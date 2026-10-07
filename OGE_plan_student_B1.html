@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Твой план подготовки к ОГЭ по английскому — уровень B1</title>
+<meta name="description" content="План подготовки к ОГЭ-2027 по английскому языку для ученика: требуемый уровень B1, критерии оценивания каждого типа заданий, 68 занятий с домашними заданиями, отметки о прогрессе, советы и ресурсы.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --teal:#15857A; --teal-dark:#0C655C; --teal-deep:#0A4A44;
+  --accent:#FF6A3B; --accent-dark:#D9531F;
+  --ink:#1A1A1A; --muted:#66615B; --line:#D5D0C8;
+  --surface:#F0EDE5; --paper:#FAF8F4; --card:#FFFFFF;
+  --radius:14px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;color:var(--ink);background:var(--paper);line-height:1.65;font-size:16px;-webkit-font-smoothing:antialiased}
+.container{max-width:1060px;margin:0 auto;padding:0 22px}
+b,strong{font-weight:700}
+
+/* ---- прогресс чтения ---- */
+#pbar{position:fixed;top:0;left:0;height:3px;background:var(--accent);width:0;z-index:1001}
+
+/* ---- hero ---- */
+.hero{background:linear-gradient(135deg,#083D38 0%,#0C655C 55%,#15857A 100%);color:#fff;padding:58px 0 50px;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 88% 12%,rgba(255,255,255,.10) 0,transparent 42%),radial-gradient(circle at 6% 95%,rgba(255,255,255,.07) 0,transparent 38%)}
+.hero .container{position:relative;z-index:1}
+.hero-label{display:inline-block;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.28);padding:6px 15px;border-radius:999px;font-size:12px;letter-spacing:.16em;font-weight:700;text-transform:uppercase;margin-bottom:22px}
+.hero h1{font-size:clamp(29px,4.6vw,44px);line-height:1.16;font-weight:800;max-width:860px;letter-spacing:-.012em}
+.hero-sub{margin-top:14px;font-size:clamp(16px,2vw,19px);color:#D8EEE9;max-width:760px;font-weight:500}
+.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin:30px 0 24px;max-width:820px}
+.stat{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.19);border-radius:12px;padding:13px 17px}
+.stat b{display:block;font-size:25px;font-weight:800;line-height:1.2}
+.stat span{font-size:12.5px;color:#C9E4DE;line-height:1.35;display:block;margin-top:2px}
+.hero-meta{display:flex;flex-direction:column;gap:5px;font-size:13.5px;color:#C9E4DE;max-width:820px}
+.hero-meta b{color:#fff;font-weight:600}
+
+/* ---- навигация ---- */
+nav{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-in{max-width:1060px;margin:0 auto;padding:0 16px;display:flex;align-items:center;gap:2px;overflow-x:auto;height:52px;scrollbar-width:none}
+.nav-in::-webkit-scrollbar{display:none}
+.nav-logo{font-weight:800;color:var(--teal);font-size:13px;letter-spacing:.08em;margin-right:10px;white-space:nowrap}
+nav a{color:#4A4A45;text-decoration:none;font-size:13.5px;font-weight:600;padding:7px 11px;border-radius:8px;white-space:nowrap}
+nav a:hover{background:var(--surface);color:var(--teal)}
+nav a.active{background:var(--teal);color:#fff}
+.nav-print{margin-left:auto;background:#fff;border:1.5px solid var(--teal);color:var(--teal)!important;font-weight:700;font-size:12.5px;padding:5px 12px;border-radius:8px;flex:0 0 auto}
+.nav-print:hover{background:var(--teal);color:#fff!important}
+
+/* ---- секции ---- */
+main{padding:40px 0 8px}
+section{margin-bottom:50px;scroll-margin-top:74px}
+.sec-head{display:flex;align-items:baseline;gap:15px;margin-bottom:8px}
+.sec-num{font-size:42px;font-weight:800;color:var(--teal);opacity:.16;line-height:.9;font-variant-numeric:tabular-nums}
+.sec-title{font-size:clamp(21px,3vw,27px);font-weight:800;color:var(--teal-deep);letter-spacing:-.01em}
+.sec-lead{color:var(--muted);font-size:14.5px;margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px 30px;box-shadow:0 1px 3px rgba(20,40,38,.05);margin-bottom:16px}
+h3{font-size:19px;color:var(--teal-deep);margin:26px 0 10px;font-weight:800}
+h3:first-child{margin-top:0}
+p{margin:0 0 12px}
+.note{font-size:13px;color:var(--muted);font-style:italic;margin-top:8px}
+.callout{background:var(--surface);border-left:4px solid var(--teal);border-radius:0 10px 10px 0;padding:14px 18px;margin:16px 0;font-size:15px}
+.callout p{margin:0}
+.tbl-title{font-weight:700;font-size:15px;margin:22px 0 10px;color:var(--teal-deep)}
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;margin:8px 0 4px;background:#fff}
+table{width:100%;border-collapse:collapse;font-size:14.5px;min-width:560px}
+thead th{background:var(--teal);color:#fff;text-align:left;padding:10px 14px;font-size:12.5px;font-weight:700;letter-spacing:.03em;text-transform:uppercase}
+tbody td{padding:10px 14px;border-top:1px solid var(--line);vertical-align:top}
+tbody tr:nth-child(even){background:#F7F5F0}
+td.k{font-weight:700;color:var(--teal-deep)}
+td.c{text-align:center}
+tr.total{background:var(--surface)!important;font-weight:800}
+tr.total td{color:var(--teal-deep)}
+.blank{display:inline-block;width:52px;height:15px;border-bottom:2px dotted #B0A99D;vertical-align:middle}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:4px 0 18px}
+.chip{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:7px 16px;font-size:13.5px;font-weight:600;color:var(--teal-deep)}
+.chip b{color:var(--accent-dark)}
+
+/* ---- шкала баллов ---- */
+.scale-bar{display:flex;height:38px;border-radius:10px;overflow:hidden;margin:20px 0 8px;font-size:12.5px;color:#fff;font-weight:700;box-shadow:inset 0 0 0 1px rgba(0,0,0,.06)}
+.scale-bar div{display:flex;align-items:center;justify-content:center;white-space:nowrap;text-align:center;padding:0 4px}
+.sc2{background:#C4574E;flex:29}.sc3{background:#DD9B3B;flex:17}.sc4{background:#6FA8A0;flex:12}.sc5{background:#15857A;flex:11}
+.scale-marks{display:flex;font-size:12.5px;color:var(--muted);margin-bottom:16px}
+.scale-marks span{padding:0 6px}
+.scale-marks b{color:var(--teal-deep)}
+
+/* ---- модули календаря ---- */
+.btn-row{display:flex;gap:10px;margin:0 0 16px;flex-wrap:wrap}
+.btn{background:#fff;border:1.5px solid var(--teal);color:var(--teal);font-weight:700;font-size:13.5px;padding:8px 18px;border-radius:9px;cursor:pointer;font-family:inherit}
+.btn:hover{background:var(--teal);color:#fff}
+.month{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);margin-bottom:14px;overflow:hidden;box-shadow:0 1px 3px rgba(20,40,38,.05)}
+.month>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:13px;padding:15px 22px;user-select:none}
+.month>summary::-webkit-details-marker{display:none}
+.month>summary:hover{background:#FBFAF6}
+.m-chip{background:var(--teal);color:#fff;font-weight:700;font-size:12.5px;padding:5px 13px;border-radius:999px;white-space:nowrap;min-width:86px;text-align:center}
+.m-title{font-weight:700;font-size:15.5px;flex:1;line-height:1.4}
+.m-count{color:var(--muted);font-size:13px;white-space:nowrap}
+.m-chev{transition:transform .25s;color:var(--teal);flex:0 0 auto}
+.month[open]>summary .m-chev{transform:rotate(180deg)}
+.month[open]>summary{border-bottom:1px solid var(--line)}
+.m-body{padding:20px 22px 14px}
+.focus-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px;margin:14px 0 20px}
+.focus-card{background:var(--surface);border-radius:10px;padding:12px 15px}
+.focus-card h4{font-size:11px;text-transform:uppercase;letter-spacing:.09em;color:var(--teal);margin-bottom:5px}
+.focus-card p{font-size:13.5px;margin:0;line-height:1.5;color:#33302C}
+
+/* ---- уроки ---- */
+.lesson{border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:12px;background:#FDFCFA}
+.lesson.exam{border-color:#F2B295;background:#FFF7F2;border-left:4px solid var(--accent)}
+.lesson.ctrl{border-left:4px solid var(--teal);background:#F3F9F8}
+.l-head{display:flex;gap:13px;margin-bottom:6px;align-items:flex-start}
+.l-num{flex:0 0 36px;height:36px;border-radius:50%;background:var(--teal);color:#fff;font-weight:800;font-size:14.5px;display:flex;align-items:center;justify-content:center}
+.lesson.exam .l-num{background:var(--accent)}
+.l-title{font-weight:700;font-size:15.5px;line-height:1.45}
+.l-goal{font-size:13.5px;color:var(--muted);margin-top:2px;font-style:italic}
+.l-plan{margin:11px 0 0;display:grid;gap:5px}
+.l-row{display:flex;gap:10px;align-items:baseline;font-size:14.5px;line-height:1.5}
+.min{flex:0 0 auto;min-width:46px;text-align:center;background:var(--surface);border:1px solid var(--line);border-radius:7px;font-size:12px;font-weight:700;color:var(--teal-deep);padding:1.5px 7px;font-variant-numeric:tabular-nums}
+.lesson.exam .min{background:#FFEDE3;border-color:#F2B295;color:var(--accent-dark)}
+.l-hw{margin-top:12px;padding:10px 15px;background:#FFF1E9;border-radius:9px;font-size:14px;line-height:1.55;border-left:3px solid var(--accent)}
+.l-hw b{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent-dark);margin-bottom:3px}
+.lesson.ctrl .l-hw{background:var(--surface);border-left-color:var(--teal)}
+.lesson.ctrl .l-hw b{color:var(--teal)}
+
+/* ---- ресурсы ---- */
+.res-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:13px;margin:16px 0 8px}
+.res{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px}
+.res h4{color:var(--teal-deep);font-size:15.5px;margin-bottom:7px;line-height:1.4}
+.res p{font-size:13.5px;color:#44403B;margin:0 0 8px;line-height:1.55}
+.res p:last-child{margin-bottom:0}
+.res .r-cap{font-size:10.5px;color:var(--accent-dark);font-weight:800;text-transform:uppercase;letter-spacing:.09em;display:block;margin-bottom:2px}
+.file-card{margin-top:13px}
+.file-list{list-style:none;display:grid;gap:8px;margin-top:10px}
+.file-list li{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:10px 13px;background:var(--surface);border:1px solid var(--line);border-radius:9px;font-size:14px;line-height:1.45}
+.file-list a{font-weight:700;color:var(--teal-deep);text-decoration:none}
+.file-list a:hover{color:var(--accent-dark);text-decoration:underline}
+.file-list a::after{content:' ↓';color:var(--accent-dark);font-weight:800}
+.file-list span{font-size:11.5px;color:var(--muted);white-space:nowrap;font-variant-numeric:tabular-nums}
+
+/* ---- футер ---- */
+footer{border-top:1px solid var(--line);background:var(--surface);padding:26px 0;margin-top:46px;font-size:13px;color:var(--muted)}
+footer .container{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+/* ---- адаптив ---- */
+@media (max-width:760px){
+  .hero{padding:44px 0 40px}
+  .hero-stats{grid-template-columns:repeat(2,1fr)}
+  .card{padding:20px 18px}
+  .m-body{padding:16px 14px 10px}
+  .month>summary{padding:13px 14px;gap:9px}
+  .m-count{display:none}
+  .sec-num{font-size:32px}
+}
+
+/* ---- печать ---- */
+@media print{
+  #pbar,nav,.btn-row{display:none!important}
+  body{background:#fff;font-size:12px}
+  .container{max-width:100%;padding:0 8mm}
+  .card,.month,.lesson,.res{box-shadow:none;break-inside:avoid}
+  .hero{-webkit-print-color-adjust:exact;print-color-adjust:exact;padding:24px 0}
+  .hero-stats,.scale-bar,thead th,.m-chip,.l-num,.min{ -webkit-print-color-adjust:exact;print-color-adjust:exact}
+  section{margin-bottom:24px}
+  details.month>*{display:block!important}
+}
+
+/* --- карточки разделов экзамена --- */
+.parts-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(185px,1fr));gap:12px;margin:16px 0 10px}
+.part{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 16px 14px;position:relative}
+.part .p-num{position:absolute;top:-11px;left:14px;background:var(--teal);color:#fff;font-weight:800;font-size:11.5px;padding:3px 11px;border-radius:999px;letter-spacing:.03em}
+.part h4{margin:8px 0 5px;color:var(--teal-deep);font-size:15px;line-height:1.3}
+.part .p-pts{display:inline-block;background:var(--surface);border-radius:999px;font-size:12px;font-weight:800;color:var(--teal-deep);padding:2px 10px;margin-bottom:7px}
+.part p{font-size:13.5px;margin:0;color:#44403B;line-height:1.5}
+
+/* --- уровень B1 --- */
+.b1-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:10px;margin:14px 0 6px}
+.b1-item{background:#F3F9F8;border:1px solid #CFE4E1;border-radius:10px;padding:13px 15px;font-size:14px;line-height:1.55}
+.b1-item b{color:var(--teal-deep)}
+.b1-path{display:flex;align-items:center;gap:14px;background:var(--surface);border-radius:12px;padding:14px 18px;margin:16px 0 4px;flex-wrap:wrap}
+.b1-stop{font-weight:800;font-size:17px;color:var(--teal-deep)}
+.b1-stop small{display:block;font-size:11px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.06em}
+.b1-arrow{color:var(--accent);font-size:22px;font-weight:800}
+.b1-path p{margin:0;font-size:13.5px;flex:1;min-width:220px}
+
+/* --- обзор месяца (раздел «Год по шагам») --- */
+.mo{border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:12px;background:#fff}
+.mo-head{display:flex;align-items:center;gap:12px;margin-bottom:10px;flex-wrap:wrap}
+.mo-head b{font-size:15.5px;color:var(--teal-deep)}
+.mo p{font-size:14px;margin-bottom:12px}
+.mo .focus-grid{margin-bottom:12px}
+.mo-link{font-size:13.5px;font-weight:700;color:var(--teal);text-decoration:none}
+.mo-link:hover{text-decoration:underline}
+.month{scroll-margin-top:74px}
+
+/* --- чекбоксы занятий --- */
+.l-head>div{flex:1;min-width:0}
+.ck{flex:0 0 27px;width:27px;height:27px;border-radius:50%;border:2px solid #C9C2B6;background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;color:transparent;transition:all .15s;user-select:none;margin-top:1px}
+.ck:hover{border-color:var(--teal)}
+.lesson.done{opacity:.55}
+.lesson.done .l-title{text-decoration:line-through}
+.lesson.done .ck{background:var(--teal);border-color:var(--teal);color:#fff}
+.lesson.done .l-num{background:#B9B3A8}
+
+/* --- скрытый план урока --- */
+.l-more{margin-top:10px}
+.l-more>summary{list-style:none;cursor:pointer;font-size:13px;font-weight:700;color:var(--teal);user-select:none;display:inline-block}
+.l-more>summary::-webkit-details-marker{display:none}
+.l-more>summary:hover{text-decoration:underline}
+.l-more>summary::before{content:'+';display:inline-block;margin-right:7px;font-weight:800}
+.l-more[open]>summary::before{content:'–'}
+.l-more .l-plan{margin-top:9px}
+.l-more .l-row{font-size:13.5px;color:#55514B}
+
+/* --- прогресс --- */
+.my-prog{display:flex;align-items:center;gap:18px;background:var(--surface);border-radius:12px;padding:14px 20px;margin:4px 0 18px;flex-wrap:wrap}
+.mp-left{display:flex;flex-direction:column;line-height:1.3}
+.mp-left b{font-size:19px;color:var(--teal-deep)}
+.mp-left span{font-size:12px;color:var(--muted);font-weight:600}
+.prog{height:8px;background:#E4E0D6;border-radius:99px;overflow:hidden}
+.mp-bar{flex:1;min-width:170px;height:10px}
+.prog>i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--teal),#1FA396);border-radius:99px;transition:width .3s}
+.btn-ghost{border-color:#C9C2B6;color:var(--muted)}
+.btn-ghost:hover{background:#EDE9E0;color:#44403B;border-color:#C9C2B6}
+.m-mini{display:flex;align-items:center;gap:9px}
+.m-bar{width:66px;height:6px;margin:0}
+
+/* --- советы --- */
+.tip-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin:14px 0 4px}
+.tip{background:#FFF7F2;border:1px solid #F2B295;border-radius:12px;padding:15px 17px;font-size:14px;line-height:1.55}
+.tip b.cap{display:block;color:var(--accent-dark);font-size:11.5px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}
+.tip p{margin:0}
+
+/* --- примечание в hero --- */
+.hero-note{margin-top:22px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.26);border-radius:12px;padding:15px 19px;font-size:14.5px;line-height:1.6;max-width:860px;color:#EAF6F3}
+.hero-note b{color:#fff}
+
+/* --- печать --- */
+@media print{
+  .ck{display:none}
+  details.l-more>*{display:block!important}
+  .lesson.done{opacity:1}
+  .lesson.done .l-title{text-decoration:none}
+}
+</style>
+</head>
+<body>
+<div id="pbar"></div>
+
+<header class="hero">
+  <div class="container">
+    <div class="hero-label">ОГЭ · Английский язык · экзамен — май 2027 (учебный год 2026/27)</div>
+    <h1>Твой план подготовки к ОГЭ по английскому языку</h1>
+    <p class="hero-sub">Годовая программа: от твоего сегодняшнего A2 к уровню B1, который требует экзамен — 68 занятий, 2 раза в неделю по 50 минут</p>
+    <div class="hero-stats">
+      <div class="stat"><b>A2 → B1</b><span>твой старт и требуемый уровень экзамена</span></div>
+      <div class="stat"><b>68</b><span>занятий с сентября по май</span></div>
+      <div class="stat"><b>2 × 50</b><span>минут в неделю + 30–40 минут ДЗ</span></div>
+      <div class="stat"><b>58+</b><span>баллов из 68 — отметка «5»</span></div>
+    </div>
+    <div class="hero-note">Экзамен проверяет уровень <b>B1</b>, а начинаешь ты с A2 — и это абсолютно нормально: разрыв закрывается за год регулярной работой. <b>Никакой магии:</b> два занятия в неделю, домашка после каждого урока и ~500 новых слов — и к маю ты готов сдавать на свои 58+ баллов.</div>
+  </div>
+</header>
+<nav><div class="nav-in">
+  <span class="nav-logo">МОЙ ПЛАН · ОГЭ</span>
+  <a href="#s1" data-sec>1 · Экзамен</a>
+<a href="#s2" data-sec>2 · Уровень B1</a>
+<a href="#s3" data-sec>3 · Год по шагам</a>
+<a href="#s4" data-sec>4 · Слова</a>
+<a href="#s5" data-sec>5 · Календарь</a>
+<a href="#s6" data-sec>6 · Советы</a>
+<a href="#s7" data-sec>7 · Ресурсы</a>
+  <a href="javascript:void(0)" class="nav-print" onclick="window.print()">Печать / PDF</a>
+</div></nav>
+<main class="container">
+
+<section id="s1">
+  <div class="sec-head"><span class="sec-num">01</span><h2 class="sec-title">Экзамен простыми словами</h2></div>
+  <div class="card">
+    <p>ОГЭ по английскому — это две части: письменная (120 минут) и устная (15 минут, отдельно). Всего можно набрать <b>68 первичных баллов</b>. Вот из чего они складываются:</p>
+    <div class="parts-grid"><div class="part"><span class="p-num">Часть 1</span><h4>Аудирование</h4><span class="p-pts">15 баллов</span><p>Слушаешь диалоги, объявления и интервью, выбираешь варианты и вписываешь слова в таблицу. Каждая запись звучит два раза.</p></div><div class="part"><span class="p-num">Часть 2</span><h4>Чтение</h4><span class="p-pts">13 баллов</span><p>Шесть коротких текстов — находишь, где ответ на вопрос, а в большом тексте отмечаешь True / False / Not stated.</p></div><div class="part"><span class="p-num">Часть 3</span><h4>Грамматика и лексика</h4><span class="p-pts">15 баллов</span><p>В связном тексте меняешь форму слова или образуешь новое суффиксом. Наш главный инструмент — регулярные тренажёры.</p></div><div class="part"><span class="p-num">Часть 4</span><h4>Письмо</h4><span class="p-pts">10 баллов</span><p>Электронное письмо другу: 100–120 слов, ответы на 3 вопроса и шаблонные фразы вежливости, которые ты выучишь наизусть.</p></div><div class="part"><span class="p-num">Часть 5</span><h4>Говорение</h4><span class="p-pts">15 баллов</span><p>Чтение вслух, ответы на 6 вопросов телефонного опроса (по 40 секунд) и монолог по плану из 4 пунктов.</p></div></div>
+    <p>Баллы переводятся в отметку по шкале. Порог сдачи — <b>29 баллов</b>: набрал — экзамен сдан. Наша цель — зайти выше, в зону «пятёрки», чтобы на реальном экзамене был запас.</p>
+    <div class="scale-bar">
+      <div class="sc2" title="0–28">«2» · 0–28</div>
+      <div class="sc3" title="29–45">«3» · 29–45</div>
+      <div class="sc4" title="46–57">«4» · 46–57</div>
+      <div class="sc5" title="58–68">«5» · 58–68</div>
+    </div>
+    <div class="scale-marks"><span>0</span><span style="margin-left:auto">порог <b>29</b></span><span style="margin-left:auto"><b>46</b> — «4»</span><span style="margin-left:auto"><b>58</b> — «5»</span><span style="margin-left:auto">68</span></div>
+    <h3>За что дают баллы: критерии каждого типа заданий</h3>
+    <p>Экзамен оценивается по чётким правилам, и знание этих правил — это уже лёгкие баллы в кармане. В таблице ниже — сколько стоит каждый тип заданий и за что могут поставить ноль даже при верном по смыслу ответе. Прочитай сейчас и обязательно перечитай перед каждым пробником.</p>
+    <div class="tbl-title">Критерии оценивания заданий ОГЭ по типам</div>
+    <div class="table-wrap"><table><thead><tr><th>Задания</th><th>Макс. балл</th><th>Как выставляется балл</th></tr></thead><tbody><tr><td class="k">1–4</td><td class="c">по 1</td><td>Верный выбор одного из трёх вариантов (в бланк записывается цифра). Исправления и лишние символы не допускаются</td></tr><tr><td class="k">5</td><td class="c">5</td><td>По 1 баллу за каждое верное соответствие «монолог — рубрика» (одна рубрика в списке лишняя). Неверное соответствие снимает балл позиции, а символ, не предусмотренный инструкцией, обнуляет позицию</td></tr><tr><td class="k">6–11</td><td class="c">по 1</td><td>Вписано не более одного слова из прозвучавшего текста, без орфографических ошибок и артиклей; числа записываются прописью. Нарушение любого из этих условий — 0 баллов</td></tr><tr><td class="k">12</td><td class="c">6</td><td>По 1 баллу за каждое верное соответствие «вопрос 1–7 — текст A–F» (один вопрос в списке лишний)</td></tr><tr><td class="k">13–19</td><td class="c">по 1</td><td>Верно определено значение утверждения: 1 — True (верно), 2 — False (неверно), 3 — Not stated (в тексте об этом не сказано)</td></tr><tr><td class="k">20–28</td><td class="c">по 1</td><td>Слово преобразовано в требуемую грамматическую форму; орфографическая ошибка обнуляет ответ</td></tr><tr><td class="k">29–34</td><td class="c">по 1</td><td>Родственное слово образовано с помощью подходящего аффикса; орфографическая ошибка обнуляет ответ</td></tr><tr><td class="k">35</td><td class="c">0–10</td><td>Развёрнутый ответ по критериям К1–К4 (см. таблицу критериев письма); менее 90 слов — 0 баллов за всё задание</td></tr><tr><td class="k">Уст. 1–3</td><td class="c">0–2 · 0–6 · 0–7</td><td>Чтение вслух — фонетическая сторона речи; телефонный опрос — по 1 баллу за каждый полный ответ; монолог — по критериям К1–К3 (см. таблицу критериев устной части)</td></tr></tbody></table></div>
+    <p class="note">Полные формулировки всех уровней баллов для письма и устной части — в демоверсии ФИПИ. Источник: спецификация и демоверсия КИМ ОГЭ 2027 г., ФИПИ.</p>
+    <p>За год ты напишешь <b>три полных пробника</b> (декабрь, март, апрель) и майскую генеральную репетицию — к экзамену формат не будет для тебя сюрпризом.</p>
+  </div>
+</section>
+
+<section id="s2">
+  <div class="sec-head"><span class="sec-num">02</span><h2 class="sec-title">Уровень B1: что от тебя требуется</h2></div>
+  <div class="card">
+    <div class="b1-path">
+      <span class="b1-stop">A2<small>сейчас</small></span>
+      <span class="b1-arrow">→</span>
+      <span class="b1-stop">B1<small>нужен на экзамене</small></span>
+      <span class="b1-arrow">→</span>
+      <span class="b1-stop">Май<small>экзамен</small></span>
+      <p>Разрыв A2 → B1 — это около <b>500 новых слов</b>, <b>10 времён и конструкций</b> и практика всех четырёх навыков каждую неделю. По 10–12 слов в неделю за 34 учебные недели это посильно.</p>
+    </div>
+    <p>Уровень B1 — это не «идеальный английский», а вполне конкретный набор умений. Вот что ты будешь уметь к маю (и что проверяет экзамен):</p>
+    <div class="b1-grid"><div class="b1-item"><b>Аудирование.</b> понимаешь основное содержание коротких диалогов, объявлений и интервью, ловишь нужную деталь.</div><div class="b1-item"><b>Чтение.</b> читаешь тексты среднего объёма, находишь нужную информацию, различаешь «правда / ложь / об этом не сказано».</div><div class="b1-item"><b>Письмо.</b> пишешь личное электронное письмо 100–120 слов: отвечаешь на вопросы, соблюдаешь формат и вежливые фразы.</div><div class="b1-item"><b>Говорение.</b> связно говоришь 10–12 фраз о себе, планах и мнении, читаешь вслух без длинных пауз, отвечаешь развёрнуто.</div><div class="b1-item"><b>Грамматика.</b> уверенно используешь все основные времена, пассив, условные предложения 1–2 типа и слова-связки.</div></div>
+    <p>Каждый месяц плана закрывает свой кусочек этой траектории — смотри раздел «Год по шагам».</p>
+  </div>
+</section>
+
+<section id="s3">
+  <div class="sec-head"><span class="sec-num">03</span><h2 class="sec-title">Твой год по шагам</h2></div>
+  <div class="card" style="padding-bottom:14px">
+    <p>Девять месяцев — девять модулей. В каждом карточка показывает, что выучим, какие слова пойдут в дело и чем тренируемся; из карточки можно перейти к занятиям этого месяца в календаре.</p>
+    <div class="mo">
+    <div class="mo-head"><span class="m-chip">Сентябрь</span><b>Модуль 1. Диагностика и фундамент A2</b></div>
+    <p>Стартовый месяц: узнаешь, как устроен экзамен, пройдёшь диагностику и закрепишь фундамент — настоящие и прошедшие времена, степени сравнения, артикли. Слова — про семью и школу.</p>
+    <div class="focus-grid"><div class="focus-card"><h4>Грамматика</h4><p>Present Simple vs Present Continuous; Past Simple (правильные и неправильные глаголы); степени сравнения прилагательных; артикли a/an/the; there is / there are</p></div><div class="focus-card"><h4>Новые слова</h4><p>«Знакомство, семья и друзья», «Школьная жизнь и распорядок дня» — 50–55 слов</p></div><div class="focus-card"><h4>Тренируем</h4><p>Знакомство со структурой всех разделов; аудирование задания 1–4; чтение 13–19 (True/False/Not stated); чтение вслух (устное задание 1)</p></div></div>
+    <a class="mo-link" href="#mm0">Занятия месяца в календаре ↓</a>
+  </div><div class="mo">
+    <div class="mo-head"><span class="m-chip">Октябрь</span><b>Модуль 2. Прошедшее время и интенсив по аудированию</b></div>
+    <p>Достраиваем прошедший блок (Past Continuous и Past Perfect) и каждую неделю тренируем аудирование — к нему привыкают только регулярной практикой. Плюс учишься искать ответ в тексте, а не угадывать.</p>
+    <div class="focus-grid"><div class="focus-card"><h4>Грамматика</h4><p>Past Continuous; Past Simple vs Past Continuous; Past Perfect (had + V3); предлоги времени и места; повторение there is/there are</p></div><div class="focus-card"><h4>Новые слова</h4><p>«Дом и повседневная жизнь», «Город и ориентирование в нём» — 55 слов</p></div><div class="focus-card"><h4>Тренируем</h4><p>Аудирование 1–4 (еженедельно); знакомство с заданием 6–11 (таблица); чтение 12 (соответствия); монолог по опоре</p></div></div>
+    <a class="mo-link" href="#mm1">Занятия месяца в календаре ↓</a>
+  </div><div class="mo">
+    <div class="mo-head"><span class="m-chip">Ноябрь</span><b>Модуль 3. Будущее, перфект и первое письмо</b></div>
+    <p>Два больших события месяца: будущее время и Present Perfect, а ещё первое настоящее электронное письмо на 100–120 слов — по шаблону, который останется с тобой до экзамена.</p>
+    <div class="focus-grid"><div class="focus-card"><h4>Грамматика</h4><p>Future Simple; be going to; Present Continuous для планов; Present Perfect (ever, never, just, already, yet); условные предложения 0 и 1 типа; словообразование: -er, -tion</p></div><div class="focus-card"><h4>Новые слова</h4><p>«Путешествия и транспорт», «В аэропорту и в отеле» — 55 слов</p></div><div class="focus-card"><h4>Тренируем</h4><p>Письмо 35: структура и первый полный текст; грамматика 20–24; аудирование 6–11 (два пропуска); чтение 12</p></div></div>
+    <a class="mo-link" href="#mm2">Занятия месяца в календаре ↓</a>
+  </div><div class="mo">
+    <div class="mo-head"><span class="m-chip">Декабрь</span><b>Модуль 4. Полугодовой рубеж: пробник №1</b></div>
+    <p>Первый полный пробник — увидишь свой реальный балл и научишься распределять 120 минут. Из нового: пассивный залог и словарный тест за полгода.</p>
+    <div class="focus-grid"><div class="focus-card"><h4>Грамматика</h4><p>Пассивный залог: Present Passive и Past Passive (be + V3); закрепление Present Perfect vs Past Simple; система прошедших времён</p></div><div class="focus-card"><h4>Новые слова</h4><p>«Еда и напитки», «Магазины и покупки» — 55 слов</p></div><div class="focus-card"><h4>Тренируем</h4><p>ПОЛНЫЙ ПРОБНИК №1 (уроки 27–28) и его разбор (урок 29); аудирование 5; устная часть: чтение вслух + диалог-расспрос</p></div></div>
+    <a class="mo-link" href="#mm3">Занятия месяца в календаре ↓</a>
+  </div><div class="mo">
+    <div class="mo-head"><span class="m-chip">Январь</span><b>Модуль 5. Модальные глаголы и разговорная часть</b></div>
+    <p>Месяц говорения: модальные глаголы, условные предложения 2 типа (маркер уровня B1) и полный цикл устных заданий — чтение вслух, опрос, монолог.</p>
+    <div class="focus-grid"><div class="focus-card"><h4>Грамматика</h4><p>Модальные глаголы: can/could, must/have to, should, may/might; их эквиваленты; условные предложения 2 типа (If + Past, would + V); словообразование: -ment, -ness</p></div><div class="focus-card"><h4>Новые слова</h4><p>«Здоровье и у врача», «Спорт и здоровый образ жизни» — 50 слов</p></div><div class="focus-card"><h4>Тренируем</h4><p>Устная часть: полный цикл трёх заданий; грамматика 20–28; словообразование 29–34</p></div></div>
+    <a class="mo-link" href="#mm4">Занятия месяца в календаре ↓</a>
+  </div><div class="mo">
+    <div class="mo-head"><span class="m-chip">Февраль</span><b>Модуль 6. Косвенная речь и сложные структуры</b></div>
+    <p>Закрываем самую «дорогую» тему года — косвенную речь (она встречается в заданиях 20–28 постоянно), плюс герундий, относительные придаточные и третье письмо с проверкой по чек-листу эксперта.</p>
+    <div class="focus-grid"><div class="focus-card"><h4>Грамматика</h4><p>Косвенная речь: утверждения, вопросы, приказы; согласование времён; герундий и инфинитив (enjoy doing, want to do); относительные придаточные who/which/that/where</p></div><div class="focus-card"><h4>Новые слова</h4><p>«Погода и климат», «Окружающая среда и экология» — 55 слов</p></div><div class="focus-card"><h4>Тренируем</h4><p>Грамматика 20–28 с косвенной речью; письмо №2 и №3; монолог «Экология»; аудирование 5 и 6–11</p></div></div>
+    <a class="mo-link" href="#mm5">Занятия месяца в календаре ↓</a>
+  </div><div class="mo">
+    <div class="mo-head"><span class="m-chip">Март</span><b>Модуль 7. Пробник №2 и системное повторение</b></div>
+    <p>Второй пробник и системное повторение: все времена собираются в один тренажёр, словообразование — в полную карту аффиксов. Отдельный урок — тайм-менеджмент экзамена.</p>
+    <div class="focus-grid"><div class="focus-card"><h4>Грамматика</h4><p>Системное повторение всех времён; инфинитив цели и причастные обороты; полное повторение словообразования (все аффиксы кодификатора)</p></div><div class="focus-card"><h4>Новые слова</h4><p>«Технологии и гаджеты», «СМИ и коммуникация» — 55 слов</p></div><div class="focus-card"><h4>Тренируем</h4><p>ПОЛНЫЙ ПРОБНИК №2 (уроки 51–52) и разбор (урок 53); полная репетиция устной части (урок 54); тайм-менеджмент экзамена</p></div></div>
+    <a class="mo-link" href="#mm6">Занятия месяца в календаре ↓</a>
+  </div><div class="mo">
+    <div class="mo-head"><span class="m-chip">Апрель</span><b>Модуль 8. Пробник №3 и точечная коррекция</b></div>
+    <p>Работаем по твоим личным слабым местам после пробника №2 и делаем третий пробник. Цель апреля — стабильные 55+ баллов на тренировках.</p>
+    <div class="focus-grid"><div class="focus-card"><h4>Грамматика</h4><p>Точечное повторение по результатам пробника №2 (индивидуальная программа); фразовые глаголы (give up, go on, look forward to); повторение косвенной речи и пассива</p></div><div class="focus-card"><h4>Новые слова</h4><p>«Образование и школьные предметы», «Работа и карьера» — 55 слов + фразовые глаголы</p></div><div class="focus-card"><h4>Тренируем</h4><p>ПОЛНЫЙ ПРОБНИК №3 (уроки 59–60) и разбор (урок 61); полная устная репетиция с оценкой (урок 62); письмо №4 на стабильность</p></div></div>
+    <a class="mo-link" href="#mm7">Занятия месяца в календаре ↓</a>
+  </div><div class="mo">
+    <div class="mo-head"><span class="m-chip">Май</span><b>Модуль 9. Финишная прямая и репетиция экзамена</b></div>
+    <p>Финишная прямая: генеральная репетиция 120 минут подряд, финальный устный прогон и настрой на экзамен. Ничего нового — только полировка шаблонов и слабых точек.</p>
+    <div class="focus-grid"><div class="focus-card"><h4>Грамматика</h4><p>Финальное повторение: марафон 20–34; ловушки перфекта, косвенной речи и словообразования; шаблоны письма и монолога — до автоматизма</p></div><div class="focus-card"><h4>Новые слова</h4><p>«Страна изучаемого языка» + сквозное повторение всех блоков года (выборочный контроль 120 слов)</p></div><div class="focus-card"><h4>Тренируем</h4><p>Генеральная репетиция письменной части в полном тайминге (урок 65); финальная устная репетиция (урок 67); психологическая подготовка</p></div></div>
+    <a class="mo-link" href="#mm8">Занятия месяца в календаре ↓</a>
+  </div>
+  </div>
+</section>
+
+<section id="s4">
+  <div class="sec-head"><span class="sec-num">04</span><h2 class="sec-title">Слова по месяцам</h2></div>
+  <div class="card">
+    <p>Словарь растёт блоками по <b>10–12 слов в неделю</b> — без перегрузки. Короткий словарный диктант будет в начале каждого занятия, а тест по блоку — в конце месяца. Все слова заводи в карточки Anki или Quizlet: так они перейдут из «узнаю» в «использую».</p>
+    <div class="table-wrap"><table><thead><tr><th>Месяц</th><th>Темы слов</th><th>Объём</th></tr></thead><tbody><tr><td class="k">Сентябрь</td><td>Знакомство, семья и друзья; школьная жизнь и распорядок дня</td><td class="c">50–55 слов</td></tr><tr><td class="k">Октябрь</td><td>Дом и повседневная жизнь; город и ориентирование</td><td class="c">55 слов</td></tr><tr><td class="k">Ноябрь</td><td>Путешествия и транспорт; в аэропорту и в отеле</td><td class="c">55 слов</td></tr><tr><td class="k">Декабрь</td><td>Еда и напитки; магазины и покупки</td><td class="c">55 слов</td></tr><tr><td class="k">Январь</td><td>Здоровье и у врача; спорт и здоровый образ жизни</td><td class="c">50 слов</td></tr><tr><td class="k">Февраль</td><td>Погода и климат; окружающая среда и экология</td><td class="c">55 слов</td></tr><tr><td class="k">Март</td><td>Технологии и гаджеты; СМИ и коммуникация</td><td class="c">55 слов</td></tr><tr><td class="k">Апрель</td><td>Образование и школьные предметы; работа и карьера + 15 фразовых глаголов</td><td class="c">55 слов</td></tr><tr><td class="k">Май</td><td>Страна изучаемого языка + сквозное повторение всех блоков</td><td class="c">—</td></tr></tbody></table></div>
+    <p class="note">Темы блоков подобраны под сюжеты заданий ОГЭ: объявления о быте и школе, путешествия, покупки, здоровье, экология, технологии и работа.</p>
+  </div>
+</section>
+
+<section id="s5">
+  <div class="sec-head"><span class="sec-num">05</span><h2 class="sec-title">Календарь занятий</h2></div>
+  <div class="card" style="padding-bottom:14px">
+    <p>Здесь все <b>68 занятий</b> с домашними заданиями. Отмечай пройденные уроки галочкой — отметки сохраняются в твоём браузере, и ты всегда видишь свой прогресс.</p>
+    <div class="my-prog">
+      <div class="mp-left"><b id="mp-num">0 из 68</b><span>занятий пройдено</span></div>
+      <div class="prog mp-bar"><i id="mp-fill"></i></div>
+      <button class="btn btn-ghost" id="mp-reset">Сбросить отметки</button>
+    </div>
+    <div class="btn-row">
+      <button class="btn" onclick="expandAll(true)">Развернуть все месяцы</button>
+      <button class="btn" onclick="expandAll(false)">Свернуть все месяцы</button>
+    </div>
+    <p class="note" style="margin:0 0 14px">Подсказка по цветам уроков: <b style="color:var(--accent-dark)">оранжевая рамка</b> — полный пробник или репетиция, <b style="color:var(--teal)">бирюзовая</b> — контроль месяца. План урока по минутам скрыт под ссылкой «Что будет на уроке».</p>
+    <details class="month" id="mm0" open>
+    <summary><span class="m-chip">Сентябрь</span><span class="m-title">Модуль 1. Диагностика и фундамент A2</span><span class="m-mini"><span class="m-count js-mc">0/8</span><span class="prog m-bar"><i></i></span></span><span class="m-chev">▾</span></summary>
+    <div class="m-body">
+      <p>Стартовый месяц: узнаешь, как устроен экзамен, пройдёшь диагностику и закрепишь фундамент — настоящие и прошедшие времена, степени сравнения, артикли. Слова — про семью и школу.</p>
+      <div class="focus-grid"><div class="focus-card"><h4>Грамматика</h4><p>Present Simple vs Present Continuous; Past Simple (правильные и неправильные глаголы); степени сравнения прилагательных; артикли a/an/the; there is / there are</p></div><div class="focus-card"><h4>Новые слова</h4><p>«Знакомство, семья и друзья», «Школьная жизнь и распорядок дня» — 50–55 слов</p></div><div class="focus-card"><h4>Тренируем</h4><p>Знакомство со структурой всех разделов; аудирование задания 1–4; чтение 13–19 (True/False/Not stated); чтение вслух (устное задание 1)</p></div><div class="focus-card"><h4>Контроль</h4><p>Стартовая диагностика (уроки 2–3), словарный тест и мини-контроль грамматики (урок 8)</p></div></div>
+      <div class="lesson" data-n="1">
+    <div class="l-head"><span class="l-num">1</span><div><div class="l-title">Вводное занятие: как устроен ОГЭ по английскому</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>Просмотреть демонстрационный вариант на сайте ФИПИ (ознакомительно); составить список тем, которые кажутся сложными; выучить первые 15 слов блока «Знакомство и семья».</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">10′</span><span>презентация экзамена: 4 раздела письменной части, устная часть, 68 первичных баллов, шкала оценок</span></div><div class="l-row"><span class="min">15′</span><span>диагностическая беседа на английском (вопросы о себе, семье, школе) и краткая обратная связь</span></div><div class="l-row"><span class="min">15′</span><span>чтение образца письма-стимула задания 35 и обсуждение, что от ученика требуется</span></div><div class="l-row"><span class="min">5′</span><span>обзор годового плана и режима (2×50 мин в неделю)</span></div><div class="l-row"><span class="min">5′</span><span>итоги и выдача ДЗ.</span></div></div></details>
+  </div><div class="lesson" data-n="2">
+    <div class="l-head"><span class="l-num">2</span><div><div class="l-title">Стартовая диагностика — письменная часть</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>Дописать дома задания 27–34 диагностики; повторить 15 слов к диктанту.</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">5′</span><span>организация, объяснение правил</span></div><div class="l-row"><span class="min">40′</span><span>диагностический мини-вариант: чтение (задания 12–14) и грамматика (20–26) из демоверсии ФИПИ, с запасом времени</span></div><div class="l-row"><span class="min">5′</span><span>самопроверка по ключам, первичные баллы в черновик.</span></div></div></details>
+  </div><div class="lesson" data-n="3">
+    <div class="l-head"><span class="l-num">3</span><div><div class="l-title">Стартовая диагностика — аудирование и разбор</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>Выучить 15 слов блока «Семья»; повторить правила Present Simple.</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">5′</span><span>установка на прослушивание</span></div><div class="l-row"><span class="min">20′</span><span>аудирование заданий 1–4 и 5 из демоверсии (каждая запись дважды)</span></div><div class="l-row"><span class="min">15′</span><span>разбор ответов: почему выбран неверный вариант, какие слова были ключевыми</span></div><div class="l-row"><span class="min">7′</span><span>заполнение стартовой строки трекера прогресса</span></div><div class="l-row"><span class="min">3′</span><span>итоги.</span></div></div></details>
+  </div><div class="lesson" data-n="4">
+    <div class="l-head"><span class="l-num">4</span><div><div class="l-title">Грамматика: Present Simple vs Present Continuous</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>Решу ОГЭ: задания 20–22 (грамматика); 10 слов блока «Школьная жизнь».</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">5′</span><span>словарный диктант</span></div><div class="l-row"><span class="min">12′</span><span>повторение: схемы, типичные маркеры (usually, now, always), ошибки с глаголами состояния</span></div><div class="l-row"><span class="min">12′</span><span>практика: выбор формы в связном тексте в формате заданий 20–28</span></div><div class="l-row"><span class="min">16′</span><span>говорение: монолог «Моя семья» по опоре из трёх пунктов (заготовка под устное задание 3)</span></div><div class="l-row"><span class="min">5′</span><span>итоги.</span></div></div></details>
+  </div><div class="lesson" data-n="5">
+    <div class="l-head"><span class="l-num">5</span><div><div class="l-title">Грамматика: Past Simple</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>Выучить 20 неправильных глаголов; Решу ОГЭ: задания 13–14 (чтение).</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">5′</span><span>словарный диктант</span></div><div class="l-row"><span class="min">10′</span><span>повторение форм 25 базовых неправильных глаголов</span></div><div class="l-row"><span class="min">15′</span><span>практика: устный рассказ «Мои выходные» + трансформации утверждений в вопросы и отрицания</span></div><div class="l-row"><span class="min">15′</span><span>чтение: задания 13–15 (True/False/Not stated) со стратегией поиска доказательства в тексте</span></div><div class="l-row"><span class="min">5′</span><span>итоги.</span></div></div></details>
+  </div><div class="lesson" data-n="6">
+    <div class="l-head"><span class="l-num">6</span><div><div class="l-title">Лексика и говорение: школа и распорядок дня</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>Записать на диктофон чтение текста вслух (образец из открытого банка ФИПИ); 10 новых слов.</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">5′</span><span>словарный диктант</span></div><div class="l-row"><span class="min">15′</span><span>активизация лексики: подстановочные упражнения, мини-диалоги «мой школьный день»</span></div><div class="l-row"><span class="min">15′</span><span>чтение вслух (формат устного задания 1): правила чтения типичных сочетаний, фразовое ударение</span></div><div class="l-row"><span class="min">12′</span><span>парная отработка: вопросы-ответы о школе</span></div><div class="l-row"><span class="min">3′</span><span>итоги.</span></div></div></details>
+  </div><div class="lesson" data-n="7">
+    <div class="l-head"><span class="l-num">7</span><div><div class="l-title">Грамматика: степени сравнения и артикли</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>Решу ОГЭ: задания 20–23; повторить все слова сентября (55 слов).</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">5′</span><span>словарный диктант</span></div><div class="l-row"><span class="min">12′</span><span>правила: -er/-est, more/most, исключения</span></div><div class="l-row"><span>артикли с уникальными и обобщёнными понятиями</span></div><div class="l-row"><span class="min">13′</span><span>практика в формате заданий 20–24</span></div><div class="l-row"><span class="min">15′</span><span>аудирование: задание 5 (соответствия) — знакомство со стратегией выделения ключевых слов рубрик</span></div><div class="l-row"><span class="min">5′</span><span>итоги.</span></div></div></details>
+  </div><div class="lesson ctrl" data-n="8">
+    <div class="l-head"><span class="l-num">8</span><div><div class="l-title">Контроль месяца и итоги</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>Оформить карточки со своими типичными ошибками; прочитать адаптированный текст уровня B1 (2 страницы).</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">5′</span><span>организация</span></div><div class="l-row"><span class="min">15′</span><span>словарный тест по всем блокам сентября</span></div><div class="l-row"><span class="min">20′</span><span>мини-контроль грамматики: времена, сравнение, артикли (смешанный тест из 20 заданий в формате 20–28)</span></div><div class="l-row"><span class="min">8′</span><span>разбор ошибок, обновление трекера</span></div><div class="l-row"><span class="min">2′</span><span>задачи на октябрь.</span></div></div></details>
+  </div>
+    </div>
+  </details><details class="month" id="mm1">
+    <summary><span class="m-chip">Октябрь</span><span class="m-title">Модуль 2. Прошедшее время и интенсив по аудированию</span><span class="m-mini"><span class="m-count js-mc">0/8</span><span class="prog m-bar"><i></i></span></span><span class="m-chev">▾</span></summary>
+    <div class="m-body">
+      <p>Достраиваем прошедший блок (Past Continuous и Past Perfect) и каждую неделю тренируем аудирование — к нему привыкают только регулярной практикой. Плюс учишься искать ответ в тексте, а не угадывать.</p>
+      <div class="focus-grid"><div class="focus-card"><h4>Грамматика</h4><p>Past Continuous; Past Simple vs Past Continuous; Past Perfect (had + V3); предлоги времени и места; повторение there is/there are</p></div><div class="focus-card"><h4>Новые слова</h4><p>«Дом и повседневная жизнь», «Город и ориентирование в нём» — 55 слов</p></div><div class="focus-card"><h4>Тренируем</h4><p>Аудирование 1–4 (еженедельно); знакомство с заданием 6–11 (таблица); чтение 12 (соответствия); монолог по опоре</p></div><div class="focus-card"><h4>Контроль</h4><p>Тематический контроль №1: аудирование + грамматика (урок 16)</p></div></div>
+      <div class="lesson" data-n="9">
+    <div class="l-head"><span class="l-num">9</span><div><div class="l-title">Грамматика: Past Continuous</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>Решу ОГЭ: грамматика по Past Continuous (2 задания); 10 слов блока «Дом».</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">5′</span><span>словарный диктант</span></div><div class="l-row"><span class="min">12′</span><span>презентация: схема «длительный процесс в момент в прошлом», маркеры while, when, at 5 pm yesterday</span></div><div class="l-row"><span class="min">13′</span><span>управляемая практика: выбор формы в предложениях и мини-тексте</span></div><div class="l-row"><span class="min">15′</span><span>аудирование: задания 1–4 (два текста) с разбором стратегии выбора из трёх вариантов</span></div><div class="l-row"><span class="min">5′</span><span>итоги.</span></div></div></details>
+  </div><div class="lesson" data-n="10">
+    <div class="l-head"><span class="l-num">10</span><div><div class="l-title">Past Simple vs Past Continuous в связном тексте</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>10 слов блока «Город»; Решу ОГЭ: задания 20–23.</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">5′</span><span>словарный диктант</span></div><div class="l-row"><span class="min">12′</span><span>практика в связном тексте формата 20–28: рассказ с чередованием форм</span></div><div class="l-row"><span class="min">15′</span><span>говорение: рассказ «Что случилось вчера» с прерываниями действия (карточки-подсказки)</span></div><div class="l-row"><span class="min">13′</span><span>чтение: задания 13–16 (True/False/Not stated)</span></div><div class="l-row"><span class="min">5′</span><span>итоги.</span></div></div></details>
+  </div><div class="lesson" data-n="11">
+    <div class="l-head"><span class="l-num">11</span><div><div class="l-title">Грамматика: Past Perfect (введение)</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>Решу ОГЭ: задание 6–7 (аудирование-таблица); формы глаголов к диктанту.</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">5′</span><span>словарный диктант</span></div><div class="l-row"><span class="min">12′</span><span>презентация: «что случилось раньше», маркеры already, before, by the time</span></div><div class="l-row"><span class="min">13′</span><span>практика: восстановление последовательности событий с опорой на картинки</span></div><div class="l-row"><span class="min">15′</span><span>аудирование: знакомство с заданием 6–11 — заполнение таблицы одним словом из записи (отрабатываем один пропуск)</span></div><div class="l-row"><span class="min">5′</span><span>итоги.</span></div></div></details>
+  </div><div class="lesson" data-n="12">
+    <div class="l-head"><span class="l-num">12</span><div><div class="l-title">Предлоги времени и места; описание пространства</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>10 новых слов; Решу ОГЭ: задания 20–21.</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">5′</span><span>словарный диктант</span></div><div class="l-row"><span class="min">10′</span><span>повторение предлогов in/on/at, рядом, между, напротив</span></div><div class="l-row"><span class="min">12′</span><span>практика: мини-текст «Мой район» с предлогами</span></div><div class="l-row"><span class="min">15′</span><span>говорение: описание картинки (подготовка к монологу задания 3)</span></div><div class="l-row"><span class="min">8′</span><span>лексические игры на закрепление слов месяца</span></div><div class="l-row"><span class="min">5′</span><span>итоги.</span></div></div></details>
+  </div><div class="lesson" data-n="13">
+    <div class="l-head"><span class="l-num">13</span><div><div class="l-title">Аудирование: интенсив по заданиям 1–4</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>10 слов; 2 текста задания 1 из открытого банка ФИПИ (аудио выдаёт репетитор).</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">5′</span><span>словарный диктант</span></div><div class="l-row"><span class="min">10′</span><span>предтекстовая работа: снятие лексических трудностей</span></div><div class="l-row"><span class="min">25′</span><span>два полных прохода заданий 1–4 (демоверсия + открытый банк ФИПИ) с разбором дистракторов: почему два варианта похожи и как отличить</span></div><div class="l-row"><span class="min">5′</span><span>фиксация ошибок в карточки</span></div><div class="l-row"><span class="min">5′</span><span>итоги.</span></div></div></details>
+  </div><div class="lesson" data-n="14">
+    <div class="l-head"><span class="l-num">14</span><div><div class="l-title">Чтение: задание 12 — установление соответствий</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>Решу ОГЭ: задание 12 (полное); повторить слова двух последних недель.</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">5′</span><span>словарный диктант</span></div><div class="l-row"><span class="min">12′</span><span>стратегия: вычленение ключевых слов вопроса, синонимический парафраз в тексте, правило «один вопрос лишний»</span></div><div class="l-row"><span class="min">23′</span><span>практика: задание 12 из демоверсии с пошаговым разбором</span></div><div class="l-row"><span class="min">5′</span><span>рефлексия: где были ловушки</span></div><div class="l-row"><span class="min">5′</span><span>итоги.</span></div></div></details>
+  </div><div class="lesson" data-n="15">
+    <div class="l-head"><span class="l-num">15</span><div><div class="l-title">Говорение: монолог «Мой дом / мой город» по шаблону</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>Довести монолог до 10–12 фраз по своей записи; 10 новых слов.</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">5′</span><span>словарный диктант</span></div><div class="l-row"><span class="min">10′</span><span>разбор критериев устного задания 3: К1 (раскрытие 4 аспектов, 10–12 фраз), К2 (вступление и заключение, связки), К3 (языковое оформление)</span></div><div class="l-row"><span class="min">20′</span><span>построение высказывания по шаблону с опорой и запись на диктофон</span></div><div class="l-row"><span class="min">10′</span><span>самооценка по упрощённому чек-листу</span></div><div class="l-row"><span class="min">5′</span><span>итоги.</span></div></div></details>
+  </div><div class="lesson ctrl" data-n="16">
+    <div class="l-head"><span class="l-num">16</span><div><div class="l-title">Тематический контроль №1: аудирование + грамматика</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>Работа над ошибками в карточках; повторение слов месяца.</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">5′</span><span>организация</span></div><div class="l-row"><span class="min">15′</span><span>аудирование: три задания типа 1–4 на время</span></div><div class="l-row"><span class="min">15′</span><span>грамматика: задания 20–26 (Past Simple/Continuous/Perfect)</span></div><div class="l-row"><span class="min">10′</span><span>самопроверка по ключам, обновление трекера</span></div><div class="l-row"><span class="min">5′</span><span>задачи на ноябрь.</span></div></div></details>
+  </div>
+    </div>
+  </details><details class="month" id="mm2">
+    <summary><span class="m-chip">Ноябрь</span><span class="m-title">Модуль 3. Будущее, перфект и первое письмо</span><span class="m-mini"><span class="m-count js-mc">0/8</span><span class="prog m-bar"><i></i></span></span><span class="m-chev">▾</span></summary>
+    <div class="m-body">
+      <p>Два больших события месяца: будущее время и Present Perfect, а ещё первое настоящее электронное письмо на 100–120 слов — по шаблону, который останется с тобой до экзамена.</p>
+      <div class="focus-grid"><div class="focus-card"><h4>Грамматика</h4><p>Future Simple; be going to; Present Continuous для планов; Present Perfect (ever, never, just, already, yet); условные предложения 0 и 1 типа; словообразование: -er, -tion</p></div><div class="focus-card"><h4>Новые слова</h4><p>«Путешествия и транспорт», «В аэропорту и в отеле» — 55 слов</p></div><div class="focus-card"><h4>Тренируем</h4><p>Письмо 35: структура и первый полный текст; грамматика 20–24; аудирование 6–11 (два пропуска); чтение 12</p></div><div class="focus-card"><h4>Контроль</h4><p>Тематический контроль №2: грамматика + лексика + словообразование (урок 24)</p></div></div>
+      <div class="lesson" data-n="17">
+    <div class="l-head"><span class="l-num">17</span><div><div class="l-title">Будущее время: will и be going to</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>Выучить шаблон письма наизусть (фразы-опоры); 10 слов блока «Транспорт».</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">5′</span><span>словарный диктант</span></div><div class="l-row"><span class="min">12′</span><span>правила и различия will / going to / Present Continuous для расписаний</span></div><div class="l-row"><span class="min">13′</span><span>практика: рассказ о планах на новогодние каникулы</span></div><div class="l-row"><span class="min">15′</span><span>письмо: разбор структуры электронного письма (обращение, благодарность, три абзаца-ответа, заключительная фраза, подпись) и образец из демоверсии</span></div><div class="l-row"><span class="min">5′</span><span>итоги.</span></div></div></details>
+  </div><div class="lesson" data-n="18">
+    <div class="l-head"><span class="l-num">18</span><div><div class="l-title">Грамматика: Present Perfect (введение)</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>Решу ОГЭ: задания 20–24; 10 слов блока «Путешествия».</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">5′</span><span>словарный диктант</span></div><div class="l-row"><span class="min">12′</span><span>презентация: ever, never, just, already, yet</span></div><div class="l-row"><span>контраст «результат сейчас»</span></div><div class="l-row"><span class="min">13′</span><span>практика: подстановочные упражнения, вопросы «Have you ever…»</span></div><div class="l-row"><span class="min">15′</span><span>чтение: задания 13–17 (True/False/Not stated) с перфектными ловушками</span></div><div class="l-row"><span class="min">5′</span><span>итоги.</span></div></div></details>
+  </div><div class="lesson" data-n="19">
+    <div class="l-head"><span class="l-num">19</span><div><div class="l-title">Present Perfect vs Past Simple</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>Решу ОГЭ: задания 29–30; 10 новых слов.</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">5′</span><span>словарный диктант</span></div><div class="l-row"><span class="min">12′</span><span>сравнительная практика: маркеры ago и just, «когда именно» vs «когда-либо»</span></div><div class="l-row"><span class="min">13′</span><span>говорение: мини-опрос «Опыт в жизни» (Have you ever been to…?)</span></div><div class="l-row"><span class="min">15′</span><span>грамматика 29–30: знакомство со словообразованием — суффиксы действующего лица -er и абстрактных существительных -tion</span></div><div class="l-row"><span class="min">5′</span><span>итоги.</span></div></div></details>
+  </div><div class="lesson" data-n="20">
+    <div class="l-head"><span class="l-num">20</span><div><div class="l-title">Условные предложения 0 и 1 типа</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>Условные предложения из Решу ОГЭ (2 задания); 10 слов.</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">5′</span><span>словарный диктант</span></div><div class="l-row"><span class="min">12′</span><span>правила: If + Present Simple, will + V</span></div><div class="l-row"><span>нулевой тип для законов природы</span></div><div class="l-row"><span class="min">13′</span><span>практика: цепочки If… will… по ситуациям</span></div><div class="l-row"><span class="min">15′</span><span>аудирование: задание 6–11 (таблица, два пропуска) — приём «слушай фразу после пропуска»</span></div><div class="l-row"><span class="min">5′</span><span>итоги.</span></div></div></details>
+  </div><div class="lesson" data-n="21">
+    <div class="l-head"><span class="l-num">21</span><div><div class="l-title">Письмо №1 (полное, по критериям)</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>Доработать письмо по замечаниям; повторить шаблон и клише.</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">5′</span><span>словарный диктант</span></div><div class="l-row"><span class="min">10′</span><span>разбор критериев К1–К4: содержание (3 вопроса + нормы вежливости), организация (абзацы, связки), лексика и грамматика (допустимо 2 ошибки на «3» в К3... см. таблицу критериев), орфография</span></div><div class="l-row"><span class="min">25′</span><span>написание письма по стимулу из демоверсии</span></div><div class="l-row"><span class="min">5′</span><span>самопроверка по чек-листу объёма и структуры</span></div><div class="l-row"><span class="min">5′</span><span>итоги.</span></div></div></details>
+  </div><div class="lesson" data-n="22">
+    <div class="l-head"><span class="l-num">22</span><div><div class="l-title">Лексика-практикум «В аэропорту и в поезде»</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>10 слов; прослушать один диалог из открытого банка ФИПИ с последующим пересказом по-русски.</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">5′</span><span>словарный диктант</span></div><div class="l-row"><span class="min">12′</span><span>ролевые ситуации: регистрация, вопрос о платформе, покупка билета</span></div><div class="l-row"><span class="min">13′</span><span>устное задание 2 (диалог-расспрос): правило полного ответа и лимит 40 секунд на вопрос</span></div><div class="l-row"><span class="min">15′</span><span>чтение: задание 12 (второй вариант из банка ФИПИ)</span></div><div class="l-row"><span class="min">5′</span><span>итоги.</span></div></div></details>
+  </div><div class="lesson" data-n="23">
+    <div class="l-head"><span class="l-num">23</span><div><div class="l-title">Грамматика: система времён A2 — интеграционный урок</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>Два грамматических текста из банка ФИПИ; повторить слова месяца.</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">5′</span><span>словарный диктант</span></div><div class="l-row"><span class="min">15′</span><span>работа с таблицей времён: тренировка мгновенного выбора формы по маркеру</span></div><div class="l-row"><span class="min">15′</span><span>практика в формате 20–28: полный связный текст с 8 пропусками</span></div><div class="l-row"><span class="min">10′</span><span>разбор типичных ошибок из карточек ученика</span></div><div class="l-row"><span class="min">5′</span><span>итоги.</span></div></div></details>
+  </div><div class="lesson ctrl" data-n="24">
+    <div class="l-head"><span class="l-num">24</span><div><div class="l-title">Тематический контроль №2: грамматика + лексика + словообразование</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>Исправить ошибки контроля; повторить шаблон письма и список клише.</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">5′</span><span>организация</span></div><div class="l-row"><span class="min">20′</span><span>грамматика: задания 20–28 (сокращённый набор) + словообразование 29–31</span></div><div class="l-row"><span class="min">10′</span><span>словарный тест по ноябрьским блокам</span></div><div class="l-row"><span class="min">10′</span><span>обновление трекера, разбор</span></div><div class="l-row"><span class="min">5′</span><span>установка на пробник №1 в декабре.</span></div></div></details>
+  </div>
+    </div>
+  </details><details class="month" id="mm3">
+    <summary><span class="m-chip">Декабрь</span><span class="m-title">Модуль 4. Полугодовой рубеж: пробник №1</span><span class="m-mini"><span class="m-count js-mc">0/8</span><span class="prog m-bar"><i></i></span></span><span class="m-chev">▾</span></summary>
+    <div class="m-body">
+      <p>Первый полный пробник — увидишь свой реальный балл и научишься распределять 120 минут. Из нового: пассивный залог и словарный тест за полгода.</p>
+      <div class="focus-grid"><div class="focus-card"><h4>Грамматика</h4><p>Пассивный залог: Present Passive и Past Passive (be + V3); закрепление Present Perfect vs Past Simple; система прошедших времён</p></div><div class="focus-card"><h4>Новые слова</h4><p>«Еда и напитки», «Магазины и покупки» — 55 слов</p></div><div class="focus-card"><h4>Тренируем</h4><p>ПОЛНЫЙ ПРОБНИК №1 (уроки 27–28) и его разбор (урок 29); аудирование 5; устная часть: чтение вслух + диалог-расспрос</p></div><div class="focus-card"><h4>Контроль</h4><p>Пробник №1 — письменная часть (2 занятия) + разбор; словарный тест полугодия (урок 32)</p></div></div>
+      <div class="lesson" data-n="25">
+    <div class="l-head"><span class="l-num">25</span><div><div class="l-title">Грамматика: пассивный залог (введение)</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>Пассив из Решу ОГЭ (2 задания); 10 слов блока «Еда».</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">5′</span><span>словарный диктант</span></div><div class="l-row"><span class="min">12′</span><span>презентация: когда нужен пассив, формы is/are/was/were + V3</span></div><div class="l-row"><span class="min">13′</span><span>практика: трансформация актив-пассив на материале предложений о изобретениях</span></div><div class="l-row"><span class="min">15′</span><span>аудирование: задание 5 (повторение стратегии соответствий)</span></div><div class="l-row"><span class="min">5′</span><span>итоги.</span></div></div></details>
+  </div><div class="lesson" data-n="26">
+    <div class="l-head"><span class="l-num">26</span><div><div class="l-title">Интеграционная практика перед пробником</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>10 слов блока «Покупки»; исправить письмо; выспаться перед пробником.</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">5′</span><span>словарный диктант</span></div><div class="l-row"><span class="min">20′</span><span>смешанный тренинг формата 20–28: перфект, пассив, прошедшие времена в одном тексте</span></div><div class="l-row"><span class="min">15′</span><span>чтение: задания 13–19 (полный блок, два текста)</span></div><div class="l-row"><span class="min">10′</span><span>разбор письма №1 по критериям К1–К4</span></div><div class="l-row"><span class="min">5′</span><span>итоги.</span></div></div></details>
+  </div><div class="lesson exam" data-n="27">
+    <div class="l-head"><span class="l-num">27</span><div><div class="l-title">ПРОБНИК №1 — часть 1: аудирование + чтение</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>Отдых; повторить словообразовательные суффиксы перед завтрашней частью.</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">5′</span><span>установка: правила, бланк ответов, тайминг</span></div><div class="l-row"><span class="min">20′</span><span>аудирование: задания 1–11 полностью, каждая запись дважды</span></div><div class="l-row"><span class="min">20′</span><span>чтение: задания 12–19</span></div><div class="l-row"><span class="min">5′</span><span>перенос ответов, сбор работ.</span></div></div></details>
+  </div><div class="lesson exam" data-n="28">
+    <div class="l-head"><span class="l-num">28</span><div><div class="l-title">ПРОБНИК №1 — часть 2: грамматика + письмо</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>Домашнего задания нет — после пробника день разгрузки.</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">5′</span><span>установка</span></div><div class="l-row"><span class="min">15′</span><span>грамматика и лексика: задания 20–34</span></div><div class="l-row"><span class="min">25′</span><span>письмо: задание 35 на время (рекомендованные 30 минут сжимаем до урока)</span></div><div class="l-row"><span class="min">5′</span><span>перенос ответов, сбор работ. Проверка репетитором до следующего занятия по критериям ФИПИ.</span></div></div></details>
+  </div><div class="lesson ctrl" data-n="29">
+    <div class="l-head"><span class="l-num">29</span><div><div class="l-title">Разбор пробника №1</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>Работа над ошибками: карточки по грамматике пробника; 10 слов.</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">5′</span><span>общий балл, сравнение со стартовой диагностикой</span></div><div class="l-row"><span class="min">20′</span><span>разбор аудирования и чтения: конкретные задания-ошибки, работа с дистракторами</span></div><div class="l-row"><span class="min">20′</span><span>разбор письма по критериям К1–К4: сколько баллов «упущено» и как их вернуть</span></div><div class="l-row"><span class="min">5′</span><span>запись результатов в трекер, персональные цели</span></div><div class="l-row"><span class="min">5′</span><span>итоги.</span></div></div></details>
+  </div><div class="lesson" data-n="30">
+    <div class="l-head"><span class="l-num">30</span><div><div class="l-title">Устная часть: интенсив по чтению вслух и диалогу-расспросу</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>Прослушать свои записи, отметить слабые звуки; 10 новых слов.</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">5′</span><span>словарный диктант</span></div><div class="l-row"><span class="min">15′</span><span>чтение вслух: два текста научно-популярного характера, запись на диктофон, самоанализ пауз и ударений</span></div><div class="l-row"><span class="min">20′</span><span>диалог-расспрос: два полных телефонных опроса (12 вопросов) с требованием полного ответа</span></div><div class="l-row"><span class="min">10′</span><span>прослушивание и анализ записей</span></div><div class="l-row"><span class="min">5′</span><span>итоги.</span></div></div></details>
+  </div><div class="lesson" data-n="31">
+    <div class="l-head"><span class="l-num">31</span><div><div class="l-title">Словообразование: суффиксы прилагательных и наречий</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>Решу ОГЭ: задания 29–34; повторить слова декабря.</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">5′</span><span>словарный диктант</span></div><div class="l-row"><span class="min">12′</span><span>карта суффиксов: «какая часть речи получится»</span></div><div class="l-row"><span class="min">13′</span><span>практика: задания 29–34 (полный набор)</span></div><div class="l-row"><span class="min">15′</span><span>монолог «Еда и здоровые привычки» по четырёхпунктному плану</span></div><div class="l-row"><span class="min">5′</span><span>итоги.</span></div></div></details>
+  </div><div class="lesson ctrl" data-n="32">
+    <div class="l-head"><span class="l-num">32</span><div><div class="l-title">Итоги первого полугодия</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>Каникулярное чтение: две главы адаптированной книги уровня B1; вести личный словарик новых слов.</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">5′</span><span>организация</span></div><div class="l-row"><span class="min">15′</span><span>словарный тест: 30 слов из всех блоков полугодия</span></div><div class="l-row"><span class="min">15′</span><span>грамматический блиц-тест по темам сентября–декабря</span></div><div class="l-row"><span class="min">12′</span><span>разбор трекера за полугодие: где рост, что требует внимания</span></div><div class="l-row"><span class="min">3′</span><span>план на январь.</span></div></div></details>
+  </div>
+    </div>
+  </details><details class="month" id="mm4">
+    <summary><span class="m-chip">Январь</span><span class="m-title">Модуль 5. Модальные глаголы и разговорная часть</span><span class="m-mini"><span class="m-count js-mc">0/6</span><span class="prog m-bar"><i></i></span></span><span class="m-chev">▾</span></summary>
+    <div class="m-body">
+      <p>Месяц говорения: модальные глаголы, условные предложения 2 типа (маркер уровня B1) и полный цикл устных заданий — чтение вслух, опрос, монолог.</p>
+      <div class="focus-grid"><div class="focus-card"><h4>Грамматика</h4><p>Модальные глаголы: can/could, must/have to, should, may/might; их эквиваленты; условные предложения 2 типа (If + Past, would + V); словообразование: -ment, -ness</p></div><div class="focus-card"><h4>Новые слова</h4><p>«Здоровье и у врача», «Спорт и здоровый образ жизни» — 50 слов</p></div><div class="focus-card"><h4>Тренируем</h4><p>Устная часть: полный цикл трёх заданий; грамматика 20–28; словообразование 29–34</p></div><div class="focus-card"><h4>Контроль</h4><p>Контроль модуля + устная мини-репетиция (урок 38)</p></div></div>
+      <div class="lesson" data-n="33">
+    <div class="l-head"><span class="l-num">33</span><div><div class="l-title">Модальные глаголы: can, could, must, have to</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>Модальные глаголы из Решу ОГЭ (2 задания); 10 слов блока «Здоровье».</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">5′</span><span>словарный диктант по каникулярным словам</span></div><div class="l-row"><span class="min">12′</span><span>правила: способность, обязанность, запрет, отсутствие необходимости (needn't / don't have to)</span></div><div class="l-row"><span class="min">13′</span><span>практика в формате 20–24</span></div><div class="l-row"><span class="min">15′</span><span>чтение: задания 13–16 (True/False/Not stated)</span></div><div class="l-row"><span class="min">5′</span><span>итоги.</span></div></div></details>
+  </div><div class="lesson" data-n="34">
+    <div class="l-head"><span class="l-num">34</span><div><div class="l-title">Модальные глаголы: should, may, might + речевые функции</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>10 слов блока «Спорт»; Решу ОГЭ: задания 20–22.</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">5′</span><span>словарный диктант</span></div><div class="l-row"><span class="min">12′</span><span>правила: советы (should), вероятность (may/might), просьбы</span></div><div class="l-row"><span class="min">13′</span><span>ролевая игра «Дай совет другу» на лексике здоровья</span></div><div class="l-row"><span class="min">15′</span><span>аудирование: задания 1–4 (полный цикл)</span></div><div class="l-row"><span class="min">5′</span><span>итоги.</span></div></div></details>
+  </div><div class="lesson" data-n="35">
+    <div class="l-head"><span class="l-num">35</span><div><div class="l-title">Условные предложения 2 типа</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>Условные предложения 2 типа из банка ФИПИ; 10 новых слов.</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">5′</span><span>словарный диктант</span></div><div class="l-row"><span class="min">12′</span><span>правила: If + Past Simple, would + V</span></div><div class="l-row"><span>русская калька ошибки «if I will»</span></div><div class="l-row"><span class="min">13′</span><span>практика: цепочки «Если бы я…» о мечтах и планах</span></div><div class="l-row"><span class="min">15′</span><span>грамматика: задания 25–28 (полный набор, смешанные формы)</span></div><div class="l-row"><span class="min">5′</span><span>итоги.</span></div></div></details>
+  </div><div class="lesson" data-n="36">
+    <div class="l-head"><span class="l-num">36</span><div><div class="l-title">Словообразование: -ment, -ness, -ity; префиксы un-, dis-, re-</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>Словообразование из открытого банка ФИПИ (2 текста); 10 слов.</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">5′</span><span>словарный диктант</span></div><div class="l-row"><span class="min">12′</span><span>карта аффиксов по частям речи</span></div><div class="l-row"><span class="min">18′</span><span>практика: задания 29–34 (два набора)</span></div><div class="l-row"><span class="min">10′</span><span>аудирование: задание 6–11 (таблица, два пропуска)</span></div><div class="l-row"><span class="min">5′</span><span>итоги.</span></div></div></details>
+  </div><div class="lesson" data-n="37">
+    <div class="l-head"><span class="l-num">37</span><div><div class="l-title">Монолог-интенсив «Здоровый образ жизни»</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>Доработать монолог по замечаниям; 10 новых слов.</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">5′</span><span>словарный диктант</span></div><div class="l-row"><span class="min">10′</span><span>разбор стратегии 7 из 7 баллов: полное раскрытие всех аспектов, связки-переходы, вступление и заключение</span></div><div class="l-row"><span class="min">25′</span><span>построение монолога по плану, запись на диктофон</span></div><div class="l-row"><span class="min">10′</span><span>разбор записи по критериям К1–К3</span></div><div class="l-row"><span class="min">5′</span><span>итоги.</span></div></div></details>
+  </div><div class="lesson ctrl" data-n="38">
+    <div class="l-head"><span class="l-num">38</span><div><div class="l-title">Контроль модуля + устная мини-репетиция</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>Работа над ошибками; повторение слов полугодия по карточкам.</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">5′</span><span>организация</span></div><div class="l-row"><span class="min">15′</span><span>словарный тест по январским блокам</span></div><div class="l-row"><span class="min">20′</span><span>устная мини-репетиция: чтение вслух + три вопроса телефонного опроса</span></div><div class="l-row"><span class="min">10′</span><span>грамматический тест: модальные и условные</span></div><div class="l-row"><span class="min">5′</span><span>план на февраль.</span></div></div></details>
+  </div>
+    </div>
+  </details><details class="month" id="mm5">
+    <summary><span class="m-chip">Февраль</span><span class="m-title">Модуль 6. Косвенная речь и сложные структуры</span><span class="m-mini"><span class="m-count js-mc">0/8</span><span class="prog m-bar"><i></i></span></span><span class="m-chev">▾</span></summary>
+    <div class="m-body">
+      <p>Закрываем самую «дорогую» тему года — косвенную речь (она встречается в заданиях 20–28 постоянно), плюс герундий, относительные придаточные и третье письмо с проверкой по чек-листу эксперта.</p>
+      <div class="focus-grid"><div class="focus-card"><h4>Грамматика</h4><p>Косвенная речь: утверждения, вопросы, приказы; согласование времён; герундий и инфинитив (enjoy doing, want to do); относительные придаточные who/which/that/where</p></div><div class="focus-card"><h4>Новые слова</h4><p>«Погода и климат», «Окружающая среда и экология» — 55 слов</p></div><div class="focus-card"><h4>Тренируем</h4><p>Грамматика 20–28 с косвенной речью; письмо №2 и №3; монолог «Экология»; аудирование 5 и 6–11</p></div><div class="focus-card"><h4>Контроль</h4><p>Контроль модуля: косвенная речь + герундий (урок 46)</p></div></div>
+      <div class="lesson" data-n="39">
+    <div class="l-head"><span class="l-num">39</span><div><div class="l-title">Косвенная речь: утверждения</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>Косвенная речь из Решу ОГЭ (2 задания); 10 слов блока «Погода».</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">5′</span><span>словарный диктант</span></div><div class="l-row"><span class="min">12′</span><span>правила: said (that) + сдвиг на шаг назад, today→that day, yesterday→the day before</span></div><div class="l-row"><span class="min">13′</span><span>практика: перевод прямой речи в косвенную на материале, близком к заданиям 20–28</span></div><div class="l-row"><span class="min">15′</span><span>чтение: задание 12 (соответствия, новый вариант)</span></div><div class="l-row"><span class="min">5′</span><span>итоги.</span></div></div></details>
+  </div><div class="lesson" data-n="40">
+    <div class="l-head"><span class="l-num">40</span><div><div class="l-title">Косвенная речь: вопросы и приказы</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>Решу ОГЭ: задания 20–24; 10 слов блока «Окружающая среда».</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">5′</span><span>словарный диктант</span></div><div class="l-row"><span class="min">12′</span><span>правила: asked if/whether, told to do, отсутствие do/does в косвенном вопросе</span></div><div class="l-row"><span class="min">13′</span><span>управляемая практика</span></div><div class="l-row"><span class="min">15′</span><span>аудирование: задания 1–4 (полный цикл, контроль динамики)</span></div><div class="l-row"><span class="min">5′</span><span>итоги.</span></div></div></details>
+  </div><div class="lesson" data-n="41">
+    <div class="l-head"><span class="l-num">41</span><div><div class="l-title">Герундий и инфинитив</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>Доработать письмо №2 по разбору; 10 новых слов.</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">5′</span><span>словарный диктант</span></div><div class="l-row"><span class="min">12′</span><span>правила и типичные пары глаголов</span></div><div class="l-row"><span class="min">13′</span><span>практика: трансформация предложений</span></div><div class="l-row"><span class="min">20′</span><span>письмо №2 на время (стимул из открытого банка)</span></div><div class="l-row"><span class="min">5′</span><span>итоги.</span></div></div></details>
+  </div><div class="lesson" data-n="42">
+    <div class="l-head"><span class="l-num">42</span><div><div class="l-title">Относительные придаточные</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>Относительные придаточные из Решу ОГЭ; 10 слов.</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">5′</span><span>словарный диктант</span></div><div class="l-row"><span class="min">12′</span><span>правила: слияние двух предложений, опущение that в разговорной речи</span></div><div class="l-row"><span class="min">13′</span><span>практика: объединение пар предложений</span></div><div class="l-row"><span class="min">15′</span><span>грамматика: полный текст формата 20–28 со смешанными темами</span></div><div class="l-row"><span class="min">5′</span><span>итоги.</span></div></div></details>
+  </div><div class="lesson" data-n="43">
+    <div class="l-head"><span class="l-num">43</span><div><div class="l-title">Аудирование-интенсив: задания 5 и 6–11</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>Аудирование из открытого банка ФИПИ (задания 6–8); 10 слов.</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">5′</span><span>словарный диктант</span></div><div class="l-row"><span class="min">20′</span><span>задание 5 (полный цикл) + задание 6–11 (три пропуска) с проговариванием алгоритма</span></div><div class="l-row"><span class="min">15′</span><span>разбор: почему теряются баллы (ответ не из текста, лишнее слово, форма не та)</span></div><div class="l-row"><span class="min">10′</span><span>приёмы прогнозирования ответа до прослушивания</span></div><div class="l-row"><span class="min">5′</span><span>итоги.</span></div></div></details>
+  </div><div class="lesson" data-n="44">
+    <div class="l-head"><span class="l-num">44</span><div><div class="l-title">Монолог «Экология и мой вклад»</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>Отработать монолог по записи; 10 новых слов.</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">5′</span><span>словарный диктант</span></div><div class="l-row"><span class="min">10′</span><span>разбор связок: firstly, moreover, as a result, to sum up — и требование ФИПИ об обязательных переходах между частями</span></div><div class="l-row"><span class="min">25′</span><span>монолог по плану с записью и разбором</span></div><div class="l-row"><span class="min">10′</span><span>чтение: задания 13–17</span></div><div class="l-row"><span class="min">5′</span><span>итоги.</span></div></div></details>
+  </div><div class="lesson" data-n="45">
+    <div class="l-head"><span class="l-num">45</span><div><div class="l-title">Письмо №3 + взаимооценка</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>Чистовик письма; повторить все слова месяца.</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">5′</span><span>словарный диктант</span></div><div class="l-row"><span class="min">20′</span><span>письмо на время (стимул о спорте и здоровье)</span></div><div class="l-row"><span class="min">15′</span><span>взаимооценка: ученик проверяет работу по критериям К1–К4 вместе с репетитором</span></div><div class="l-row"><span class="min">10′</span><span>типичные ошибки орфографии и пунктуации (критерий К4)</span></div><div class="l-row"><span class="min">5′</span><span>итоги.</span></div></div></details>
+  </div><div class="lesson ctrl" data-n="46">
+    <div class="l-head"><span class="l-num">46</span><div><div class="l-title">Контроль модуля</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>Работа над ошибками; подготовка к пробнику №2: повторить шаблоны письма и монолога.</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">5′</span><span>организация</span></div><div class="l-row"><span class="min">15′</span><span>словарный тест по февральским блокам</span></div><div class="l-row"><span class="min">20′</span><span>грамматический контроль: косвенная речь + герундий + относительные придаточные</span></div><div class="l-row"><span class="min">10′</span><span>обновление трекера и разбор</span></div><div class="l-row"><span class="min">5′</span><span>задачи на март.</span></div></div></details>
+  </div>
+    </div>
+  </details><details class="month" id="mm6">
+    <summary><span class="m-chip">Март</span><span class="m-title">Модуль 7. Пробник №2 и системное повторение</span><span class="m-mini"><span class="m-count js-mc">0/8</span><span class="prog m-bar"><i></i></span></span><span class="m-chev">▾</span></summary>
+    <div class="m-body">
+      <p>Второй пробник и системное повторение: все времена собираются в один тренажёр, словообразование — в полную карту аффиксов. Отдельный урок — тайм-менеджмент экзамена.</p>
+      <div class="focus-grid"><div class="focus-card"><h4>Грамматика</h4><p>Системное повторение всех времён; инфинитив цели и причастные обороты; полное повторение словообразования (все аффиксы кодификатора)</p></div><div class="focus-card"><h4>Новые слова</h4><p>«Технологии и гаджеты», «СМИ и коммуникация» — 55 слов</p></div><div class="focus-card"><h4>Тренируем</h4><p>ПОЛНЫЙ ПРОБНИК №2 (уроки 51–52) и разбор (урок 53); полная репетиция устной части (урок 54); тайм-менеджмент экзамена</p></div><div class="focus-card"><h4>Контроль</h4><p>Пробник №2 — письменная часть (2 занятия) + разбор; устная репетиция 15 минут</p></div></div>
+      <div class="lesson" data-n="47">
+    <div class="l-head"><span class="l-num">47</span><div><div class="l-title">Тренажёр всех времён</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>Грамматика из открытого банка ФИПИ (2 текста); 10 слов блока «Технологии».</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">5′</span><span>словарный диктант</span></div><div class="l-row"><span class="min">20′</span><span>интенсив по таблице времён: мгновенный выбор по маркеру и контексту</span></div><div class="l-row"><span class="min">15′</span><span>практика: два связных текста формата 20–28 на время</span></div><div class="l-row"><span class="min">10′</span><span>разбор ошибок</span></div><div class="l-row"><span class="min">5′</span><span>итоги.</span></div></div></details>
+  </div><div class="lesson" data-n="48">
+    <div class="l-head"><span class="l-num">48</span><div><div class="l-title">Инфинитив цели и причастные конструкции</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>10 слов блока «Медиа»; Решу ОГЭ: задания 20–23.</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">5′</span><span>словарный диктант</span></div><div class="l-row"><span class="min">12′</span><span>правила: инфинитив цели, -ing после предлогов</span></div><div class="l-row"><span class="min">13′</span><span>управляемая практика</span></div><div class="l-row"><span class="min">15′</span><span>аудирование: задание 6–11 (полный блок)</span></div><div class="l-row"><span class="min">5′</span><span>итоги.</span></div></div></details>
+  </div><div class="lesson" data-n="49">
+    <div class="l-head"><span class="l-num">49</span><div><div class="l-title">Словообразование: полная карта аффиксов</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>Словообразование из Решу ОГЭ (полный блок); 10 слов.</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">5′</span><span>словарный диктант</span></div><div class="l-row"><span class="min">15′</span><span>построение карты: существительные, прилагательные, глаголы, наречия</span></div><div class="l-row"><span class="min">20′</span><span>практика: два полных набора 29–34</span></div><div class="l-row"><span class="min">10′</span><span>разбор спорных случаев</span></div><div class="l-row"><span class="min">5′</span><span>итоги.</span></div></div></details>
+  </div><div class="lesson" data-n="50">
+    <div class="l-head"><span class="l-num">50</span><div><div class="l-title">Стратегия экзамена: тайм-менеджмент</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>Отдых и лёгкое повторение шаблонов перед пробником.</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">5′</span><span>словарный диктант</span></div><div class="l-row"><span class="min">15′</span><span>разбор эталонного тайминга: 30/30/30/30 минут по разделам, правило «не зависни»</span></div><div class="l-row"><span class="min">15′</span><span>обсуждение приёмов: что бросить, что сделать быстро, когда вернуться</span></div><div class="l-row"><span class="min">10′</span><span>повторение шаблона письма и каркаса монолога</span></div><div class="l-row"><span class="min">5′</span><span>итоги.</span></div></div></details>
+  </div><div class="lesson exam" data-n="51">
+    <div class="l-head"><span class="l-num">51</span><div><div class="l-title">ПРОБНИК №2 — часть 1: аудирование + чтение</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>Ничего заданного: разгрузка после пробника.</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">5′</span><span>установка</span></div><div class="l-row"><span class="min">20′</span><span>аудирование: задания 1–11 полностью</span></div><div class="l-row"><span class="min">20′</span><span>чтение: задания 12–19</span></div><div class="l-row"><span class="min">5′</span><span>перенос ответов, сбор работ.</span></div></div></details>
+  </div><div class="lesson exam" data-n="52">
+    <div class="l-head"><span class="l-num">52</span><div><div class="l-title">ПРОБНИК №2 — часть 2: грамматика + письмо</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>Ничего заданного.</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">5′</span><span>установка</span></div><div class="l-row"><span class="min">15′</span><span>грамматика и лексика: задания 20–34</span></div><div class="l-row"><span class="min">25′</span><span>письмо: задание 35 на время</span></div><div class="l-row"><span class="min">5′</span><span>перенос, сбор работ. Проверка по критериям до следующего занятия.</span></div></div></details>
+  </div><div class="lesson ctrl" data-n="53">
+    <div class="l-head"><span class="l-num">53</span><div><div class="l-title">Разбор пробника №2</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>Работа над ошибками; 10 новых слов.</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">5′</span><span>баллы и сравнение с пробником №1</span></div><div class="l-row"><span class="min">20′</span><span>разбор слабых разделов по трекеру (индивидуально)</span></div><div class="l-row"><span class="min">15′</span><span>разбор письма по критериям</span></div><div class="l-row"><span class="min">10′</span><span>план точечной коррекции на четыре недели апреля</span></div><div class="l-row"><span class="min">5′</span><span>итоги.</span></div></div></details>
+  </div><div class="lesson exam" data-n="54">
+    <div class="l-head"><span class="l-num">54</span><div><div class="l-title">Устная часть: полная репетиция 15 минут</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>Прослушать запись репетиции, исправить слабые места; повторить слова месяца.</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">5′</span><span>словарный диктант</span></div><div class="l-row"><span class="min">35′</span><span>полная репетиция: чтение вслух (2 минуты на чтение) + шесть вопросов опроса + монолог (2 минуты), всё под запись</span></div><div class="l-row"><span class="min">10′</span><span>разбор по критериям, предварительные баллы</span></div><div class="l-row"><span class="min">5′</span><span>итоги.</span></div></div></details>
+  </div>
+    </div>
+  </details><details class="month" id="mm7">
+    <summary><span class="m-chip">Апрель</span><span class="m-title">Модуль 8. Пробник №3 и точечная коррекция</span><span class="m-mini"><span class="m-count js-mc">0/8</span><span class="prog m-bar"><i></i></span></span><span class="m-chev">▾</span></summary>
+    <div class="m-body">
+      <p>Работаем по твоим личным слабым местам после пробника №2 и делаем третий пробник. Цель апреля — стабильные 55+ баллов на тренировках.</p>
+      <div class="focus-grid"><div class="focus-card"><h4>Грамматика</h4><p>Точечное повторение по результатам пробника №2 (индивидуальная программа); фразовые глаголы (give up, go on, look forward to); повторение косвенной речи и пассива</p></div><div class="focus-card"><h4>Новые слова</h4><p>«Образование и школьные предметы», «Работа и карьера» — 55 слов + фразовые глаголы</p></div><div class="focus-card"><h4>Тренируем</h4><p>ПОЛНЫЙ ПРОБНИК №3 (уроки 59–60) и разбор (урок 61); полная устная репетиция с оценкой (урок 62); письмо №4 на стабильность</p></div><div class="focus-card"><h4>Контроль</h4><p>Пробник №3 — письменная часть (2 занятия) + разбор; устный блок с критериальной оценкой</p></div></div>
+      <div class="lesson" data-n="55">
+    <div class="l-head"><span class="l-num">55</span><div><div class="l-title">Коррекционный урок: грамматика по личному профилю ошибок</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>Задания по слабой теме из банка ФИПИ; 10 слов блока «Образование».</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">5′</span><span>словарный диктант</span></div><div class="l-row"><span class="min">30′</span><span>тренажёр индивидуально слабых грамматических тем (из личного трекера после пробника №2)</span></div><div class="l-row"><span class="min">10′</span><span>практика 20–28 с включением этих тем</span></div><div class="l-row"><span class="min">5′</span><span>итоги.</span></div></div></details>
+  </div><div class="lesson" data-n="56">
+    <div class="l-head"><span class="l-num">56</span><div><div class="l-title">Коррекционный урок: аудирование или чтение (по профилю)</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>10 слов блока «Работа»; соответствующий раздел из банка ФИПИ.</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">5′</span><span>словарный диктант</span></div><div class="l-row"><span class="min">25′</span><span>интенсив по слабому разделу: два полных блока с проговариванием алгоритма</span></div><div class="l-row"><span class="min">15′</span><span>приёмы самопроверки и контроля времени</span></div><div class="l-row"><span class="min">5′</span><span>итоги.</span></div></div></details>
+  </div><div class="lesson" data-n="57">
+    <div class="l-head"><span class="l-num">57</span><div><div class="l-title">Фразовые глаголы и лексика B1</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>Выучить 15 фразовых глаголов; полный блок чтения из Решу ОГЭ.</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">5′</span><span>словарный диктант</span></div><div class="l-row"><span class="min">12′</span><span>вводение фразовых глаголов в контексте сюжетов экзамена</span></div><div class="l-row"><span class="min">13′</span><span>практика: замена и подстановка</span></div><div class="l-row"><span class="min">15′</span><span>чтение: задания 12–19 (полный блок)</span></div><div class="l-row"><span class="min">5′</span><span>итоги.</span></div></div></details>
+  </div><div class="lesson" data-n="58">
+    <div class="l-head"><span class="l-num">58</span><div><div class="l-title">Письмо №4: проверка стабильности</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>Чистовик письма; повторить все слова модуля.</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">5′</span><span>словарный диктант</span></div><div class="l-row"><span class="min">10′</span><span>чек-лист эксперта: пять ловушек объёма и вежливых фраз</span></div><div class="l-row"><span class="min">25′</span><span>письмо на время с последующей самооценкой по критериям</span></div><div class="l-row"><span class="min">10′</span><span>разбор и сравнение с письмами №1–3</span></div><div class="l-row"><span class="min">5′</span><span>итоги.</span></div></div></details>
+  </div><div class="lesson exam" data-n="59">
+    <div class="l-head"><span class="l-num">59</span><div><div class="l-title">ПРОБНИК №3 — часть 1: аудирование + чтение</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>Ничего заданного.</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">5′</span><span>установка</span></div><div class="l-row"><span class="min">20′</span><span>аудирование: задания 1–11</span></div><div class="l-row"><span class="min">20′</span><span>чтение: задания 12–19</span></div><div class="l-row"><span class="min">5′</span><span>перенос ответов.</span></div></div></details>
+  </div><div class="lesson exam" data-n="60">
+    <div class="l-head"><span class="l-num">60</span><div><div class="l-title">ПРОБНИК №3 — часть 2: грамматика + письмо</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>Подготовиться к устной репетиции: монологи по любым двум темам года.</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">5′</span><span>установка</span></div><div class="l-row"><span class="min">15′</span><span>грамматика и лексика: задания 20–34</span></div><div class="l-row"><span class="min">25′</span><span>письмо: задание 35</span></div><div class="l-row"><span class="min">5′</span><span>перенос. Проверка по критериям до следующего занятия.</span></div></div></details>
+  </div><div class="lesson ctrl" data-n="61">
+    <div class="l-head"><span class="l-num">61</span><div><div class="l-title">Разбор пробника №3 + стратегия «страховки баллов»</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>Работа над ошибками; 10 новых слов.</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">5′</span><span>баллы и тренд за год</span></div><div class="l-row"><span class="min">15′</span><span>разбор ошибок</span></div><div class="l-row"><span class="min">15′</span><span>разбор письма по критериям</span></div><div class="l-row"><span class="min">10′</span><span>стратегия «где взять лёгкие баллы»: задания 20–28, чтение вслух, полные ответы в опросе</span></div><div class="l-row"><span class="min">5′</span><span>итоги.</span></div></div></details>
+  </div><div class="lesson exam" data-n="62">
+    <div class="l-head"><span class="l-num">62</span><div><div class="l-title">Устная часть: полная репетиция с оценкой по критериям</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>Выборочно повторить монологи по темам года; слова месяца.</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">5′</span><span>словарный диктант</span></div><div class="l-row"><span class="min">35′</span><span>полный устный экзамен: 15 минут стандарта + разбор</span></div><div class="l-row"><span>все три задания под запись с критериальной оценкой</span></div><div class="l-row"><span class="min">10′</span><span>фиксация прогноза в трекере</span></div><div class="l-row"><span class="min">5′</span><span>итоги.</span></div></div></details>
+  </div>
+    </div>
+  </details><details class="month" id="mm8">
+    <summary><span class="m-chip">Май</span><span class="m-title">Модуль 9. Финишная прямая и репетиция экзамена</span><span class="m-mini"><span class="m-count js-mc">0/6</span><span class="prog m-bar"><i></i></span></span><span class="m-chev">▾</span></summary>
+    <div class="m-body">
+      <p>Финишная прямая: генеральная репетиция 120 минут подряд, финальный устный прогон и настрой на экзамен. Ничего нового — только полировка шаблонов и слабых точек.</p>
+      <div class="focus-grid"><div class="focus-card"><h4>Грамматика</h4><p>Финальное повторение: марафон 20–34; ловушки перфекта, косвенной речи и словообразования; шаблоны письма и монолога — до автоматизма</p></div><div class="focus-card"><h4>Новые слова</h4><p>«Страна изучаемого языка» + сквозное повторение всех блоков года (выборочный контроль 120 слов)</p></div><div class="focus-card"><h4>Тренируем</h4><p>Генеральная репетиция письменной части в полном тайминге (урок 65); финальная устная репетиция (урок 67); психологическая подготовка</p></div><div class="focus-card"><h4>Контроль</h4><p>Репетиция полного экзамена (уроки 65–66), финальный устный прогон (урок 67), итоговое занятие (урок 68)</p></div></div>
+      <div class="lesson" data-n="63">
+    <div class="l-head"><span class="l-num">63</span><div><div class="l-title">Марафон грамматики: задания 20–34 на скорость</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>Последний проход слабых тем из открытого банка ФИПИ.</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">5′</span><span>словарный диктант</span></div><div class="l-row"><span class="min">25′</span><span>два полных блока 20–28 и 29–34 с контролем времени</span></div><div class="l-row"><span class="min">15′</span><span>разбор частотных ловушек: перфект vs паст симпл, косвенная речь, согласование суффиксов</span></div><div class="l-row"><span class="min">5′</span><span>итоги.</span></div></div></details>
+  </div><div class="lesson" data-n="64">
+    <div class="l-head"><span class="l-num">64</span><div><div class="l-title">Шаблоны письма и монолога: финальная полировка</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>Повторить все шаблоны и клише; наладить режим сна перед экзаменом.</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">5′</span><span>словарный диктант</span></div><div class="l-row"><span class="min">15′</span><span>письмо: беглый прогон шаблона, клише благодарности и заключительных фраз</span></div><div class="l-row"><span class="min">20′</span><span>монолог: сборная репетиция двух тем по каркасу</span></div><div class="l-row"><span class="min">10′</span><span>чек-лист дня экзамена: документы, вода, режим сна</span></div><div class="l-row"><span class="min">5′</span><span>итоги.</span></div></div></details>
+  </div><div class="lesson exam" data-n="65">
+    <div class="l-head"><span class="l-num">65</span><div><div class="l-title">ГЕНЕРАЛЬНАЯ РЕПЕТИЦИЯ: письменная часть 120 минут</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>Ничего заданного: полноценный отдых.</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">5′</span><span>установка и выдача материалов</span></div><div class="l-row"><span class="min">110′</span><span>непрерывная работа: аудирование 1–11, чтение 12–19, грамматика 20–34, письмо 35 — с экзаменационным таймингом (сдвоенное занятие или перенос на выделенный слот).</span></div></div></details>
+  </div><div class="lesson ctrl" data-n="66">
+    <div class="l-head"><span class="l-num">66</span><div><div class="l-title">Разбор репетиции + психология экзаменационного дня</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>Отдых; лёгкое прослушивание английской речи ежедневно по 15–20 минут.</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">5′</span><span>общий балл репетиции</span></div><div class="l-row"><span class="min">25′</span><span>быстрый разбор ошибок по разделам</span></div><div class="l-row"><span class="min">15′</span><span>инструкция дня экзамена: бланки, поведение при панике (дыхание, пропуск задания и возврат), вода и еда</span></div><div class="l-row"><span class="min">5′</span><span>установка на успех.</span></div></div></details>
+  </div><div class="lesson exam" data-n="67">
+    <div class="l-head"><span class="l-num">67</span><div><div class="l-title">Устная часть: финальная репетиция</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>«Уши в языке»: подкасты или видео на английском ежедневно; лёгкое повторение монологов.</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">5′</span><span>установка</span></div><div class="l-row"><span class="min">35′</span><span>полный устный блок (один-два полных прохода) с записью и оценкой по критериям</span></div><div class="l-row"><span class="min">10′</span><span>последние точечные исправления произношения и пауз</span></div><div class="l-row"><span class="min">5′</span><span>итоги.</span></div></div></details>
+  </div><div class="lesson ctrl" data-n="68">
+    <div class="l-head"><span class="l-num">68</span><div><div class="l-title">Итоговое занятие года</div></div><span class="ck" title="Отметить занятие пройденным">✓</span></div>
+    <div class="l-hw"><b>Домашнее задание</b>Ничего заданного — ученик готов к экзамену.</div>
+    <details class="l-more"><summary>Что будет на уроке</summary><div class="l-plan"><div class="l-row"><span class="min">5′</span><span>обзор трекера за год: старт → май, динамика по разделам</span></div><div class="l-row"><span class="min">15′</span><span>блиц-тест уверенности: 20 заданий формата 20–28</span></div><div class="l-row"><span class="min">20′</span><span>ответы на вопросы ученика, стратегия дня экзамена</span></div><div class="l-row"><span class="min">10′</span><span>напутствие и финальные рекомендации родителям.</span></div></div></details>
+  </div>
+    </div>
+  </details>
+  </div>
+</section>
+
+<section id="s6">
+  <div class="sec-head"><span class="sec-num">06</span><h2 class="sec-title">Советы и лайфхаки</h2></div>
+  <div class="card">
+    <p>Эти правила придуманы не на пустом месте — это типичные места потери баллов, собранные из критериев оценивания ФИПИ. Прочитай сейчас и перечитай перед пробниками.</p>
+    <div class="tip-grid"><div class="tip"><b class="cap">Краткие ответы: точность решает</b><p>Пиши слово из текста без артиклей, числа — словами, и обязательно проверяй орфографию. Ошибка в написании = 0 за задание, даже если ответ по смыслу верный.</p></div><div class="tip"><b class="cap">Письмо: шаблон — твой друг</b><p>Обращение, благодарность, связки, заключительная фраза и подпись — с новых строк и наизусть. Держи объём 100–120 слов (безопасная зона 90–132) и посчитай слова перед переносом в бланк.</p></div><div class="tip"><b class="cap">Говорение: никаких «Yes, I do»</b><p>Односложный ответ = 0 баллов за вопрос. Отвечай полной фразой за 40 секунд. В монологе: вступление, все 4 пункта плана, заключение, связки (firstly, moreover, to sum up) и 10–12 фраз.</p></div><div class="tip"><b class="cap">Тайминг: по 30 минут на раздел</b><p>Не зависай на сложном задании — пропусти и вернись позже. Оставь 5 минут на проверку написания: это самые лёгкие спасённые баллы.</p></div><div class="tip"><b class="cap">Диктофон — бесплатный тренажёр</b><p>Записывай чтение вслух и монологи с сентября. Прослушивание своих записей убирает страх тишины и показывает реальные ошибки произношения.</p></div><div class="tip"><b class="cap">День экзамена</b><p>Выспись и возьми воду. Если начинается паника — три медленных вдоха и возврат к самому простому заданию: 20–28 по грамматике, чтение вслух, полные ответы в опросе дают лёгкие баллы.</p></div></div>
+  </div>
+</section>
+
+<section id="s7">
+  <div class="sec-head"><span class="sec-num">07</span><h2 class="sec-title">Ресурсы и книги для подготовки</h2></div>
+  <div class="card">
+    <p>Покупать гору учебников не нужно: база подготовки — в бесплатных онлайн-ресурсах, а из печатного достаточно двух помощников — справочника Мерфи для грамматики и сборника Гудковой и Терентьевой для тренировочных вариантов. Всё остальное — в открытом доступе, главное — знать, где что искать.</p>
+    <div class="res-grid"><div class="res"><h4>Портал «Решу ОГЭ»</h4><span class="r-cap">en-oge.sdamgia.ru</span><p>Здесь ты делаешь домашние задания: каталог задач по номерам 1–38, автоматическая проверка и статистика ошибок по типам.</p></div><div class="res"><h4>ФИПИ: fipi.ru</h4><span class="r-cap">демоверсия и открытый банк</span><p>Настоящий формат заданий и официальные аудиозаписи. Перед экзаменом полезно перерешать свежую демоверсию целиком.</p></div><div class="res"><h4>Мерфи — «English Grammar in Use»</h4><span class="r-cap">справочник по грамматике, 5-е издание</span><p>Главная книга по грамматике: слева на странице объяснение, справа — упражнения, 145 юнитов. Юнит по теме недели читаем до занятия, 2–3 упражнения идут в домашку. Бери издание с ответами.</p></div><div class="res"><h4>Гудкова, Терентьева — сборник «ОГЭ-2027»</h4><span class="r-cap">30 тренировочных вариантов (АСТ)</span><p>Полные варианты в формате настоящего экзамена с ключами — по ним идём на пробники и делаем тренировки на время. Ищи свежее издание под ОГЭ-2027.</p></div><div class="res"><h4>Anki / Quizlet</h4><span class="r-cap">карточки слов</span><p>Одна колода на каждый тематический блок из таблицы слов. 10–15 минут в день — и диктанты перестанут пугать.</p></div><div class="res"><h4>BBC Learning English</h4><span class="r-cap">подкасты и видео</span><p>Короткие сюжеты с субтитрами. С весны — по 15–20 минут в день: так «уши в языке» привыкают к живой речи.</p></div></div>
+    <div class="res file-card"><h4>Файлы комплекта — скачать</h4><span class="r-cap">формат .docx · открывается в Word, WPS или Google Docs</span>
+      <ul class="file-list">
+        <li><a href="OGE_cheatsheet_vocabulary.docx" download>Шпаргалка «Лексика»: 19 тематических списков на год</a><span>docx · 29 КБ</span></li>
+        <li><a href="OGE_cheatsheet_grammar.docx" download>Шпаргалка «Грамматика»: все времена и правила в таблицах</a><span>docx · 36 КБ</span></li>
+      </ul>
+    </div>
+    <p class="note">Сторонние сайты и сборники проверяй на соответствие актуальному формату: заданий устаревших видов в интернете много — они только сбивают настройку.</p>
+  </div>
+</section>
+</main>
+<footer><div class="container">
+  <span>Твой маршрут: сентябрь → май 2027 · старт A2 → требуемый уровень B1 · 68 занятий</span>
+  <span>Основа: спецификация и демоверсия ФИПИ 2027 (структура 2026 сохранена) · «Решу ОГЭ»</span>
+</div></footer>
+<script>
+const KEY='oge-student-done-v1';
+function lsGet(k){try{return localStorage.getItem(k)}catch(e){return null}}
+function lsSet(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+let done=new Set();
+try{done=new Set((JSON.parse(lsGet(KEY)||'[]')||[]).map(Number))}catch(e){}
+function save(){lsSet(KEY,JSON.stringify([...done]))}
+function apply(){
+  document.querySelectorAll('.lesson[data-n]').forEach(el=>el.classList.toggle('done',done.has(+el.dataset.n)));
+  document.getElementById('mp-num').textContent=done.size+' из 68';
+  document.getElementById('mp-fill').style.width=(done.size/68*100)+'%';
+  document.querySelectorAll('details.month').forEach(m=>{
+    const ls=[...m.querySelectorAll('.lesson[data-n]')];
+    const c=ls.filter(l=>done.has(+l.dataset.n)).length;
+    m.querySelector('.js-mc').textContent=c+'/'+ls.length;
+    m.querySelector('.m-bar>i').style.width=(ls.length?c/ls.length*100:0)+'%';
+  });
+}
+document.querySelectorAll('.ck').forEach(c=>c.addEventListener('click',e=>{
+  const n=+c.closest('.lesson').dataset.n;
+  done.has(n)?done.delete(n):done.add(n);
+  save();apply();
+}));
+document.getElementById('mp-reset').addEventListener('click',()=>{done.clear();save();apply();});
+const bar=document.getElementById('pbar');
+addEventListener('scroll',()=>{const h=document.documentElement;bar.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';},{passive:true});
+const links=[...document.querySelectorAll('nav a[data-sec]')];
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.toggle('active',l.getAttribute('href')==='#'+e.target.id));}});},{rootMargin:'-25% 0px -65% 0px'});
+links.forEach(l=>{const s=document.getElementById(l.getAttribute('href').slice(1));s&&io.observe(s);});
+function expandAll(open){document.querySelectorAll('details.month').forEach(d=>d.open=open);}
+let printState=[];
+addEventListener('beforeprint',()=>{printState=[...document.querySelectorAll('details.month')].map(d=>d.open);expandAll(true);});
+addEventListener('afterprint',()=>{[...document.querySelectorAll('details.month')].forEach((d,i)=>d.open=printState[i]);});
+apply();
+</script>
+</body>
+</html>
