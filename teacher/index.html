@@ -49,6 +49,8 @@ nav a:hover{background:var(--surface);color:var(--teal)}
 nav a.active{background:var(--teal);color:#fff}
 .nav-print{margin-left:auto;background:#fff;border:1.5px solid var(--teal);color:var(--teal)!important;font-weight:700;font-size:12.5px;padding:5px 12px;border-radius:8px;flex:0 0 auto}
 .nav-print:hover{background:var(--teal);color:#fff!important}
+.nav-home{margin-left:auto;color:var(--teal)!important;font-weight:700}
+.nav-home+*{margin-left:8px}
 
 /* ---- секции ---- */
 main{padding:40px 0 8px}
@@ -198,6 +200,7 @@ footer .container{display:flex;justify-content:space-between;gap:16px;flex-wrap:
 <a href="#s5" data-sec>5 · Календарь занятий</a>
 <a href="#s6" data-sec>6 · Контроль</a>
 <a href="#s7" data-sec>7 · Ресурсы</a>
+  <a href="../" class="nav-home">← План ученика</a>
   <a href="javascript:void(0)" class="nav-print" onclick="window.print()">Печать / PDF</a>
 </div></nav>
 <main class="container">
@@ -814,9 +817,9 @@ footer .container{display:flex;justify-content:space-between;gap:16px;flex-wrap:
     <div class="res-grid"><div class="res"><h4>ФИПИ: fipi.ru — раздел ОГЭ</h4><span class="r-cap">Что содержит</span><p>Демоверсии, спецификация, кодификатор по английскому языку; видеоконсультации разработчиков КИМ</p><span class="r-cap">Как использовать в плане</span><p>База формата: сверять структуру заданий в начале года; смотреть видеоконсультации вместе с учеником</p></div><div class="res"><h4>Открытый банк заданий ОГЭ (ФИПИ)</h4><span class="r-cap">Что содержит</span><p>Типовые экзаменационные задания по всем разделам и устной части</p><span class="r-cap">Как использовать в плане</span><p>Основной источник упражнений на каждом занятии и в домашних заданиях</p></div><div class="res"><h4>Аудио к демонстрационному варианту (ФИПИ)</h4><span class="r-cap">Что содержит</span><p>Официальные аудиозаписи письменной части (MP3 в архиве демоверсии)</p><span class="r-cap">Как использовать в плане</span><p>Пробники и еженедельное аудирование в экзаменационном звучании</p></div><div class="res"><h4>Портал «Решу ОГЭ»: en-oge.sdamgia.ru</h4><span class="r-cap">Что содержит</span><p>Каталог заданий по типам 1–38, ежемесячные тренировочные варианты, конструктор варианта по темам, автоматическая проверка</p><span class="r-cap">Как использовать в плане</span><p>Домашние задания с автоматической проверкой; конструктор для точечной отработки тем; варианты для тренировок</p></div><div class="res"><h4>Приложения-карточки (Anki, Quizlet)</h4><span class="r-cap">Что содержит</span><p>Интервальное повторение слов; бесплатный функционал достаточен</p><span class="r-cap">Как использовать в плане</span><p>Ведение личных колод по тематическим блокам раздела 4</p></div><div class="res"><h4>Подкасты и видео (BBC Learning English и аналоги)</h4><span class="r-cap">Что содержит</span><p>Короткие сюжеты на английском с субтитрами</p><span class="r-cap">Как использовать в плане</span><p>«Уши в языке»: 15–20 минут в день с апреля–мая</p></div><div class="res"><h4>R. Murphy «English Grammar in Use» (5-е изд., Cambridge, 2019)</h4><span class="r-cap">Что содержит</span><p>Классический справочник-самоучитель уровня Intermediate: 145 юнитов — на каждом развороте объяснение слева и упражнения справа; брать версию с ответами</p><span class="r-cap">Как использовать в плане</span><p>Основная книга по грамматике для разбора и домашних заданий: юнит по теме месяца читается дома до занятия, правило закрепляется экзаменационными тренажёрами; ключевые юниты (Present Perfect, пассив, условные) задаются как ДЗ</p></div><div class="res"><h4>Гудкова Л. М., Терентьева О. В. «ОГЭ-2027. Английский язык. 30 тренировочных вариантов» (АСТ)</h4><span class="r-cap">Что содержит</span><p>30 полных вариантов экзаменационных работ в актуальном формате ФИПИ с ключами; у авторов есть также пособие по устной части и справочник «Английский язык в таблицах и схемах»</p><span class="r-cap">Как использовать в плане</span><p>Сборник для подготовки к ОГЭ: варианты — источник полных пробников, тематических контрольных и домашних тренировок в экзаменационном тайминге; разбор ошибок — на занятии с репетитором</p></div></div>
     <div class="res file-card"><h4>Файлы комплекта — скачать</h4><span class="r-cap">формат .docx · открывается в Word, WPS или Google Docs</span>
       <ul class="file-list">
-        <li><a href="OGE_plan_teacher_A2-B1.docx" download>Годовой план подготовки (A2 → B1): 7 глав, 68 занятий, критерии и трекер</a><span>docx · 59 КБ</span></li>
-        <li><a href="OGE_cheatsheet_vocabulary.docx" download>Шпаргалка «Лексика»: 19 тематических списков на год</a><span>docx · 29 КБ</span></li>
-        <li><a href="OGE_cheatsheet_grammar.docx" download>Шпаргалка «Грамматика»: все времена и правила в таблицах</a><span>docx · 36 КБ</span></li>
+        <li><a href="../OGE_plan_teacher_A2-B1.docx" download>Годовой план подготовки (A2 → B1): 7 глав, 68 занятий, критерии и трекер</a><span>docx · 59 КБ</span></li>
+        <li><a href="../OGE_cheatsheet_vocabulary.docx" download>Шпаргалка «Лексика»: 19 тематических списков на год</a><span>docx · 29 КБ</span></li>
+        <li><a href="../OGE_cheatsheet_grammar.docx" download>Шпаргалка «Грамматика»: все времена и правила в таблицах</a><span>docx · 36 КБ</span></li>
       </ul>
     </div>
     <p class="note">Адреса: fipi.ru (раздел «ОГЭ», открытый банк заданий), en-oge.sdamgia.ru (портал «Решу ОГЭ», английский язык). Справочник Мерфи и сборник Гудковой/Терентьевой издаются с ключами — при покупке выбирайте свежий тираж под ОГЭ-2027.</p>
