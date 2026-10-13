@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Подготовка к ОГЭ по английскому языку — годовой план (A2 → B1)</title>
 <meta name="description" content="Годовой план подготовки к ОГЭ-2027 по английскому языку с уровня A2 до B1: 68 занятий с поминутным планом, критерии оценивания каждого типа заданий, разбор экзамена ФИПИ 2027, грамматическая карта, лексика, пробники и трекер прогресса.">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<meta property="og:image" content="logo.png">
+<meta name="twitter:image" content="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -29,7 +32,8 @@ b,strong{font-weight:700}
 .hero{background:linear-gradient(135deg,#083D38 0%,#0C655C 55%,#15857A 100%);color:#fff;padding:58px 0 50px;position:relative;overflow:hidden}
 .hero::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 88% 12%,rgba(255,255,255,.10) 0,transparent 42%),radial-gradient(circle at 6% 95%,rgba(255,255,255,.07) 0,transparent 38%)}
 .hero .container{position:relative;z-index:1}
-.hero-label{display:inline-block;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.28);padding:6px 15px;border-radius:999px;font-size:12px;letter-spacing:.16em;font-weight:700;text-transform:uppercase;margin-bottom:22px}
+.hero-label{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.28);padding:6px 15px;border-radius:999px;font-size:12px;letter-spacing:.16em;font-weight:700;text-transform:uppercase;margin-bottom:22px}
+.home-logo{width:20px;height:20px;border-radius:18%;flex:0 0 auto}
 .hero h1{font-size:clamp(29px,4.6vw,44px);line-height:1.16;font-weight:800;max-width:860px;letter-spacing:-.012em}
 .hero-sub{margin-top:14px;font-size:clamp(16px,2vw,19px);color:#D8EEE9;max-width:760px;font-weight:500}
 .hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin:30px 0 24px;max-width:820px}
@@ -149,6 +153,7 @@ tr.total td{color:var(--teal-deep)}
 /* ---- футер ---- */
 footer{border-top:1px solid var(--line);background:var(--surface);padding:26px 0;margin-top:46px;font-size:13px;color:var(--muted)}
 footer .container{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.foot-legal{flex-basis:100%;border-top:1px solid var(--line);margin-top:16px;padding-top:12px;display:flex;flex-direction:column;gap:5px;font-size:12px;line-height:1.5}
 
 /* ---- адаптив ---- */
 @media (max-width:760px){
@@ -179,7 +184,7 @@ footer .container{display:flex;justify-content:space-between;gap:16px;flex-wrap:
 
 <header class="hero">
   <div class="container">
-    <div class="hero-label">ОГЭ · Английский язык · ФИПИ 2027 · учебный год 2026/27</div>
+    <div class="hero-label"><img src="logo.png" alt="Интерактивная школа «МУДРО»" class="home-logo">ОГЭ · Английский язык · ФИПИ 2027 · учебный год 2026/27</div>
     <h1>Подготовка к ОГЭ по английскому языку</h1>
     <p class="hero-sub">Годовая траектория A2 → B1: 68 занятий, 2 раза в неделю по 50 минут</p>
     <div class="hero-stats">
@@ -204,7 +209,7 @@ footer .container{display:flex;justify-content:space-between;gap:16px;flex-wrap:
 <a href="#s5" data-sec>5 · Календарь занятий</a>
 <a href="#s6" data-sec>6 · Контроль</a>
 <a href="#s7" data-sec>7 · Ресурсы</a>
-  <a href="../" class="nav-home">← План ученика</a>
+  <a href="index.html" class="nav-home">← План ученика</a>
   <a href="javascript:void(0)" class="nav-print" onclick="window.print()">Печать / PDF</a>
 </div></nav>
 <main class="container">
@@ -809,7 +814,7 @@ footer .container{display:flex;justify-content:space-between;gap:16px;flex-wrap:
     <h3>6.3. Трекер прогресса</h3>
     <p>Трекер — компактная таблица, в которую заносятся баллы по разделам на каждой контрольной точке. Сравнение строк показывает, какой раздел тянет результат вниз, и именно туда направляются коррекционные занятия апреля. Рядом с баллами полезно подписывать оценку по шкале из раздела 2.6 — это делает прогресс наглядным для ученика и родителей.</p>
     <div class="tbl-title">Таблица 8. Трекер прогресса (заполняется по мере прохождения плана)</div>
-    <div class="dl-row"><a class="dl-btn" href="../OGE_progress_tracker.xlsx" download>Скачать трекер для заполнения (.xlsx)</a><span class="dl-note">вводите баллы по разделам — «Итого (68)» посчитается автоматически, превышение максимума подсветится красным</span></div>
+    <div class="dl-row"><a class="dl-btn" href="OGE_progress_tracker.xlsx" download>Скачать трекер для заполнения (.xlsx)</a><span class="dl-note">вводите баллы по разделам — «Итого (68)» посчитается автоматически, превышение максимума подсветится красным</span></div>
     <div class="table-wrap"><table><thead><tr><th>Контрольная точка</th><th>Ауд. (15)</th><th>Чтение (13)</th><th>Грамм./лекс. (15)</th><th>Письмо (10)</th><th>Говорение (15)</th><th>Итого (68)</th><th>Оценка</th></tr></thead><tbody><tr><td class="k">Старт (сентябрь)</td><td class="c"><span class="blank"></span></td><td class="c"><span class="blank"></span></td><td class="c"><span class="blank"></span></td><td class="c">—</td><td class="c"><span class="blank"></span></td><td class="c"><span class="blank"></span></td><td class="c"><span class="blank"></span></td></tr><tr><td class="k">Пробник №1 (декабрь)</td><td class="c"><span class="blank"></span></td><td class="c"><span class="blank"></span></td><td class="c"><span class="blank"></span></td><td class="c"><span class="blank"></span></td><td class="c"><span class="blank"></span></td><td class="c"><span class="blank"></span></td><td class="c"><span class="blank"></span></td></tr><tr><td class="k">Пробник №2 (март)</td><td class="c"><span class="blank"></span></td><td class="c"><span class="blank"></span></td><td class="c"><span class="blank"></span></td><td class="c"><span class="blank"></span></td><td class="c"><span class="blank"></span></td><td class="c"><span class="blank"></span></td><td class="c"><span class="blank"></span></td></tr><tr><td class="k">Пробник №3 (апрель)</td><td class="c"><span class="blank"></span></td><td class="c"><span class="blank"></span></td><td class="c"><span class="blank"></span></td><td class="c"><span class="blank"></span></td><td class="c"><span class="blank"></span></td><td class="c"><span class="blank"></span></td><td class="c"><span class="blank"></span></td></tr><tr><td class="k">Репетиция (май)</td><td class="c"><span class="blank"></span></td><td class="c"><span class="blank"></span></td><td class="c"><span class="blank"></span></td><td class="c"><span class="blank"></span></td><td class="c"><span class="blank"></span></td><td class="c"><span class="blank"></span></td><td class="c"><span class="blank"></span></td></tr><tr><td class="k">Экзамен (факт)</td><td class="c"><span class="blank"></span></td><td class="c"><span class="blank"></span></td><td class="c"><span class="blank"></span></td><td class="c"><span class="blank"></span></td><td class="c"><span class="blank"></span></td><td class="c"><span class="blank"></span></td><td class="c"><span class="blank"></span></td></tr></tbody></table></div>
     <p class="note">В скобках — максимальный первичный балл раздела. В сентябре письмо целиком не проверяется — ставится прочерк; говорение оценивается упрощённо по трём заданиям устной части.</p>
   </div>
@@ -822,10 +827,10 @@ footer .container{display:flex;justify-content:space-between;gap:16px;flex-wrap:
     <div class="res-grid"><div class="res"><h4>ФИПИ: fipi.ru — раздел ОГЭ</h4><span class="r-cap">Что содержит</span><p>Демоверсии, спецификация, кодификатор по английскому языку; видеоконсультации разработчиков КИМ</p><span class="r-cap">Как использовать в плане</span><p>База формата: сверять структуру заданий в начале года; смотреть видеоконсультации вместе с учеником</p></div><div class="res"><h4>Открытый банк заданий ОГЭ (ФИПИ)</h4><span class="r-cap">Что содержит</span><p>Типовые экзаменационные задания по всем разделам и устной части</p><span class="r-cap">Как использовать в плане</span><p>Основной источник упражнений на каждом занятии и в домашних заданиях</p></div><div class="res"><h4>Аудио к демонстрационному варианту (ФИПИ)</h4><span class="r-cap">Что содержит</span><p>Официальные аудиозаписи письменной части (MP3 в архиве демоверсии)</p><span class="r-cap">Как использовать в плане</span><p>Пробники и еженедельное аудирование в экзаменационном звучании</p></div><div class="res"><h4>Портал «Решу ОГЭ»: en-oge.sdamgia.ru</h4><span class="r-cap">Что содержит</span><p>Каталог заданий по типам 1–38, ежемесячные тренировочные варианты, конструктор варианта по темам, автоматическая проверка</p><span class="r-cap">Как использовать в плане</span><p>Домашние задания с автоматической проверкой; конструктор для точечной отработки тем; варианты для тренировок</p></div><div class="res"><h4>Приложения-карточки (Anki, Quizlet)</h4><span class="r-cap">Что содержит</span><p>Интервальное повторение слов; бесплатный функционал достаточен</p><span class="r-cap">Как использовать в плане</span><p>Ведение личных колод по тематическим блокам раздела 4</p></div><div class="res"><h4>Подкасты и видео (BBC Learning English и аналоги)</h4><span class="r-cap">Что содержит</span><p>Короткие сюжеты на английском с субтитрами</p><span class="r-cap">Как использовать в плане</span><p>«Практика понимания речи»: 15–20 минут в день с апреля–мая</p></div><div class="res"><h4>R. Murphy «English Grammar in Use» (5-е изд., Cambridge, 2019)</h4><span class="r-cap">Что содержит</span><p>Классический справочник-самоучитель уровня Intermediate: 145 юнитов — на каждом развороте объяснение слева и упражнения справа; брать версию с ответами</p><span class="r-cap">Как использовать в плане</span><p>Основная книга по грамматике для разбора и домашних заданий: юнит по теме месяца читается дома до занятия, правило закрепляется экзаменационными тренажёрами; ключевые юниты (Present Perfect, пассив, условные) задаются как ДЗ</p></div><div class="res"><h4>Гудкова Л. М., Терентьева О. В. «ОГЭ-2027. Английский язык. 30 тренировочных вариантов» (АСТ)</h4><span class="r-cap">Что содержит</span><p>30 полных вариантов экзаменационных работ в актуальном формате ФИПИ с ключами; у авторов есть также пособие по устной части и справочник «Английский язык в таблицах и схемах»</p><span class="r-cap">Как использовать в плане</span><p>Сборник для подготовки к ОГЭ: варианты — источник полных пробников, тематических контрольных и домашних тренировок в экзаменационном тайминге; разбор ошибок — на занятии с репетитором</p></div></div>
     <div class="res file-card"><h4>Файлы комплекта — скачать</h4><span class="r-cap">формат .docx · открывается в Word, WPS или Google Docs</span>
       <ul class="file-list">
-        <li><a href="../OGE_progress_tracker.xlsx" download>Трекер прогресса (для заполнения учителем)</a><span>xlsx · 6 КБ</span></li>
-        <li><a href="../OGE_plan_teacher_A2-B1.docx" download>Годовой план подготовки (A2 → B1): 7 глав, 68 занятий, критерии и трекер</a><span>docx · 62 КБ</span></li>
-        <li><a href="../OGE_cheatsheet_vocabulary.docx" download>Шпаргалка «Лексика»: 21 тематический список на год</a><span>docx · 41 КБ</span></li>
-        <li><a href="../OGE_cheatsheet_grammar.docx" download>Шпаргалка «Грамматика»: все времена и правила в таблицах</a><span>docx · 40 КБ</span></li>
+        <li><a href="OGE_progress_tracker.xlsx" download>Трекер прогресса (для заполнения учителем)</a><span>xlsx · 362 КБ</span></li>
+        <li><a href="OGE_plan_teacher_A2-B1.docx" download>Годовой план подготовки (A2 → B1): 7 глав, 68 занятий, критерии и трекер</a><span>docx · 415 КБ</span></li>
+        <li><a href="OGE_cheatsheet_vocabulary.docx" download>Шпаргалка «Лексика»: 21 тематический список на год</a><span>docx · 395 КБ</span></li>
+        <li><a href="OGE_cheatsheet_grammar.docx" download>Шпаргалка «Грамматика»: все времена и правила в таблицах</a><span>docx · 393 КБ</span></li>
       </ul>
     </div>
     <p class="note">Адреса: fipi.ru (раздел «ОГЭ», открытый банк заданий), en-oge.sdamgia.ru (портал «Решу ОГЭ», английский язык). Справочник Мерфи и сборник Гудковой/Терентьевой издаются с ключами — при покупке выбирайте свежий тираж под ОГЭ-2027.</p>
@@ -836,8 +841,12 @@ footer .container{display:flex;justify-content:space-between;gap:16px;flex-wrap:
 </section>
 </main>
 <footer><div class="container">
-  <span>Составлено по официальным материалам ФИПИ (спецификация и демоверсия КИМ ОГЭ-2027, учебный год 2026/27) и порталу «Решу ОГЭ»</span>
+  <span>Составлено по официальным материалам ФИПИ (спецификация и демоверсия КИМ ОГЭ-2027, учебный год 2026/27)</span>
   <span>A2 → B1 · 68 занятий · сентябрь — май 2027</span>
+  <div class="foot-legal">
+    <span>© 2019-2026 ИП Громова Анна Александровна, ОГРНИП: 319237500156762, ИНН: 236507001744</span>
+    <span>Лицензия № Л035-01218-23/01091451 Интерактивная школа «МУДРО»</span>
+  </div>
 </div></footer>
 <script>
 const bar=document.getElementById('pbar');
