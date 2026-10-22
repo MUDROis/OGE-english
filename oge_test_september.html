@@ -1,0 +1,1276 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Проверочная работа за сентябрь · ОГЭ английский</title>
+<style>
+
+:root{
+  --teal:#15857A; --teal-dark:#0E5F58; --accent:#FF6A3B; --accent-dark:#C2492F;
+  --ink:#1E2A28; --muted:#5C6B68; --bg:#F4F7F6; --card:#FFFFFF; --line:#E1E8E6;
+  --ok-bg:#F0FAF8; --bad-bg:#FDF1EC;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Noto Sans',Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+.wrap{max-width:980px;margin:0 auto;padding:0 1rem 3rem}
+.top{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.top .bar{max-width:980px;margin:0 auto;padding:.55rem 1rem;display:flex;align-items:center;gap:.9rem;flex-wrap:wrap}
+.brand{font-weight:800;color:var(--teal-dark);font-size:.98rem;white-space:nowrap}
+.top nav{display:flex;gap:.85rem;flex-wrap:wrap}
+.top nav a{color:var(--muted);text-decoration:none;font-size:.88rem;font-weight:600}
+.top nav a:hover{color:var(--teal-dark)}
+.spacer{flex:1}
+.chip{background:var(--teal);color:#fff;font-weight:800;font-size:.85rem;border-radius:999px;padding:.32rem .8rem;white-space:nowrap}
+.btn{background:var(--teal);color:#fff;border:none;border-radius:9px;padding:.45rem .95rem;font-weight:700;font-size:.86rem;cursor:pointer;font-family:inherit}
+.btn:hover{background:var(--teal-dark)}
+.btn.ghost{background:transparent;color:var(--teal-dark);border:1.5px solid var(--teal)}
+.btn.ghost:hover{background:rgba(21,133,122,.08)}
+.btn.warn{background:transparent;color:var(--accent-dark);border:1.5px solid var(--accent)}
+.btn.warn:hover{background:var(--bad-bg)}
+.hero{padding:2.2rem 0 1.2rem}
+.kicker{display:inline-block;background:rgba(21,133,122,.1);color:var(--teal-dark);font-size:.78rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:.32rem .75rem;border-radius:999px;margin-bottom:.8rem}
+h1{font-size:1.85rem;line-height:1.25}
+h1 em{font-style:normal;color:var(--teal)}
+.sub{color:var(--muted);margin-top:.55rem;max-width:680px}
+.stats{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1.1rem}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:.5rem .95rem;font-size:.85rem}
+.stat b{color:var(--teal-dark)}
+section{margin-top:2.4rem;scroll-margin-top:78px}
+h2{font-size:1.32rem;border-left:4px solid var(--teal);padding-left:.65rem;scroll-margin-top:78px}
+h2 small{display:block;font-size:.83rem;color:var(--muted);font-weight:600;margin-top:.15rem}
+.note-p{color:var(--muted);margin-top:.6rem;max-width:760px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.1rem}
+.lesson-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1.1rem 1.2rem}
+.lesson-card h3{font-size:1rem;color:var(--teal-dark)}
+.lesson-card .lmax{font-size:.8rem;color:var(--muted);margin-bottom:.6rem}
+table.timing{width:100%;border-collapse:collapse;font-size:.85rem}
+table.timing td{padding:.32rem .4rem;border-bottom:1px dashed var(--line);vertical-align:top}
+table.timing td:first-child{white-space:nowrap;font-weight:700;color:var(--teal-dark);width:52px}
+.howto{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1.05rem 1.25rem;margin-top:1rem}
+.howto h3{font-size:.98rem;margin-bottom:.5rem;color:var(--teal-dark)}
+.howto li{margin:.35rem 0 .35rem 1.15rem;font-size:.9rem;color:var(--ink)}
+.scale-t{width:100%;border-collapse:collapse;font-size:.88rem;margin-top:.9rem}
+.scale-t th{background:rgba(21,133,122,.09);color:var(--teal-dark);text-align:left;padding:.45rem .6rem;font-size:.8rem;text-transform:uppercase;letter-spacing:.04em}
+.scale-t td{padding:.45rem .6rem;border-bottom:1px solid var(--line)}
+.task{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1.15rem 1.3rem;margin-top:1.05rem;scroll-margin-top:78px}
+.task-head{display:flex;align-items:center;justify-content:space-between;gap:.8rem;flex-wrap:wrap}
+.task-head h3{font-size:1.04rem}
+.badge{background:rgba(21,133,122,.12);color:var(--teal-dark);font-weight:800;font-size:.86rem;border-radius:999px;padding:.3rem .75rem;white-space:nowrap}
+.badge.done{background:var(--teal);color:#fff}
+.instr{color:var(--muted);font-size:.9rem;margin:.55rem 0 .9rem}
+.instr b{color:var(--ink)}
+.blitz-grid{display:grid;gap:.45rem}
+.blitz-row{display:grid;grid-template-columns:26px 1fr 210px 260px;gap:.6rem;align-items:center;padding:.18rem .3rem;border-radius:9px}
+.blitz-row .idx{color:var(--muted);font-weight:700;font-size:.85rem;text-align:center}
+.blitz-row input{border:1px solid var(--line);border-radius:8px;padding:.38rem .6rem;font-size:.92rem;font-family:inherit;outline:none;width:100%}
+.blitz-row input:focus{border-color:var(--teal)}
+.fb{font-size:.85rem;font-weight:600}
+.blitz-row.ok{background:var(--ok-bg)}
+.blitz-row.ok input{border-color:var(--teal)}
+.blitz-row.ok .fb{color:var(--teal-dark)}
+.blitz-row.bad{background:var(--bad-bg)}
+.blitz-row.bad input{border-color:var(--accent)}
+.blitz-row.bad .fb{color:var(--accent-dark)}
+.optgrid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.5rem;margin:.35rem 0 .2rem}
+label.opt{display:flex;gap:.55rem;align-items:center;border:1px solid var(--line);border-radius:10px;padding:.42rem .65rem;cursor:pointer;font-size:.92rem}
+label.opt:hover{border-color:var(--teal)}
+label.opt input{accent-color:var(--teal);flex:none}
+.lt{flex:none;width:21px;height:21px;border-radius:50%;background:rgba(21,133,122,.12);color:var(--teal-dark);font-weight:800;font-size:.78rem;display:flex;align-items:center;justify-content:center}
+label.ok{border-color:var(--teal);background:var(--ok-bg)}
+label.ok .lt{background:var(--teal);color:#fff}
+label.bad{border-color:var(--accent);background:var(--bad-bg)}
+label.bad .lt{background:var(--accent);color:#fff}
+label.reveal{border-style:dashed;border-color:var(--teal)}
+label.reveal .lt{background:var(--teal);color:#fff}
+.lextext{background:#FBFDFC;border:1px dashed var(--line);border-radius:12px;padding:.9rem 1.05rem;margin-bottom:.8rem}
+.lextext .gn{display:inline-flex;width:19px;height:19px;border-radius:50%;background:rgba(255,106,59,.14);color:var(--accent-dark);font-weight:800;font-size:.72rem;align-items:center;justify-content:center;vertical-align:middle;margin-right:.15rem}
+.gramtext{line-height:2;font-size:.95rem;background:#FBFDFC;border:1px dashed var(--line);border-radius:12px;padding:.9rem 1.05rem;margin-bottom:.9rem}
+.caps{font-weight:800;letter-spacing:.05em;color:var(--teal-dark);white-space:nowrap}
+.gn{display:inline-flex;min-width:19px;height:19px;border-radius:50%;background:rgba(255,106,59,.14);color:var(--accent-dark);font-weight:800;font-size:.72rem;align-items:center;justify-content:center;vertical-align:middle;margin-right:.2rem}
+.gram-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.7rem}
+.gcell{border:1px solid var(--line);border-radius:10px;padding:.5rem .6rem}
+.gcell.g-ok{border-color:var(--teal);background:var(--ok-bg)}
+.gcell.g-bad{border-color:var(--accent);background:var(--bad-bg)}
+.gcell .gbase{font-size:.78rem;color:var(--muted);font-weight:700}
+.gcell input{border:1px solid var(--line);border-radius:7px;padding:.32rem .5rem;font-size:.9rem;width:100%;margin-top:.25rem;font-family:inherit;outline:none}
+.gcell input:focus{border-color:var(--teal)}
+.gcell .fb{display:block;margin-top:.3rem;font-size:.78rem}
+.reading{background:#FBFDFC;border:1px dashed var(--line);border-radius:12px;padding:.95rem 1.1rem;margin-bottom:.9rem;max-height:430px;overflow:auto}
+.reading h4{color:var(--teal-dark);margin-bottom:.45rem}
+.reading p{font-size:.93rem;line-height:1.68}
+.stmts{display:grid;gap:.35rem}
+.optrow{display:flex;flex-wrap:wrap;gap:.55rem;align-items:center;padding:.42rem .5rem;border-radius:10px}
+.optrow.s-ok{background:var(--ok-bg)}
+.optrow.s-bad{background:var(--bad-bg)}
+.optrow .stext{flex:1 1 340px;font-size:.92rem}
+.optrow .snum{flex:none;width:21px;height:21px;border-radius:50%;background:rgba(21,133,122,.12);color:var(--teal-dark);font-weight:800;font-size:.78rem;display:flex;align-items:center;justify-content:center}
+.optrow .opts{display:flex;gap:.4rem;flex-wrap:wrap}
+.optrow label.opt{padding:.28rem .55rem;font-size:.85rem}
+.listencard{border:1px solid var(--line);border-radius:12px;padding:.8rem .95rem;margin-top:.6rem}
+.listencard .lh{display:flex;align-items:center;gap:.6rem}
+.lletter{flex:none;width:28px;height:28px;border-radius:50%;background:var(--teal);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center}
+.listencard .lq{font-weight:700;font-size:.94rem}
+.listencard .optgrid{margin-top:.55rem}
+.teacher-only{display:none}
+body.teacher .teacher-only{display:block}
+body.teacher .teacher-inline{display:inline-flex}
+.tape{border-left:3px solid var(--accent);background:#FFF7F4;border-radius:0 10px 10px 0;padding:.65rem .9rem;margin-top:.7rem;font-size:.9rem}
+.tape summary{cursor:pointer;font-weight:800;color:var(--accent-dark);font-size:.86rem}
+.tape p{margin-top:.5rem;font-style:italic;line-height:1.6}
+.tape .tnote{font-style:normal;color:var(--muted);font-size:.8rem;margin-top:.4rem}
+.teacher-note{border-left:3px solid var(--accent);background:#FFF7F4;border-radius:0 10px 10px 0;padding:.75rem .95rem;margin-top:.9rem;font-size:.88rem}
+.teacher-note h4{color:var(--accent-dark);font-size:.88rem;margin-bottom:.35rem}
+.teacher-note li{margin:.25rem 0 .25rem 1.1rem}
+.timerbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;background:var(--ok-bg);border:1px solid var(--line);border-radius:11px;padding:.5rem .8rem;margin-top:1rem}
+.timerbar .tnote{font-size:.8rem;color:var(--muted)}
+.tdisp{font-weight:800;font-size:1.05rem;font-variant-numeric:tabular-nums;min-width:58px;text-align:center}
+.tdisp.warn{color:#B7791F}
+.tdisp.danger{color:var(--accent-dark)}
+.mono-plan{margin:.55rem 0 .3rem 1.25rem;font-size:.93rem}
+.mono-plan li{margin:.25rem 0}
+.mono-note{font-size:.82rem;color:var(--accent-dark);font-weight:700;margin-top:.3rem}
+.crit{display:grid;grid-template-columns:1fr 92px;gap:.3rem .8rem;align-items:center;margin-top:.7rem;border-top:1px dashed var(--line);padding-top:.6rem}
+.crit .cname{font-weight:700;font-size:.88rem}
+.crit .chelp{grid-column:1;font-size:.78rem;color:var(--muted)}
+.crit select{border:1px solid var(--line);border-radius:8px;padding:.3rem .45rem;font-family:inherit;font-size:.9rem;grid-row:span 2;align-self:start}
+.warnbox{display:none;background:var(--bad-bg);border-left:3px solid var(--accent);border-radius:0 10px 10px 0;padding:.55rem .8rem;margin-top:.6rem;font-size:.86rem;color:var(--accent-dark);font-weight:600}
+.supports{margin-top:.7rem}
+.supports summary{cursor:pointer;font-weight:700;color:var(--teal-dark);font-size:.86rem}
+.supports div{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.5rem}
+.supports span{background:rgba(21,133,122,.09);color:var(--teal-dark);border-radius:999px;padding:.25rem .7rem;font-size:.8rem;font-weight:600}
+.task-actions{margin-top:.95rem;display:flex;gap:.6rem;flex-wrap:wrap}
+.res-table{width:100%;border-collapse:collapse;margin-top:1rem;font-size:.9rem}
+.res-table th{background:rgba(21,133,122,.09);color:var(--teal-dark);text-align:left;padding:.5rem .6rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.04em}
+.res-table td{padding:.5rem .6rem;border-bottom:1px solid var(--line)}
+.res-table td.num{text-align:right;font-variant-numeric:tabular-nums;font-weight:700}
+.res-table tr.total td{background:rgba(21,133,122,.05);font-weight:800}
+.grade-line{display:flex;align-items:center;gap:.9rem;flex-wrap:wrap;margin-top:1.1rem}
+.grade-big{background:var(--teal);color:#fff;border-radius:14px;padding:.55rem 1.2rem;font-size:1.5rem;font-weight:800}
+.grade-note{color:var(--muted);font-size:.86rem;max-width:520px}
+.res-actions{margin-top:1.2rem;display:flex;gap:.7rem;flex-wrap:wrap}
+.audio-bar{background:var(--ok-bg);border:1px solid var(--line);border-radius:12px;padding:.7rem .95rem;margin-top:1.05rem}
+.ab-row{display:flex;align-items:center;gap:.55rem;flex-wrap:wrap}
+.ab-label{font-size:.82rem;color:var(--muted);font-weight:700;display:inline-flex;align-items:center;gap:.35rem}
+.ab-chk{display:inline-flex;align-items:center;gap:.35rem;font-size:.86rem;font-weight:700;color:var(--ink);cursor:pointer;user-select:none}
+.ab-chk input{accent-color:var(--teal);width:16px;height:16px}
+.audio-bar select{border:1px solid var(--line);border-radius:8px;padding:.32rem .45rem;font-family:inherit;font-size:.85rem;background:#fff;color:var(--ink);max-width:250px}
+.audio-bar select:focus{border-color:var(--teal);outline:none}
+.ab-status{font-size:.84rem;color:var(--teal-dark);font-weight:700;margin-top:.45rem;min-height:1.25em}
+.ab-status:empty{margin-top:0;min-height:0}
+.btn.mini{padding:.3rem .65rem;font-size:.8rem;border-radius:8px}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.lh .ltbtn{margin-left:auto;flex:none}
+.listencard.speaking{border-color:var(--accent);box-shadow:0 0 0 2px rgba(255,106,59,.22)}
+.listencard.speaking .lletter{background:var(--accent);animation:tpulse 1.1s ease-in-out infinite}
+@keyframes tpulse{0%,100%{transform:scale(1)}50%{transform:scale(1.14)}}
+.tts-unsupported{background:var(--bad-bg);border-left:3px solid var(--accent);border-radius:0 10px 10px 0;padding:.55rem .8rem;font-size:.86rem;color:var(--accent-dark);font-weight:600}
+footer{margin-top:2.6rem;color:#8A9794;font-size:.8rem;text-align:center;line-height:1.6}
+@media (max-width:760px){
+  .top nav{display:none}
+  .grid2{grid-template-columns:1fr}
+  .blitz-row{grid-template-columns:22px 1fr}
+  .blitz-row input{grid-column:2}
+  .blitz-row .fb{grid-column:2}
+  .optgrid{grid-template-columns:1fr}
+  .gram-grid{grid-template-columns:1fr 1fr}
+  .crit{grid-template-columns:1fr 80px}
+  h1{font-size:1.45rem}
+  .audio-bar select{max-width:100%}
+}
+@media print{
+  .top,.no-print,.timerbar,.task-actions,.badge,.chip,.teacher-only,.warnbox,.audio-bar,.ltbtn{display:none !important}
+  body{background:#fff}
+  .wrap{max-width:none;padding:0}
+  .task{border:1px solid #999;box-shadow:none;page-break-inside:avoid}
+  .reading{max-height:none;overflow:visible}
+  section#l2{page-break-before:always}
+  .blitz-row input,.gcell input{border:none;border-bottom:1px solid #444;border-radius:0}
+  label.opt{border:1px solid #bbb}
+  .optrow label.opt{border:none;padding:.15rem .3rem}
+}
+
+.qrow{display:flex;gap:.7rem;align-items:flex-start;margin:.45rem 0}
+.qrow .snum{margin-top:.4rem;flex:none;width:21px;height:21px;border-radius:50%;background:rgba(255,106,59,.14);color:var(--accent-dark);font-weight:800;font-size:.78rem;display:flex;align-items:center;justify-content:center}
+.qrow .optgrid{flex:1}
+.fclist{font-size:.8rem;color:var(--muted);margin-top:.45rem}
+</style>
+</head>
+<body>
+<header class="top no-print">
+  <div class="bar">
+    <span class="brand">ОГЭ английский · проверочная «Сентябрь»</span>
+    <nav>
+      <a href="#plan">План</a>
+      <a href="#l1">Урок 1</a>
+      <a href="#l2">Урок 2</a>
+      <a href="#results">Результаты</a>
+    </nav>
+    <span class="spacer"></span>
+    <span class="chip" id="chip-total">Баллы: 0 / 60</span>
+    <button class="btn ghost" id="tbtn" onclick="TestAPI.teacher()">Режим учителя: ВЫКЛ</button>
+  </div>
+</header>
+<div class="wrap">
+  <div class="hero">
+    <span class="kicker">Модуль 1 · уроки 1–8 · ОГЭ-2027</span>
+    <h1>Проверочная работа за сентябрь <em>в формате ОГЭ</em></h1>
+    <p class="sub">Формат ОГЭ · 2 занятия по 50 минут · 60 баллов. Проверяет материал уроков 1–8: Present Simple с нуля (формы, do/does, наречия частотности), Present Continuous и выбор формы, глаголы состояния и have got, лексику «Семья, друзья, внешность и характер» и «Школьная жизнь», чтение 13–19, аудирование 1–4 и монологи устного задания 3 по темам «Семья» и «Школа». Автопроверка, таймеры, режим учителя со скриптами и браузерная озвучка аудирования (play / pause / стоп, темп, режим ×2).</p>
+    <div class="stats">
+      <span class="stat"><b>2</b> занятия × 50 минут</span>
+      <span class="stat"><b>9</b> заданий</span>
+      <span class="stat"><b>60</b> первичных баллов</span>
+      <span class="stat"><b>5</b> разделов ОГЭ</span>
+      <span class="stat">шкала: <b>«5»</b> от 54</span>
+    </div>
+  </div>
+  <section id="plan">
+    <h2>План проверки <small>два занятия по 50 минут · проводится после урока 8</small></h2>
+    <p class="note-p">Проверочная дублирует и расширяет «Контроль месяца» (урок 8): вместо только словарного теста и грамматики проверяются все пять направлений сентября — лексика («Семья, друзья, внешность и характер» + «Школьная жизнь»), Present Simple и Present Continuous, чтение 13–19, аудирование 1–4 и монологи устного задания 3. Каждый тип задания — в точном формате ОГЭ-2027. Прошедшее время в проверочную не входит: оно начинается с урока 9.</p>
+    <div class="grid2">
+    <div class="lesson-card">
+      <h3>Урок 1 — Письменная часть: лексика + грамматика + чтение</h3>
+      <div class="lmax">Максимальный балл: 38 · тайминг рассчитан на 50 минут</div>
+      <table class="timing">
+        <tr><td>0–3′</td><td>Организация: инструкция, таймер 50:00, бланк ответов (страница)</td></tr>
+        <tr><td>6′</td><td>Задание 1. Блиц-перевод — 10 слов сентября (RU → EN)</td></tr>
+        <tr><td>8′</td><td>Задание 2. Лексика в контексте — текст с 8 пропусками, выбор из 3 вариантов</td></tr>
+        <tr><td>10′</td><td>Задание 3. Грамматика в формате ОГЭ 20–28 — 8 преобразований в связном тексте</td></tr>
+        <tr><td>12′</td><td>Задание 4. Чтение: текст A + 7 утверждений True / False / Not stated (формат 13–19)</td></tr>
+        <tr><td>8′</td><td>Задание 5. Чтение: текст B + 5 утверждений True / False / Not stated</td></tr>
+        <tr><td>3′</td><td>Подсчёт баллов, фиксация в трекере. Если не успели — задание 5 переносится в ДЗ</td></tr>
+      </table>
+    </div>
+    <div class="lesson-card">
+      <h3>Урок 2 — Аудирование + говорение</h3>
+      <div class="lmax">Максимальный балл: 22 · тайминг рассчитан на 50 минут</div>
+      <table class="timing">
+        <tr><td>0–3′</td><td>Организация; тексты звучат дважды: учитель читает вслух или включается озвучка браузером (кнопки ▶, пауза, режим ×2)</td></tr>
+        <tr><td>10′</td><td>Задание 6. Аудирование, блок 1 — формат ОГЭ 1–4: 4 текста × вопрос с 3 вариантами</td></tr>
+        <tr><td>10′</td><td>Задание 7. Аудирование, блок 2 — 4 текста (подлиннее), тот же формат</td></tr>
+        <tr><td>10′</td><td>Задание 8. Монолог №1 «Моя семья»: подготовка 1:30, говорение до 2:00, критерии К1–К3</td></tr>
+        <tr><td>12′</td><td>Задание 9. Монолог №2 «Моя школа»: тот же формат</td></tr>
+        <tr><td>5′</td><td>Разбор аудирования по ключам, баллы за монологи, трекер</td></tr>
+      </table>
+    </div>
+    </div>
+    <div class="howto">
+      <h3>Как проводить</h3>
+      <ol>
+        <li>Аудирование: тексты для чтения вслух — в «Режиме учителя» (кнопка в шапке). Читать дважды: первый раз целиком, второй раз — с паузами для ответов. Темп — спокойный, естественный; имена и цифры не выделять голосом. Самостоятельно тексты можно прослушать браузером: кнопка ▶ у каждого текста или «▶ Блок 1 / Блок 2» на панели озвучки; доступны пауза, темп и режим ×2 (текст прозвучит дважды с паузой для ответов — как на экзамене). Голос зависит от браузера; лучше всего — Chrome или Edge.</li>
+        <li>Монологи: строго по регламенту — 1,5 минуты подготовки (таймер в карточке), не более 2 минут говорения. Оценка — по критериям К1–К3 прямо в карточке; при К1 = 0 весь монолог оценивается в 0 баллов (правило ФИПИ).</li>
+        <li>Автопроверка: кнопка «Проверить» у каждого задания показывает ✓/✗ и баллы; итоги — в разделе «Результаты». Ответы сохраняются в браузере (localStorage) — можно закрыть и вернуться.</li>
+        <li>После проверки: оформить «работу над ошибками» по заданиям с наименьшим процентом и добавить в колоду все слова из текстов, которые ученик не знал (правило месяца: каждый текст = +20–30 слов).</li>
+      </ol>
+    </div>
+    <table class="scale-t">
+      <thead><tr><th>Отметка</th><th>Баллы (из 60)</th><th>Комментарий</th></tr></thead>
+      <tbody>
+        <tr><td><b>«5»</b></td><td>54–60</td><td>90–100% — материал сентября усвоен прочно</td></tr>
+        <tr><td><b>«4»</b></td><td>45–53</td><td>75–89% — хорошая база, есть точечные пробелы</td></tr>
+        <tr><td><b>«3»</b></td><td>33–44</td><td>55–74% — база есть, нужна доработка тем</td></tr>
+        <tr><td><b>«2»</b></td><td>0–32</td><td>менее 55% — повторить модуль до движения дальше</td></tr>
+      </tbody>
+    </table>
+    <div class="teacher-note teacher-only">
+      <h4>Методические комментарии (режим учителя)</h4>
+      <ul>
+        <li><b>Задание 1.</b> Слова из колод сентября (темы «Семья» и «Школа»). Меньше 6 из 10 — вернуть обе темы в ежедневный диктант на следующую неделю.</li>
+        <li><b>Задание 2.</b> Ловушки: get on well (предлог on), take after ≠ look like, lay the table (не put), strict but fair, only child (артикль an не нужен внутри предложения).</li>
+        <li><b>Задание 3.</b> Типичные ошибки модуля: забытый -s/-es в 3-м лице, Do вместо Does после he/she, лишнее -s после I (глаголы состояния know/like/want), am/is/are в Continuous, families — -y → -ies.</li>
+        <li><b>Задания 4–5.</b> Ловушки чтения: частотность (argue sometimes ≠ never argues — пункт 4 текста A), атрибуция («Anton says Physics is easy» ≠ «Anton получает пятёрки» — пункт 4 текста B), порядок родственников (eldest ≠ youngest).</li>
+        <li><b>Задания 6–7.</b> Между текстами держать паузу 10–15 секунд; второе прослушивание — с фиксацией ответов. Если блок 2 &gt; 50% ошибок — добавить в ДЗ ещё один вариант 1–4 на «Решу ОГЭ».</li>
+        <li><b>Задания 8–9.</b> Строго 1,5 мин подготовки и до 2 мин говорения. Слушать: все ли 4 аспекта раскрыты, есть ли вступление/заключение и связки. Записать на диктофон — разбор на следующем занятии. Фиксировать типовые ошибки К3 для плана октября.</li>
+      </ul>
+    </div>
+  </section>
+  <section id="l1">
+    <h2>Урок 1 · Лексика + грамматика + чтение <small>5 заданий · 38 баллов · письменная часть</small></h2>
+    <div class="timerbar no-print">
+      <button class="btn ghost" onclick="TestAPI.timer('lt1',3000)">Старт / пауза — 50:00</button>
+      <span class="tdisp" id="tdisp-lt1">50:00</span>
+      <button class="btn warn" onclick="TestAPI.timerReset('lt1',3000)">Сброс</button>
+      <span class="tnote">таймер занятия</span>
+    </div>
+  <article class="task" id="task-blitz">
+    <div class="task-head"><h3>Задание 1. Блиц-перевод</h3><span class="badge" id="score-blitz">– / 10</span></div>
+    <p class="instr">Напишите по-английски. По одному слову или выражению на строку. (Цифровой аналог еженедельного словарного диктанта: лексика сентября — «Семья, друзья, внешность и характер» и «Школьная жизнь».)</p>
+    <div class="blitz-grid">
+      <div class="blitz-row" id="blitz-row-0">
+        <span class="idx">1</span>
+        <span>родственник</span>
+        <input type="text" id="blitz-0" autocomplete="off" autocapitalize="none" spellcheck="false">
+        <span class="fb" id="blitz-fb-0"></span>
+      </div>
+      <div class="blitz-row" id="blitz-row-1">
+        <span class="idx">2</span>
+        <span>единственный ребёнок в семье</span>
+        <input type="text" id="blitz-1" autocomplete="off" autocapitalize="none" spellcheck="false">
+        <span class="fb" id="blitz-fb-1"></span>
+      </div>
+      <div class="blitz-row" id="blitz-row-2">
+        <span class="idx">3</span>
+        <span>надёжный (о человеке)</span>
+        <input type="text" id="blitz-2" autocomplete="off" autocapitalize="none" spellcheck="false">
+        <span class="fb" id="blitz-fb-2"></span>
+      </div>
+      <div class="blitz-row" id="blitz-row-3">
+        <span class="idx">4</span>
+        <span>щедрый</span>
+        <input type="text" id="blitz-3" autocomplete="off" autocapitalize="none" spellcheck="false">
+        <span class="fb" id="blitz-fb-3"></span>
+      </div>
+      <div class="blitz-row" id="blitz-row-4">
+        <span class="idx">5</span>
+        <span>пойти в кого-либо (по характеру)</span>
+        <input type="text" id="blitz-4" autocomplete="off" autocapitalize="none" spellcheck="false">
+        <span class="fb" id="blitz-fb-4"></span>
+      </div>
+      <div class="blitz-row" id="blitz-row-5">
+        <span class="idx">6</span>
+        <span>накрывать на стол</span>
+        <input type="text" id="blitz-5" autocomplete="off" autocapitalize="none" spellcheck="false">
+        <span class="fb" id="blitz-fb-5"></span>
+      </div>
+      <div class="blitz-row" id="blitz-row-6">
+        <span class="idx">7</span>
+        <span>пылесосить пол</span>
+        <input type="text" id="blitz-6" autocomplete="off" autocapitalize="none" spellcheck="false">
+        <span class="fb" id="blitz-fb-6"></span>
+      </div>
+      <div class="blitz-row" id="blitz-row-7">
+        <span class="idx">8</span>
+        <span>расписание уроков</span>
+        <input type="text" id="blitz-7" autocomplete="off" autocapitalize="none" spellcheck="false">
+        <span class="fb" id="blitz-fb-7"></span>
+      </div>
+      <div class="blitz-row" id="blitz-row-8">
+        <span class="idx">9</span>
+        <span>получать хорошие оценки</span>
+        <input type="text" id="blitz-8" autocomplete="off" autocapitalize="none" spellcheck="false">
+        <span class="fb" id="blitz-fb-8"></span>
+      </div>
+      <div class="blitz-row" id="blitz-row-9">
+        <span class="idx">10</span>
+        <span>принимать участие (в чём-либо)</span>
+        <input type="text" id="blitz-9" autocomplete="off" autocapitalize="none" spellcheck="false">
+        <span class="fb" id="blitz-fb-9"></span>
+      </div>
+    </div>
+    <div class="task-actions no-print"><button class="btn" onclick="TestAPI.check('blitz')">Проверить</button></div>
+  </article>
+  <article class="task" id="task-lex">
+    <div class="task-head"><h3>Задание 2. Лексика в контексте</h3><span class="badge" id="score-lex">– / 8</span></div>
+    <p class="instr">Прочитайте текст и в каждом пункте (1–8) выберите один правильный вариант из трёх.</p>
+    <div class="lextext">Hi! I'm Kate. I'm an (1) ___ child, but I'm not lonely: my two (2) ___ — Nick and Alex — live next door, and we get (3) ___ really well. People say I take (4) ___ my mum: we are both patient and reliable. At home everybody does the (5) ___, and I usually (6) ___ the table before dinner. My favourite subject at school is Biology — it is really (7) ___. Our Maths teacher is (8) ___ but fair: nobody dares to cheat in her tests.</div>
+      <div class="qrow">
+        <span class="snum">1</span>
+        <div class="optgrid"><label class="opt"><input type="radio" name="lex-0" value="0"><span class="lt">A</span><span>only</span></label><label class="opt"><input type="radio" name="lex-0" value="1"><span class="lt">B</span><span>alone</span></label><label class="opt"><input type="radio" name="lex-0" value="2"><span class="lt">C</span><span>single</span></label></div>
+      </div>
+      <div class="qrow">
+        <span class="snum">2</span>
+        <div class="optgrid"><label class="opt"><input type="radio" name="lex-1" value="0"><span class="lt">A</span><span>relatives</span></label><label class="opt"><input type="radio" name="lex-1" value="1"><span class="lt">B</span><span>neighbours</span></label><label class="opt"><input type="radio" name="lex-1" value="2"><span class="lt">C</span><span>classmates</span></label></div>
+      </div>
+      <div class="qrow">
+        <span class="snum">3</span>
+        <div class="optgrid"><label class="opt"><input type="radio" name="lex-2" value="0"><span class="lt">A</span><span>on</span></label><label class="opt"><input type="radio" name="lex-2" value="1"><span class="lt">B</span><span>up</span></label><label class="opt"><input type="radio" name="lex-2" value="2"><span class="lt">C</span><span>out</span></label></div>
+      </div>
+      <div class="qrow">
+        <span class="snum">4</span>
+        <div class="optgrid"><label class="opt"><input type="radio" name="lex-3" value="0"><span class="lt">A</span><span>after</span></label><label class="opt"><input type="radio" name="lex-3" value="1"><span class="lt">B</span><span>like</span></label><label class="opt"><input type="radio" name="lex-3" value="2"><span class="lt">C</span><span>up</span></label></div>
+      </div>
+      <div class="qrow">
+        <span class="snum">5</span>
+        <div class="optgrid"><label class="opt"><input type="radio" name="lex-4" value="0"><span class="lt">A</span><span>chores</span></label><label class="opt"><input type="radio" name="lex-4" value="1"><span class="lt">B</span><span>lessons</span></label><label class="opt"><input type="radio" name="lex-4" value="2"><span class="lt">C</span><span>homework</span></label></div>
+      </div>
+      <div class="qrow">
+        <span class="snum">6</span>
+        <div class="optgrid"><label class="opt"><input type="radio" name="lex-5" value="0"><span class="lt">A</span><span>lay</span></label><label class="opt"><input type="radio" name="lex-5" value="1"><span class="lt">B</span><span>do</span></label><label class="opt"><input type="radio" name="lex-5" value="2"><span class="lt">C</span><span>make</span></label></div>
+      </div>
+      <div class="qrow">
+        <span class="snum">7</span>
+        <div class="optgrid"><label class="opt"><input type="radio" name="lex-6" value="0"><span class="lt">A</span><span>exciting</span></label><label class="opt"><input type="radio" name="lex-6" value="1"><span class="lt">B</span><span>boring</span></label><label class="opt"><input type="radio" name="lex-6" value="2"><span class="lt">C</span><span>tiring</span></label></div>
+      </div>
+      <div class="qrow">
+        <span class="snum">8</span>
+        <div class="optgrid"><label class="opt"><input type="radio" name="lex-7" value="0"><span class="lt">A</span><span>strict</span></label><label class="opt"><input type="radio" name="lex-7" value="1"><span class="lt">B</span><span>stubborn</span></label><label class="opt"><input type="radio" name="lex-7" value="2"><span class="lt">C</span><span>generous</span></label></div>
+      </div>
+    <div class="task-actions no-print"><button class="btn" onclick="TestAPI.check('lex')">Проверить</button></div>
+  </article>
+  <article class="task" id="task-gram">
+    <div class="task-head"><h3>Задание 3. Грамматика (формат заданий 20–28)</h3><span class="badge" id="score-gram">– / 8</span></div>
+    <p class="instr">Преобразуйте слова, напечатанные ЗАГЛАВНЫМИ буквами, так, чтобы они грамматически соответствовали содержанию текста. В реальном ОГЭ это задания 20–28. Орфографическая ошибка обнуляет ответ.</p>
+    <div class="gramtext">My cousin Nick is my best friend. He (<span class="gn">1</span>) <span class="caps">STUDY</span> at a music school, so he (<span class="gn">2</span>) <span class="caps">GO</span> there three times a week. Nick (<span class="gn">3</span>) <span class="caps">HAVE</span> a twin brother, and the two of them are as different as day and night. (<span class="gn">4</span>) <span class="caps">DO</span> you often see your relatives? I (<span class="gn">5</span>) <span class="caps">KNOW</span> that mine live far away, but we chat online every evening. Right now my parents (<span class="gn">6</span>) <span class="caps">WATCH</span> an old family video, and my little sister (<span class="gn">7</span>) <span class="caps">PLAY</span> with our cat. My dad says that many Russian (<span class="gn">8</span>) <span class="caps">FAMILY</span> celebrate birthdays at home — and ours is no exception!</div>
+    <div class="gram-grid">
+      <div class="gcell" id="gram-cell-0">
+        <span class="gbase">1. STUDY</span>
+        <input type="text" id="gram-0" autocomplete="off" autocapitalize="none" spellcheck="false">
+        <span class="fb" id="gram-fb-0"></span>
+      </div>
+      <div class="gcell" id="gram-cell-1">
+        <span class="gbase">2. GO</span>
+        <input type="text" id="gram-1" autocomplete="off" autocapitalize="none" spellcheck="false">
+        <span class="fb" id="gram-fb-1"></span>
+      </div>
+      <div class="gcell" id="gram-cell-2">
+        <span class="gbase">3. HAVE</span>
+        <input type="text" id="gram-2" autocomplete="off" autocapitalize="none" spellcheck="false">
+        <span class="fb" id="gram-fb-2"></span>
+      </div>
+      <div class="gcell" id="gram-cell-3">
+        <span class="gbase">4. DO</span>
+        <input type="text" id="gram-3" autocomplete="off" autocapitalize="none" spellcheck="false">
+        <span class="fb" id="gram-fb-3"></span>
+      </div>
+      <div class="gcell" id="gram-cell-4">
+        <span class="gbase">5. KNOW</span>
+        <input type="text" id="gram-4" autocomplete="off" autocapitalize="none" spellcheck="false">
+        <span class="fb" id="gram-fb-4"></span>
+      </div>
+      <div class="gcell" id="gram-cell-5">
+        <span class="gbase">6. WATCH</span>
+        <input type="text" id="gram-5" autocomplete="off" autocapitalize="none" spellcheck="false">
+        <span class="fb" id="gram-fb-5"></span>
+      </div>
+      <div class="gcell" id="gram-cell-6">
+        <span class="gbase">7. PLAY</span>
+        <input type="text" id="gram-6" autocomplete="off" autocapitalize="none" spellcheck="false">
+        <span class="fb" id="gram-fb-6"></span>
+      </div>
+      <div class="gcell" id="gram-cell-7">
+        <span class="gbase">8. FAMILY</span>
+        <input type="text" id="gram-7" autocomplete="off" autocapitalize="none" spellcheck="false">
+        <span class="fb" id="gram-fb-7"></span>
+      </div>
+    </div>
+    <div class="task-actions no-print"><button class="btn" onclick="TestAPI.check('gram')">Проверить</button></div>
+  </article>
+  <article class="task" id="task-readA">
+    <div class="task-head"><h3>Задание 4. Чтение: текст A</h3><span class="badge" id="score-readA">– / 7</span></div>
+    <p class="instr">Прочитайте текст и определите, какие из приведённых утверждений 1–7 соответствуют содержанию текста (True), какие не соответствуют (False) и о чём в тексте не сказано (Not stated). В реальном ОГЭ это задания 13–19.</p>
+    <div class="reading">
+      <h4>Every family is different</h4>
+      <p>People often ask me what it is like to grow up in a big family. Well, I am the youngest of five children, and our house is never quiet! My eldest brother Max is twenty: he studies at university and still lives with us. He is reliable and patient, and he always helps me with my homework. My sister Anya and I are twins — people say we look like each other, but our characters are completely different. Anya is stubborn but generous, and I am more honest — sometimes too honest! My cousins visit us every weekend, and then I lay the table for twelve people: it is our family tradition. My dad cooks the best pancakes in the world, and my granny often says that family comes first. My classmates sometimes complain about their parents, but I never do: my mum and dad are strict but fair, and I know they love us. Of course, we argue about the chores sometimes — nobody wants to vacuum the floor! — but we always get on well. My teacher says that a happy family is not the family without problems, but the family that solves them together, and I believe she is right.</p>
+    </div>
+    <div class="stmts">
+      <div class="optrow">
+        <span class="snum">1</span>
+        <span class="stext">The girl has got more brothers than sisters.</span>
+        <div class="opts"><label class="opt"><input type="radio" name="readA-0" value="T"><span class="lt">1</span><span>True</span></label><label class="opt"><input type="radio" name="readA-0" value="F"><span class="lt">2</span><span>False</span></label><label class="opt"><input type="radio" name="readA-0" value="N"><span class="lt">3</span><span>Not stated</span></label></div>
+      </div>
+      <div class="optrow">
+        <span class="snum">2</span>
+        <span class="stext">Max is a university student.</span>
+        <div class="opts"><label class="opt"><input type="radio" name="readA-1" value="T"><span class="lt">1</span><span>True</span></label><label class="opt"><input type="radio" name="readA-1" value="F"><span class="lt">2</span><span>False</span></label><label class="opt"><input type="radio" name="readA-1" value="N"><span class="lt">3</span><span>Not stated</span></label></div>
+      </div>
+      <div class="optrow">
+        <span class="snum">3</span>
+        <span class="stext">The twins are similar in character.</span>
+        <div class="opts"><label class="opt"><input type="radio" name="readA-2" value="T"><span class="lt">1</span><span>True</span></label><label class="opt"><input type="radio" name="readA-2" value="F"><span class="lt">2</span><span>False</span></label><label class="opt"><input type="radio" name="readA-2" value="N"><span class="lt">3</span><span>Not stated</span></label></div>
+      </div>
+      <div class="optrow">
+        <span class="snum">4</span>
+        <span class="stext">The girl never argues with her family.</span>
+        <div class="opts"><label class="opt"><input type="radio" name="readA-3" value="T"><span class="lt">1</span><span>True</span></label><label class="opt"><input type="radio" name="readA-3" value="F"><span class="lt">2</span><span>False</span></label><label class="opt"><input type="radio" name="readA-3" value="N"><span class="lt">3</span><span>Not stated</span></label></div>
+      </div>
+      <div class="optrow">
+        <span class="snum">5</span>
+        <span class="stext">Anya is the eldest child in the family.</span>
+        <div class="opts"><label class="opt"><input type="radio" name="readA-4" value="T"><span class="lt">1</span><span>True</span></label><label class="opt"><input type="radio" name="readA-4" value="F"><span class="lt">2</span><span>False</span></label><label class="opt"><input type="radio" name="readA-4" value="N"><span class="lt">3</span><span>Not stated</span></label></div>
+      </div>
+      <div class="optrow">
+        <span class="snum">6</span>
+        <span class="stext">The girl lays the table when the cousins visit.</span>
+        <div class="opts"><label class="opt"><input type="radio" name="readA-5" value="T"><span class="lt">1</span><span>True</span></label><label class="opt"><input type="radio" name="readA-5" value="F"><span class="lt">2</span><span>False</span></label><label class="opt"><input type="radio" name="readA-5" value="N"><span class="lt">3</span><span>Not stated</span></label></div>
+      </div>
+      <div class="optrow">
+        <span class="snum">7</span>
+        <span class="stext">The girl's granny lives with her family.</span>
+        <div class="opts"><label class="opt"><input type="radio" name="readA-6" value="T"><span class="lt">1</span><span>True</span></label><label class="opt"><input type="radio" name="readA-6" value="F"><span class="lt">2</span><span>False</span></label><label class="opt"><input type="radio" name="readA-6" value="N"><span class="lt">3</span><span>Not stated</span></label></div>
+      </div>
+    </div>
+    <div class="task-actions no-print"><button class="btn" onclick="TestAPI.check('readA')">Проверить</button></div>
+  </article>
+  <article class="task" id="task-readB">
+    <div class="task-head"><h3>Задание 5. Чтение: текст B</h3><span class="badge" id="score-readB">– / 5</span></div>
+    <p class="instr">Прочитайте текст и определите, какие из утверждений 1–5 соответствуют содержанию текста (True), какие не соответствуют (False) и о чём в тексте не сказано (Not stated).</p>
+    <div class="reading">
+      <h4>My school week</h4>
+      <p>My school is small, but I really like it. This term my timetable is hard: six or seven lessons every day, and Maths comes first almost every morning. My best subject is Biology, and my worst is Physics. I study for Physics tests for hours, but my marks are still poor. My classmate Anton says that Physics is easy, but he often cheats in tests, so I don't trust his opinion. Our Physics teacher, Mrs Orlova — we call her «the storm» — is the strictest teacher in the school, but she is fair too. Children who break the rules stay after classes, but nobody argues with her: she explains everything so clearly that even I begin to understand Physics in her lessons. During breaks my friends and I usually discuss school events, and after lessons I go to the football club. We train twice a week, on Tuesdays and Thursdays. My parents think I spend too much time on football and too little on homework, but they are wrong: I do my homework every evening before dinner. At the weekend I rest — but only after I finish everything for Monday.</p>
+    </div>
+    <div class="stmts">
+      <div class="optrow">
+        <span class="snum">1</span>
+        <span class="stext">The pupil's school is in the centre of the town.</span>
+        <div class="opts"><label class="opt"><input type="radio" name="readB-0" value="T"><span class="lt">1</span><span>True</span></label><label class="opt"><input type="radio" name="readB-0" value="F"><span class="lt">2</span><span>False</span></label><label class="opt"><input type="radio" name="readB-0" value="N"><span class="lt">3</span><span>Not stated</span></label></div>
+      </div>
+      <div class="optrow">
+        <span class="snum">2</span>
+        <span class="stext">Maths is often the first lesson of the day.</span>
+        <div class="opts"><label class="opt"><input type="radio" name="readB-1" value="T"><span class="lt">1</span><span>True</span></label><label class="opt"><input type="radio" name="readB-1" value="F"><span class="lt">2</span><span>False</span></label><label class="opt"><input type="radio" name="readB-1" value="N"><span class="lt">3</span><span>Not stated</span></label></div>
+      </div>
+      <div class="optrow">
+        <span class="snum">3</span>
+        <span class="stext">The pupil's marks in Physics are good.</span>
+        <div class="opts"><label class="opt"><input type="radio" name="readB-2" value="T"><span class="lt">1</span><span>True</span></label><label class="opt"><input type="radio" name="readB-2" value="F"><span class="lt">2</span><span>False</span></label><label class="opt"><input type="radio" name="readB-2" value="N"><span class="lt">3</span><span>Not stated</span></label></div>
+      </div>
+      <div class="optrow">
+        <span class="snum">4</span>
+        <span class="stext">Anton often gets high marks for Physics.</span>
+        <div class="opts"><label class="opt"><input type="radio" name="readB-3" value="T"><span class="lt">1</span><span>True</span></label><label class="opt"><input type="radio" name="readB-3" value="F"><span class="lt">2</span><span>False</span></label><label class="opt"><input type="radio" name="readB-3" value="N"><span class="lt">3</span><span>Not stated</span></label></div>
+      </div>
+      <div class="optrow">
+        <span class="snum">5</span>
+        <span class="stext">Mrs Orlova is strict but unfair.</span>
+        <div class="opts"><label class="opt"><input type="radio" name="readB-4" value="T"><span class="lt">1</span><span>True</span></label><label class="opt"><input type="radio" name="readB-4" value="F"><span class="lt">2</span><span>False</span></label><label class="opt"><input type="radio" name="readB-4" value="N"><span class="lt">3</span><span>Not stated</span></label></div>
+      </div>
+    </div>
+    <div class="task-actions no-print"><button class="btn" onclick="TestAPI.check('readB')">Проверить</button></div>
+  </article>
+  </section>
+  <section id="l2">
+    <h2>Урок 2 · Аудирование + говорение <small>4 задания · 22 балла · устная часть с чтением вслух</small></h2>
+    <div class="timerbar no-print">
+      <button class="btn ghost" onclick="TestAPI.timer('lt2',3000)">Старт / пауза — 50:00</button>
+      <span class="tdisp" id="tdisp-lt2">50:00</span>
+      <button class="btn warn" onclick="TestAPI.timerReset('lt2',3000)">Сброс</button>
+      <span class="tnote">таймер занятия</span>
+    </div>
+    <div class="audio-bar no-print" id="abar">
+      <div class="ab-row" id="abar-controls">
+        <button class="btn" id="abar-play1" title="Прочитать все 4 текста блока 1 подряд">▶ Блок 1 (A–D)</button>
+        <button class="btn" id="abar-play2" title="Прочитать все 4 текста блока 2 подряд">▶ Блок 2 (A–D)</button>
+        <button class="btn ghost" id="abar-pause" disabled>⏸ Пауза</button>
+        <button class="btn ghost" id="abar-stop" disabled>⏹ Стоп</button>
+        <label class="ab-chk"><input type="checkbox" id="abar-x2"> ×2 как на ОГЭ</label>
+        <label class="ab-label">Темп
+          <select id="abar-rate">
+            <option value="0.8">0.8 — медленно</option>
+            <option value="0.9">0.9</option>
+            <option value="1" selected>1.0 — обычный</option>
+            <option value="1.15">1.15 — быстрее</option>
+          </select>
+        </label>
+        <label class="ab-label">Голос
+          <select id="abar-voice"></select>
+        </label>
+      </div>
+      <div class="ab-status" id="abar-status"></div>
+      <div class="tts-unsupported" id="abar-msg" style="display:none">В этом браузере озвучка недоступна — откройте страницу в Chrome, Edge или Safari, либо читайте тексты вслух (тексты — в «Режиме учителя»).</div>
+    </div>
+  <article class="task" id="task-listenA">
+    <div class="task-head"><h3>Задание 6. Аудирование, блок 1 (формат заданий 1–4)</h3><span class="badge" id="score-listenA">– / 4</span></div>
+    <p class="instr">Вы услышите четыре коротких текста, обозначенных буквами A, B, C, D. Каждый текст звучит дважды: учитель читает вслух — либо включите озвучку браузером (панель ниже и кнопки ▶ у текстов). К каждому тексту дан вопрос с тремя вариантами ответа. Сначала прочитайте вопросы и варианты.</p>
+    <div class="listencard" id="lc-listenA-0">
+      <div class="lh"><span class="lletter">A</span><span class="lq">What does the speaker say about her family?</span><button class="btn mini ghost ltbtn no-print" data-key="listenA-0" data-letter="A" id="ltbtn-listenA-0" title="Прослушать текст A (браузерная озвучка)">▶ A</button></div>
+      <div class="optgrid"><label class="opt"><input type="radio" name="listenA-0" value="0"><span class="lt">A</span><span>She is an only child.</span></label><label class="opt"><input type="radio" name="listenA-0" value="1"><span class="lt">B</span><span>She is the youngest of five children.</span></label><label class="opt"><input type="radio" name="listenA-0" value="2"><span class="lt">C</span><span>Her brother Max is the youngest.</span></label></div>
+      <details class="tape teacher-only">
+        <summary>Текст для чтения вслух (только учитель)</summary>
+        <p>There are five children in our family, and I am the youngest. My eldest brother Max helps me with my homework, and my twin sister Anya walks with me to school. Sometimes I want to be alone, but Mum says that in a big family you are never lonely. And she is right!</p>
+        <div class="tnote">Прочитать дважды: первый раз — без остановок, второй раз — с паузами 10–15 секунд для ответов. Темп спокойный, имена и числа не выделять голосом. Либо включите озвучку кнопкой ▶ рядом с вопросом.</div>
+      </details>
+    </div>
+    <div class="listencard" id="lc-listenA-1">
+      <div class="lh"><span class="lletter">B</span><span class="lq">What is the speaker's favourite subject?</span><button class="btn mini ghost ltbtn no-print" data-key="listenA-1" data-letter="B" id="ltbtn-listenA-1" title="Прослушать текст B (браузерная озвучка)">▶ B</button></div>
+      <div class="optgrid"><label class="opt"><input type="radio" name="listenA-1" value="0"><span class="lt">A</span><span>history</span></label><label class="opt"><input type="radio" name="listenA-1" value="1"><span class="lt">B</span><span>Maths</span></label><label class="opt"><input type="radio" name="listenA-1" value="2"><span class="lt">C</span><span>IT</span></label></div>
+      <details class="tape teacher-only">
+        <summary>Текст для чтения вслух (только учитель)</summary>
+        <p>I am keen on history. Our history teacher tells amazing stories about ancient times, and I never feel bored in his lessons. Maths is my hardest subject: I do my best, but my marks are not always good. My dream is to become a history teacher one day — just like my teacher.</p>
+        <div class="tnote">Прочитать дважды: первый раз — без остановок, второй раз — с паузами 10–15 секунд для ответов. Темп спокойный, имена и числа не выделять голосом. Либо включите озвучку кнопкой ▶ рядом с вопросом.</div>
+      </details>
+    </div>
+    <div class="listencard" id="lc-listenA-2">
+      <div class="lh"><span class="lletter">C</span><span class="lq">What are the speaker's duties at home?</span><button class="btn mini ghost ltbtn no-print" data-key="listenA-2" data-letter="C" id="ltbtn-listenA-2" title="Прослушать текст C (браузерная озвучка)">▶ C</button></div>
+      <div class="optgrid"><label class="opt"><input type="radio" name="listenA-2" value="0"><span class="lt">A</span><span>vacuuming the floor</span></label><label class="opt"><input type="radio" name="listenA-2" value="1"><span class="lt">B</span><span>laying the table</span></label><label class="opt"><input type="radio" name="listenA-2" value="2"><span class="lt">C</span><span>clearing the table</span></label></div>
+      <details class="tape teacher-only">
+        <summary>Текст для чтения вслух (только учитель)</summary>
+        <p>In our family everyone does the chores. I usually vacuum the floor, and my twin brother lays the table. My elder sister clears the table after dinner — she is the oldest, so she has the most duties. At the weekend we clean the whole flat together, and then Mum makes her wonderful pancakes.</p>
+        <div class="tnote">Прочитать дважды: первый раз — без остановок, второй раз — с паузами 10–15 секунд для ответов. Темп спокойный, имена и числа не выделять голосом. Либо включите озвучку кнопкой ▶ рядом с вопросом.</div>
+      </details>
+    </div>
+    <div class="listencard" id="lc-listenA-3">
+      <div class="lh"><span class="lletter">D</span><span class="lq">Why does the speaker value his friend?</span><button class="btn mini ghost ltbtn no-print" data-key="listenA-3" data-letter="D" id="ltbtn-listenA-3" title="Прослушать текст D (браузерная озвучка)">▶ D</button></div>
+      <div class="optgrid"><label class="opt"><input type="radio" name="listenA-3" value="0"><span class="lt">A</span><span>Anton never gets angry and always explains.</span></label><label class="opt"><input type="radio" name="listenA-3" value="1"><span class="lt">B</span><span>Anton is his twin brother.</span></label><label class="opt"><input type="radio" name="listenA-3" value="2"><span class="lt">C</span><span>Anton cheats in Maths tests.</span></label></div>
+      <details class="tape teacher-only">
+        <summary>Текст для чтения вслух (только учитель)</summary>
+        <p>People say my best friend and I look like brothers, but I think we just take after each other in character: we are both honest and reliable. Anton is more patient than I am: when I cannot solve a Maths problem, he explains it again and again and never gets angry. That is why we always get on well.</p>
+        <div class="tnote">Прочитать дважды: первый раз — без остановок, второй раз — с паузами 10–15 секунд для ответов. Темп спокойный, имена и числа не выделять голосом. Либо включите озвучку кнопкой ▶ рядом с вопросом.</div>
+      </details>
+    </div>
+    <div class="task-actions no-print"><button class="btn" onclick="TestAPI.check('listenA')">Проверить</button></div>
+  </article>
+  <article class="task" id="task-listenB">
+    <div class="task-head"><h3>Задание 7. Аудирование, блок 2 (формат заданий 1–4)</h3><span class="badge" id="score-listenB">– / 4</span></div>
+    <p class="instr">Ещё четыре текста — чуть длиннее. Каждый текст звучит дважды (учитель вслух или озвучка браузером). Прочитайте вопросы до прослушивания.</p>
+    <div class="listencard" id="lc-listenB-0">
+      <div class="lh"><span class="lletter">A</span><span class="lq">How often does the school choir practise?</span><button class="btn mini ghost ltbtn no-print" data-key="listenB-0" data-letter="A" id="ltbtn-listenB-0" title="Прослушать текст A (браузерная озвучка)">▶ A</button></div>
+      <div class="optgrid"><label class="opt"><input type="radio" name="listenB-0" value="0"><span class="lt">A</span><span>once a week</span></label><label class="opt"><input type="radio" name="listenB-0" value="1"><span class="lt">B</span><span>twice a week</span></label><label class="opt"><input type="radio" name="listenB-0" value="2"><span class="lt">C</span><span>every day</span></label></div>
+      <details class="tape teacher-only">
+        <summary>Текст для чтения вслух (только учитель)</summary>
+        <p>My school is famous for its events. Every term we have a concert or a competition, and I always take part in them. This term I sing in the school choir: we practise twice a week, after lessons. My mum thinks it is too much because I also play volleyball, but I cope with the pressure — homework first, then hobbies!</p>
+        <div class="tnote">Прочитать дважды: первый раз — без остановок, второй раз — с паузами 10–15 секунд для ответов. Темп спокойный, имена и числа не выделять голосом. Либо включите озвучку кнопкой ▶ рядом с вопросом.</div>
+      </details>
+    </div>
+    <div class="listencard" id="lc-listenB-1">
+      <div class="lh"><span class="lletter">B</span><span class="lq">Why does the speaker like the school uniform?</span><button class="btn mini ghost ltbtn no-print" data-key="listenB-1" data-letter="B" id="ltbtn-listenB-1" title="Прослушать текст B (браузерная озвучка)">▶ B</button></div>
+      <div class="optgrid"><label class="opt"><input type="radio" name="listenB-1" value="0"><span class="lt">A</span><span>It saves time in the morning.</span></label><label class="opt"><input type="radio" name="listenB-1" value="1"><span class="lt">B</span><span>It is expensive and fashionable.</span></label><label class="opt"><input type="radio" name="listenB-1" value="2"><span class="lt">C</span><span>Students show off expensive clothes.</span></label></div>
+      <details class="tape teacher-only">
+        <summary>Текст для чтения вслух (только учитель)</summary>
+        <p>In our school we wear a uniform: dark trousers, a white shirt and a jacket. My friend hates it and thinks that students should wear what they want. I don't agree. The uniform saves time in the morning — I never think about what to put on. Besides, we all look the same, and nobody shows off expensive clothes.</p>
+        <div class="tnote">Прочитать дважды: первый раз — без остановок, второй раз — с паузами 10–15 секунд для ответов. Темп спокойный, имена и числа не выделять голосом. Либо включите озвучку кнопкой ▶ рядом с вопросом.</div>
+      </details>
+    </div>
+    <div class="listencard" id="lc-listenB-2">
+      <div class="lh"><span class="lletter">C</span><span class="lq">What does the speaker say about Emma?</span><button class="btn mini ghost ltbtn no-print" data-key="listenB-2" data-letter="C" id="ltbtn-listenB-2" title="Прослушать текст C (браузерная озвучка)">▶ C</button></div>
+      <div class="optgrid"><label class="opt"><input type="radio" name="listenB-2" value="0"><span class="lt">A</span><span>She has got a big family.</span></label><label class="opt"><input type="radio" name="listenB-2" value="1"><span class="lt">B</span><span>She is an only child.</span></label><label class="opt"><input type="radio" name="listenB-2" value="2"><span class="lt">C</span><span>She is the speaker's cousin.</span></label></div>
+      <details class="tape teacher-only">
+        <summary>Текст для чтения вслух (только учитель)</summary>
+        <p>I have got a pen friend from Great Britain. Her name is Emma, and we write letters to each other in English twice a month. It helps me with the language more than any exercise! Emma is an only child, and she says her house is too quiet. I send her photos of my big noisy family, and she asks me a hundred questions about my cousins.</p>
+        <div class="tnote">Прочитать дважды: первый раз — без остановок, второй раз — с паузами 10–15 секунд для ответов. Темп спокойный, имена и числа не выделять голосом. Либо включите озвучку кнопкой ▶ рядом с вопросом.</div>
+      </details>
+    </div>
+    <div class="listencard" id="lc-listenB-3">
+      <div class="lh"><span class="lletter">D</span><span class="lq">What do the brother and sister agree about?</span><button class="btn mini ghost ltbtn no-print" data-key="listenB-3" data-letter="D" id="ltbtn-listenB-3" title="Прослушать текст D (браузерная озвучка)">▶ D</button></div>
+      <div class="optgrid"><label class="opt"><input type="radio" name="listenB-3" value="0"><span class="lt">A</span><span>Housework is boring, so they do it together.</span></label><label class="opt"><input type="radio" name="listenB-3" value="1"><span class="lt">B</span><span>They are complete opposites.</span></label><label class="opt"><input type="radio" name="listenB-3" value="2"><span class="lt">C</span><span>They never watch films.</span></label></div>
+      <details class="tape teacher-only">
+        <summary>Текст для чтения вслух (только учитель)</summary>
+        <p>My brother and I are complete opposites. I am stubborn and impatient, and he is calm and generous. But there is one thing we agree about: housework is boring! So we do the chores together — I cook, and he vacuums the floor — and we finish twice as fast. Then we have time for films and board games with our cousins.</p>
+        <div class="tnote">Прочитать дважды: первый раз — без остановок, второй раз — с паузами 10–15 секунд для ответов. Темп спокойный, имена и числа не выделять голосом. Либо включите озвучку кнопкой ▶ рядом с вопросом.</div>
+      </details>
+    </div>
+    <div class="task-actions no-print"><button class="btn" onclick="TestAPI.check('listenB')">Проверить</button></div>
+  </article>
+  <article class="task" id="task-monoA">
+    <div class="task-head"><h3>Задание 8. Монолог №1 — «Моя семья»</h3><span class="badge" id="score-monoA">– / 7</span></div>
+    <p class="instr">Представь, что ты готовишь проект по теме «Моя семья». Расскажи о своей семье по плану:</p>
+    <ol class="mono-plan">
+      <li>who your family consists of and how many people you are;</li>
+      <li>what you and your relatives like to do together;</li>
+      <li>what qualities you value in your family members;</li>
+      <li>whether you would like to have a big family in the future, and why.</li>
+    </ol>
+    <div class="mono-note">10–12 фраз · подготовка 1,5 мин · говорение до 2 мин</div>
+    <div class="timerbar no-print">
+      <button class="btn ghost" onclick="TestAPI.timer('monoA-prep',90)">Подготовка 1:30</button>
+      <span class="tdisp" id="tdisp-monoA-prep">1:30</span>
+      <button class="btn ghost" onclick="TestAPI.timer('monoA-speak',120)">Говорение 2:00</button>
+      <span class="tdisp" id="tdisp-monoA-speak">2:00</span>
+      <span class="tnote">таймеры монолога</span>
+    </div>
+    <div class="crit">
+        <div class="cname">К1. Решение коммуникативной задачи</div>
+        <select id="monoA-K1" aria-label="К1. Решение коммуникативной задачи"><option value="">—</option><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select>
+        <div class="chelp">3 — все четыре аспекта раскрыты полно и развёрнуто, 10–12 фраз; 2 — один аспект раскрыт не полностью, 8–9 фраз; 1 — 6–7 фраз; 0 — три аспекта не раскрыты. При 0 по К1 весь монолог — 0 баллов.</div>
+        <div class="cname">К2. Организация высказывания</div>
+        <select id="monoA-K2" aria-label="К2. Организация высказывания"><option value="">—</option><option value="0">0</option><option value="1">1</option></select>
+        <div class="chelp">1 — есть вступление и заключение, высказывание логично, есть связки-переходы (first, also, however, to sum up); 0 — нет вступления/заключения или речь распадается на отдельные фразы.</div>
+        <div class="cname">К3. Языковое оформление</div>
+        <select id="monoA-K3" aria-label="К3. Языковое оформление"><option value="">—</option><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select>
+        <div class="chelp">3 — не более 4 негрубых лексико-грамматических и не более 3 фонетических ошибок; 2 — характеристики соседней зоны превышены незначительно; 1 — ошибки заметны, но не мешают пониманию; 0 — ошибки мешают пониманию.</div>
+    </div>
+    <div class="warnbox" id="monoA-warn"></div>
+    <details class="supports">
+      <summary>Фразы-опоры для связного ответа</summary>
+      <div><span>To start with… / First of all…</span><span>In my opinion… / I believe…</span><span>As for me… / And what about me — …</span><span>Besides… / Also… / Moreover…</span><span>On the one hand…, on the other hand…</span><span>To sum up… / All in all…</span></div>
+    </details>
+    <div class="task-actions no-print"><button class="btn" onclick="TestAPI.check('monoA')">Выставить баллы</button></div>
+  </article>
+  <article class="task" id="task-monoB">
+    <div class="task-head"><h3>Задание 9. Монолог №2 — «Моя школа»</h3><span class="badge" id="score-monoB">– / 7</span></div>
+    <p class="instr">Представь, что ты готовишь проект по теме «Моя школа». Расскажи:</p>
+    <ol class="mono-plan">
+      <li>what school you study at and what your timetable is like;</li>
+      <li>what your favourite subject is and why you like it;</li>
+      <li>what your teachers and classmates are like;</li>
+      <li>what school events you have and whether you take part in them.</li>
+    </ol>
+    <div class="mono-note">10–12 фраз · подготовка 1,5 мин · говорение до 2 мин</div>
+    <div class="timerbar no-print">
+      <button class="btn ghost" onclick="TestAPI.timer('monoB-prep',90)">Подготовка 1:30</button>
+      <span class="tdisp" id="tdisp-monoB-prep">1:30</span>
+      <button class="btn ghost" onclick="TestAPI.timer('monoB-speak',120)">Говорение 2:00</button>
+      <span class="tdisp" id="tdisp-monoB-speak">2:00</span>
+      <span class="tnote">таймеры монолога</span>
+    </div>
+    <div class="crit">
+        <div class="cname">К1. Решение коммуникативной задачи</div>
+        <select id="monoB-K1" aria-label="К1. Решение коммуникативной задачи"><option value="">—</option><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select>
+        <div class="chelp">3 — все четыре аспекта раскрыты полно и развёрнуто, 10–12 фраз; 2 — один аспект раскрыт не полностью, 8–9 фраз; 1 — 6–7 фраз; 0 — три аспекта не раскрыты. При 0 по К1 весь монолог — 0 баллов.</div>
+        <div class="cname">К2. Организация высказывания</div>
+        <select id="monoB-K2" aria-label="К2. Организация высказывания"><option value="">—</option><option value="0">0</option><option value="1">1</option></select>
+        <div class="chelp">1 — есть вступление и заключение, высказывание логично, есть связки-переходы (first, also, however, to sum up); 0 — нет вступления/заключения или речь распадается на отдельные фразы.</div>
+        <div class="cname">К3. Языковое оформление</div>
+        <select id="monoB-K3" aria-label="К3. Языковое оформление"><option value="">—</option><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select>
+        <div class="chelp">3 — не более 4 негрубых лексико-грамматических и не более 3 фонетических ошибок; 2 — характеристики соседней зоны превышены незначительно; 1 — ошибки заметны, но не мешают пониманию; 0 — ошибки мешают пониманию.</div>
+    </div>
+    <div class="warnbox" id="monoB-warn"></div>
+    <details class="supports">
+      <summary>Фразы-опоры для связного ответа</summary>
+      <div><span>To start with… / First of all…</span><span>In my opinion… / I believe…</span><span>As for me… / And what about me — …</span><span>Besides… / Also… / Moreover…</span><span>On the one hand…, on the other hand…</span><span>To sum up… / All in all…</span></div>
+    </details>
+    <div class="task-actions no-print"><button class="btn" onclick="TestAPI.check('monoB')">Выставить баллы</button></div>
+  </article>
+  </section>
+  <section id="results">
+    <h2>Результаты <small>баллы по разделам · оценка · прогноз на ОГЭ</small></h2>
+    <table class="res-table">
+      <thead><tr><th>Раздел</th><th style="text-align:right">Баллы</th><th style="text-align:right">Освоение</th></tr></thead>
+      <tbody id="res-rows"></tbody>
+    </table>
+    <table class="res-table">
+      <thead><tr><th>Прогноз на ОГЭ (ориентировочно)</th><th style="text-align:right">Проверочная</th><th style="text-align:right">ОГЭ (первичные)</th></tr></thead>
+      <tbody id="fc-rows"></tbody>
+    </table>
+    <p class="fclist">Прогноз — линейная проекция процента освоения на максимум раздела ОГЭ. Материал проверяемого месяца покрывает не весь экзамен, поэтому цифра показывает динамику, а не гарантированный балл.</p>
+    <div class="grade-line">
+      <span class="grade-big" id="grade-big">«—»</span>
+      <span class="grade-note" id="grade-note">Проверьте задания, чтобы получить оценку.</span>
+    </div>
+    <div class="res-actions no-print">
+      <button class="btn" onclick="TestAPI.checkAll()">Проверить всё</button>
+      <button class="btn ghost" onclick="window.print()">Печать / PDF</button>
+      <button class="btn warn" onclick="TestAPI.resetAll()">Сбросить все результаты</button>
+    </div>
+  </section>
+  <footer>Проверочная работа по материалам уроков 1–8 плана подготовки к ОГЭ (A2 → B1) · формат заданий — спецификация ФИПИ, ОГЭ-2027<br>критерии монолога — К1–К3 устного задания 3 · шкала проверочной: «5» ≥ 54 · «4» 45–53 · «3» 33–44 · «2» &lt; 33</footer>
+</div>
+<script>
+var TEST_DATA = {"storageKey":"oge-test-sep-v1","ttsKey":"oge-test-sep-tts-v1","blitz":{"id":"blitz","max":10,"minutes":6,"title":"Задание 1. Блиц-перевод","instr":"Напишите по-английски. По одному слову или выражению на строку. (Цифровой аналог еженедельного словарного диктанта: лексика сентября — «Семья, друзья, внешность и характер» и «Школьная жизнь».)","items":[{"ru":"родственник","accept":["relative","a relative","relatives"]},{"ru":"единственный ребёнок в семье","accept":["only child","an only child"]},{"ru":"надёжный (о человеке)","accept":["reliable"]},{"ru":"щедрый","accept":["generous"]},{"ru":"пойти в кого-либо (по характеру)","accept":["take after","take after sb","take after somebody"]},{"ru":"накрывать на стол","accept":["lay the table","lay a table"]},{"ru":"пылесосить пол","accept":["vacuum the floor","hoover the floor","vacuum my floor"]},{"ru":"расписание уроков","accept":["timetable","schedule"]},{"ru":"получать хорошие оценки","accept":["get good marks","get good grades","get high marks"]},{"ru":"принимать участие (в чём-либо)","accept":["take part in","participate in"]}]},"lex":{"id":"lex","max":8,"minutes":8,"title":"Задание 2. Лексика в контексте","instr":"Прочитайте текст и в каждом пункте (1–8) выберите один правильный вариант из трёх.","text":"Hi! I'm Kate. I'm an (1) ___ child, but I'm not lonely: my two (2) ___ — Nick and Alex — live next door, and we get (3) ___ really well. People say I take (4) ___ my mum: we are both patient and reliable. At home everybody does the (5) ___, and I usually (6) ___ the table before dinner. My favourite subject at school is Biology — it is really (7) ___. Our Maths teacher is (8) ___ but fair: nobody dares to cheat in her tests.","items":[{"options":["only","alone","single"],"correct":0},{"options":["relatives","neighbours","classmates"],"correct":0},{"options":["on","up","out"],"correct":0},{"options":["after","like","up"],"correct":0},{"options":["chores","lessons","homework"],"correct":0},{"options":["lay","do","make"],"correct":0},{"options":["exciting","boring","tiring"],"correct":0},{"options":["strict","stubborn","generous"],"correct":0}]},"gram":{"id":"gram","max":8,"minutes":10,"title":"Задание 3. Грамматика (формат заданий 20–28)","instr":"Преобразуйте слова, напечатанные ЗАГЛАВНЫМИ буквами, так, чтобы они грамматически соответствовали содержанию текста. В реальном ОГЭ это задания 20–28. Орфографическая ошибка обнуляет ответ.","parts":[{"t":"My cousin Nick is my best friend. He "},{"gap":1},{"t":" at a music school, so he "},{"gap":2},{"t":" there three times a week. Nick "},{"gap":3},{"t":" a twin brother, and the two of them are as different as day and night. "},{"gap":4},{"t":" you often see your relatives? I "},{"gap":5},{"t":" that mine live far away, but we chat online every evening. Right now my parents "},{"gap":6},{"t":" an old family video, and my little sister "},{"gap":7},{"t":" with our cat. My dad says that many Russian "},{"gap":8},{"t":" celebrate birthdays at home — and ours is no exception!"}],"items":[{"base":"STUDY","accept":["studies"],"tip":"3-е лицо ед. ч.: согласная + y → -ies"},{"base":"GO","accept":["goes"],"tip":"3-е лицо, go → goes (-es); маркер частотности three times a week"},{"base":"HAVE","accept":["has","has got"],"tip":"have → has в 3-м лице ед. ч. (или has got)"},{"base":"DO","accept":["do"],"tip":"вопрос к you в Present Simple — вспомогательный Do (не Does: подлежащее you)"},{"base":"KNOW","accept":["know"],"tip":"после I глагол в начальной форме — никакого -s (глагол состояния)"},{"base":"WATCH","accept":["are watching"],"tip":"Right now — Present Continuous: are + V-ing"},{"base":"PLAY","accept":["is playing"],"tip":"Present Continuous в 3-м лице ед. ч.: is + V-ing"},{"base":"FAMILY","accept":["families"],"tip":"мн. число существительного: согласная + y → -ies"}]},"readA":{"id":"readA","max":7,"minutes":12,"title":"Задание 4. Чтение: текст A","instr":"Прочитайте текст и определите, какие из приведённых утверждений 1–7 соответствуют содержанию текста (True), какие не соответствуют (False) и о чём в тексте не сказано (Not stated). В реальном ОГЭ это задания 13–19.","heading":"Every family is different","text":"People often ask me what it is like to grow up in a big family. Well, I am the youngest of five children, and our house is never quiet! My eldest brother Max is twenty: he studies at university and still lives with us. He is reliable and patient, and he always helps me with my homework. My sister Anya and I are twins — people say we look like each other, but our characters are completely different. Anya is stubborn but generous, and I am more honest — sometimes too honest! My cousins visit us every weekend, and then I lay the table for twelve people: it is our family tradition. My dad cooks the best pancakes in the world, and my granny often says that family comes first. My classmates sometimes complain about their parents, but I never do: my mum and dad are strict but fair, and I know they love us. Of course, we argue about the chores sometimes — nobody wants to vacuum the floor! — but we always get on well. My teacher says that a happy family is not the family without problems, but the family that solves them together, and I believe she is right.","items":[{"s":"The girl has got more brothers than sisters.","a":"N"},{"s":"Max is a university student.","a":"T"},{"s":"The twins are similar in character.","a":"F"},{"s":"The girl never argues with her family.","a":"F"},{"s":"Anya is the eldest child in the family.","a":"F"},{"s":"The girl lays the table when the cousins visit.","a":"T"},{"s":"The girl's granny lives with her family.","a":"N"}]},"readB":{"id":"readB","max":5,"minutes":8,"title":"Задание 5. Чтение: текст B","instr":"Прочитайте текст и определите, какие из утверждений 1–5 соответствуют содержанию текста (True), какие не соответствуют (False) и о чём в тексте не сказано (Not stated).","heading":"My school week","text":"My school is small, but I really like it. This term my timetable is hard: six or seven lessons every day, and Maths comes first almost every morning. My best subject is Biology, and my worst is Physics. I study for Physics tests for hours, but my marks are still poor. My classmate Anton says that Physics is easy, but he often cheats in tests, so I don't trust his opinion. Our Physics teacher, Mrs Orlova — we call her «the storm» — is the strictest teacher in the school, but she is fair too. Children who break the rules stay after classes, but nobody argues with her: she explains everything so clearly that even I begin to understand Physics in her lessons. During breaks my friends and I usually discuss school events, and after lessons I go to the football club. We train twice a week, on Tuesdays and Thursdays. My parents think I spend too much time on football and too little on homework, but they are wrong: I do my homework every evening before dinner. At the weekend I rest — but only after I finish everything for Monday.","items":[{"s":"The pupil's school is in the centre of the town.","a":"N"},{"s":"Maths is often the first lesson of the day.","a":"T"},{"s":"The pupil's marks in Physics are good.","a":"F"},{"s":"Anton often gets high marks for Physics.","a":"N"},{"s":"Mrs Orlova is strict but unfair.","a":"F"}]},"listenA":{"id":"listenA","max":4,"minutes":10,"title":"Задание 6. Аудирование, блок 1 (формат заданий 1–4)","instr":"Вы услышите четыре коротких текста, обозначенных буквами A, B, C, D. Каждый текст звучит дважды: учитель читает вслух — либо включите озвучку браузером (панель ниже и кнопки ▶ у текстов). К каждому тексту дан вопрос с тремя вариантами ответа. Сначала прочитайте вопросы и варианты.","items":[{"letter":"A","script":"There are five children in our family, and I am the youngest. My eldest brother Max helps me with my homework, and my twin sister Anya walks with me to school. Sometimes I want to be alone, but Mum says that in a big family you are never lonely. And she is right!","q":"What does the speaker say about her family?","options":["She is an only child.","She is the youngest of five children.","Her brother Max is the youngest."],"correct":1},{"letter":"B","script":"I am keen on history. Our history teacher tells amazing stories about ancient times, and I never feel bored in his lessons. Maths is my hardest subject: I do my best, but my marks are not always good. My dream is to become a history teacher one day — just like my teacher.","q":"What is the speaker's favourite subject?","options":["history","Maths","IT"],"correct":0},{"letter":"C","script":"In our family everyone does the chores. I usually vacuum the floor, and my twin brother lays the table. My elder sister clears the table after dinner — she is the oldest, so she has the most duties. At the weekend we clean the whole flat together, and then Mum makes her wonderful pancakes.","q":"What are the speaker's duties at home?","options":["vacuuming the floor","laying the table","clearing the table"],"correct":0},{"letter":"D","script":"People say my best friend and I look like brothers, but I think we just take after each other in character: we are both honest and reliable. Anton is more patient than I am: when I cannot solve a Maths problem, he explains it again and again and never gets angry. That is why we always get on well.","q":"Why does the speaker value his friend?","options":["Anton never gets angry and always explains.","Anton is his twin brother.","Anton cheats in Maths tests."],"correct":0}]},"listenB":{"id":"listenB","max":4,"minutes":10,"title":"Задание 7. Аудирование, блок 2 (формат заданий 1–4)","instr":"Ещё четыре текста — чуть длиннее. Каждый текст звучит дважды (учитель вслух или озвучка браузером). Прочитайте вопросы до прослушивания.","items":[{"letter":"A","script":"My school is famous for its events. Every term we have a concert or a competition, and I always take part in them. This term I sing in the school choir: we practise twice a week, after lessons. My mum thinks it is too much because I also play volleyball, but I cope with the pressure — homework first, then hobbies!","q":"How often does the school choir practise?","options":["once a week","twice a week","every day"],"correct":1},{"letter":"B","script":"In our school we wear a uniform: dark trousers, a white shirt and a jacket. My friend hates it and thinks that students should wear what they want. I don't agree. The uniform saves time in the morning — I never think about what to put on. Besides, we all look the same, and nobody shows off expensive clothes.","q":"Why does the speaker like the school uniform?","options":["It saves time in the morning.","It is expensive and fashionable.","Students show off expensive clothes."],"correct":0},{"letter":"C","script":"I have got a pen friend from Great Britain. Her name is Emma, and we write letters to each other in English twice a month. It helps me with the language more than any exercise! Emma is an only child, and she says her house is too quiet. I send her photos of my big noisy family, and she asks me a hundred questions about my cousins.","q":"What does the speaker say about Emma?","options":["She has got a big family.","She is an only child.","She is the speaker's cousin."],"correct":1},{"letter":"D","script":"My brother and I are complete opposites. I am stubborn and impatient, and he is calm and generous. But there is one thing we agree about: housework is boring! So we do the chores together — I cook, and he vacuums the floor — and we finish twice as fast. Then we have time for films and board games with our cousins.","q":"What do the brother and sister agree about?","options":["Housework is boring, so they do it together.","They are complete opposites.","They never watch films."],"correct":0}]}};
+
+(function(){
+  'use strict';
+  var DATA = window.TEST_DATA;
+  var KEY = (DATA && DATA.storageKey) || 'oge-test-v1';
+  var MAX_TOTAL = 60;
+  var TASKS = {
+    blitz:{max:10,kind:'blitz'}, lex:{max:8,kind:'choice'}, gram:{max:8,kind:'text'},
+    readA:{max:7,kind:'tf'}, readB:{max:5,kind:'tf'},
+    listenA:{max:4,kind:'choice'}, listenB:{max:4,kind:'choice'},
+    monoA:{max:7,kind:'mono'}, monoB:{max:7,kind:'mono'}
+  };
+  var S = loadState();
+  S.answers = S.answers || {};
+  S.scores = S.scores || {};
+
+  function loadState(){ try{ return JSON.parse(localStorage.getItem(KEY)) || {}; }catch(e){ return {}; } }
+  function persist(){ try{ localStorage.setItem(KEY, JSON.stringify(S)); }catch(e){} }
+  function el(id){ return document.getElementById(id); }
+  function norm(v){
+    var s = (v===null||v===undefined?'':String(v)).toLowerCase();
+    s = s.replace(/[\u2019\u2018\u0060\u00B4]/g,"'");
+    s = s.replace(/[.,!?;:"]+/g,' ');
+    s = s.replace(/\s+/g,' ').trim();
+    if (s.indexOf('to ')===0) s = s.slice(3);
+    return s;
+  }
+  function radioVal(name){
+    var r = document.querySelector('input[name="'+name+'"]:checked');
+    return r ? r.value : null;
+  }
+  function setBadge(id, score, max){
+    var b = el('score-'+id); if(!b) return;
+    b.textContent = (score===null?'–':score) + ' / ' + max;
+    b.classList.toggle('done', score!==null && score===max);
+  }
+
+  function checkBlitz(){
+    var items = DATA.blitz.items, score = 0;
+    for (var i=0;i<items.length;i++){
+      var row = el('blitz-row-'+i), fb = el('blitz-fb-'+i), inp = el('blitz-'+i);
+      var val = norm(inp.value); var ok = false;
+      for (var j=0;j<items[i].accept.length;j++){ if (val && val===norm(items[i].accept[j])){ ok=true; break; } }
+      if (ok) score++;
+      row.classList.remove('ok','bad'); row.classList.add(ok?'ok':'bad');
+      fb.textContent = ok ? '✓' : '✗ правильно: ' + items[i].accept[0];
+    }
+    finish('blitz', score);
+  }
+  function checkGram(){
+    var items = DATA.gram.items, score = 0;
+    for (var i=0;i<items.length;i++){
+      var cell = el('gram-cell-'+i), fb = el('gram-fb-'+i), inp = el('gram-'+i);
+      var val = norm(inp.value); var ok = false;
+      S.answers['gram-'+i] = inp.value;
+      for (var j=0;j<items[i].accept.length;j++){ if (val && val===norm(items[i].accept[j])){ ok=true; break; } }
+      if (ok) score++;
+      cell.classList.remove('g-ok','g-bad'); cell.classList.add(ok?'g-ok':'g-bad');
+      fb.textContent = ok ? '✓ ' + items[i].accept[0] : '✗ ' + items[i].accept[0] + ' · ' + items[i].tip;
+    }
+    finish('gram', score);
+  }
+  function checkChoice(id){
+    var items = DATA[id].items, score = 0;
+    for (var i=0;i<items.length;i++){
+      var name = id+'-'+i;
+      var key = (items[i].correct!==undefined) ? String(items[i].correct) : items[i].a;
+      var val = radioVal(name);
+      S.answers[name] = val;
+      var labels = document.querySelectorAll('input[name="'+name+'"]');
+      for (var k=0;k<labels.length;k++){ labels[k].closest('label').classList.remove('ok','bad','reveal'); }
+      if (val===null) continue;
+      var ok = (val===key);
+      if (ok) score++;
+      var picked = document.querySelector('input[name="'+name+'"][value="'+val+'"]');
+      if (picked) picked.closest('label').classList.add(ok?'ok':'bad');
+      if (!ok){
+        var right = document.querySelector('input[name="'+name+'"][value="'+key+'"]');
+        if (right) right.closest('label').classList.add('reveal');
+      }
+    }
+    finish(id, score);
+  }
+  function checkMono(id){
+    var s1 = el(id+'-K1'), s2 = el(id+'-K2'), s3 = el(id+'-K3');
+    S.answers[id+'-K1'] = s1.value; S.answers[id+'-K2'] = s2.value; S.answers[id+'-K3'] = s3.value;
+    var warn = el(id+'-warn');
+    if (s1.value==='' || s2.value==='' || s3.value===''){
+      if (warn){ warn.style.display='block'; warn.textContent='Выставьте все три критерия (К1, К2, К3) — иначе балл не начисляется.'; }
+      finish(id, null);
+      return;
+    }
+    var k1 = parseInt(s1.value,10), k2 = parseInt(s2.value,10), k3 = parseInt(s3.value,10);
+    var total = k1 + k2 + k3;
+    if (k1===0){ total = 0; if (warn){ warn.style.display='block'; warn.textContent='К1 = 0 (коммуникативная задача не решена) — по правилам ФИПИ весь монолог оценивается в 0 баллов.'; } }
+    else if (warn){ warn.style.display='none'; }
+    finish(id, total);
+  }
+  function finish(id, score){
+    S.scores[id] = score;
+    setBadge(id, score, TASKS[id].max);
+    persist();
+    updateTotals();
+  }
+  function runCheck(id){
+    var kind = TASKS[id].kind;
+    if (kind==='blitz') checkBlitz();
+    else if (kind==='text') checkGram();
+    else if (kind==='mono') checkMono(id);
+    else checkChoice(id);
+  }
+
+  function sumOf(ids){ var s=0; for (var i=0;i<ids.length;i++){ var v=S.scores[ids[i]]; if (typeof v==='number') s+=v; } return s; }
+  function scoredMax(ids){ var s=0; for (var i=0;i<ids.length;i++){ var v=S.scores[ids[i]]; if (typeof v==='number') s+=TASKS[ids[i]].max; } return s; }
+
+  var SECTIONS = [
+    ['Лексика', ['blitz','lex']],
+    ['Грамматика (формат 20–28)', ['gram']],
+    ['Чтение (формат 13–19)', ['readA','readB']],
+    ['Аудирование (формат 1–4)', ['listenA','listenB']],
+    ['Говорение (монологи, К1–К3)', ['monoA','monoB']]
+  ];
+  var FORECAST = [
+    ['Грамматика и лексика', ['blitz','lex','gram'], 15],
+    ['Чтение', ['readA','readB'], 13],
+    ['Аудирование', ['listenA','listenB'], 15],
+    ['Говорение', ['monoA','monoB'], 15]
+  ];
+
+  function updateTotals(){
+    var total = sumOf(Object.keys(TASKS));
+    var doneMax = 0, checkedAll = true;
+    for (var t in TASKS){ doneMax += scoredMax([t]); if (typeof S.scores[t]!=='number') checkedAll = false; }
+    var chip = el('chip-total'); if (chip) chip.textContent = 'Баллы: ' + total + ' / ' + MAX_TOTAL;
+    var tb = el('res-rows'); if (!tb) return;
+    var html = '';
+    for (var i=0;i<SECTIONS.length;i++){
+      var nm = SECTIONS[i][0], ids = SECTIONS[i][1];
+      var max = 0; for (var j=0;j<ids.length;j++) max += TASKS[ids[j]].max;
+      var sc = sumOf(ids); var pct = Math.round(100 * sc / max);
+      html += '<tr><td>'+nm+'</td><td class="num">'+sc+' / '+max+'</td><td class="num">'+pct+'%</td></tr>';
+    }
+    html += '<tr class="total"><td>ИТОГО (с оценкой)</td><td class="num">'+total+' / '+MAX_TOTAL+'</td><td class="num">'+Math.round(100*total/MAX_TOTAL)+'%</td></tr>';
+    tb.innerHTML = html;
+    var grade = total>=54?'5':(total>=45?'4':(total>=33?'3':'2'));
+    var gEl = el('grade-big'); if (gEl) gEl.textContent = '«'+grade+'»';
+    var gNote = el('grade-note');
+    if (gNote) gNote.textContent = checkedAll
+      ? 'Итоговая оценка за проверочную работу (шкала в разделе «План»).'
+      : 'Предварительная оценка: проверены не все задания ('+doneMax+' из '+MAX_TOTAL+' доступных баллов).';
+    var fb = el('fc-rows');
+    if (fb){
+      var fh = '';
+      for (var f=0;f<FORECAST.length;f++){
+        var nm2 = FORECAST[f][0], ids2 = FORECAST[f][1], oge = FORECAST[f][2];
+        var max2 = 0; for (var q=0;q<ids2.length;q++) max2 += TASKS[ids2[q]].max;
+        var sc2 = sumOf(ids2);
+        var any = scoredMax(ids2) > 0;
+        var proj = any ? Math.round(100*sc2/max2/100*oge) : null;
+        fh += '<tr><td>'+nm2+'</td><td class="num">'+sc2+' / '+max2+'</td><td class="num">'+(proj===null?'—':'≈ '+proj+' / '+oge)+'</td></tr>';
+      }
+      fb.innerHTML = fh;
+    }
+  }
+
+  function restore(){
+    Object.keys(S.answers).forEach(function(key){
+      var v = S.answers[key];
+      if (v===null || v===undefined) return;
+      var anyRadio = document.querySelector('input[name="'+key+'"]');
+      if (anyRadio){
+        var target = document.querySelector('input[name="'+key+'"][value="'+v+'"]');
+        if (target) target.checked = true;
+      } else {
+        var node = el(key);
+        if (node) node.value = v;
+      }
+    });
+    Object.keys(S.scores).forEach(function(t){ setBadge(t, S.scores[t], TASKS[t].max); });
+    updateTotals();
+    if (S.teacher) document.body.classList.add('teacher');
+    var tb = el('tbtn'); if (tb) tb.textContent = S.teacher ? 'Режим учителя: ВКЛ' : 'Режим учителя: ВЫКЛ';
+  }
+
+  function trackInput(e){
+    var t = e.target;
+    if (!t || !t.name && !t.id) return;
+    if (t.type==='radio'){ if (t.name) { S.answers[t.name] = t.value; persist(); } return; }
+    if (t.tagName==='SELECT' && t.id){ S.answers[t.id] = t.value; persist(); return; }
+    if (t.type==='text' && t.id){ S.answers[t.id] = t.value; persist(); }
+  }
+
+  // ---- timers ----
+  var T = {};
+  function fmt(left){ var m=Math.floor(left/60), s=left%60; return m+':'+(s<10?'0':'')+s; }
+  function render(id){
+    var t = T[id]; if(!t || !t.disp) return;
+    t.disp.textContent = t.left>0 ? fmt(t.left) : 'Время!';
+    t.disp.classList.toggle('warn', t.left>0 && t.left<=300);
+    t.disp.classList.toggle('danger', t.left<=60);
+  }
+  function pauseOtherMono(id){
+    ['monoA-prep','monoA-speak','monoB-prep','monoB-speak'].forEach(function(k){
+      if (k!==id && T[k] && T[k].iv){ clearInterval(T[k].iv); T[k].iv = null; }
+    });
+  }
+  function timer(id, secs){
+    var t = T[id];
+    if (!t){ t = T[id] = { left: secs, iv: null, disp: el('tdisp-'+id) }; }
+    if (t.iv){ clearInterval(t.iv); t.iv = null; }
+    else {
+      if (id.indexOf('mono')===0) pauseOtherMono(id);
+      t.iv = setInterval(function(){
+        t.left--;
+        if (t.left<=0){ t.left=0; render(id); clearInterval(t.iv); t.iv=null; return; }
+        render(id);
+      }, 1000);
+    }
+    render(id);
+  }
+  function timerReset(id, secs){
+    if (T[id] && T[id].iv){ clearInterval(T[id].iv); }
+    T[id] = { left: secs, iv: null, disp: el('tdisp-'+id) };
+    render(id);
+  }
+
+  // ---- teacher mode / global actions ----
+  function teacher(){
+    S.teacher = !S.teacher;
+    document.body.classList.toggle('teacher', !!S.teacher);
+    var tb = el('tbtn'); if (tb) tb.textContent = S.teacher ? 'Режим учителя: ВКЛ' : 'Режим учителя: ВЫКЛ';
+    persist();
+  }
+  function checkAll(){
+    Object.keys(TASKS).forEach(function(id){ runCheck(id); });
+    var r = el('results'); if (r) r.scrollIntoView({behavior:'smooth'});
+  }
+  function resetAll(){
+    if (!window.confirm('Сбросить все ответы и баллы проверочной работы?')) return;
+    try{ localStorage.removeItem(KEY); }catch(e){}
+    window.location.reload();
+  }
+
+  // ---- TTS: озвучка текстов аудирования браузером ----
+  var TTS = (function(){
+    var API = window.speechSynthesis || null;
+    var USUP = !!API && typeof window.SpeechSynthesisUtterance !== 'undefined';
+    var TKEY = (DATA && DATA.ttsKey) || 'oge-test-tts-v1';
+    var voices = [], voiceIdx = -1;
+    var q = [], qi = 0, state = 'idle', curKey = null; // idle | playing | paused
+    var gapTimer = null, gapTick = null, gapLeft = 0, gapResume = null;
+    var keepAlive = null, inited = false, primed = false;
+    var els = {};
+
+    function loadPrefs(){ try{ return JSON.parse(localStorage.getItem(TKEY)) || {}; }catch(e){ return {}; } }
+    var prefs = loadPrefs();
+    function savePrefs(){ try{ localStorage.setItem(TKEY, JSON.stringify(prefs)); }catch(e){} }
+
+    function itemOf(key){
+      var p = key.split('-');
+      var blk = DATA[p[0]];
+      var i = parseInt(p[1], 10);
+      return (blk && blk.items && blk.items[i]) ? blk.items[i] : null;
+    }
+    function blockKeys(b){
+      var out = [], it = DATA[b].items;
+      for (var i=0;i<it.length;i++) out.push(b + '-' + i);
+      return out;
+    }
+    function splitSentences(t){
+      var m = String(t).match(/[^.!?]+[.!?]+/g);
+      if (!m || !m.length) return [String(t)];
+      var out = [], i;
+      for (i=0;i<m.length;i++){ var s = m[i].trim(); if (s) out.push(s); }
+      return out.length ? out : [String(t)];
+    }
+
+    function scoreVoice(v){
+      var n = (v.name||'').toLowerCase(), s = 0, lang = (v.lang||'').toLowerCase();
+      if (lang.indexOf('en') !== 0) return -1;
+      if (n.indexOf('natural') >= 0) s += 100;
+      if (n.indexOf('google uk english') >= 0) s += 80;
+      if (n.indexOf('google us english') >= 0) s += 70;
+      if (n.indexOf('microsoft') >= 0 && n.indexOf('online') >= 0) s += 60;
+      if (lang === 'en-gb') s += 10;
+      if (lang === 'en-us') s += 8;
+      if (n.indexOf('compact') >= 0) s -= 20;
+      return s;
+    }
+    function pickVoice(list){
+      var i;
+      if (prefs.voice){
+        for (i=0;i<list.length;i++){ if (list[i].name === prefs.voice) return i; }
+      }
+      var best = -1, bs = 0;
+      for (i=0;i<list.length;i++){ var s = scoreVoice(list[i]); if (s > bs){ bs = s; best = i; } }
+      return best;
+    }
+    function refreshVoices(){
+      if (!USUP || !els.voice) return;
+      var list = API.getVoices() || [];
+      var en = [], i;
+      for (i=0;i<list.length;i++){ if ((list[i].lang||'').toLowerCase().indexOf('en') === 0) en.push(list[i]); }
+      if (!en.length) en = list;
+      if (!en.length) return;
+      voices = en;
+      els.voice.innerHTML = '';
+      for (i=0;i<voices.length;i++){
+        var o = document.createElement('option');
+        o.value = voices[i].name;
+        o.textContent = voices[i].name + ' (' + voices[i].lang + ')';
+        els.voice.appendChild(o);
+      }
+      voiceIdx = pickVoice(voices);
+      if (voiceIdx >= 0) els.voice.selectedIndex = voiceIdx;
+    }
+
+    function setStatus(t){ if (els.status) els.status.textContent = t; }
+    function setPauseLabel(paused){
+      if (!els.pause) return;
+      els.pause.textContent = paused ? '▶ Продолжить' : '⏸ Пауза';
+      els.pause.disabled = (state === 'idle');
+      if (els.stop) els.stop.disabled = (state === 'idle');
+    }
+    function resetUI(){
+      var cards = document.querySelectorAll('.listencard'), i;
+      for (i=0;i<cards.length;i++) cards[i].classList.remove('speaking');
+      var btns = document.querySelectorAll('.ltbtn');
+      for (i=0;i<btns.length;i++){ btns[i].textContent = '▶ ' + btns[i].getAttribute('data-letter'); }
+    }
+    function updateUI(){
+      resetUI();
+      if (state === 'idle'){ setPauseLabel(false); return; }
+      var st = q[qi];
+      if (st && st.key){
+        var it = itemOf(st.key);
+        var card = el('lc-' + st.key);
+        if (card) card.classList.add('speaking');
+        var btn = el('ltbtn-' + st.key);
+        if (btn) btn.textContent = '⏹';
+        if (it && state === 'paused') setStatus('⏸ Пауза — текст ' + it.letter);
+      }
+      setPauseLabel(state === 'paused');
+    }
+
+    function clearGap(){ if (gapTimer){ clearTimeout(gapTimer); gapTimer = null; } if (gapTick){ clearInterval(gapTick); gapTick = null; } }
+    function stopKeepAlive(){ if (keepAlive){ clearInterval(keepAlive); keepAlive = null; } }
+    function startKeepAlive(){
+      stopKeepAlive();
+      keepAlive = setInterval(function(){
+        if (state === 'playing' && API.speaking && !API.paused) API.resume();
+      }, 8000);
+    }
+
+    function buildQueue(keys){
+      var x2 = els.x2 && els.x2.checked;
+      var out = [], k;
+      for (k=0;k<keys.length;k++){
+        var key = keys[k], it = itemOf(key);
+        var sents = it ? splitSentences(it.script) : [];
+        out.push({ type:'text', key:key, sents:sents, pass:1, si:0 });
+        if (x2){
+          out.push({ type:'gap', ms:10, label:'Пауза для ответов', key:key });
+          out.push({ type:'text', key:key, sents:sents, pass:2, si:0 });
+        }
+        if (k < keys.length - 1) out.push({ type:'gap', ms:(x2 ? 12 : 4), label:'Следующий текст', key:keys[k+1] });
+      }
+      return out;
+    }
+
+    function currentRate(){
+      var r = els.rate ? parseFloat(els.rate.value) : 1;
+      if (!r || r < 0.5 || r > 2) r = 1;
+      return r;
+    }
+
+    function playStep(){
+      if (state !== 'playing') return;
+      if (qi >= q.length){ finish(); return; }
+      var st = q[qi];
+      if (st.type === 'gap'){ startGap(st, st.ms); return; }
+      if (st.type === 'text' && st.key !== curKey){ curKey = st.key; updateUI(); }
+      if (st.si >= st.sents.length){ st.si = 0; qi++; playStep(); return; }
+      var it = itemOf(st.key);
+      var u = new SpeechSynthesisUtterance(st.sents[st.si]);
+      if (voiceIdx >= 0 && voices[voiceIdx]){ u.voice = voices[voiceIdx]; u.lang = voices[voiceIdx].lang; }
+      else { u.lang = 'en-GB'; }
+      u.rate = currentRate(); u.pitch = 1; u.volume = 1;
+      var where = (it ? it.letter : '?') + (st.pass === 2 ? ' · 2-е прочтение' : '');
+      setStatus('🔊 Читается ' + where + ' · фраза ' + (st.si + 1) + ' из ' + st.sents.length);
+      st.si++;
+      u.onend = function(){ if (state === 'playing') playStep(); };
+      u.onerror = function(ev){
+        var er = ev && ev.error ? ev.error : '';
+        if (er === 'interrupted' || er === 'canceled') return;
+        if (state === 'playing') playStep();
+      };
+      API.speak(u);
+    }
+
+    function startGap(step, leftSec){
+      gapLeft = leftSec;
+      var it = itemOf(step.key);
+      var tail = it ? ' · далее текст ' + it.letter : '';
+      setStatus('🔊 ' + step.label + ' — ' + gapLeft + ' с' + tail);
+      gapTick = setInterval(function(){
+        gapLeft--;
+        if (gapLeft > 0) setStatus('🔊 ' + step.label + ' — ' + gapLeft + ' с' + tail);
+      }, 1000);
+      gapTimer = setTimeout(function(){ clearGap(); qi++; playStep(); }, gapLeft * 1000);
+    }
+
+    function finish(){
+      state = 'idle'; clearGap(); stopKeepAlive(); curKey = null;
+      q = []; qi = 0;
+      resetUI(); setPauseLabel(false);
+      setStatus('Прочтение завершено ✓');
+      setTimeout(function(){ if (state === 'idle') setStatus(''); }, 4000);
+    }
+
+    function stopAll(silent){
+      state = 'idle'; clearGap(); stopKeepAlive(); gapResume = null; curKey = null;
+      if (API){ try{ API.cancel(); }catch(e){} }
+      q = []; qi = 0;
+      resetUI(); setPauseLabel(false);
+      if (!silent) setStatus('');
+    }
+
+    function prime(){
+      if (primed || !USUP) return;
+      primed = true;
+      try{
+        var u0 = new SpeechSynthesisUtterance(' ');
+        u0.volume = 0; u0.rate = 2;
+        API.speak(u0);
+        API.cancel();
+      }catch(e){}
+    }
+
+    function play(keys){
+      if (!USUP) return;
+      prime();
+      stopAll(true);
+      q = buildQueue(keys); qi = 0;
+      state = 'playing';
+      setPauseLabel(false);
+      updateUI();
+      // Chrome: speak() сразу после cancel() может быть проигнорирован — микропауза
+      setTimeout(function(){ if (state === 'playing') playStep(); }, 150);
+      startKeepAlive();
+    }
+
+    function pauseToggle(){
+      if (state === 'playing'){
+        state = 'paused';
+        if (gapTimer){ gapResume = { left: gapLeft }; clearGap(); }
+        else { try{ API.pause(); }catch(e){} }
+        setPauseLabel(true);
+        var st = q[qi];
+        if (st && st.key){ var it = itemOf(st.key); if (it) setStatus('⏸ Пауза — текст ' + it.letter); }
+      } else if (state === 'paused'){
+        state = 'playing';
+        if (gapResume){
+          var step = q[qi], left = gapResume.left;
+          gapResume = null;
+          if (step && step.type === 'gap') startGap(step, Math.max(1, left));
+          else playStep();
+        }
+        else if (API.speaking || API.pending){ try{ API.resume(); }catch(e){} }
+        else { playStep(); }
+        setPauseLabel(false);
+      }
+    }
+
+    function bind(){
+      if (els.p1) els.p1.onclick = function(){ play(blockKeys('listenA')); };
+      if (els.p2) els.p2.onclick = function(){ play(blockKeys('listenB')); };
+      if (els.pause) els.pause.onclick = pauseToggle;
+      if (els.stop) els.stop.onclick = function(){ stopAll(); };
+      if (els.x2) els.x2.onchange = function(){ prefs.x2 = els.x2.checked; savePrefs(); setStatus(els.x2.checked ? 'Режим ×2 включён: каждый текст прозвучит дважды, между прочтениями — пауза для ответов' : 'Режим ×2 выключен: каждый текст прозвучит один раз'); };
+      if (els.rate) els.rate.onchange = function(){ prefs.rate = parseFloat(els.rate.value); savePrefs(); };
+      if (els.voice) els.voice.onchange = function(){ prefs.voice = els.voice.value; voiceIdx = els.voice.selectedIndex; savePrefs(); };
+      document.addEventListener('click', function(e){
+        var b = e.target && e.target.closest ? e.target.closest('.ltbtn') : null;
+        if (!b || b.disabled) return;
+        var key = b.getAttribute('data-key');
+        var cur = (state !== 'idle' && q[qi]) ? q[qi].key : null;
+        if (cur === key){ stopAll(); } else { play([key]); }
+      });
+    }
+
+    function init(){
+      if (inited) return;
+      inited = true;
+      els.status = el('abar-status');
+      els.voice = el('abar-voice');
+      els.rate = el('abar-rate');
+      els.x2 = el('abar-x2');
+      els.pause = el('abar-pause');
+      els.stop = el('abar-stop');
+      els.p1 = el('abar-play1');
+      els.p2 = el('abar-play2');
+      if (!USUP){
+        var ctrl = el('abar-controls');
+        if (ctrl) ctrl.style.display = 'none';
+        var msg = el('abar-msg');
+        if (msg) msg.style.display = 'block';
+        var btns = document.querySelectorAll('.ltbtn');
+        for (var i=0;i<btns.length;i++){ btns[i].disabled = true; }
+        setStatus('озвучка браузером недоступна');
+        return;
+      }
+      if (els.rate && prefs.rate) els.rate.value = String(prefs.rate);
+      if (els.x2) els.x2.checked = !!prefs.x2;
+      setPauseLabel(false);
+      refreshVoices();
+      if (typeof API.onvoiceschanged !== 'undefined') API.onvoiceschanged = refreshVoices;
+      setTimeout(refreshVoices, 250);
+      setTimeout(refreshVoices, 1200);
+      bind();
+    }
+
+    return { init: init, state: function(){ return state; }, stop: function(){ stopAll(); } };
+  })();
+
+  window.TestAPI = { check: runCheck, checkAll: checkAll, resetAll: resetAll, timer: timer, timerReset: timerReset, teacher: teacher, tts: TTS };
+
+  document.addEventListener('input', trackInput, true);
+  document.addEventListener('change', trackInput, true);
+  function boot(){ restore(); TTS.init(); }
+  document.addEventListener('DOMContentLoaded', boot);
+  if (document.readyState !== 'loading') boot();
+})();
+
+</script>
+</body>
+</html>
