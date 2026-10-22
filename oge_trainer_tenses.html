@@ -1,0 +1,1461 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ОГЭ · 5 времён вперемешку | Интерактивный тренажёр</title>
+<meta name="description" content="Интенсивный интерактивный тренажёр по английскому для ОГЭ (B1): Present Simple, Present Continuous, Past Simple, Past Continuous, Present Perfect. 120 заданий, 4 текста 20–28, таймер и прогресс.">
+<meta name="theme-color" content="#2457e6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800;900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f3f6fc; --card:#fff; --ink:#16233b; --muted:#55657f; --line:#dde5f2;
+  --brand:#2457e6; --brand-soft:#eaf0ff; --accent:#ff8a3d;
+  --ok:#0f7a55; --ok-soft:#e6f6ef; --bad:#bc2b45; --bad-soft:#fdecef;
+  --r:18px; --shadow:0 8px 28px rgba(22,35,59,.07);
+  --ps:#0f7a55; --pc:#2457e6; --past:#a85b08; --pcast:#7443c7; --pp:#b3246a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Manrope","Nunito",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  font-size:16px;line-height:1.6}
+h1,h2,h3,h4{line-height:1.25;margin:0 0 .5em;letter-spacing:-.02em}
+h1{font-size:clamp(1.6rem,4vw,2.5rem)}
+h2{font-size:clamp(1.25rem,3vw,1.7rem)}
+h3{font-size:1.08rem}
+p{margin:0 0 .8em}
+a{color:var(--brand)}
+button,input,select{font:inherit;color:inherit}
+button{cursor:pointer}
+button:disabled{cursor:default;opacity:.65}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+[hidden]{display:none!important}
+.skip{position:absolute;left:-999px;top:0;background:#fff;padding:12px;z-index:99}
+.skip:focus{left:8px;top:8px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+.muted{color:var(--muted)}
+.small{font-size:.88rem}
+.tag{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;
+  background:var(--brand-soft);color:var(--brand);font-size:.76rem;font-weight:700;white-space:nowrap}
+.tag.ok{background:var(--ok-soft);color:var(--ok)}
+.tag.bad{background:var(--bad-soft);color:var(--bad)}
+.t-ps{--tc:var(--ps)} .t-pc{--tc:var(--pc)} .t-past{--tc:var(--past)}
+.t-pcast{--tc:var(--pcast)} .t-pp{--tc:var(--pp)}
+.ttag{background:color-mix(in srgb,var(--tc) 12%,white);color:var(--tc);
+  display:inline-block;padding:3px 9px;border-radius:8px;font-size:.75rem;font-weight:800}
+.btn{border:1px solid var(--line);background:#fff;padding:11px 17px;border-radius:12px;
+  font-weight:700;display:inline-flex;gap:8px;align-items:center;justify-content:center;
+  transition:transform .15s,box-shadow .15s,background .15s}
+.btn:hover{transform:translateY(-1px);box-shadow:var(--shadow)}
+.btn.primary{background:var(--brand);border-color:var(--brand);color:#fff}
+.btn.accent{background:var(--accent);border-color:var(--accent);color:#241300}
+.btn.ghost{background:transparent}
+.btn.sm{padding:7px 12px;font-size:.85rem;border-radius:10px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px;box-shadow:var(--shadow)}
+.grid{display:grid;gap:16px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+.top{background:linear-gradient(160deg,#fff 0%,#eef3ff 100%);border-bottom:1px solid var(--line);padding:26px 0 20px}
+.brandrow{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.brand{font-weight:900;letter-spacing:.02em;font-size:1.1rem}
+.top p{max-width:70ch;color:var(--muted)}
+.tenses-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.tenses-row .ttag{font-size:.82rem;padding:6px 12px}
+.tabs{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--line);
+  display:flex;gap:6px;overflow-x:auto;padding:10px 0;margin-bottom:22px;scrollbar-width:thin}
+.tabs button{flex:0 0 auto;border:1px solid transparent;background:transparent;padding:10px 15px;
+  border-radius:12px;font-weight:700;color:var(--muted);white-space:nowrap}
+.tabs button[aria-selected="true"]{background:#fff;color:var(--brand);border-color:var(--line);box-shadow:var(--shadow)}
+main{padding-bottom:40px;min-height:60vh}
+section>h2{margin-bottom:6px}
+.lead{color:var(--muted);margin-bottom:20px}
+.setup-grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.field label,.field legend{display:block;font-weight:800;font-size:.85rem;margin-bottom:8px;
+  text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.field select{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:12px;background:#fff}
+fieldset.field{border:0;padding:0;margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+.chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 12px;font-size:.83rem;font-weight:700}
+.chip[aria-pressed="true"]{background:var(--brand-soft);border-color:var(--brand);color:var(--brand)}
+.checkline{display:flex;align-items:center;gap:9px;flex-wrap:wrap;font-size:.9rem}
+.checkline input{width:18px;height:18px;accent-color:var(--brand)}
+.note{background:var(--brand-soft);border-left:4px solid var(--brand);padding:12px 15px;border-radius:0 12px 12px 0;font-size:.9rem}
+.note.warn{background:#fff6ec;border-color:var(--accent)}
+.quiz-head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.meta{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.bar{height:9px;background:var(--line);border-radius:99px;overflow:hidden;margin:10px 0 20px}
+.bar i{display:block;height:100%;background:var(--brand);transition:width .35s}
+.question{font-size:clamp(1.05rem,2.4vw,1.3rem);font-weight:700;line-height:1.65;margin:14px 0 20px}
+.blank{display:inline-block;min-width:86px;border-bottom:3px solid var(--brand);vertical-align:bottom}
+mark.mis{background:var(--bad-soft);color:var(--bad);padding:1px 5px;border-radius:5px;text-decoration:underline wavy var(--bad)}
+.options{display:grid;gap:10px}
+.option{text-align:left;border:2px solid var(--line);background:#fff;border-radius:14px;padding:13px 15px;
+  font-weight:600;display:flex;gap:11px;align-items:center;transition:border-color .15s,background .15s}
+.option .num{flex:0 0 26px;height:26px;display:grid;place-items:center;border-radius:8px;background:var(--bg);font-size:.8rem;color:var(--muted)}
+.option:hover:not(:disabled){border-color:var(--brand);background:#fafcff}
+.option.right{border-color:var(--ok);background:var(--ok-soft)}
+.option.wrong{border-color:var(--bad);background:var(--bad-soft)}
+.option:disabled{opacity:1}
+.type-row{display:flex;gap:10px;flex-wrap:wrap}
+.type-row input{flex:1;min-width:180px;padding:13px 15px;border:2px solid var(--line);border-radius:14px;background:#fff}
+.type-row input.correct{border-color:var(--ok)}
+.type-row input.incorrect{border-color:var(--bad)}
+.type-inline{border:2px solid var(--line);border-radius:12px;padding:8px 12px;min-width:120px;max-width:220px;background:#fff;font:inherit;color:inherit}
+.type-inline:focus{outline:none;border-color:var(--brand)}
+.type-inline.correct{border-color:var(--ok);background:var(--ok-soft)}
+.type-inline.incorrect{border-color:var(--bad);background:var(--bad-soft)}
+.feedback{margin-top:18px;padding:15px 17px;border-radius:14px;border-left:5px solid var(--ok);background:var(--ok-soft)}
+.feedback.bad{border-color:var(--bad);background:var(--bad-soft)}
+.feedback h4{margin-bottom:5px}
+.feedback p{margin:0;font-size:.94rem}
+.quiz-foot{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:18px}
+.kbd{font-family:ui-monospace,monospace;font-size:.78rem;border:1px solid var(--line);border-bottom-width:3px;
+  border-radius:6px;padding:1px 6px;background:#fff}
+.hintbox{margin-top:12px;font-size:.9rem;background:#fff8ef;border:1px dashed var(--accent);padding:11px 14px;border-radius:12px}
+.score-big{font-size:clamp(2.4rem,7vw,3.6rem);font-weight:900;letter-spacing:-.04em;line-height:1}
+.stat-row{display:flex;gap:22px;flex-wrap:wrap;align-items:flex-end;margin:10px 0 18px}
+.stat small{display:block;color:var(--muted);font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+.mastery{margin:9px 0}
+.mastery .line{display:flex;justify-content:space-between;font-size:.85rem;margin-bottom:5px;gap:8px}
+.mastery .bar{height:7px;margin:0}
+.mastery .bar i{background:var(--tc,var(--brand))}
+.mistake{border:1px solid var(--line);border-radius:14px;padding:14px;margin-bottom:10px;background:#fff}
+.mistake .q{font-weight:700;margin-bottom:6px}
+.mistake .ans{font-size:.9rem}
+.mistake .ex{font-size:.88rem;color:var(--muted);margin-top:6px}
+.tense-card{border-top:5px solid var(--tc);padding-top:18px}
+.formula{background:var(--bg);border-radius:12px;padding:12px;font-size:.9rem;margin:12px 0}
+.formula b{display:block;font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px}
+.formula code{font-family:ui-monospace,monospace;font-size:.92rem}
+ul{margin:0 0 12px;padding-left:20px}
+li{margin-bottom:5px}
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px}
+table{border-collapse:collapse;width:100%;font-size:.9rem;min-width:560px;background:#fff}
+th,td{text-align:left;padding:11px 13px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--bg);font-size:.8rem;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+tr:last-child td{border-bottom:0}
+details{border:1px solid var(--line);border-radius:14px;padding:14px 16px;background:#fff;margin-bottom:10px}
+summary{font-weight:800;cursor:pointer}
+details p,details li{font-size:.93rem}
+.flip-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{border:1px solid var(--line);border-radius:14px;background:#fff;padding:14px;min-height:96px;text-align:left;font-weight:800}
+.flip small{display:block;font-weight:600;color:var(--muted);margin-top:6px;font-size:.8rem}
+.flip[aria-expanded="true"]{background:var(--brand-soft);border-color:var(--brand)}
+.steps{counter-reset:s;list-style:none;padding:0}
+.steps li{counter-increment:s;position:relative;padding:12px 14px 12px 48px;border:1px solid var(--line);
+  border-radius:12px;background:#fff;margin-bottom:9px}
+.steps li::before{content:counter(s);position:absolute;left:13px;top:12px;width:25px;height:25px;border-radius:8px;
+  background:var(--brand);color:#fff;display:grid;place-items:center;font-weight:800;font-size:.85rem}
+.oge-text{font-size:1.02rem;line-height:2.15}
+.og{display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;margin:0 3px;line-height:1.2}
+.og .base{font-size:.62rem;letter-spacing:.06em;color:var(--muted);font-weight:800}
+.og input{width:112px;padding:5px 7px;border:1.5px solid var(--line);border-radius:8px;text-align:center;background:#fff;font-size:.9rem}
+.og input.right{border-color:var(--ok);background:var(--ok-soft)}
+.og input.wrong{border-color:var(--bad);background:var(--bad-soft)}
+.og .sol{font-size:.7rem;color:var(--ok);font-weight:800}
+.timer-box{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.clock{font-variant-numeric:tabular-nums;font-size:2.3rem;font-weight:900;letter-spacing:-.02em}
+.sample{background:var(--bg);border-radius:12px;padding:14px;font-size:.95rem}
+.sample mark{background:#fff;border-left:3px solid var(--tc);padding:2px 5px;border-radius:4px}
+.plan-list{counter-reset:p;list-style:none;padding:0}
+.plan-list li{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-bottom:8px}
+.plan-list b{color:var(--brand)}
+footer{border-top:1px solid var(--line);padding:22px 0 34px;color:var(--muted);font-size:.86rem}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--ink);color:#fff;
+  padding:11px 18px;border-radius:12px;font-size:.9rem;z-index:100;box-shadow:var(--shadow)}
+.pill-row{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+@media(max-width:600px){
+  .card{padding:17px}
+  .option{font-size:.95rem}
+  .og input{width:92px}
+  .tabs button{padding:9px 12px;font-size:.9rem}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+@media print{
+  body{background:#fff;font-size:11pt}
+  .top,.tabs,footer,.skip,.no-print,.setup,#session,#results,#tab-oge,#tab-speak,#tab-progress{display:none!important}
+  .card{box-shadow:none;border:1px solid #bbb;break-inside:avoid;padding:12px}
+  .grid{display:block}
+  .tense-card{margin-bottom:14px}
+  details{display:block} details>:not(summary){display:block!important}
+  summary{list-style:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Перейти к содержимому</a>
+
+<header class="top">
+  <div class="wrap">
+    <div class="brandrow">
+      <div class="brand">ОГЭ · грамматика</div>
+      <div><span class="tag">A2 → B1</span> <span class="tag">120+ заданий</span></div>
+    </div>
+    <h1>Пять времён. Один экзамен. ⚡</h1>
+    <p>Интенсивный марафон по временам вперемешку: сначала находите «улику»-маркер, потом выбираете форму.
+       Без подсказок в экзамен-раунде — как на настоящем ОГЭ.</p>
+    <div class="tenses-row" aria-label="Времена в тренажёре">
+      <span class="ttag t-ps">Present Simple</span>
+      <span class="ttag t-pc">Present Continuous</span>
+      <span class="ttag t-past">Past Simple</span>
+      <span class="ttag t-pcast">Past Continuous</span>
+      <span class="ttag t-pp">Present Perfect</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+<nav class="tabs no-print" role="tablist" aria-label="Разделы тренажёра">
+  <button role="tab" id="tabbtn-trainer" aria-controls="tab-trainer" aria-selected="true">🎯 Тренировка</button>
+  <button role="tab" id="tabbtn-theory" aria-controls="tab-theory" aria-selected="false" tabindex="-1">🧠 Теория</button>
+  <button role="tab" id="tabbtn-oge" aria-controls="tab-oge" aria-selected="false" tabindex="-1">📄 Тексты 20–28</button>
+  <button role="tab" id="tabbtn-speak" aria-controls="tab-speak" aria-selected="false" tabindex="-1">🎤 Говорение</button>
+  <button role="tab" id="tabbtn-progress" aria-controls="tab-progress" aria-selected="false" tabindex="-1">📊 Прогресс</button>
+</nav>
+
+<main id="main">
+
+<section id="tab-trainer" role="tabpanel" aria-labelledby="tabbtn-trainer">
+  <h2>🎯 Собери свою сессию</h2>
+  <p class="lead">50 минут = теория (10) + марафон (25) + разбор ошибок (10) + говорение (5).</p>
+
+  <div class="card" id="setup">
+    <div class="setup-grid">
+      <div class="field">
+        <label for="mode">Формат</label>
+        <select id="mode">
+          <option value="mix">🔀 Смешанный марафон (всё вместе)</option>
+          <option value="choice">🔤 Выбрать правильную форму</option>
+          <option value="type">✍️ Вписать форму глагола</option>
+          <option value="error">🕵️ Найти и исправить ошибку</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="count">Количество заданий</label>
+        <select id="count">
+          <option value="10">10 — разминка</option>
+          <option value="20" selected>20 — стандарт</option>
+          <option value="30">30 — интенсив</option>
+          <option value="0">Всё, что есть — хардкор</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="level">Сложность</label>
+        <select id="level">
+          <option value="0">Все уровни</option>
+          <option value="1">База · устойчивое A2</option>
+          <option value="2">Повышенный · B1 и ловушки</option>
+        </select>
+      </div>
+    </div>
+
+    <fieldset class="field" style="margin-top:18px">
+      <legend>Времена (можно выбрать несколько)</legend>
+      <div class="chips" id="tenseChips">
+        <button class="chip" data-t="ps" aria-pressed="true">Present Simple</button>
+        <button class="chip" data-t="pc" aria-pressed="true">Present Continuous</button>
+        <button class="chip" data-t="past" aria-pressed="true">Past Simple</button>
+        <button class="chip" data-t="pcast" aria-pressed="true">Past Continuous</button>
+        <button class="chip" data-t="pp" aria-pressed="true">Present Perfect</button>
+      </div>
+    </fieldset>
+
+    <div class="checkline" style="margin-top:16px">
+      <label><input type="checkbox" id="useTimer" checked> Показывать время сессии</label>
+      <label><input type="checkbox" id="allowHint" checked> Разрешить подсказку</label>
+    </div>
+
+    <div class="pill-row">
+      <button class="btn primary" id="startBtn">🚀 Начать тренировку</button>
+      <button class="btn accent" id="examBtn">⏱ Экзамен-раунд: 25 / 12 мин</button>
+    </div>
+    <p class="note small">В экзамен-раунде: 25 заданий вперемешку, без подсказок, обратный отсчёт 12 минут,
+      баланс по всем пяти временам. Это учебный формат: процент здесь <b>не</b> переводится в шкалу ФИПИ.</p>
+  </div>
+
+  <div class="card" id="session" hidden>
+    <div class="quiz-head">
+      <div class="meta">
+        <span class="tag" id="qMode">Марафон</span>
+        <span class="ttag" id="qTense"></span>
+        <span class="tag" id="qLevel"></span>
+      </div>
+      <div class="meta">
+        <strong id="qCounter">1 / 20</strong>
+        <span class="tag" id="clock">⏱ 00:00</span>
+        <span class="tag ok" id="scoreLive">✓ 0</span>
+      </div>
+    </div>
+    <div class="bar"><i id="progressBar" style="width:0%"></i></div>
+
+    <h3 id="qTitle" tabindex="-1" class="question"></h3>
+    <div class="options" id="options" role="group" aria-label="Варианты ответа"></div>
+
+    <div class="type-row" id="typeRow" hidden>
+      <span class="small muted">Впишите форму(ы) прямо в пропуски в вопросе, затем нажмите «Проверить».</span>
+      <button class="btn primary" id="checkType">Проверить</button>
+    </div>
+
+    <div class="hintbox" id="hintBox" hidden></div>
+
+    <div class="feedback" id="feedback" hidden aria-live="polite"></div>
+
+    <div class="quiz-foot no-print">
+      <button class="btn sm ghost" id="hintBtn">💡 Подсказка <span class="kbd">H</span></button>
+      <button class="btn primary" id="nextBtn" hidden>Дальше → <span class="kbd">Enter</span></button>
+      <button class="btn sm ghost" id="finishEarly">Завершить и посмотреть результат</button>
+    </div>
+    <p class="small muted no-print" style="margin-top:12px">
+      Клавиши: <span class="kbd">1</span> <span class="kbd">2</span> <span class="kbd">3</span> — ответ,
+      <span class="kbd">Enter</span> — дальше, <span class="kbd">H</span> — подсказка.
+    </p>
+  </div>
+
+  <div class="card" id="results" hidden>
+    <h2 id="resultTitle">🏁 Сессия завершена</h2>
+    <div class="stat-row">
+      <div class="stat"><small>Точность</small><div class="score-big" id="resAccuracy">0%</div></div>
+      <div class="stat"><small>Верно</small><div id="resCorrect">0 / 0</div></div>
+      <div class="stat"><small>Время</small><div id="resTime">00:00</div></div>
+      <div class="stat"><small>Серия без ошибок</small><div id="resStreak">0</div></div>
+      <div class="stat"><small>Подсказок</small><div id="resHints">0</div></div>
+    </div>
+    <div id="resMastery"></div>
+    <p class="note" id="resAdvice"></p>
+    <div class="pill-row no-print">
+      <button class="btn primary" id="retryWrong">🔁 Разобрать ошибки</button>
+      <button class="btn" id="againBtn">Новый круг</button>
+      <button class="btn ghost" id="copyResult">📋 Скопировать результат</button>
+    </div>
+    <h3 style="margin-top:20px" id="mistakesTitle">Разбор</h3>
+    <div id="mistakes"></div>
+  </div>
+</section>
+
+<section id="tab-theory" role="tabpanel" aria-labelledby="tabbtn-theory" hidden>
+  <h2>🧠 Сначала алгоритм, потом правила</h2>
+  <p class="lead">На ОГЭ вы не «угадываете время». Вы отвечаете на пять вопросов подряд.</p>
+
+  <div class="card" style="margin-bottom:18px">
+    <h3>🔎 Алгоритм выбора формы (30 секунд)</h3>
+    <ol class="steps">
+      <li><b>Когда?</b> Есть <code>now / at the moment</code> → настоящее; <code>yesterday / last / ago</code> → прошлое;
+        <code>since / for / already / yet / ever / never / this week</code> → связка «прошлое ↔ сейчас».</li>
+      <li><b>Факт или процесс?</b> Регулярно / всегда / по расписанию → <b>Simple</b>. В момент речи / временная ситуация → <b>Continuous</b>.</li>
+      <li><b>Результат важен сейчас?</b> Есть результат, опыт, «не закончено к сейчас» → <b>Present Perfect</b>.
+        Если указано <i>когда</i> в прошлом — только <b>Past Simple</b>.</li>
+      <li><b>Действие прервано или на фоне?</b> <code>while …</code> / «в 8 вечера вчера» → <b>Past Continuous</b>;
+        короткое событие, которое вмешалось → <b>Past Simple</b>.</li>
+      <li><b>Глагол состояния?</b> know, like, want, need, believe, understand, love, hate, own, seem →
+        обычно <b>без Continuous</b>, даже если «сейчас».</li>
+    </ol>
+  </div>
+
+  <div class="grid g2" style="margin-bottom:20px">
+
+    <article class="card tense-card t-ps">
+      <span class="ttag">Present Simple</span>
+      <h3>Регулярность и факты</h3>
+      <div class="formula"><b>Формула</b>
+        <code>+</code> V / V-s · <code>−</code> do not / does not + V · <code>?</code> Do / Does + S + V
+      </div>
+      <ul>
+        <li>Привычки и распорядок: <i>I get up at seven.</i></li>
+        <li>Общие истины: <i>Water boils at 100 °C.</i></li>
+        <li>Расписание: <i>The train leaves at 6:15.</i></li>
+      </ul>
+      <p class="small"><b>Маркеры:</b> always, usually, often, sometimes, never, every day, on Mondays, how often.</p>
+      <p class="small muted">⚠️ Не забываем <b>-s</b> в 3-м лице и <b>does</b> в вопросе/отрицании: <i>Does she like…?</i></p>
+    </article>
+
+    <article class="card tense-card t-pc">
+      <span class="ttag">Present Continuous</span>
+      <h3>Процесс сейчас / вокруг сейчас</h3>
+      <div class="formula"><b>Формула</b>
+        <code>+</code> am / is / are + V-ing · <code>−</code> am not / isn't / aren't + V-ing · <code>?</code> Am / Is / Are + S + V-ing
+      </div>
+      <ul>
+        <li>Действие в момент речи: <i>Look! She is smiling.</i></li>
+        <li>Временная ситуация вокруг нас: <i>We are doing a project this week.</i></li>
+        <li>Планированное будущее: <i>I am meeting Ann tomorrow.</i></li>
+      </ul>
+      <p class="small"><b>Маркеры:</b> now, right now, at the moment, today, this week, Look!, Listen!</p>
+      <p class="small muted">⚠️ <i>know, want, like, believe</i> — не в Continuous: <b>I want</b>, не ~~I am wanting~~.</p>
+    </article>
+
+    <article class="card tense-card t-past">
+      <span class="ttag">Past Simple</span>
+      <h3>Закрытая страница прошлого</h3>
+      <div class="formula"><b>Формула</b>
+        <code>+</code> V2 / -ed · <code>−</code> did not + V · <code>?</code> Did + S + V
+      </div>
+      <ul>
+        <li>Завершённое действие в указанный момент: <i>I met him yesterday.</i></li>
+        <li>Цепочка событий: <i>She came in, took off her coat and sat down.</i></li>
+        <li>Прошлая привычка/состояние: <i>They lived in Tver in 2020.</i></li>
+      </ul>
+      <p class="small"><b>Маркеры:</b> yesterday, last week/year, … ago, in 2019, when I was ten.</p>
+      <p class="small muted">⚠️ После <b>did</b> — голый инфинитив: <i>Did you go…? / I didn't go…</i></p>
+    </article>
+
+    <article class="card tense-card t-pcast">
+      <span class="ttag">Past Continuous</span>
+      <h3>Фон в прошлом</h3>
+      <div class="formula"><b>Формула</b>
+        <code>+</code> was / were + V-ing · <code>−</code> was not / were not + V-ing · <code>?</code> Was / Were + S + V-ing
+      </div>
+      <ul>
+        <li>Процесс в точный момент прошлого: <i>At eight I was having dinner.</i></li>
+        <li>Два параллельных процесса: <i>While Mum was cooking, Dad was reading.</i></li>
+        <li>Длительный фон + короткое вмешательство: <i>I was sleeping when the phone rang.</i></li>
+      </ul>
+      <p class="small"><b>Маркеры:</b> at 5 o'clock yesterday, from 4 to 5, while, as, when + Past Simple.</p>
+      <p class="small muted">⚠️ <b>while</b> + длительный процесс; короткое действие после <b>when</b> — обычно Simple.</p>
+    </article>
+
+    <article class="card tense-card t-pp" style="grid-column:1/-1">
+      <span class="ttag">Present Perfect</span>
+      <h3>Мост между прошлым и сейчас</h3>
+      <div class="formula"><b>Формула</b>
+        <code>+</code> have / has + V3 (past participle) · <code>−</code> have not / has not + V3 ·
+        <code>?</code> Have / Has + S + V3
+      </div>
+      <div class="grid g2">
+        <div>
+          <ul>
+            <li>Результат без указания времени: <i>I have lost my key. <b>(Где она? Не могу войти.)</b></i></li>
+            <li>Жизненный опыт: <i>Have you ever been to Britain?</i></li>
+            <li>Незавершённый период: <i>I have read three books this month.</i></li>
+            <li>Длительность до сейчас: <i>We have known each other since 2019.</i></li>
+          </ul>
+        </div>
+        <div>
+          <p class="small"><b>Маркеры:</b> already, yet, just, ever, never, since, for, so far, this week, recently.</p>
+          <div class="note warn small">
+            <b>Главная ловушка ОГЭ:</b><br>
+            <i>I <b>have seen</b> this film <b>three times</b>.</i> — опыт, время не указано.<br>
+            <i>I <b>saw</b> this film <b>last night</b>.</i> — указано когда → Past Simple.<br>
+            ❌ <i>I have seen it yesterday.</i> — так нельзя.
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <div class="card" style="margin-bottom:18px">
+    <h3>⚔️ Битва времён: шпаргалка</h3>
+    <div class="table-wrap">
+      <table>
+        <caption class="small muted" style="text-align:left;padding:10px 13px">Сравните пару и выберите нужный столбец</caption>
+        <thead><tr><th>Пара</th><th>Когда первый вариант</th><th>Когда второй</th></tr></thead>
+        <tbody>
+          <tr><td><b>Present Simple ↔ Continuous</b></td>
+              <td><i>He <b>reads</b> every evening.</i> — система</td>
+              <td><i>He <b>is reading</b> now.</i> — процесс</td></tr>
+          <tr><td><b>Past Simple ↔ Continuous</b></td>
+              <td><i>When the phone <b>rang</b>…</i> — событие</td>
+              <td><i>While I <b>was walking</b>…</i> — фон</td></tr>
+          <tr><td><b>Past Simple ↔ Present Perfect</b></td>
+              <td><i>She <b>moved</b> here <b>in 2021</b>.</i> — дата в прошлом</td>
+              <td><i>She <b>has moved</b> here.</i> — видим результат сейчас</td></tr>
+          <tr><td><b>for / since</b></td>
+              <td><i>for three years</i> — длительность</td>
+              <td><i>since 2022</i> — точка начала</td></tr>
+          <tr><td><b>been ↔ gone</b></td>
+              <td><i>He has <b>been</b> to London.</i> — был и вернулся</td>
+              <td><i>He has <b>gone</b> to London.</i> — уехал и ещё там</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:18px">
+    <h3>🏷 Маркер-карточки: нажмите, чтобы открыть время</h3>
+    <div class="flip-grid" id="flipGrid"></div>
+    <p class="small muted" style="margin-top:12px">Это не исключительные маркеры: контекст всегда важнее.
+      Например, <i>this week</i> может давать и Continuous (временный процесс), и Perfect (итог за период).</p>
+  </div>
+
+  <div class="grid g2">
+    <div>
+      <details open>
+        <summary>🚫 Глаголы состояния (State verbs)</summary>
+        <p><b>know, like, love, hate, want, need, prefer, believe, think</b> (= считать), <b>understand, remember,
+        forget, mean, own, have</b> (= иметь), <b>seem, appear, belong, cost, fit</b>.</p>
+        <p>✅ <i>I have known her for years.</i> ❌ <i>I am knowing her…</i></p>
+        <p class="small muted">Но: <i>have</i> (= принимать пищу) и <i>think</i> (= обдумывать) — уже процесс:
+          <i>I am having breakfast; I am thinking about it.</i></p>
+      </details>
+      <details>
+        <summary>🧩 Орфография V-ing и V2</summary>
+        <ul>
+          <li>make → making, write → writing (немая e падает)</li>
+          <li>run → running, stop → stopped, sit → sitting (удвоение)</li>
+          <li>study → studied, but play → played</li>
+          <li>Неправильные: go–went–gone, see–saw–seen, take–took–taken,
+            give–gave–given, write–wrote–written, know–knew–known, be–was/were–been.</li>
+        </ul>
+      </details>
+    </div>
+    <div>
+      <details open>
+        <summary>❌ Топ-6 ошибок на ОГЭ</summary>
+        <ul>
+          <li>~~He don't like~~ → <b>He doesn't like</b></li>
+          <li>~~Did you went?~~ → <b>Did you go?</b></li>
+          <li>~~I am know~~ → <b>I know</b></li>
+          <li>~~I have saw~~ → <b>I have seen</b></li>
+          <li>~~She has finished it yesterday~~ → <b>She finished it yesterday</b></li>
+          <li>~~While I did my homework, he came~~ → <b>While I was doing…</b></li>
+        </ul>
+      </details>
+      <p class="note small">Future-формы и Present Perfect Continuous — следующий модуль.
+        Здесь отрабатываем ровно пять времён, которые мешаются в голове чаще всего.</p>
+    </div>
+  </div>
+</section>
+
+<section id="tab-oge" role="tabpanel" aria-labelledby="tabbtn-oge" hidden>
+  <h2>📄 Грамматика в связном тексте</h2>
+  <p class="lead">Формат, близкий к заданиям 20–28: глагол в базе → нужная форма в контексте.
+     Ориентир — <b>8 минут на текст</b>. После проверки доступны объяснения к каждому пропуску.</p>
+
+  <div class="pill-row no-print">
+    <button class="btn primary" data-text="0" id="textBtn0">Текст 1 · Museum · 12 пропусков</button>
+    <button class="btn" data-text="1" id="textBtn1">Текст 2 · My Hobby · 12 пропусков</button>
+    <button class="btn" data-text="2" id="textBtn2">Текст 3 · Science Fair · 17 пропусков</button>
+    <button class="btn" data-text="3" id="textBtn3">Текст 4 · Travel Blog · 24 пропуска</button>
+  </div>
+
+  <div class="card">
+    <div class="quiz-head">
+      <div><h3 id="ogeTitle"></h3><p class="small muted" id="ogeNote"></p></div>
+      <span class="tag" id="ogeScore">Не проверено</span>
+    </div>
+    <div class="oge-text" id="ogeText"></div>
+    <div class="pill-row no-print" style="margin-top:20px">
+      <button class="btn primary" id="ogeCheck">✅ Проверить текст</button>
+      <button class="btn ghost" id="ogeReset">↺ Очистить</button>
+    </div>
+    <div id="ogeExplain" style="margin-top:16px"></div>
+  </div>
+
+  <p class="note small" style="margin-top:16px">
+    <b>Важно про формат.</b> В тексте 1 каждый ответ — <b>одно слово</b> (иногда это вспомогательный глагол:
+    <i>was / has / is</i>). В текстах 2–4 — учебное усложнение: ответ может состоять из двух слов.
+    На реальном ОГЭ всегда читайте инструкцию конкретного задания и правила записи ответа в КИМ.
+  </p>
+</section>
+
+<section id="tab-speak" role="tabpanel" aria-labelledby="tabbtn-speak" hidden>
+  <h2>🎤 Время должно работать в речи</h2>
+  <p class="lead">Монолог «Hobbies» с опорой: 4 аспекта, 10–12 фраз, 1,5 минуты на подготовку.
+     В каждой части — своё время глагола.</p>
+
+  <div class="grid g2">
+    <div class="card">
+      <h3>План высказывания</h3>
+      <ol class="plan-list">
+        <li><b>Why do people have hobbies?</b><br><span class="small muted">Факты и причины → <span class="ttag t-ps">Present Simple</span></span></li>
+        <li><b>What hobbies are the most popular with your friends?</b><br>
+          <span class="small muted">Что они любят вообще / чем увлечены сейчас → <span class="ttag t-ps">Simple</span> + <span class="ttag t-pc">Continuous</span></span></li>
+        <li><b>How do you usually spend your free time?</b><br>
+          <span class="small muted">Рутина vs история о прошлых выходных → <span class="ttag t-ps">Present Simple</span> / <span class="ttag t-past">Past Simple</span> / <span class="ttag t-pcast">Past Continuous</span></span></li>
+        <li><b>What is your attitude to having a hobby?</b><br>
+          <span class="small muted">Какой опыт уже есть → <span class="ttag t-pp">Present Perfect</span> + вывод <span class="ttag t-ps">Simple</span></span></li>
+      </ol>
+      <div class="note small">Вступление и заключение обязательны: за них снять балл по организации очень легко.</div>
+    </div>
+
+    <div class="card">
+      <h3>⏱ Тренировка по регламенту</h3>
+      <div class="timer-box">
+        <div class="clock" id="speakClock" role="timer" aria-label="Оставшееся время">01:30</div>
+        <div class="grid" style="gap:8px">
+          <button class="btn sm primary" id="speakPrep">🧠 Подготовка · 1:30</button>
+          <button class="btn sm accent" id="speakTalk">🎤 Монолог · 2:00</button>
+          <button class="btn sm ghost" id="speakPause">⏸ Пауза</button>
+          <button class="btn sm ghost" id="speakReset">↺ Сброс</button>
+        </div>
+      </div>
+      <p class="small muted" id="speakStatus" aria-live="polite" style="margin-top:12px">
+        Выберите этап. Во время монолога смотрите на план, а не в текст.</p>
+
+      <h3 style="margin-top:18px">Самопроверка (6 баллов)</h3>
+      <div id="selfCheck">
+        <label class="checkline"><input type="checkbox"> Названо вступление и есть заключение</label>
+        <label class="checkline"><input type="checkbox"> Раскрыты все 4 аспекта плана</label>
+        <label class="checkline"><input type="checkbox"> Сказано 10–12 фраз</label>
+        <label class="checkline"><input type="checkbox"> Использованы минимум 3 разных времени</label>
+        <label class="checkline"><input type="checkbox"> Есть связки: first of all, as for, however, in conclusion</label>
+        <label class="checkline"><input type="checkbox"> Нет длинных пауз и слова читаются с первого раза</label>
+      </div>
+      <p class="note small" id="selfScore" style="margin-top:12px">Отметьте выполненное после записи себя на диктофон.</p>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:18px">
+    <h3>🧰 Sentence starters по временам</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Время</th><th>Готовая фраза-опора</th></tr></thead>
+        <tbody>
+          <tr><td><span class="ttag t-ps">Present Simple</span></td><td>Most teenagers <b>spend</b> their free time online.</td></tr>
+          <tr><td><span class="ttag t-ps">Present Simple</span></td><td>My friends <b>are</b> keen on gaming and sport.</td></tr>
+          <tr><td><span class="ttag t-pc">Present Continuous</span></td><td>Now I <b>am learning</b> to play the guitar.</td></tr>
+          <tr><td><span class="ttag t-past">Past Simple</span></td><td>Last month I <b>joined</b> a photography club.</td></tr>
+          <tr><td><span class="ttag t-pcast">Past Continuous</span></td><td>While I <b>was walking</b> in the park, I noticed a bird.</td></tr>
+          <tr><td><span class="ttag t-pp">Present Perfect</span></td><td>I <b>have already taken</b> part in two competitions.</td></tr>
+          <tr><td><span class="ttag t-pp">Present Perfect</span></td><td>I <b>have never tried</b> surfing, but I'd like to.</td></tr>
+          <tr><td><span class="ttag t-ps">Present Simple</span></td><td>In conclusion, I <b>believe</b> a hobby makes life brighter.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:18px">
+    <details>
+      <summary>👁 Открыть образец монолога (12 фраз, 5 времён)</summary>
+      <div class="sample" style="margin-top:12px">
+        <p>
+        <span class="t-ps"><mark>Today I am going to talk about hobbies.</mark></span>
+        <span class="t-ps"><mark>People have hobbies because they want to relax and learn new skills.</mark></span>
+        <span class="t-ps"><mark>A good hobby also helps teenagers make friends.</mark></span><br>
+        <span class="t-ps"><mark>As for my friends, most of them are keen on football and computer games.</mark></span>
+        <span class="t-pc"><mark>My best friend is training for a competition at the moment.</mark></span><br>
+        <span class="t-ps"><mark>I usually spend my free time reading and taking photos.</mark></span>
+        <span class="t-past"><mark>Last weekend I visited a small exhibition in our town.</mark></span>
+        <span class="t-pcast"><mark>While I was walking around the gallery, I met a local photographer.</mark></span>
+        <span class="t-past"><mark>He gave me some useful advice.</mark></span><br>
+        <span class="t-pp"><mark>I have already taken more than fifty photos this year.</mark></span>
+        <span class="t-pp"><mark>I have never entered a competition yet, but I am going to.</mark></span>
+        <span class="t-ps"><mark>In conclusion, I think a hobby makes every day more interesting.</mark></span>
+        </p>
+        <p class="small muted">Образец — не для заучивания. Замените факты на свои: иначе монолог станет чужим.</p>
+      </div>
+    </details>
+
+    <div class="pill-row" style="margin-top:16px">
+      <button class="btn" id="rouletteBtn">🎲 Случайный вопрос для разминки</button>
+    </div>
+    <p class="note" id="rouletteOut">Нажмите кнопку — получите вопрос с указанием целевого времени.</p>
+  </div>
+</section>
+
+<section id="tab-progress" role="tabpanel" aria-labelledby="tabbtn-progress" hidden>
+  <h2>📊 Ваш личный трекер</h2>
+  <p class="lead">Данные хранятся в этом браузере. Никаких аккаунтов и передачи данных.</p>
+  <div class="grid g3" id="progressStats" style="margin-bottom:18px"></div>
+  <div class="card" style="margin-bottom:18px">
+    <h3>Освоение времён</h3>
+    <div id="progressMastery"></div>
+    <p class="note" id="progressAdvice" style="margin-top:14px"></p>
+  </div>
+  <div class="card">
+    <h3>Последние сессии</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Когда</th><th>Режим</th><th>Верно</th><th>Точность</th><th>Время</th></tr></thead>
+        <tbody id="sessionsBody"></tbody>
+      </table>
+    </div>
+    <div class="pill-row no-print" style="margin-top:16px">
+      <button class="btn sm" id="exportBtn">⬇️ Скачать отчёт (.txt)</button>
+      <button class="btn sm ghost" id="resetBtn">🗑 Сбросить прогресс</button>
+    </div>
+  </div>
+</section>
+
+</main>
+</div>
+
+<footer>
+  <div class="wrap">
+    <p><b>ОГЭ English · B1.</b> Учебный тренажёр, не официальный КИМ ФИПИ.
+      Процент правильных ответов не переводится в первичные баллы экзамена.</p>
+    <p class="no-print">
+      <button class="btn sm" id="printBtn">🖨 Распечатать теорию-шпаргалку</button>
+      <span class="small"> Рекомендация: 20 заданий сегодня → разбор ошибок → 20 через два дня.</span>
+    </p>
+  </div>
+</footer>
+
+<div class="toast" id="toast" hidden role="status"></div>
+
+<script>
+"use strict";
+const TENSES = {
+  ps:   {name:"Present Simple",     ru:"регулярность / факт / расписание", hint:"Ищите систему: every day, usually, often. Не забудьте -s в 3-м лице или do/does."},
+  pc:   {name:"Present Continuous", ru:"процесс сейчас / временная ситуация", hint:"Действие происходит сейчас или вокруг сейчас: am/is/are + V-ing. Глаголы состояния так не употребляются."},
+  past: {name:"Past Simple",        ru:"завершённое действие в прошлом", hint:"Есть дата/момент в прошлом: yesterday, last…, …ago. В вопросе и отрицании помог did + V."},
+  pcast:{name:"Past Continuous",    ru:"длительный фон в прошлом", hint:"Представьте кадр из прошлого: was/were + V-ing. Часто рядом while или точное время."},
+  pp:   {name:"Present Perfect",    ru:"результат / опыт / связь с сейчас", hint:"Важно НЕ когда, а что есть сейчас: have/has + V3. Ищите already, yet, ever, never, since, for."}
+};
+const TL = Object.keys(TENSES);
+
+const it  = (id,t,lv,m,q,opts,ans,ex) => ({id,t,lv,m,q,opts,ans,ex,kind:"choice"});
+const fill= (id,t,lv,m,q,ans,ex)    => ({id,t,lv,m,q,ans,ex,kind:"type"});
+
+const MCQ = [
+ it("c01","ps",1,"three times a week","My sister ___ to the gym three times a week.",["goes","is going","has gone"],"goes","Регулярность → Present Simple. 3-е лицо ед. числа → goes."),
+ it("c02","ps",1,"научный факт","Water ___ at 100 degrees Celsius.",["boils","is boiling","has boiled"],"boils","Общая истина всегда в Present Simple, даже если говорим об этом сейчас."),
+ it("c03","ps",1,"on Sundays","___ your parents ___ at home on Sundays?",["Do … stay","Are … staying","Have … stayed"],"Do … stay","Вопрос о регулярном действии: Do + subjects + глагол без -s."),
+ it("c04","ps",1,"предпочтение","He ___ coffee — he prefers tea.",["doesn't drink","isn't drinking","hasn't drunk"],"doesn't drink","Факт о привычке: does not + V. Continuous описывал бы процесс прямо сейчас."),
+ it("c05","ps",2,"расписание","The train ___ at 6:15 every morning.",["leaves","is leaving","has left"],"leaves","Расписание в английском — Present Simple, хотя речь о будущем."),
+ it("c06","ps",1,"способность/факт","My friend ___ English very well.",["speaks","is speaking","has spoken"],"speaks","Это характеристика человека, а не процесс в момент речи."),
+ it("c07","ps",1,"every day","Kate ___ her homework before dinner every day.",["finishes","is finishing","has finished"],"finishes","Every day = система. Глагол finish + -es в 3-м лице."),
+ it("c08","ps",1,"вегетарианец","___ you ___ meat? — No, I'm vegetarian.",["Do … eat","Are … eating","Have … eaten"],"Do … eat","Вопрос о привычке, а не о том, что человек делает в эту секунду."),
+ it("c09","pc",1,"Look!","Look! The children ___ in the yard.",["are playing","play","have played"],"are playing","Look! указывает на процесс в момент речи → are + V-ing."),
+ it("c10","pc",1,"Be quiet!","Be quiet! The baby ___.",["is sleeping","sleeps","has slept"],"is sleeping","Просьба тише означает, что действие происходит прямо сейчас."),
+ it("c11","pc",1,"at the moment","She ___ a book at the moment, so don't disturb her.",["is reading","reads","has read"],"is reading","At the moment → Present Continuous. Не путаем с регулярным чтением."),
+ it("c12","pc",1,"right now","We ___ for the bus right now.",["are waiting","wait","have waited"],"are waiting","Right now = сейчас. We → are + V-ing."),
+ it("c13","pc",2,"собираются уходить","Why ___ you ___ your shoes? We are going out.",["are … putting on","do … put on","have … put on"],"are … putting on","Вопрос о процессе, который происходит прямо перед разговором."),
+ it("c14","pc",1,"не могу сейчас","I can't come to the phone — I ___ dinner.",["am cooking","cook","have cooked"],"am cooking","Причина «не могу сейчас» — действующий процесс."),
+ it("c15","pc",1,"Look at him!","Look at that dog! It ___ at me.",["is looking","looks","has looked"],"is looking","Маркер Look at! → процесс сейчас. Look at — устойчивое сочетание."),
+ it("c16","pc",2,"this week","This week we ___ a project about ecology.",["are making","make","have made"],"are making","Временная ситуация на неделе, а не постоянная привычка → Continuous."),
+ it("c17","past",1,"last July","We ___ to the seaside last July.",["went","were going","have gone"],"went","Last July — закрытый период в прошлом → Past Simple."),
+ it("c18","past",1,"yesterday","She ___ her keys yesterday morning.",["lost","was losing","has lost"],"lost","Указано когда → Past Simple. С Present Perfect нельзя ставить yesterday."),
+ it("c19","past",1,"last night","___ you ___ the match on TV last night?",["Did … watch","Were … watching","Have … watched"],"Did … watch","Вопрос о завершённом событии: Did + S + глагол без -ed."),
+ it("c20","past",1,"two days ago","He ___ me about his new job two days ago.",["told","was telling","has told"],"told","Two days ago — конкретное время в прошлом. Tell → told."),
+ it("c21","past",2,"причина в прошлом","I ___ the film, so I went home early.",["didn't like","wasn't liking","haven't liked"],"didn't like","Like — глагол состояния: не используется в Continuous. Отрицание в прошлом — didn't + V."),
+ it("c22","past",1,"исторический факт","Mozart ___ more than 600 works.",["wrote","was writing","has written"],"wrote","Речь о человеке, чья жизнь уже завершена: исторический факт → Past Simple."),
+ it("c23","past",1,"three years ago","They ___ to a bigger flat three years ago.",["moved","were moving","have moved"],"moved","Ago отсчитывает момент в прошлом → Past Simple."),
+ it("c24","past",1,"ten minutes ago","The bus ___ ten minutes ago.",["left","was leaving","has left"],"left","Ten minutes ago = точка в прошлом. Leave → left."),
+ it("c25","pcast",1,"at eight yesterday","At eight yesterday evening I ___ dinner.",["was having","had","have had"],"was having","Точный момент в прошлом + длительный процесс → was + V-ing."),
+ it("c26","pcast",1,"while","While Mum ___ dinner, Dad was reading the newspaper.",["was cooking","cooked","has cooked"],"was cooking","Два параллельных длительных действия: оба в Past Continuous."),
+ it("c27","pcast",1,"at 5 yesterday","What ___ you ___ at five o'clock yesterday?",["were … doing","did … do","have … done"],"were … doing","Вопрос о процессе в точный момент прошлого → were + V-ing."),
+ it("c28","pcast",1,"while / rang","While we ___ home, the phone rang.",["were walking","walked","have walked"],"were walking","While + длительный фон; rang — короткое действие, которое его прервало."),
+ it("c29","pcast",1,"when I called","She ___ a film when I called her.",["was watching","watched","has watched"],"was watching","Она была в процессе, когда произошёл звонок."),
+ it("c30","pcast",2,"from 4 to 5","They ___ tennis from four to five yesterday.",["were playing","played","have played"],"were playing","Подчёркнута длительность внутри отрезка прошлого → Continuous."),
+ it("c31","pcast",1,"went out","I ___ to music when the lights went out.",["was listening","listened","have listened"],"was listening","Фон (слушал) + вмешавшееся событие (свет погас)."),
+ it("c32","pcast",2,"параллелизм","While the teacher ___, nobody in the class was talking.",["was speaking","spoke","has spoken"],"was speaking","Два одновременных процесса в прошлом: was speaking / was talking."),
+ it("c33","pp",1,"three times","I ___ this film three times.",["have seen","saw","was seeing"],"have seen","Речь об опыте к сейчас, время просмотра не важно → Present Perfect."),
+ it("c34","pp",1,"already","He ___ the book already.",["has read","read","was reading"],"has read","Already — классический маркер Perfect. Read в третьей форме пишется так же, но читается [red]."),
+ it("c35","pp",1,"ever","___ you ever ___ to Britain?",["Have … been","Did … go","Are … going"],"Have … been","Вопрос о жизненном опыте: Have you ever been…? (был и вернулся)."),
+ it("c36","pp",2,"since 2019","We ___ each other since 2019.",["have known","knew","were knowing"],"have known","Состояние началось в прошлом и длится сейчас. Know — state verb,Continuous невозможен."),
+ it("c37","pp",1,"yet","She ___ home yet.",["hasn't come","didn't come","wasn't coming"],"hasn't come","Yet в отрицании → действие ожидается к сейчас: has not + V3."),
+ it("c38","pp",2,"this week","I ___ him three times this week.",["have met","met","was meeting"],"have met","Период «эта неделя» ещё не закончен → результат за период в Present Perfect."),
+ it("c39","pp",1,"just","She ___ just ___ the room.",["has … left","did … leave","was … leaving"],"has … left","Just = только что, результат виден сейчас. Between subject and V3 стоит has."),
+ it("c40","pp",2,"the best … ever","This is the best film I ___.",["have ever watched","ever watched","am watching"],"have ever watched","Конструкция «это лучший …, который я когда-либо …» требует Present Perfect."),
+ it("c41","ps",2,"habit","My grandmother ___ early every morning.",["wakes up","is waking up","has woken up"],"wakes up","Every morning = регулярность. 3-е лицо ед. числа → wakes up."),
+ it("c42","pc",2,"temporary","I ___ in a hotel this month while my flat ___ .",["am staying / is being renovated","stay / renovates","have stayed / has been renovated"],"am staying / is being renovated","This month = временная ситуация → Continuous. Flat = пассив в Continuous."),
+ it("c43","past",2,"sequence","She ___ the door, ___ in and ___ down.",["opened / came / sat","was opening / was coming / was sitting","has opened / has come / has sat"],"opened / came / sat","Цепочка завершённых действий в прошлом → все в Past Simple."),
+ it("c44","pcast",2,"interruption","I ___ a shower when the water ___ off.",["was having / went","had / went","have had / has gone"],"was having / went","Длительный процесс (was having) прерван коротким событием (went)."),
+ it("c45","pp",2,"result now","I ___ my wallet. I can't pay.",["have lost","lost","was losing"],"have lost","Результат виден сейчас (can't pay), время не указано → Present Perfect."),
+ it("c46","ps",2,"general truth","The earth ___ around the sun.",["revolves","is revolving","has revolved"],"revolves","Научный факт → Present Simple, даже если говорим об этом сейчас."),
+ it("c47","pc",2,"annoyance","He ___ his keys again! He's so careless.",["is always losing","always loses","has always lost"],"is always losing","Always + Continuous = раздражение от повторяющегося действия."),
+ it("c48","past",2,"specific time","I ___ her at the station yesterday at 5.",["met","was meeting","have met"],"met","Yesterday at 5 = конкретный момент в прошлом → Past Simple."),
+ it("c49","pcast",2,"background","The sun ___ when we ___ the tent.",["was shining / pitched","shone / were pitching","has shone / have pitched"],"was shining / pitched","Фон (was shining) + короткое действие (pitched)."),
+ it("c50","pp",2,"experience","___ you ever ___ sushi?",["Have … eaten","Did … eat","Are … eating"],"Have … eaten","Вопрос о жизненном опыте без указания времени → Present Perfect.")
+];
+
+const TYPE = [
+ fill("f01","ps",1,"usually","My brother usually ___ (walk) to school.","walks","Usually + 3-е лицо ед. числа → walk + s."),
+ fill("f02","ps",1,"факт","Cats ___ (not / eat) chocolate.", "don't eat~do not eat","Отрицание в Present Simple: do not + V. Не doesn't: subjects — cats."),
+ fill("f03","ps",1,"вопрос","___ she ___ (speak) German?","does she speak","Вопрос о факте: Does + she + инфинитив без -s."),
+ fill("f04","ps",2,"расписание","The lesson ___ (start) at nine every Monday.","starts","Every Monday = расписание → Present Simple, 3-е лицо → starts."),
+ fill("f05","ps",2,"how often","How often ___ you ___ (visit) your grandparents?","do you visit","How often спрашивает о частоте → Present Simple: do + you + V."),
+ fill("f06","pc",1,"Listen!","Listen! She ___ (sing) in the next room.","is singing","Listen! → процесс сейчас, she → is + singing."),
+ fill("f07","pc",1,"now","I ___ (not / watch) TV now — I'm doing my homework.","am not watching~'m not watching","Отрицание процесса: am not + V-ing. Форма amn't не существует."),
+ fill("f08","pc",1,"вопрос","Look at the sky! What ___ it ___ (do)?","is it doing","Вопрос о процессе сейчас: Is + it + doing."),
+ fill("f09","pc",1,"at the moment","They ___ (run) in the park at the moment.","are running","Run → running (удвоение n), subjects they → are."),
+ fill("f10","pc",1,"не шумите","Please don't make a noise. Grandpa ___ (work).","is working","Контекст «не шумите» = процесс происходит сейчас."),
+ fill("f11","past",1,"yesterday","We ___ (buy) a new laptop yesterday.","bought","Buy — неправильный глагол: buy–bought–bought."),
+ fill("f12","past",1,"last Friday","She ___ (not / come) to school last Friday.","didn't come~did not come","Did + not, а смысловой глагол возвращается в форму come."),
+ fill("f13","past",1,"last night","___ you ___ (enjoy) the concert last night?","did you enjoy","Вопрос в прошлом: Did + you + инфинитив (не enjoyed)."),
+ fill("f14","past",1,"an hour ago","I ___ (write) three emails an hour ago.","wrote","An hour ago → Past Simple. Write → wrote."),
+ fill("f15","past",1,"last week","He ___ (be) ill last week.","was","He → was. Указан закрытый период last week."),
+ fill("f16","pcast",1,"at six yesterday","At six yesterday we ___ (have) dinner.","were having","Точный момент прошлого + процесс: we → were + having."),
+ fill("f17","pcast",1,"when you called","I ___ (not / sleep) when you called.","wasn't sleeping~was not sleeping","Фон в прошлом в отрицании: was not + V-ing."),
+ fill("f18","pcast",1,"at ten last night","What ___ she ___ (do) at ten last night?","was she doing","Вопрос о процессе в момент прошлого: Was + she + doing."),
+ fill("f19","pcast",1,"while / rang","While they ___ (talk), the bell rang.","were talking","While + длительный процесс: they → were talking."),
+ fill("f20","pcast",2,"когда началась метель","He ___ (stand) at the bus stop when it started to snow.","was standing","Он уже находился в процессе, когда началось другое событие."),
+ fill("f21","pp",1,"never","I ___ (never / be) to Spain.","have never been~never have been","Опыт к сейчас: have + never + V3. Be → been."),
+ fill("f22","pp",1,"just","She ___ (just / finish) her project.","has just finished~just has finished","Just + Present Perfect: she → has, finish → finished."),
+ fill("f23","pp",1,"ever","___ you ever ___ (eat) sushi?","have you ever eaten","Вопрос об опыте: Have + you + ever + V3. Eat → eaten."),
+ fill("f24","pp",2,"for six years","We ___ (know) each other for six years.","have known","Длящийся до сейчас state verb: have + known, не have been knowing."),
+ fill("f25","pp",1,"yet","He ___ (not / read) this book yet.","hasn't read~has not read","Yet + отрицание → has not + V3. Read → read [red]."),
+ fill("f26","ps",2,"habit","My cat ___ (sleep) on the sofa every afternoon.","sleeps","Every afternoon = регулярность. 3-е лицо ед. числа → sleeps."),
+ fill("f27","pc",2,"temporary","I ___ (stay) with my friend this week.","am staying","This week = временная ситуация → Continuous."),
+ fill("f28","past",2,"sequence","He ___ (open) the book and ___ (start) reading.","opened~started","Цепочка действий в прошлом → оба в Past Simple."),
+ fill("f29","pcast",2,"parallel","While I ___ (cook), my husband ___ (watch) TV.","was cooking~was watching","Два параллельных процесса в прошлом → оба в Past Continuous."),
+ fill("f30","pp",2,"result","I ___ (lose) my keys. I can't get in.","have lost","Результат виден сейчас, время не указано → Present Perfect."),
+ fill("f31","ps",2,"fact","The sun ___ (rise) in the east.","rises","Научный факт → Present Simple."),
+ fill("f32","pc",2,"annoyance","He ___ (always / complain) about his job.","is always complaining","Always + Continuous = раздражение."),
+ fill("f33","past",2,"specific","I ___ (meet) her at the conference last year.","met","Last year = конкретное время в прошлом → Past Simple."),
+ fill("f34","pcast",2,"interruption","We ___ (have) dinner when the phone ___ (ring).","were having~rang","Длительный процесс прерван коротким событием."),
+ fill("f35","pp",2,"experience","___ you ever ___ (try) skydiving?","have you ever tried","Вопрос о жизненном опыте → Present Perfect."),
+ fill("f36","ps",2,"schedule","The flight ___ (depart) at 8 PM tomorrow.","departs","Расписание → Present Simple, даже если речь о будущем."),
+ fill("f37","pc",2,"around now","We ___ (work) on a new project these days.","are working","These days = временная ситуация вокруг сейчас → Continuous."),
+ fill("f38","past",2,"completed","She ___ (finish) her thesis last month.","finished","Last month = завершённый период в прошлом → Past Simple."),
+ fill("f39","pcast",2,"background","The birds ___ (sing) when we ___ (wake) up.","were singing~woke","Фон (were singing) + короткое событие (woke)."),
+ fill("f40","pp",2,"duration","They ___ (live) here since 2015.","have lived~have been living","Состояние началось в прошлом и длится до сейчас → Present Perfect.")
+];
+
+const ERR = [
+ it("e01","pc",1,"is play","She *is play* the piano now.",["is playing","plays","has played"],"is playing","Сейчас → Continuous: is + V-ing, а не is + инфинитив."),
+ it("e02","pp",1,"have saw","I *have saw* this film twice.",["have seen","have sawed","has seen"],"have seen","После have нужна третья форма: see → seen."),
+ it("e03","ps",1,"go","He *go* to school by bike every day.",["goes","go","is going"],"goes","Every day + he → Present Simple с -s: goes."),
+ it("e04","pcast",1,"was do","While I *was do* my homework, the phone rang.",["was doing","did","have done"],"was doing","После was нужен V-ing: was doing."),
+ it("e05","past",1,"watched","Did you *watched* the news yesterday?",["watch","watching","have watched"],"watch","После did глагол всегда в начальной форме: Did you watch…?"),
+ it("e06","pp",2,"am knowing","I *am knowing* him for ten years.",["have known","know","was knowing"],"have known","For ten years → связь с сейчас; know — state verb → have known."),
+ it("e07","pc",1,"snows","Look! It *snows* outside.",["is snowing","snows","has snowed"],"is snowing","Look! → процесс в момент речи: is snowing."),
+ it("e08","pcast",1,"was watching","We *was watching* a film at midnight.",["were watching","was watched","are watching"],"were watching","We требует were, не was."),
+ it("e09","past",1,"went","She didn't *went* to bed early.",["go","gone","going"],"go","Didn't + инфинитив: didn't go."),
+ it("e10","pp",1,"has finish","My brother *has finish* his homework already.",["has finished","has finish","have finished"],"has finished","Has + V3: finished. И brother → has, не have."),
+ it("e11","pcast",2,"have","At seven yesterday I *have* breakfast when the phone rang.",["was having","had","have had"],"was having","Длительный фон в точный момент прошлого → was having."),
+ it("e12","ps",1,"likes","Does she *likes* pop music?",["like","likes","is liking"],"like","Does уже несёт -s: основной глагол без -s → like."),
+ it("e13","ps",2,"don't","My friend *don't* like coffee.",["doesn't","don't","isn't"],"doesn't","My friend = he/she → doesn't, не don't."),
+ it("e14","pc",2,"are know","I *are knowing* the answer now.",["know","am knowing","have known"],"know","Know — state verb, не используется в Continuous."),
+ it("e15","past",2,"was go","I *was go* to the cinema yesterday.",["went","was going","have gone"],"went","Yesterday = завершённое действие в прошлом → Past Simple."),
+ it("e16","pcast",2,"were play","They *were play* football at 5 PM.",["were playing","played","have played"],"were playing","Past Continuous = were + V-ing."),
+ it("e17","pp",2,"have saw","She *have saw* that movie.",["has seen","have seen","saw"],"has seen","She → has + V3. See → seen."),
+ it("e18","ps",2,"is work","He *is work* in a bank.",["works","is working","has worked"],"works","Факт о работе → Present Simple. He → works."),
+ it("e19","pc",2,"am read","I *am read* a book now.",["am reading","read","have read"],"am reading","Now → Continuous: am + V-ing."),
+ it("e20","past",2,"did went","He *did went* home early.",["went","did go","has gone"],"went","Did + V (без -ed): did go, но в утверждении просто went."),
+ it("e21","pcast",2,"was read","She *was read* when I called.",["was reading","read","has read"],"was reading","Past Continuous = was + V-ing."),
+ it("e22","pp",2,"has eat","They *has eat* already.",["have eaten","has eaten","ate"],"have eaten","They → have + V3. Eat → eaten."),
+ it("e23","ps",2,"are like","We *are like* this song.",["like","are liking","have liked"],"like","Like — state verb, не в Continuous."),
+ it("e24","pc",2,"is rain","It *is rain* outside.",["is raining","rains","has rained"],"is raining","Now → Continuous: is + V-ing."),
+ it("e25","past",2,"was see","I *was see* him yesterday.",["saw","was seeing","have seen"],"saw","Yesterday → Past Simple: see → saw.")
+];
+
+const TEXTS = [
+ {
+  title:"Text 1 · A Day at the Museum",
+  note:"База · 12 пропусков · в каждом ответе ОДНО слово · ориентир 8 минут",
+  text:`Last Saturday, my friend Ben and I {{DECIDE|decided|past|Маркер last Saturday: завершённое событие в прошлом → Past Simple.}}
+to visit the science museum. We {{BE|were|past|Subjects we + момент в прошлом → were.}} there at ten in the morning.
+While we {{BE|were|pcast|Слово looking уже дано: нужен только вспомогательный were для Past Continuous.}}
+looking at the robots, our guide suddenly {{COME|came|past|Suddenly + короткое вмешавшееся событие → Past Simple: come → came.}}
+up to us. He {{TELL|told|past|Часть цепочки событий в прошлом: tell → told.}} us that the museum
+{{OPEN|opened|past|Дата in 1998 → завершённое действие в прошлом → opened.}} in 1998.
+
+Ben is a big fan of science. He {{HAVE|has|pp|Слово visited уже дано, есть already и три раза к сейчас → нужен вспомогательный has.}}
+visited the museum three times already, and now he {{BE|is|pc|Слово working дано + now → вспомогательный is для Present Continuous.}}
+working on a project about robots. "I {{SEE|saw|past|Указано когда: for the first time last winter → Past Simple, see → saw.}}
+that hall for the first time last winter," he told me. "Let's go!"
+
+We stayed there until six. Before we left, I {{TAKE|took|past|Событие перед уходом в прошлом → take → took.}}
+a photo of a giant model of the Solar System. It {{BE|was|pcast|Слово raining дано: нужен was, чтобы получить фон в прошлом.}}
+raining when we came out, so we quickly {{RUN|ran|past|Короткое последовательное действие → run → ran.}} to the bus stop.`
+ },
+ {
+  title:"Text 2 · My Hobby",
+  note:"Повышенный · 12 пропусков · ответ может быть из двух слов · ориентир 8–10 минут",
+  text:`Hi! I'm Anna and I {{BE|have been~'ve been|pp|For five years: состояние началось в прошлом и длится сейчас → have been.}}
+keen on photography for five years. My dad {{GIVE|gave|past|Событие в прошлом: give → gave.}} me my first camera
+when I {{BE|was|past|Когда мне было двенадцать → was.}} twelve.
+While my parents were cleaning, I {{TAKE|was taking|pcast|While задаёт длительный фон в прошлом → was taking.}}
+photos of our cat. He never {{MOVE|moved|past|Завершённое факт-описание в прошлом: never moved.}}
+from his favourite chair that morning. I {{NOT KNOW|didn't know~did not know|past|Then = в тот момент в прошлом; know — state verb → didn't know.}}
+anything about light and colour then.
+
+Now I {{POST|post|ps|Now здесь означает «в наше время», плюс every weekend → система → Post без -s (I).}}
+my pictures online every weekend. Look! I {{EDIT|am editing~'m editing|pc|Look! + right now → процесс: am editing.}}
+a new photo right now. I {{CHOOSE|have chosen~'ve chosen|pp|Already + результат к сейчас, время не указано → have chosen.}}
+the best one for the school competition already. But I {{NOT SEND|haven't sent~has not sent~have not sent|pp|Yet в отрицании → действие ещё не выполнено к сейчас: have not sent.}}
+it to my teacher yet.
+
+While I {{WALK|was walking|pcast|Длительный процесс в прошлом, прерванный событием noticed → was walking.}}
+to school yesterday, I noticed a rainbow. I {{STOP|stopped|past|Короткое завершённое действие: stop → stopped (удвоение p).}}
+to take a photo, and that picture won the competition!`
+ },
+ {
+  title:"Text 3 · Science Fair",
+  note:"Продвинутый · 17 пропусков · усложнённая грамматика · ориентир 10–12 минут",
+  text:`Our school {{ORGANISE|organises~is organising|ps|Every year = регулярность → Present Simple. Но если речь о текущем году → is organising.}}
+a science fair every year. This year, we {{WORK|are working|pc|This year + временный проект → Present Continuous.}}
+on a robot that {{CAN|can|ps|Can = способность, модальный глагол → Present Simple.}}
+pick up small objects. While my teammate {{DESIGN|was designing|pcast|While + длительный процесс в прошлом → Past Continuous.}}
+the robot's arm last week, he suddenly {{REALISE|realised|past|Suddenly + короткое осознание → Past Simple.}}
+that we {{NEED|needed|past|Нужен был Past Simple для согласования времён: he realised that we needed.}}
+more sensors.
+
+We {{BUY|bought|past|Last week → завершённое действие в прошлом → bought.}}
+five new sensors yesterday. Since then, we {{TEST|have tested~have been testing|pp|Since then + результат к сейчас → Present Perfect.}}
+the robot three times. Each time, it {{FAIL|failed|past|Each time + конкретные испытания в прошлом → Past Simple.}}
+to pick up the heaviest object. Right now, my partner {{ADJUST|is adjusting|pc|Right now → процесс в момент речи → Present Continuous.}}
+the code.
+
+I {{KNOW|have known|pp|Since 2020 + state verb know → Present Perfect.}}
+him since 2020, and he {{BE|is|ps|Факт о настоящем → Present Simple.}}
+always very careful. While we {{WAIT|were waiting|pcast|While + процесс в прошлом → Past Continuous.}}
+for the results last month, the judges {{ANNOUNCE|announced|past|Короткое событие → Past Simple.}}
+our project the best. We {{WIN|won|past|Last month → Past Simple: win → won.}}
+first place!
+
+By the way, I have never {{BE|been|pp|Опыт к сейчас + never → Present Perfect: have been.}}
+to a science fair before this year. It {{BE|was|past|This year + конкретное событие → Past Simple.}}
+amazing!`
+ },
+ {
+  title:"Text 4 · Travel Blog",
+  note:"Продвинутый · 24 пропуска · усложнённая грамматика · ориентир 10–12 минут",
+  text:`Hi everyone! I {{BE|have been|pp|For two weeks + состояние длится до сейчас → Present Perfect.}}
+in Italy for two weeks now. I {{ARRIVE|arrived|past|Two weeks ago → завершённое действие в прошлом → arrived.}}
+here on a sunny morning. While I {{WALK|was walking|pcast|While + процесс в прошлом → Past Continuous.}}
+to my hotel, I {{NOTICE|noticed|past|Короткое событие → Past Simple.}}
+a beautiful fountain.
+
+Since I {{GET|got~have got~have gotten|past|Конкретный момент в прошлом → Past Simple.}}
+here, I {{VISIT|have visited|pp|Since + результат к сейчас → Present Perfect.}}
+five museums. Right now, I {{SIT|am sitting|pc|Right now → процесс в момент речи → Present Continuous.}}
+in a café and {{DRINK|am drinking|pc|Параллельное действие сейчас → Present Continuous.}}
+espresso. My friend {{JOIN|will join~is joining|pc|Планированное будущее → Present Continuous.}}
+me tomorrow.
+
+Last night, we {{GO|went|past|Last night → Past Simple: go → went.}}
+to a traditional restaurant. While we {{EAT|were eating|pcast|While + процесс в прошлом → Past Continuous.}}
+pizza, a street musician {{START|started|past|Короткое событие → Past Simple.}}
+playing outside. Everyone {{STOP|stopped|past|Короткое событие → Past Simple.}}
+to listen. It {{BE|was|past|Конкретный момент в прошлом → Past Simple.}}
+magical!
+
+I {{NEVER|have never eaten~never have eaten|pp|Never + опыт к сейчас → Present Perfect.}}
+such delicious food before. I {{TAKE|have taken~'ve taken|pp|Результат к сейчас (много фото) → Present Perfect.}}
+more than 200 photos already. While I {{WRITE|was writing|pcast|While + процесс в прошлом → Past Continuous.}}
+this blog post, my phone {{RING|rang|past|Короткое событие → Past Simple.}}.
+It {{BE|was|past|Конкретный момент в прошлом → Past Simple.}}
+my mum. She {{ASK|asked|past|Past Simple для цепочки событий → asked.}}
+how I {{BE|was|past|Согласование времён: she asked how I was.}}.
+
+I {{LOVE|love|ps|Факт о настоящем → Present Simple.}}
+travelling! I {{BE|have been|pp|Since 2015 + состояние длится до сейчас → Present Perfect.}}
+to ten countries since 2015. Next year, I {{PLAN|am planning|pc|Планированное будущее → Present Continuous.}}
+to visit Japan.`
+ }
+];
+
+const FLIPS = [
+ ["every day","ps"],["now","pc"],["yesterday","past"],["last week","past"],
+ ["ago","past"],["while","pcast"],["at 8 yesterday","pcast"],["already","pp"],
+ ["yet","pp"],["since 2020","pp"],["ever","pp"],["this week","pp"]
+];
+
+const ROULETTE = [
+ ["What do you usually do after school?","ps"],
+ ["What are you doing this week for your hobby?","pc"],
+ ["What did you do last Sunday?","past"],
+ ["What were you doing at seven yesterday evening?","pcast"],
+ ["How long have you known your best friend?","pp"],
+ ["Have you ever tried an extreme sport?","pp"],
+ ["How often does your family go to the cinema?","ps"],
+ ["What is your friend doing in this photo? Imagine!","pc"],
+ ["When did you last read a book?","past"],
+ ["What have you already done this week?","pp"]
+];
+
+const $  = (s,r=document)=>r.querySelector(s);
+const $$ = (s,r=document)=>Array.from(r.querySelectorAll(s));
+const norm = s => String(s||"").toLowerCase().replace(/[’`]/g,"'").replace(/[.!?]+$/,"").replace(/\s+/g," ").trim();
+const accepts = (item,val) => norm(item.ans).split("~").some(a=>norm(a)===norm(val));
+const blanksOf = q => (String(q).match(/___/g)||[]).length;
+const displayAns = item => item.ans.split("~").join(" / ");
+const typeAccept = (item, vals) => {
+  if(blanksOf(item.q)<=1) return norm(item.ans).split("~").some(a=>norm(a)===norm(vals[0]));
+  const parts=item.ans.split("~");
+  if(parts.length!==vals.length) return false;
+  return parts.every((p,i)=>norm(p)===norm(vals[i]));
+};
+const shuffle = arr => {const a=arr.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;};
+const fmt = sec => {sec=Math.max(0,Math.floor(sec));return String(Math.floor(sec/60)).padStart(2,"0")+":"+String(sec%60).padStart(2,"0");};
+const rich = s => String(s).replace(/\*\*(.+?)\*\*/g,"<b>$1</b>").replace(/\*(.+?)\*/g,'<mark class="mis">$1</mark>').replace(/___/g,'<span class="blank"></span>');
+let toastTimer;
+function toast(text){const el=$("#toast");el.textContent=text;el.hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.hidden=true,2600);}
+
+const KEY="oge_5tenses_v1";
+const emptyDB = () => ({total:0,best:0,bestStreak:0,sessions:[],byTense:Object.fromEntries(TL.map(t=>[t,{ok:0,n:0}]))});
+let DB = emptyDB();
+try{const raw=localStorage.getItem(KEY);if(raw){const p=JSON.parse(raw);if(p&&p.byTense)DB=Object.assign(emptyDB(),p);}}catch(e){}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(DB));}catch(e){}}
+function record(t,ok){DB.total++;DB.byTense[t].n++;if(ok)DB.byTense[t].ok++;}
+
+const TABS=["trainer","theory","oge","speak","progress"];
+function showTab(id){
+  TABS.forEach(t=>{
+    const on=t===id;
+    $("#tab-"+t).hidden=!on;
+    const b=$("#tabbtn-"+t);
+    b.setAttribute("aria-selected",on?"true":"false");
+    b.tabIndex=on?0:-1;
+  });
+  if(id==="progress")renderProgress();
+}
+$$(".tabs button").forEach((b,i)=>{
+  b.addEventListener("click",()=>showTab(TABS[i]));
+  b.addEventListener("keydown",e=>{
+    if(!["ArrowLeft","ArrowRight","Home","End"].includes(e.key))return;
+    e.preventDefault();
+    let n=i;
+    if(e.key==="ArrowRight")n=(i+1)%TABS.length;
+    if(e.key==="ArrowLeft")n=(i-1+TABS.length)%TABS.length;
+    if(e.key==="Home")n=0;
+    if(e.key==="End")n=TABS.length-1;
+    $("#tabbtn-"+TABS[n]).focus();showTab(TABS[n]);
+  });
+});
+
+let S=null, clockTimer=null;
+
+function poolFor(mode){
+  if(mode==="choice")return MCQ.slice();
+  if(mode==="type")return TYPE.slice();
+  if(mode==="error")return ERR.slice();
+  return MCQ.concat(TYPE,ERR);
+}
+function buildItems({mode,count,level,tenses,exam=false}){
+  if(exam){
+    const out=[];
+    TL.forEach(t=>{
+      const pool=poolFor("mix").filter(x=>x.t===t);
+      shuffle(pool).slice(0,5).forEach(x=>out.push(x));
+    });
+    return shuffle(out);
+  }
+  let pool=poolFor(mode).filter(x=>tenses.includes(x.t)&&(level===0||x.lv===level));
+  pool=shuffle(pool);
+  if(count>0)pool=pool.slice(0,count);
+  return pool;
+}
+function startSession(items,opts){
+  clearInterval(clockTimer);
+  S={items,i:0,ok:0,streak:0,bestStreak:0,hints:0,elapsed:0,left:opts.exam?720:0,
+     exam:!!opts.exam,mode:opts.mode,answered:false,log:[],done:false,
+     showClock:opts.showClock!==false};
+  $("#setup").hidden=true;$("#results").hidden=true;$("#session").hidden=false;
+  S.started=Date.now();
+  clockTimer=setInterval(()=>{
+    if(!S||S.done)return;
+    S.elapsed++;
+    if(S.exam){S.left--;if(S.left<=0){finishSession();return;}}
+    renderClock();
+  },1000);
+  renderQuestion();
+  $("#session").scrollIntoView({block:"start"});
+}
+function renderClock(){
+  $("#clock").textContent=S.exam?"⏳ "+fmt(S.left):"⏱ "+fmt(S.elapsed);
+  $("#clock").classList.toggle("bad",S.exam&&S.left<60);
+}
+function renderQuestion(){
+  const item=S.items[S.i];S.answered=false;
+  $("#qCounter").textContent=(S.i+1)+" / "+S.items.length;
+  $("#progressBar").style.width=(S.i/S.items.length*100)+"%";
+  $("#qMode").textContent=S.exam?"Экзамен-раунд":({mix:"Марафон",choice:"Выбор формы",type:"Впиши форму",error:"Охота за ошибкой"}[S.mode]);
+  const tq=$("#qTense");tq.className="ttag t-"+item.t;tq.textContent=TENSES[item.t].name;
+  $("#qLevel").textContent=item.lv===2?"B1 · ловушка":"A2 · база";
+  $("#qTitle").innerHTML=rich(item.q);
+  $("#feedback").hidden=true;$("#feedback").className="feedback";
+  $("#hintBox").hidden=true;$("#nextBtn").hidden=true;
+  $("#hintBtn").hidden=S.exam||$("#allowHint").checked===false;
+  $("#finishEarly").hidden=!S.exam;
+  $("#options").innerHTML="";$("#options").hidden=false;
+  $("#typeRow").hidden=true;
+
+  if(item.kind==="type"){
+    $("#options").hidden=true;$("#typeRow").hidden=false;
+    $$("#qTitle .blank").forEach(sp=>{
+      const inp=document.createElement("input");
+      inp.type="text";inp.autocomplete="off";inp.autocapitalize="off";inp.spellcheck=false;
+      inp.className="type-inline";inp.placeholder="форма";
+      sp.replaceWith(inp);
+    });
+    setTimeout(()=>{const f=$$("#qTitle input.type-inline")[0];if(f)f.focus();},30);
+  }else{
+    const opts=shuffle(item.opts);
+    opts.forEach((o,idx)=>{
+      const b=document.createElement("button");
+      b.className="option";b.dataset.value=o;
+      b.innerHTML='<span class="num">'+(idx+1)+"</span><span>"+o+"</span>";
+      b.addEventListener("click",()=>answer(o,b));
+      $("#options").appendChild(b);
+    });
+  }
+  renderClock();
+  $("#qTitle").focus({preventScroll:true});
+}
+function answer(value,btn){
+  if(!S||S.answered||S.done)return;
+  const item=S.items[S.i];
+  let ok,chosen="";
+  if(item.kind==="type"){
+    const boxes=$$("#qTitle input.type-inline");
+    const vals=boxes.map(i=>i.value.trim());
+    ok=typeAccept(item, vals);
+    chosen=vals.join(" ");
+    const parts=item.ans.split("~");
+    boxes.forEach((inp,i)=>{
+      const exp=(parts.length===vals.length)?parts[i]:parts[0];
+      inp.disabled=true;
+      inp.classList.remove("correct","incorrect");
+      inp.classList.add(norm(inp.value)===norm(exp)?"correct":"incorrect");
+    });
+  }else{
+    ok=accepts(item,value);chosen=value;
+  }
+  S.answered=true;
+  if(ok){S.ok++;S.streak++;S.bestStreak=Math.max(S.bestStreak,S.streak);}else{S.streak=0;}
+  record(item.t,ok);
+  S.log.push({item,chosen,ok});
+
+  if(item.kind!=="type"){
+    $$(".option").forEach(b=>{
+      b.disabled=true;
+      if(norm(b.dataset.value)===norm(item.ans))b.classList.add("right");
+      else if(b===btn&&!ok)b.classList.add("wrong");
+    });
+  }
+
+  const fb=$("#feedback");
+  fb.className="feedback"+(ok?"":" bad");
+  fb.innerHTML="<h4>"+(ok?"✅ Верно!":"❌ Почти. Вот как правильно:")+"</h4>"+
+    "<p><b>"+displayAns(item)+"</b> — "+item.ex+"</p>"+
+    (!ok?'<p class="small muted" style="margin-top:6px">Ваш ответ: '+(chosen||"—")+"</p>":"");
+  fb.hidden=false;
+  $("#scoreLive").textContent="✓ "+S.ok;
+  $("#nextBtn").hidden=false;
+  $("#nextBtn").innerHTML=(S.i===S.items.length-1?"Итоги →":"Дальше →")+' <span class="kbd">Enter</span>';
+  save();
+}
+function submitType(){
+  if(!S||S.answered)return;
+  const boxes=$$("#qTitle input.type-inline");
+  const vals=boxes.map(i=>i.value.trim());
+  if(vals.some(v=>!v)){
+    toast("Заполните все пропуски");
+    const f=boxes.find(i=>!i.value.trim());
+    if(f)f.focus();
+    return;
+  }
+  answer(vals,null);
+}
+function showHint(){
+  if(!S||S.answered||S.exam)return;
+  const item=S.items[S.i];
+  if(!$("#allowHint").checked)return;
+  S.hints++;
+  $("#hintBox").hidden=false;
+  $("#hintBox").innerHTML="<b>💡 Опора:</b> "+TENSES[item.t].hint+
+    (item.m?"<br><b>Улика в задании:</b> <i>"+item.m+"</i>":"");
+}
+function finishSession(){
+  if(!S||S.done)return;
+  S.done=true;clearInterval(clockTimer);
+  const total=S.log.length, acc=total?Math.round(S.ok/total*100):0;
+  const row={date:new Date().toISOString(),mode:S.exam?"Экзамен-раунд":S.mode,n:total,ok:S.ok,acc,
+             sec:S.elapsed,streak:S.bestStreak,hints:S.hints};
+  DB.sessions.unshift(row);DB.sessions=DB.sessions.slice(0,12);
+  DB.best=Math.max(DB.best,acc);DB.bestStreak=Math.max(DB.bestStreak,S.bestStreak);save();
+
+  $("#session").hidden=true;$("#results").hidden=false;
+  $("#resultTitle").textContent=acc>=90?"🏆 Почти безупречно!":acc>=70?"👍 Крепкий результат!":acc>=50?"🔧 Есть над чем поработать":"🌱 Начало положено. Разбираем ошибки.";
+  $("#resAccuracy").textContent=total?acc+"%":"—";
+  $("#resCorrect").textContent=S.ok+" / "+total;
+  $("#resTime").textContent=fmt(S.elapsed);
+  $("#resStreak").textContent=S.bestStreak;
+  $("#resHints").textContent=S.hints;
+  renderMastery($("#resMastery"),S.log);
+  const weak=weakest(S.log);
+  $("#resAdvice").textContent=total?
+    (weak?"Слабейшая зона этого круга — "+TENSES[weak].name+". Вернитесь к её карточке в разделе «Теория» и сделайте ещё 10 заданий только на это время.":
+     "Все пять времён отработаны. Следующий шаг — текст 20–28 и монолог: перенесите форму в речь.")
+    :"В этом круге не было ответов. Нажмите «Новый круг» и попробуйте ещё раз.";
+  renderMistakes(S.log.filter(x=>!x.ok));
+  $("#retryWrong").disabled=!S.log.some(x=>!x.ok);
+  $("#results").scrollIntoView({block:"start"});
+}
+function renderMastery(el,log){
+  el.innerHTML="";
+  TL.forEach(t=>{
+    const rows=log.filter(x=>x.item.t===t);
+    const ok=rows.filter(x=>x.ok).length, n=rows.length;
+    const pct=n?Math.round(ok/n*100):0;
+    const div=document.createElement("div");
+    div.className="mastery t-"+t;
+    div.innerHTML='<div class="line"><span class="ttag t-'+t+'">'+TENSES[t].name+'</span><span>'+(n?ok+"/"+n+" · "+pct+"%":"нет заданий")+"</span></div>"+
+      '<div class="bar"><i style="width:'+pct+'%"></i></div>';
+    el.appendChild(div);
+  });
+}
+function weakest(log){
+  let best=null,rate=1.1;
+  TL.forEach(t=>{
+    const rows=log.filter(x=>x.item.t===t);if(!rows.length)return;
+    const r=1-rows.filter(x=>x.ok).length/rows.length;
+    if(r<rate){rate=r;best=t;}
+  });
+  let worst=null,worstRate=-1;
+  TL.forEach(t=>{
+    const rows=log.filter(x=>x.item.t===t);if(!rows.length)return;
+    const r=rows.filter(x=>!x.ok).length/rows.length;
+    if(r>worstRate){worstRate=r;worst=t;}
+  });
+  return worstRate>0?worst:best;
+}
+function renderMistakes(list){
+  const box=$("#mistakes");box.innerHTML="";
+  $("#mistakesTitle").textContent=list.length?"Разбор ошибок ("+list.length+")":"Ошибок нет — отличная работа!";
+  list.forEach(x=>{
+    const d=document.createElement("div");d.className="mistake";
+    d.innerHTML='<div class="q">'+rich(x.item.q)+'</div>'+
+      '<div class="ans"><span class="ttag t-'+x.item.t+'">'+TENSES[x.item.t].name+'</span> Ваш ответ: <b>'+
+      (x.chosen||"—")+'</b> → правильно: <b style="color:var(--ok)">'+displayAns(x.item)+"</b></div>"+
+      '<div class="ex">'+x.item.ex+"</div>";
+    box.appendChild(d);
+  });
+}
+function currentConfig(){
+  return {
+    mode:$("#mode").value,
+    count:Number($("#count").value),
+    level:Number($("#level").value),
+    tenses: $$("#tenseChips .chip").filter(b=>b.getAttribute("aria-pressed")==="true").map(b=>b.dataset.t),
+    showClock:$("#useTimer").checked
+  };
+}
+
+$$("#tenseChips .chip").forEach(b=>b.addEventListener("click",()=>{
+  const on=b.getAttribute("aria-pressed")==="true";
+  if(on && $$("#tenseChips .chip").filter(x=>x.getAttribute("aria-pressed")==="true").length===1){
+    toast("Оставьте хотя бы одно время 🙂");return;
+  }
+  b.setAttribute("aria-pressed",on?"false":"true");
+}));
+$("#startBtn").addEventListener("click",()=>{
+  const c=currentConfig();
+  if(!c.tenses.length){toast("Выберите время");return;}
+  const items=buildItems(c);
+  if(!items.length){toast("Под эти фильтры нет заданий. Снизьте сложность или добавьте время.");return;}
+  startSession(items,c);
+});
+$("#examBtn").addEventListener("click",()=>{
+  showTab("trainer");
+  startSession(buildItems({exam:true}),{mode:"mix",exam:true,showClock:true});
+});
+$("#checkType").addEventListener("click",submitType);
+$("#hintBtn").addEventListener("click",showHint);
+$("#nextBtn").addEventListener("click",nextQuestion);
+$("#finishEarly").addEventListener("click",()=>{if(confirm("Завершить раунд досрочно?"))finishSession();});
+function nextQuestion(){
+  if(!S||S.done)return;
+  if(!S.answered){toast("Сначала выберите или впишите ответ");return;}
+  if(S.i+1>=S.items.length){finishSession();return;}
+  S.i++;renderQuestion();
+}
+$("#againBtn").addEventListener("click",()=>{showTab("trainer");$("#results").hidden=true;$("#session").hidden=true;$("#setup").hidden=false;});
+$("#retryWrong").addEventListener("click",()=>{
+  if(!S)return;
+  const wrong=S.log.filter(x=>!x.ok).map(x=>x.item);
+  if(!wrong.length)return;
+  startSession(shuffle(wrong),{mode:"mix",showClock:true});
+});
+$("#copyResult").addEventListener("click",async()=>{
+  if(!S)return;
+  const text="ОГЭ · 5 времён\nТочность: "+(S.log.length?Math.round(S.ok/S.log.length*100):0)+
+    "%\nВерно: "+S.ok+"/"+S.log.length+"\nВремя: "+fmt(S.elapsed)+"\nЛучшая серия: "+S.bestStreak;
+  try{await navigator.clipboard.writeText(text);toast("Скопировано!");}
+  catch(e){const ta=document.createElement("textarea");ta.value=text;document.body.appendChild(ta);ta.select();
+    try{document.execCommand("copy");toast("Скопировано!");}catch(_){toast("Не удалось скопировать");}ta.remove();}
+});
+document.addEventListener("keydown",e=>{
+  if(showTabCheck()!== "trainer"||!S||S.done||$("#session").hidden)return;
+  if(["INPUT","TEXTAREA","SELECT"].includes(document.activeElement.tagName)){
+    if(e.key==="Enter"&&document.activeElement.classList&&document.activeElement.classList.contains("type-inline")){
+      e.preventDefault();submitType();
+    }
+    return;
+  }
+  if(["1","2","3"].includes(e.key)){
+    const b=$$(".option")[Number(e.key)-1];if(b&&!b.disabled){e.preventDefault();b.click();}
+  }
+  if(e.key==="Enter"&&S.answered){e.preventDefault();nextQuestion();}
+  if(e.key.toLowerCase()==="h"||e.key.toLowerCase()==="р"){e.preventDefault();showHint();}
+});
+function showTabCheck(){return $("#tab-trainer").hidden?"other":"trainer";}
+
+FLIPS.forEach(([marker,t])=>{
+  const b=document.createElement("button");
+  b.className="flip";b.setAttribute("aria-expanded","false");
+  b.innerHTML=marker+"<small>Нажмите, чтобы открыть</small>";
+  b.addEventListener("click",()=>{
+    const open=b.getAttribute("aria-expanded")==="true";
+    b.setAttribute("aria-expanded",open?"false":"true");
+    b.innerHTML=marker+"<span class='ttag t-"+t+"' style='display:block;margin-top:8px'>"+TENSES[t].name+"</span>"+
+      (open?"":"<small>"+TENSES[t].ru+"</small>");
+  });
+  $("#flipGrid").appendChild(b);
+});
+
+let currentText=0, ogeGaps=[];
+function parseText(raw){
+  const parts=[];let last=0,re=/\{\{([^}]+)\}\}/g,m,n=0;
+  while((m=re.exec(raw))){
+    if(m.index>last)parts.push({type:"text",value:raw.slice(last,m.index)});
+    const [base,ans,t,ex]=m[1].split("|");
+    parts.push({type:"gap",base,ans,t,ex,index:n++});last=re.lastIndex;
+  }
+  if(last<raw.length)parts.push({type:"text",value:raw.slice(last)});
+  return parts;
+}
+function renderOge(idx){
+  currentText=idx;const data=TEXTS[idx];
+  ogeGaps=parseText(data.text);
+  $("#ogeTitle").textContent=data.title;$("#ogeNote").textContent=data.note;
+  $("#ogeScore").textContent="Не проверено";$("#ogeExplain").innerHTML="";
+  const host=$("#ogeText");host.innerHTML="";
+  let gi=0;
+  ogeGaps.forEach(p=>{
+    if(p.type==="text"){host.appendChild(document.createTextNode(p.value.replace(/\s+/g," ")));return;}
+    gi++;
+    const span=document.createElement("span");span.className="og";
+    span.innerHTML='<span class="base">'+gi+". "+p.base+'</span><input autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Пропуск '+gi+", глагол "+p.base+'">';
+    const input=$("input",span);input.dataset.i=ogeGaps.indexOf(p);
+    input.addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();checkOge();}});
+    p.el=input;host.appendChild(span);
+  });
+  $("#textBtn0").className="btn"+(idx===0?" primary":"");
+  $("#textBtn1").className="btn"+(idx===1?" primary":"");
+  $("#textBtn2").className="btn"+(idx===2?" primary":"");
+  $("#textBtn3").className="btn"+(idx===3?" primary":"");
+}
+function checkOge(){
+  let ok=0,n=0;const wrong=[];
+  const host=$("#ogeExplain");host.innerHTML="";
+  ogeGaps.forEach((p,idx)=>{
+    if(p.type!=="gap")return;
+    n++;
+    const val=p.el.value;
+    const good=accepts(p,val);
+    if(good)ok++;else wrong.push(p);
+    p.el.className=good?"right":"wrong";
+    p.el.disabled=true;
+    const old=p.el.parentNode.querySelector(".sol");if(old)old.remove();
+    if(!good){const s=document.createElement("span");s.className="sol";s.textContent="→ "+p.ans.split("~")[0];p.el.parentNode.appendChild(s);}
+    const d=document.createElement("div");d.className="mistake";
+    d.innerHTML='<div class="q"><span class="ttag t-'+p.t+'">'+TENSES[p.t].name+'</span> '+p.base+' → <b>'+p.ans.split("~")[0]+"</b></div>"+
+      '<div class="ex">'+p.ex+"</div>";
+    d.style.background=good?"var(--ok-soft)":"#fff";
+    host.appendChild(d);
+  });
+  $("#ogeScore").textContent=ok+" / "+n+" · "+Math.round(ok/n*100)+"%";
+  $("#ogeScore").className="tag "+(ok/n>=.8?"ok":"bad");
+  const sum=document.createElement("p");sum.className="note";
+  sum.textContent=ok===n?"Идеально! Все формы выбраны по контексту.":
+    "Ошибок: "+wrong.length+". Прочитайте объяснения ниже и перезапишите текст целиком через два дня — это лучше, чем десять новых упражнений.";
+  host.prepend(sum);
+  wrong.forEach(p=>record(p.t,false));
+  ogeGaps.filter(p=>p.type==="gap"&&!wrong.includes(p)).forEach(p=>record(p.t,true));
+  DB.total+=n;save();
+  toast("Текст проверен: "+ok+" из "+n);
+}
+function resetOge(){renderOge(currentText);}
+$("#textBtn0").addEventListener("click",()=>renderOge(0));
+$("#textBtn1").addEventListener("click",()=>renderOge(1));
+$("#textBtn2").addEventListener("click",()=>renderOge(2));
+$("#textBtn3").addEventListener("click",()=>renderOge(3));
+$("#ogeCheck").addEventListener("click",checkOge);
+$("#ogeReset").addEventListener("click",resetOge);
+renderOge(0);
+
+let spLeft=90,spRunning=false,spTimer=null,spMode="prep";
+function spPaint(){
+  $("#speakClock").textContent=fmt(spLeft);
+  $("#speakStatus").textContent=spRunning?
+    (spMode==="prep"?"🧠 Подготовка: набросайте 4 опоры, не пишите текст целиком.":"🎤 Говорите по плану. Не считайте слова — считайте аспекты.")
+    :"Пауза. Выберите этап или продолжите.";
+}
+function spStop(){clearInterval(spTimer);spRunning=false;}
+function spStart(seconds,mode){
+  spStop();spLeft=seconds;spMode=mode;spRunning=true;spPaint();
+  spTimer=setInterval(()=>{
+    spLeft--;
+    if(spLeft<=0){spStop();$("#speakClock").textContent="00:00";
+      $("#speakStatus").textContent=mode==="prep"?"⏰ Время вышло. Начинайте монолог — нажмите «Монолог · 2:00».":
+        "⏰ Две минуты прошли. Прослушайте запись и заполните самопроверку.";
+      toast(mode==="prep"?"Подготовка завершена":"Время монолога вышло");return;}
+    spPaint();
+  },1000);
+}
+$("#speakPrep").addEventListener("click",()=>spStart(90,"prep"));
+$("#speakTalk").addEventListener("click",()=>spStart(120,"talk"));
+$("#speakPause").addEventListener("click",()=>{spStop();spPaint();});
+$("#speakReset").addEventListener("click",()=>{spStop();spLeft=90;spPaint();$("#speakStatus").textContent="Таймер сброшен. Выберите этап.";});
+function selfCheck(){
+  const n=$$("#selfCheck input").filter(i=>i.checked).length;
+  $("#selfScore").textContent=n+"/6 · "+(n===6?"Готово к экзамен-формату.":n>=4?"Хорошая база. Подтяните невыделенные пункты.":"Начните с каркаса: вступление → 4 аспекта → заключение.");
+  $("#selfScore").className="note"+(n<4?" warn":"");
+}
+$$("#selfCheck input").forEach(i=>i.addEventListener("change",selfCheck));
+let lastRoulette=-1;
+$("#rouletteBtn").addEventListener("click",()=>{
+  let n;do{n=Math.floor(Math.random()*ROULETTE.length);}while(n===lastRoulette);
+  lastRoulette=n;const [q,t]=ROULETTE[n];
+  $("#rouletteOut").innerHTML="<b>"+q+"</b><br><span class='ttag t-"+t+"'>"+TENSES[t].name+"</span> <span class='small muted'>— целевое время для ответа</span>";
+});
+
+function renderProgress(){
+  const acc=DB.total?Math.round(Object.values(DB.byTense).reduce((s,x)=>s+x.ok,0)/DB.total*100):0;
+  $("#progressStats").innerHTML=
+    '<div class="card"><small class="muted">Ответов за всё время</small><div class="score-big">'+DB.total+'</div></div>'+
+    '<div class="card"><small class="muted">Лучшая точность сессии</small><div class="score-big">'+DB.best+'%</div></div>'+
+    '<div class="card"><small class="muted">Рекордная серия</small><div class="score-big">'+DB.bestStreak+'</div></div>';
+
+  const host=$("#progressMastery");host.innerHTML="";
+  const rates=[];
+  TL.forEach(t=>{
+    const d=DB.byTense[t],pct=d.n?Math.round(d.ok/d.n*100):0;
+    rates.push({t,pct,n:d.n});
+    const div=document.createElement("div");div.className="mastery t-"+t;
+    div.innerHTML='<div class="line"><span class="ttag t-'+t+'">'+TENSES[t].name+'</span><span>'+
+      (d.n?pct+"% · "+d.ok+"/"+d.n:"ещё не тренировали")+"</span></div><div class='bar'><i style='width:"+pct+"%'></i></div>";
+    host.appendChild(div);
+  });
+  const trained=rates.filter(x=>x.n>0);
+  if(!trained.length){$("#progressAdvice").textContent="Пройдите первую сессию — и здесь появится ваша личная карта сильных и слабых мест.";}
+  else{
+    const worst=trained.slice().sort((a,b)=>a.pct-b.pct)[0];
+    $("#progressAdvice").textContent=worst.pct>=90?"Все времена выше 90%. Переносите грамматику в говорение и тексты — там она чаще всего «ломается».":
+      "Приоритет сейчас — "+TENSES[worst.t].name+" ("+worst.pct+"%). Откройте его карточку в теории и сделайте сессию с фильтром только на это время.";
+  }
+  const tb=$("#sessionsBody");tb.innerHTML="";
+  if(!DB.sessions.length){tb.innerHTML="<tr><td colspan='5' class='muted'>Пока нет завершённых сессий.</td></tr>";}
+  DB.sessions.forEach(s=>{
+    const tr=document.createElement("tr");
+    const d=new Date(s.date);
+    tr.innerHTML="<td>"+d.toLocaleDateString("ru-RU")+" "+d.toLocaleTimeString("ru-RU",{hour:"2-digit",minute:"2-digit"})+"</td>"+
+      "<td>"+(s.mode==="mix"?"Марафон":s.mode==="choice"?"Выбор":s.mode==="type"?"Впиши":s.mode==="error"?"Ошибка":s.mode)+"</td>"+
+      "<td>"+s.ok+" / "+s.n+"</td><td>"+s.acc+"%</td><td>"+fmt(s.sec)+"</td>";
+    tb.appendChild(tr);
+  });
+}
+$("#exportBtn").addEventListener("click",()=>{
+  let txt="ОГЭ · трекер 5 времён\nДата: "+new Date().toLocaleString("ru-RU")+"\n\n";
+  TL.forEach(t=>{const d=DB.byTense[t];txt+=TENSES[t].name+": "+d.ok+"/"+d.n+"\n";});
+  txt+="\nВсего ответов: "+DB.total+"\nЛучшая точность: "+DB.best+"%\nРекордная серия: "+DB.bestStreak+"\n\nПоследние сессии:\n";
+  DB.sessions.forEach(s=>{txt+=s.date+" · "+s.mode+" · "+s.ok+"/"+s.n+" · "+s.acc+"% · "+fmt(s.sec)+"\n";});
+  const blob=new Blob([txt],{type:"text/plain;charset=utf-8"});
+  const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="oge-5-tenses-report.txt";
+  document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),1500);
+  toast("Отчёт скачан");
+});
+$("#resetBtn").addEventListener("click",()=>{
+  if(!confirm("Удалить всю статистику и историю сессий? Это действие нельзя отменить."))return;
+  DB=emptyDB();save();renderProgress();toast("Прогресс сброшен");
+});
+
+$("#printBtn").addEventListener("click",()=>{
+  showTab("theory");
+  $$("details").forEach(d=>d.open=true);
+  setTimeout(()=>window.print(),250);
+});
+
+renderClock();
+</script>
+</body>
+</html>
