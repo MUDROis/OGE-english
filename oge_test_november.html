@@ -1293,6 +1293,29 @@ var TEST_DATA = {"storageKey":"oge-test-nov-v1","ttsKey":"oge-test-nov-tts-v1","
       for (i=0;i<m.length;i++){ var s = m[i].trim(); if (s) out.push(s); }
       return out.length ? out : [String(t)];
     }
+    function splitScript(t){
+      var src = String(t || '');
+      var re = /(Interviewer|Ben)\s*:/g, marks = [], m;
+      while ((m = re.exec(src)) !== null) marks.push({ at:m.index, raw:m[0], who:m[1] });
+      var sents = [], pitches = [], i, j;
+      if (!marks.length){
+        sents = splitSentences(src);
+        for (i=0;i<sents.length;i++) pitches.push(1);
+        return { sents:sents, pitches:pitches };
+      }
+      var chunks = [];
+      if (marks[0].at > 0) chunks.push({ who:'', text:src.slice(0, marks[0].at) });
+      for (i=0;i<marks.length;i++){
+        var end = (i+1 < marks.length) ? marks[i+1].at : src.length;
+        chunks.push({ who:marks[i].who, text:src.slice(marks[i].at + marks[i].raw.length, end) });
+      }
+      for (i=0;i<chunks.length;i++){
+        var ss = splitSentences(chunks[i].text).filter(function(s){ return s && s.trim(); });
+        var pitch = (chunks[i].who === 'Interviewer') ? 0.8 : 1;
+        for (j=0;j<ss.length;j++){ sents.push(ss[j]); pitches.push(pitch); }
+      }
+      return { sents:sents, pitches:pitches };
+    }
 
     function scoreVoice(v){
       var n = (v.name||'').toLowerCase(), s = 0, lang = (v.lang||'').toLowerCase();
@@ -1376,11 +1399,11 @@ var TEST_DATA = {"storageKey":"oge-test-nov-v1","ttsKey":"oge-test-nov-tts-v1","
       var out = [], k;
       for (k=0;k<keys.length;k++){
         var key = keys[k], it = itemOf(key);
-        var sents = it ? splitSentences(it.script) : [];
-        out.push({ type:'text', key:key, sents:sents, pass:1, si:0 });
+        var sp = it ? splitScript(it.script) : { sents:[], pitches:[] };
+        out.push({ type:'text', key:key, sents:sp.sents, pitches:sp.pitches, pass:1, si:0 });
         if (x2){
           out.push({ type:'gap', ms:10, label:'Пауза для ответов', key:key });
-          out.push({ type:'text', key:key, sents:sents, pass:2, si:0 });
+          out.push({ type:'text', key:key, sents:sp.sents, pitches:sp.pitches, pass:2, si:0 });
         }
         if (k < keys.length - 1) out.push({ type:'gap', ms:(x2 ? 12 : 4), label:'Следующий текст', key:keys[k+1] });
       }
@@ -1404,7 +1427,9 @@ var TEST_DATA = {"storageKey":"oge-test-nov-v1","ttsKey":"oge-test-nov-tts-v1","
       var u = new SpeechSynthesisUtterance(st.sents[st.si]);
       if (voiceIdx >= 0 && voices[voiceIdx]){ u.voice = voices[voiceIdx]; u.lang = voices[voiceIdx].lang; }
       else { u.lang = 'en-GB'; }
-      u.rate = currentRate(); u.pitch = 1; u.volume = 1;
+      u.rate = currentRate();
+      u.pitch = (st.pitches && typeof st.pitches[st.si] === 'number') ? st.pitches[st.si] : 1;
+      u.volume = 1;
       var where = (it ? it.letter : '?') + (st.pass === 2 ? ' · 2-е прочтение' : '');
       setStatus('🔊 Читается ' + where + ' · фраза ' + (st.si + 1) + ' из ' + st.sents.length);
       st.si++;
