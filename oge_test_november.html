@@ -1,0 +1,1558 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Проверочная работа за ноябрь · ОГЭ английский</title>
+<style>
+
+:root{
+  --teal:#15857A; --teal-dark:#0E5F58; --accent:#FF6A3B; --accent-dark:#C2492F;
+  --ink:#1E2A28; --muted:#5C6B68; --bg:#F4F7F6; --card:#FFFFFF; --line:#E1E8E6;
+  --ok-bg:#F0FAF8; --bad-bg:#FDF1EC;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Noto Sans',Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+.wrap{max-width:980px;margin:0 auto;padding:0 1rem 3rem}
+.top{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.top .bar{max-width:980px;margin:0 auto;padding:.55rem 1rem;display:flex;align-items:center;gap:.9rem;flex-wrap:wrap}
+.brand{font-weight:800;color:var(--teal-dark);font-size:.98rem;white-space:nowrap}
+.top nav{display:flex;gap:.85rem;flex-wrap:wrap}
+.top nav a{color:var(--muted);text-decoration:none;font-size:.88rem;font-weight:600}
+.top nav a:hover{color:var(--teal-dark)}
+.spacer{flex:1}
+.chip{background:var(--teal);color:#fff;font-weight:800;font-size:.85rem;border-radius:999px;padding:.32rem .8rem;white-space:nowrap}
+.btn{background:var(--teal);color:#fff;border:none;border-radius:9px;padding:.45rem .95rem;font-weight:700;font-size:.86rem;cursor:pointer;font-family:inherit}
+.btn:hover{background:var(--teal-dark)}
+.btn.ghost{background:transparent;color:var(--teal-dark);border:1.5px solid var(--teal)}
+.btn.ghost:hover{background:rgba(21,133,122,.08)}
+.btn.warn{background:transparent;color:var(--accent-dark);border:1.5px solid var(--accent)}
+.btn.warn:hover{background:var(--bad-bg)}
+.hero{padding:2.2rem 0 1.2rem}
+.kicker{display:inline-block;background:rgba(21,133,122,.1);color:var(--teal-dark);font-size:.78rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:.32rem .75rem;border-radius:999px;margin-bottom:.8rem}
+h1{font-size:1.85rem;line-height:1.25}
+h1 em{font-style:normal;color:var(--teal)}
+.sub{color:var(--muted);margin-top:.55rem;max-width:680px}
+.stats{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1.1rem}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:.5rem .95rem;font-size:.85rem}
+.stat b{color:var(--teal-dark)}
+section{margin-top:2.4rem;scroll-margin-top:78px}
+h2{font-size:1.32rem;border-left:4px solid var(--teal);padding-left:.65rem;scroll-margin-top:78px}
+h2 small{display:block;font-size:.83rem;color:var(--muted);font-weight:600;margin-top:.15rem}
+.note-p{color:var(--muted);margin-top:.6rem;max-width:760px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.1rem}
+.lesson-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1.1rem 1.2rem}
+.lesson-card h3{font-size:1rem;color:var(--teal-dark)}
+.lesson-card .lmax{font-size:.8rem;color:var(--muted);margin-bottom:.6rem}
+table.timing{width:100%;border-collapse:collapse;font-size:.85rem}
+table.timing td{padding:.32rem .4rem;border-bottom:1px dashed var(--line);vertical-align:top}
+table.timing td:first-child{white-space:nowrap;font-weight:700;color:var(--teal-dark);width:52px}
+.howto{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1.05rem 1.25rem;margin-top:1rem}
+.howto h3{font-size:.98rem;margin-bottom:.5rem;color:var(--teal-dark)}
+.howto li{margin:.35rem 0 .35rem 1.15rem;font-size:.9rem;color:var(--ink)}
+.scale-t{width:100%;border-collapse:collapse;font-size:.88rem;margin-top:.9rem}
+.scale-t th{background:rgba(21,133,122,.09);color:var(--teal-dark);text-align:left;padding:.45rem .6rem;font-size:.8rem;text-transform:uppercase;letter-spacing:.04em}
+.scale-t td{padding:.45rem .6rem;border-bottom:1px solid var(--line)}
+.task{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1.15rem 1.3rem;margin-top:1.05rem;scroll-margin-top:78px}
+.task-head{display:flex;align-items:center;justify-content:space-between;gap:.8rem;flex-wrap:wrap}
+.task-head h3{font-size:1.04rem}
+.badge{background:rgba(21,133,122,.12);color:var(--teal-dark);font-weight:800;font-size:.86rem;border-radius:999px;padding:.3rem .75rem;white-space:nowrap}
+.badge.done{background:var(--teal);color:#fff}
+.instr{color:var(--muted);font-size:.9rem;margin:.55rem 0 .9rem}
+.instr b{color:var(--ink)}
+.blitz-grid{display:grid;gap:.45rem}
+.blitz-row{display:grid;grid-template-columns:26px 1fr 210px 260px;gap:.6rem;align-items:center;padding:.18rem .3rem;border-radius:9px}
+.blitz-row .idx{color:var(--muted);font-weight:700;font-size:.85rem;text-align:center}
+.blitz-row input{border:1px solid var(--line);border-radius:8px;padding:.38rem .6rem;font-size:.92rem;font-family:inherit;outline:none;width:100%}
+.blitz-row input:focus{border-color:var(--teal)}
+.fb{font-size:.85rem;font-weight:600}
+.blitz-row.ok{background:var(--ok-bg)}
+.blitz-row.ok input{border-color:var(--teal)}
+.blitz-row.ok .fb{color:var(--teal-dark)}
+.blitz-row.bad{background:var(--bad-bg)}
+.blitz-row.bad input{border-color:var(--accent)}
+.blitz-row.bad .fb{color:var(--accent-dark)}
+.optgrid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.5rem;margin:.35rem 0 .2rem}
+label.opt{display:flex;gap:.55rem;align-items:center;border:1px solid var(--line);border-radius:10px;padding:.42rem .65rem;cursor:pointer;font-size:.92rem}
+label.opt:hover{border-color:var(--teal)}
+label.opt input{accent-color:var(--teal);flex:none}
+.lt{flex:none;width:21px;height:21px;border-radius:50%;background:rgba(21,133,122,.12);color:var(--teal-dark);font-weight:800;font-size:.78rem;display:flex;align-items:center;justify-content:center}
+label.ok{border-color:var(--teal);background:var(--ok-bg)}
+label.ok .lt{background:var(--teal);color:#fff}
+label.bad{border-color:var(--accent);background:var(--bad-bg)}
+label.bad .lt{background:var(--accent);color:#fff}
+label.reveal{border-style:dashed;border-color:var(--teal)}
+label.reveal .lt{background:var(--teal);color:#fff}
+.lextext{background:#FBFDFC;border:1px dashed var(--line);border-radius:12px;padding:.9rem 1.05rem;margin-bottom:.8rem}
+.lextext .gn{display:inline-flex;width:19px;height:19px;border-radius:50%;background:rgba(255,106,59,.14);color:var(--accent-dark);font-weight:800;font-size:.72rem;align-items:center;justify-content:center;vertical-align:middle;margin-right:.15rem}
+.gramtext{line-height:2;font-size:.95rem;background:#FBFDFC;border:1px dashed var(--line);border-radius:12px;padding:.9rem 1.05rem;margin-bottom:.9rem}
+.caps{font-weight:800;letter-spacing:.05em;color:var(--teal-dark);white-space:nowrap}
+.gn{display:inline-flex;min-width:19px;height:19px;border-radius:50%;background:rgba(255,106,59,.14);color:var(--accent-dark);font-weight:800;font-size:.72rem;align-items:center;justify-content:center;vertical-align:middle;margin-right:.2rem}
+.gram-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.7rem}
+.gcell{border:1px solid var(--line);border-radius:10px;padding:.5rem .6rem}
+.gcell.g-ok{border-color:var(--teal);background:var(--ok-bg)}
+.gcell.g-bad{border-color:var(--accent);background:var(--bad-bg)}
+.gcell .gbase{font-size:.78rem;color:var(--muted);font-weight:700}
+.gcell input{border:1px solid var(--line);border-radius:7px;padding:.32rem .5rem;font-size:.9rem;width:100%;margin-top:.25rem;font-family:inherit;outline:none}
+.gcell input:focus{border-color:var(--teal)}
+.gcell .fb{display:block;margin-top:.3rem;font-size:.78rem}
+.reading{background:#FBFDFC;border:1px dashed var(--line);border-radius:12px;padding:.95rem 1.1rem;margin-bottom:.9rem;max-height:430px;overflow:auto}
+.reading h4{color:var(--teal-dark);margin-bottom:.45rem}
+.reading p{font-size:.93rem;line-height:1.68}
+.stmts{display:grid;gap:.35rem}
+.optrow{display:flex;flex-wrap:wrap;gap:.55rem;align-items:center;padding:.42rem .5rem;border-radius:10px}
+.optrow.s-ok{background:var(--ok-bg)}
+.optrow.s-bad{background:var(--bad-bg)}
+.optrow .stext{flex:1 1 340px;font-size:.92rem}
+.optrow .snum{flex:none;width:21px;height:21px;border-radius:50%;background:rgba(21,133,122,.12);color:var(--teal-dark);font-weight:800;font-size:.78rem;display:flex;align-items:center;justify-content:center}
+.optrow .opts{display:flex;gap:.4rem;flex-wrap:wrap}
+.optrow label.opt{padding:.28rem .55rem;font-size:.85rem}
+.listencard{border:1px solid var(--line);border-radius:12px;padding:.8rem .95rem;margin-top:.6rem}
+.listencard .lh{display:flex;align-items:center;gap:.6rem}
+.lletter{flex:none;width:28px;height:28px;border-radius:50%;background:var(--teal);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center}
+.listencard .lq{font-weight:700;font-size:.94rem}
+.listencard .optgrid{margin-top:.55rem}
+.teacher-only{display:none}
+body.teacher .teacher-only{display:block}
+body.teacher .teacher-inline{display:inline-flex}
+.tape{border-left:3px solid var(--accent);background:#FFF7F4;border-radius:0 10px 10px 0;padding:.65rem .9rem;margin-top:.7rem;font-size:.9rem}
+.tape summary{cursor:pointer;font-weight:800;color:var(--accent-dark);font-size:.86rem}
+.tape p{margin-top:.5rem;font-style:italic;line-height:1.6}
+.tape .tnote{font-style:normal;color:var(--muted);font-size:.8rem;margin-top:.4rem}
+.teacher-note{border-left:3px solid var(--accent);background:#FFF7F4;border-radius:0 10px 10px 0;padding:.75rem .95rem;margin-top:.9rem;font-size:.88rem}
+.teacher-note h4{color:var(--accent-dark);font-size:.88rem;margin-bottom:.35rem}
+.teacher-note li{margin:.25rem 0 .25rem 1.1rem}
+.timerbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;background:var(--ok-bg);border:1px solid var(--line);border-radius:11px;padding:.5rem .8rem;margin-top:1rem}
+.timerbar .tnote{font-size:.8rem;color:var(--muted)}
+.tdisp{font-weight:800;font-size:1.05rem;font-variant-numeric:tabular-nums;min-width:58px;text-align:center}
+.tdisp.warn{color:#B7791F}
+.tdisp.danger{color:var(--accent-dark)}
+.mono-plan{margin:.55rem 0 .3rem 1.25rem;font-size:.93rem}
+.mono-plan li{margin:.25rem 0}
+.mono-note{font-size:.82rem;color:var(--accent-dark);font-weight:700;margin-top:.3rem}
+.crit{display:grid;grid-template-columns:1fr 92px;gap:.3rem .8rem;align-items:center;margin-top:.7rem;border-top:1px dashed var(--line);padding-top:.6rem}
+.crit .cname{font-weight:700;font-size:.88rem}
+.crit .chelp{grid-column:1;font-size:.78rem;color:var(--muted)}
+.crit select{border:1px solid var(--line);border-radius:8px;padding:.3rem .45rem;font-family:inherit;font-size:.9rem;grid-row:span 2;align-self:start}
+.warnbox{display:none;background:var(--bad-bg);border-left:3px solid var(--accent);border-radius:0 10px 10px 0;padding:.55rem .8rem;margin-top:.6rem;font-size:.86rem;color:var(--accent-dark);font-weight:600}
+.supports{margin-top:.7rem}
+.supports summary{cursor:pointer;font-weight:700;color:var(--teal-dark);font-size:.86rem}
+.supports div{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.5rem}
+.supports span{background:rgba(21,133,122,.09);color:var(--teal-dark);border-radius:999px;padding:.25rem .7rem;font-size:.8rem;font-weight:600}
+.task-actions{margin-top:.95rem;display:flex;gap:.6rem;flex-wrap:wrap}
+.res-table{width:100%;border-collapse:collapse;margin-top:1rem;font-size:.9rem}
+.res-table th{background:rgba(21,133,122,.09);color:var(--teal-dark);text-align:left;padding:.5rem .6rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.04em}
+.res-table td{padding:.5rem .6rem;border-bottom:1px solid var(--line)}
+.res-table td.num{text-align:right;font-variant-numeric:tabular-nums;font-weight:700}
+.res-table tr.total td{background:rgba(21,133,122,.05);font-weight:800}
+.grade-line{display:flex;align-items:center;gap:.9rem;flex-wrap:wrap;margin-top:1.1rem}
+.grade-big{background:var(--teal);color:#fff;border-radius:14px;padding:.55rem 1.2rem;font-size:1.5rem;font-weight:800}
+.grade-note{color:var(--muted);font-size:.86rem;max-width:520px}
+.res-actions{margin-top:1.2rem;display:flex;gap:.7rem;flex-wrap:wrap}
+.audio-bar{background:var(--ok-bg);border:1px solid var(--line);border-radius:12px;padding:.7rem .95rem;margin-top:1.05rem}
+.ab-row{display:flex;align-items:center;gap:.55rem;flex-wrap:wrap}
+.ab-label{font-size:.82rem;color:var(--muted);font-weight:700;display:inline-flex;align-items:center;gap:.35rem}
+.ab-chk{display:inline-flex;align-items:center;gap:.35rem;font-size:.86rem;font-weight:700;color:var(--ink);cursor:pointer;user-select:none}
+.ab-chk input{accent-color:var(--teal);width:16px;height:16px}
+.audio-bar select{border:1px solid var(--line);border-radius:8px;padding:.32rem .45rem;font-family:inherit;font-size:.85rem;background:#fff;color:var(--ink);max-width:250px}
+.audio-bar select:focus{border-color:var(--teal);outline:none}
+.ab-status{font-size:.84rem;color:var(--teal-dark);font-weight:700;margin-top:.45rem;min-height:1.25em}
+.ab-status:empty{margin-top:0;min-height:0}
+.btn.mini{padding:.3rem .65rem;font-size:.8rem;border-radius:8px}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.lh .ltbtn{margin-left:auto;flex:none}
+.listencard.speaking{border-color:var(--accent);box-shadow:0 0 0 2px rgba(255,106,59,.22)}
+.listencard.speaking .lletter{background:var(--accent);animation:tpulse 1.1s ease-in-out infinite}
+@keyframes tpulse{0%,100%{transform:scale(1)}50%{transform:scale(1.14)}}
+.tts-unsupported{background:var(--bad-bg);border-left:3px solid var(--accent);border-radius:0 10px 10px 0;padding:.55rem .8rem;font-size:.86rem;color:var(--accent-dark);font-weight:600}
+footer{margin-top:2.6rem;color:#8A9794;font-size:.8rem;text-align:center;line-height:1.6}
+@media (max-width:760px){
+  .top nav{display:none}
+  .grid2{grid-template-columns:1fr}
+  .blitz-row{grid-template-columns:22px 1fr}
+  .blitz-row input{grid-column:2}
+  .blitz-row .fb{grid-column:2}
+  .optgrid{grid-template-columns:1fr}
+  .gram-grid{grid-template-columns:1fr 1fr}
+  .crit{grid-template-columns:1fr 80px}
+  h1{font-size:1.45rem}
+  .audio-bar select{max-width:100%}
+}
+@media print{
+  .top,.no-print,.timerbar,.task-actions,.badge,.chip,.teacher-only,.warnbox,.audio-bar,.ltbtn{display:none !important}
+  body{background:#fff}
+  .wrap{max-width:none;padding:0}
+  .task{border:1px solid #999;box-shadow:none;page-break-inside:avoid}
+  .reading{max-height:none;overflow:visible}
+  section#l2{page-break-before:always}
+  .blitz-row input,.gcell input{border:none;border-bottom:1px solid #444;border-radius:0}
+  label.opt{border:1px solid #bbb}
+  .optrow label.opt{border:none;padding:.15rem .3rem}
+}
+
+.qrow{display:flex;gap:.7rem;align-items:flex-start;margin:.45rem 0}
+.qrow .snum{margin-top:.4rem;flex:none;width:21px;height:21px;border-radius:50%;background:rgba(255,106,59,.14);color:var(--accent-dark);font-weight:800;font-size:.78rem;display:flex;align-items:center;justify-content:center}
+.qrow .optgrid{flex:1}
+.fclist{font-size:.8rem;color:var(--muted);margin-top:.45rem}
+.rublist{display:grid;gap:.3rem;margin:.55rem 0 .2rem;font-size:.92rem}
+.rublist li{margin-left:1.25rem}
+.rubrow{display:flex;gap:.35rem;flex-wrap:wrap;margin-top:.5rem}
+.rubrow label.opt{padding:.28rem .5rem;font-size:.85rem}
+.gaptable{display:grid;gap:.4rem;margin-top:.4rem}
+.gaprow{display:grid;grid-template-columns:26px 1fr 190px 250px;gap:.6rem;align-items:center;padding:.22rem .3rem;border-radius:9px}
+.gaprow .idx{color:var(--accent-dark);font-weight:800;font-size:.85rem;text-align:center}
+.gaprow .hint{font-size:.93rem}
+.gaprow input{border:1px solid var(--line);border-radius:8px;padding:.38rem .6rem;font-size:.92rem;font-family:inherit;outline:none;width:100%}
+.gaprow input:focus{border-color:var(--teal)}
+.gaprow .fb{font-size:.85rem;font-weight:600}
+.gaprow.ok{background:var(--ok-bg)}.gaprow.ok input{border-color:var(--teal)}.gaprow.ok .fb{color:var(--teal-dark)}
+.gaprow.bad{background:var(--bad-bg)}.gaprow.bad input{border-color:var(--accent)}.gaprow.bad .fb{color:var(--accent-dark)}
+.letter-stim{background:#FBFDFC;border:1px dashed var(--line);border-radius:12px;padding:1rem 1.15rem;font-size:.93rem}
+.letter-stim .lrow{display:flex;gap:.5rem;flex-wrap:wrap}
+.letter-stim .lhk{font-weight:800;color:var(--teal-dark);min-width:64px}
+.letter-stim .lbody{margin-top:.6rem;line-height:1.66}
+.letter-stim ul.lqs{margin:.55rem 0 0 1.25rem}
+.letter-stim .lclosing{margin-top:.55rem}
+.letter-stim .ltask{margin-top:.7rem;font-weight:700;color:var(--accent-dark)}
+.letter-area{margin-top:.8rem}
+.letter-area textarea{width:100%;min-height:240px;border:1px solid var(--line);border-radius:10px;padding:.75rem .85rem;font-family:inherit;font-size:.95rem;line-height:1.55;outline:none;resize:vertical;background:#fff}
+.letter-area textarea:focus{border-color:var(--teal)}
+.letter-meta{display:flex;gap:.6rem;align-items:center;margin-top:.45rem;flex-wrap:wrap}
+.lcount{background:rgba(21,133,122,.1);color:var(--teal-dark);border-radius:999px;padding:.22rem .7rem;font-size:.82rem;font-weight:800}
+.lcount.warn{background:var(--bad-bg);color:var(--accent-dark)}
+.chk-list{display:grid;gap:.25rem;margin-top:.6rem;font-size:.88rem;font-weight:600}
+.chk-list .ok-c{color:var(--teal-dark)}.chk-list .bad-c{color:var(--accent-dark)}
+.svrow{display:flex;gap:.7rem;align-items:flex-start;margin:.5rem 0;padding:.4rem .45rem;border-radius:10px}
+.svrow.ok{background:var(--ok-bg)}.svrow.bad{background:var(--bad-bg)}
+.svrow.speaking{outline:2px solid rgba(255,106,59,.55);background:var(--bad-bg)}
+.svradio{display:flex;gap:.4rem;margin-top:.45rem;flex-wrap:wrap}
+.svradio label.opt{padding:.26rem .55rem;font-size:.85rem}
+.svintro{margin-top:.5rem;font-size:.92rem;color:var(--muted)}
+@media (max-width:760px){
+  .gaprow{grid-template-columns:22px 1fr}
+  .gaprow input{grid-column:2}
+  .gaprow .fb{grid-column:2}
+  .letter-area textarea{min-height:190px}
+}
+@media print{
+  .letter-area textarea{border:none;border-bottom:1px solid #444;border-radius:0}
+  .lcount,.chk-list{display:none !important}
+}
+</style>
+</head>
+<body>
+<header class="top no-print">
+  <div class="bar">
+    <span class="brand">ОГЭ английский · проверочная «Ноябрь»</span>
+    <nav>
+      <a href="#plan">План</a>
+      <a href="#l1">Урок 1</a>
+      <a href="#l2">Урок 2</a>
+      <a href="#results">Результаты</a>
+    </nav>
+    <span class="spacer"></span>
+    <span class="chip" id="chip-total">Баллы: 0 / 71</span>
+    <button class="btn ghost" id="tbtn" onclick="TestAPI.teacher()">Режим учителя: ВЫКЛ</button>
+  </div>
+</header>
+<div class="wrap">
+  <div class="hero">
+    <span class="kicker">Модуль 3 · уроки 17–24 · ОГЭ-2027</span>
+    <h1>Проверочная работа за ноябрь <em>в формате ОГЭ</em></h1>
+    <p class="sub">Формат ОГЭ · 2 занятия по 50 минут · 71 балл. Проверяет материал уроков 17–24: будущее время (will, be going to, Present Continuous для будущего), Present Perfect — с нуля — и его главный конфликт с Past Simple, словарный запас месяца «Каникулы и путешествия» и «Транспорт» (≈ 200 слов), письмо №1 по критериям К1–К4, аудирование формата задания 5 (высказывания → рубрики) и формата задания 6 (интервью + таблица), монологи устного задания 3 «Каникулы» и «Путешествия», телефонный опрос устной части — условный диалог-расспрос с электронным помощником (6 вопросов, полный ответ на каждый, 40 секунд) на тему «Каникулы и путешествия». Автопроверка, таймеры, режим учителя со скриптами и браузерная озвучка аудирования (play / pause / стоп, темп, режим ×2).</p>
+    <div class="stats">
+<span class="stat"><b>2</b> занятия × 50 минут</span>
+      <span class="stat"><b>9</b> заданий</span>
+      <span class="stat"><b>71</b> первичных баллов</span>
+      <span class="stat"><b>5</b> разделов ОГЭ</span>
+      <span class="stat"><b>от 64</b> шкала: «5»</span>
+    </div>
+  </div>
+  <section id="plan">
+    <h2>План проверки <small>два занятия по 50 минут · проводится после урока 24</small></h2>
+    <p class="note-p">Проверочная заменяет и расширяет «Тематический контроль №2» (урок 24): вместо словарного теста, грамматики и чтения проверяются все направления ноября — словарный запас (блиц-перевод + лексика в контексте), грамматика (будущее время, Present Perfect, Present Perfect vs Past Simple — формат 20–28), письмо №1 по критериям К1–К4, аудирование формата задания 5 и интервью формата задания 6, монологи устного задания 3 и телефонный опрос устной части (условный диалог-расспрос с электронным помощником — 6 вопросов, полный ответ на каждый). Каждый тип задания — в точном формате ОГЭ-2027. Чтение 12–14 из плана урока 24 проводится обычным порядком по «Решу ОГЭ» — в проверочную не входит.</p>
+    <div class="grid2">
+    <div class="lesson-card">
+      <h3>Урок 1 — Письменная часть: лексика + грамматика + письмо №1</h3>
+      <div class="lmax">Максимальный балл: 40 · тайминг рассчитан на 50 минут</div>
+      <table class="timing">
+        <tr><td>0–3′</td><td>Организация: инструкция, таймер 50:00, бланк ответов (страница)</td></tr>
+        <tr><td>8′</td><td>Задание 1. Блиц-перевод — 12 слов ноября (RU → EN): «Каникулы и путешествия», «Транспорт»</td></tr>
+        <tr><td>9′</td><td>Задание 2. Лексика в контексте — текст о поездке с 8 пропусками, выбор из 3 вариантов</td></tr>
+        <tr><td>13′</td><td>Задание 3. Грамматика в формате ОГЭ 20–28 — 10 преобразований: будущее время, Present Perfect, Past Simple</td></tr>
+        <tr><td>17′</td><td>Задание 4. Письмо №1 — формат задания 35: полные ответы на 3 вопроса Бена (встречные вопросы не задаются), 100–120 слов; структура проверяется автоматически, баллы К1–К4 выставляет учитель</td></tr>
+      </table>
+    </div>
+    <div class="lesson-card">
+      <h3>Урок 2 — Аудирование + устная часть (монологи + телефонный опрос)</h3>
+      <div class="lmax">Максимальный балл: 31 · тайминг рассчитан на 50 минут</div>
+      <table class="timing">
+        <tr><td>0–3′</td><td>Организация; тексты звучат дважды: учитель читает вслух или включается озвучка браузером (кнопки ▶, пауза, режим ×2)</td></tr>
+        <tr><td>10′</td><td>Задание 5. Аудирование, формат задания 5: пять высказываний (А–Е) → рубрики 1–6, одна лишняя</td></tr>
+        <tr><td>12′</td><td>Задание 6. Аудирование, формат задания 6: интервью + таблица — не более одного слова из записи, числа прописью</td></tr>
+        <tr><td>8′</td><td>Задание 7. Монолог №1 «Каникулы»: подготовка 1:30, говорение до 2:00, критерии К1–К3</td></tr>
+        <tr><td>8′</td><td>Задание 8. Монолог №2 «Путешествия»: тот же формат</td></tr>
+        <tr><td>7′</td><td>Задание 9. Телефонный опрос (устная часть, задание 2): 6 вопросов электронного помощника на тему «Каникулы и путешествия», полный ответ на каждый, 40 секунд</td></tr>
+        <tr><td>2′</td><td>Разбор ключей, баллы в трекер, задачи на декабрь</td></tr>
+      </table>
+    </div>
+    </div>
+    <div class="howto">
+      <h3>Как проводить</h3>
+      <ol>
+        <li>Аудирование: тексты для чтения вслух — в «Режиме учителя» (кнопка в шапке). Читать дважды: первый раз целиком, второй раз — с паузами для ответов. Темп — спокойный, естественный; имена и цифры не выделять голосом. Самостоятельно тексты можно прослушать браузером: кнопка ▶ у каждого текста или «▶ Задание 5 (А–Е)» и «▶ Интервью» на панели озвучки; доступны пауза, темп и режим ×2 (текст прозвучит дважды с паузой для ответов — как на экзамене). Голос зависит от браузера; лучше всего — Chrome или Edge.</li>
+        <li>Письмо: в формате ОГЭ встречные вопросы НЕ задаются — только полные ответы на 3 вопроса письма-стимула. Кнопка «Проверить письмо» проверяет структуру автоматически — обращение, благодарность (или положительные эмоции от получения письма), надежда на последующие контакты, завершающая фраза, подпись, объём слов. Объём: 100–120 слов; менее 90 — всё задание оценивается в 0 баллов; более 132 — проверяются только первые 120 слов. В объём входят обращение и подпись; стяжённые формы (I've, doesn't) и слова через дефис (pop-singer, thirty-two) считаются одним словом. Баллы за содержание выставляет учитель по критериям К1–К4 в той же карточке; при К1 = 0 всё задание оценивается в 0 баллов (правила ФИПИ).</li>
+        <li>Монологи: строго по регламенту — 1,5 минуты подготовки (таймер в карточке), не более 2 минут говорения. Оценка — по критериям К1–К3 прямо в карточке; при К1 = 0 весь монолог оценивается в 0 баллов (правило ФИПИ).</li>
+        <li>Телефонный опрос (устная часть, задание 2): прослушай вопрос электронного помощника (кнопка ▶ у вопроса или «▶ Телефонный опрос» на панели) и ответь ПОЛНЫМ предложением за 40 секунд (таймер в карточке). По 1 баллу за полный ответ на каждый из 6 вопросов; 0 — ответ не дан, дан словом или словосочетанием, не соответствует вопросу или непонятен (критерий C3). Образцы полных ответов — в «Режиме учителя».</li>
+        <li>Автопроверка: кнопка «Проверить» у каждого задания показывает ✓/✗ и баллы; итоги — в разделе «Результаты». Ответы сохраняются в браузере (localStorage) — можно закрыть и вернуться.</li>
+        <li>После проверки: оформить «работу над ошибками» по заданиям с наименьшим процентом; добавить в колоду все слова из текстов и интервью (правило месяца: каждый текст = +20–30 слов).</li>
+      </ol>
+    </div>
+    <table class="scale-t">
+      <thead><tr><th>Отметка</th><th>Баллы (из 60)</th><th>Комментарий</th></tr></thead>
+      <tbody>
+        <tr><td><b>«5»</b></td><td>64–71</td><td>90–100% — материал ноября усвоен прочно</td></tr>
+        <tr><td><b>«4»</b></td><td>53–63</td><td>75–89% — хорошая база, есть точечные пробелы</td></tr>
+        <tr><td><b>«3»</b></td><td>39–52</td><td>55–74% — база есть, нужна доработка тем</td></tr>
+        <tr><td><b>«2»</b></td><td>0–38</td><td>менее 55% — повторить Present Perfect и письмо до движения дальше</td></tr>
+      </tbody>
+    </table>
+    <div class="teacher-note teacher-only">
+      <h4>Методические комментарии (режим учителя)</h4>
+      <ul>
+        <li><b>Задание 1.</b> Слова из колод ноября (темы «Каникулы и путешествия» и «Транспорт»). Меньше 7 из 12 — вернуть обе темы в ежедневный диктант на следующую неделю.</li>
+        <li><b>Задание 2.</b> Ловушки: journey (дорога) ≠ travel (глагол) ≠ trip (поездка), queue (очередь), arrive in + город, do sightseeing (не make), security check, платформа = platform (не перрон).</li>
+        <li><b>Задание 3.</b> Типичные ошибки модуля: have + V2 (have saw), лишнее -s у will (wills), пропущенный be в be going to (I going to), ever/already с точным прошедшим (have went last August), забытый -ed, has после they, потерянный апостроф в hasn't.</li>
+        <li><b>Задание 4.</b> В письме ОГЭ встречные вопросы не задаются — только ответы на 3 вопроса стимула. К1: ответы полные и точные; нормы вежливости — благодарность или/и положительные эмоции от получения + надежда на контакты; оформление — обращение / завершающая фраза / подпись на отдельных строках. Объём 90–132 (рекомендуется 100–120): менее 90 — 0 за всё задание; более 132 — проверяются первые 120 слов. В подсчёт входят обращение и подпись; стяжённые (I've) и дефисные (pop-singer) формы — одно слово, числа цифрами — одно слово. При К1 = 0 — 0 баллов за всё письмо (правило ФИПИ). Опоры: Thanks for your letter / It was great to hear from you / Hope to hear from you soon / Best wishes.</li>
+        <li><b>Задание 5.</b> Между высказываниями держать паузу 10–15 секунд; лишняя рубрика — 3 (совет летать только самолётом). Стратегия: рубрика = суть, а не слово из текста (в В звучит train, но рубрика 1 — про предпочтение поезда, а не просто «поезд»).</li>
+        <li><b>Задание 6.</b> Двойное прослушивание; в бланк — не более ОДНОГО слова, числа прописью (fifteen, а не 15), артикли не писать. Если ошибки в более чем половине пунктов — добавить в ДЗ ещё один вариант задания 6 на «Решу ОГЭ».</li>
+        <li><b>Задания 7–8.</b> Строго 1,5 мин подготовки и до 2 мин говорения. В монологе «Каникулы» слушать be going to / will в последнем аспекте; в «Путешествиях» — лексику транспорта и would like to. Записать на диктофон — разбор на следующем занятии; фиксировать типовые ошибки К3 для плана декабря.</li>
+        <li><b>Задание 9.</b> Тема опроса — «Каникулы и путешествия». Слушать: полный ответ (не менее одного полного предложения, прямо отвечающего на вопрос), а не слово или словосочетание. Ответ «I am fifteen» на «How old are you?» — полный ответ ✓; ответ «train» словом на «How do you usually travel?» — 0. Опоры: I spent… / I usually travel by… / I am going to… / I think that… is the most popular… / I would like to visit… because… / I advise him or her to…</li>
+      </ul>
+    </div>
+  </section>
+  <section id="l1">
+    <h2>Урок 1 · Лексика + грамматика + письмо №1 <small>4 задания · 40 баллов · письменная часть</small></h2>
+    <div class="timerbar no-print">
+      <button class="btn ghost" onclick="TestAPI.timer('lt1',3000)">Старт / пауза — 50:00</button>
+      <span class="tdisp" id="tdisp-lt1">50:00</span>
+      <button class="btn warn" onclick="TestAPI.timerReset('lt1',3000)">Сброс</button>
+      <span class="tnote">таймер занятия</span>
+    </div>
+  <article class="task" id="task-blitz">
+    <div class="task-head"><h3>Задание 1. Блиц-перевод</h3><span class="badge" id="score-blitz">– / 12</span></div>
+    <p class="instr">Напишите по-английски. По одному слову или выражению на строку. (Цифровой аналог еженедельного словарного диктанта: лексика ноября — «Каникулы и путешествия» и «Транспорт».)</p>
+    <div class="blitz-grid">
+      <div class="blitz-row" id="blitz-row-0">
+        <span class="idx">1</span>
+        <span>школьные каникулы</span>
+        <input type="text" id="blitz-0" autocomplete="off" autocapitalize="none" spellcheck="false">
+        <span class="fb" id="blitz-fb-0"></span>
+      </div>
+      <div class="blitz-row" id="blitz-row-1">
+        <span class="idx">2</span>
+        <span>поездка, короткое путешествие</span>
+        <input type="text" id="blitz-1" autocomplete="off" autocapitalize="none" spellcheck="false">
+        <span class="fb" id="blitz-fb-1"></span>
+      </div>
+      <div class="blitz-row" id="blitz-row-2">
+        <span class="idx">3</span>
+        <span>путешествие (дорога в путь)</span>
+        <input type="text" id="blitz-2" autocomplete="off" autocapitalize="none" spellcheck="false">
+        <span class="fb" id="blitz-fb-2"></span>
+      </div>
+      <div class="blitz-row" id="blitz-row-3">
+        <span class="idx">4</span>
+        <span>чемодан</span>
+        <input type="text" id="blitz-3" autocomplete="off" autocapitalize="none" spellcheck="false">
+        <span class="fb" id="blitz-fb-3"></span>
+      </div>
+      <div class="blitz-row" id="blitz-row-4">
+        <span class="idx">5</span>
+        <span>багаж</span>
+        <input type="text" id="blitz-4" autocomplete="off" autocapitalize="none" spellcheck="false">
+        <span class="fb" id="blitz-fb-4"></span>
+      </div>
+      <div class="blitz-row" id="blitz-row-5">
+        <span class="idx">6</span>
+        <span>билет туда и обратно</span>
+        <input type="text" id="blitz-5" autocomplete="off" autocapitalize="none" spellcheck="false">
+        <span class="fb" id="blitz-fb-5"></span>
+      </div>
+      <div class="blitz-row" id="blitz-row-6">
+        <span class="idx">7</span>
+        <span>успеть на поезд</span>
+        <input type="text" id="blitz-6" autocomplete="off" autocapitalize="none" spellcheck="false">
+        <span class="fb" id="blitz-fb-6"></span>
+      </div>
+      <div class="blitz-row" id="blitz-row-7">
+        <span class="idx">8</span>
+        <span>посадочный талон</span>
+        <input type="text" id="blitz-7" autocomplete="off" autocapitalize="none" spellcheck="false">
+        <span class="fb" id="blitz-fb-7"></span>
+      </div>
+      <div class="blitz-row" id="blitz-row-8">
+        <span class="idx">9</span>
+        <span>взлетать (о самолёте)</span>
+        <input type="text" id="blitz-8" autocomplete="off" autocapitalize="none" spellcheck="false">
+        <span class="fb" id="blitz-fb-8"></span>
+      </div>
+      <div class="blitz-row" id="blitz-row-9">
+        <span class="idx">10</span>
+        <span>приземляться</span>
+        <input type="text" id="blitz-9" autocomplete="off" autocapitalize="none" spellcheck="false">
+        <span class="fb" id="blitz-fb-9"></span>
+      </div>
+      <div class="blitz-row" id="blitz-row-10">
+        <span class="idx">11</span>
+        <span>осмотр достопримечательностей</span>
+        <input type="text" id="blitz-10" autocomplete="off" autocapitalize="none" spellcheck="false">
+        <span class="fb" id="blitz-fb-10"></span>
+      </div>
+      <div class="blitz-row" id="blitz-row-11">
+        <span class="idx">12</span>
+        <span>заблудиться</span>
+        <input type="text" id="blitz-11" autocomplete="off" autocapitalize="none" spellcheck="false">
+        <span class="fb" id="blitz-fb-11"></span>
+      </div>
+    </div>
+    <div class="task-actions no-print"><button class="btn" onclick="TestAPI.check('blitz')">Проверить</button></div>
+  </article>
+  <article class="task" id="task-lex">
+    <div class="task-head"><h3>Задание 2. Лексика в контексте</h3><span class="badge" id="score-lex">– / 8</span></div>
+    <p class="instr">Прочитайте текст и в каждом пункте (1–8) выберите один правильный вариант из трёх.</p>
+    <div class="lextext">Hi! I'm Dima. In August my parents and I made a long (1) ___ across the country: we visited three cities in ten days. We travelled by train because flying is expensive. Dad bought the tickets online, so we didn't have to stand in a long (2) ___ at the station. On the day of the trip we came to the station early, found our (3) ___ and put our heavy (4) ___ on the special rack. The train (5) ___ in the first city early in the morning, and we went to the hotel to leave our suitcases. Every day we did a lot of (6) ___: old streets, museums and famous places. Mom bought (7) ___ for our grandparents — magnets and postcards from every city. On the last evening we went to the airport, went through security (8) ___ and flew home. It was the best trip of my summer!</div>
+      <div class="qrow">
+        <span class="snum">1</span>
+        <div class="optgrid"><label class="opt"><input type="radio" name="lex-0" value="0"><span class="lt">A</span><span>journey</span></label><label class="opt"><input type="radio" name="lex-0" value="1"><span class="lt">B</span><span>travel</span></label><label class="opt"><input type="radio" name="lex-0" value="2"><span class="lt">C</span><span>ticket</span></label></div>
+      </div>
+      <div class="qrow">
+        <span class="snum">2</span>
+        <div class="optgrid"><label class="opt"><input type="radio" name="lex-1" value="0"><span class="lt">A</span><span>queue</span></label><label class="opt"><input type="radio" name="lex-1" value="1"><span class="lt">B</span><span>delay</span></label><label class="opt"><input type="radio" name="lex-1" value="2"><span class="lt">C</span><span>traffic jam</span></label></div>
+      </div>
+      <div class="qrow">
+        <span class="snum">3</span>
+        <div class="optgrid"><label class="opt"><input type="radio" name="lex-2" value="0"><span class="lt">A</span><span>platform</span></label><label class="opt"><input type="radio" name="lex-2" value="1"><span class="lt">B</span><span>passport</span></label><label class="opt"><input type="radio" name="lex-2" value="2"><span class="lt">C</span><span>passenger</span></label></div>
+      </div>
+      <div class="qrow">
+        <span class="snum">4</span>
+        <div class="optgrid"><label class="opt"><input type="radio" name="lex-3" value="0"><span class="lt">A</span><span>luggage</span></label><label class="opt"><input type="radio" name="lex-3" value="1"><span class="lt">B</span><span>tickets</span></label><label class="opt"><input type="radio" name="lex-3" value="2"><span class="lt">C</span><span>souvenirs</span></label></div>
+      </div>
+      <div class="qrow">
+        <span class="snum">5</span>
+        <div class="optgrid"><label class="opt"><input type="radio" name="lex-4" value="0"><span class="lt">A</span><span>arrived</span></label><label class="opt"><input type="radio" name="lex-4" value="1"><span class="lt">B</span><span>landed</span></label><label class="opt"><input type="radio" name="lex-4" value="2"><span class="lt">C</span><span>took</span></label></div>
+      </div>
+      <div class="qrow">
+        <span class="snum">6</span>
+        <div class="optgrid"><label class="opt"><input type="radio" name="lex-5" value="0"><span class="lt">A</span><span>sightseeing</span></label><label class="opt"><input type="radio" name="lex-5" value="1"><span class="lt">B</span><span>viewing</span></label><label class="opt"><input type="radio" name="lex-5" value="2"><span class="lt">C</span><span>excursions</span></label></div>
+      </div>
+      <div class="qrow">
+        <span class="snum">7</span>
+        <div class="optgrid"><label class="opt"><input type="radio" name="lex-6" value="0"><span class="lt">A</span><span>souvenirs</span></label><label class="opt"><input type="radio" name="lex-6" value="1"><span class="lt">B</span><span>suitcases</span></label><label class="opt"><input type="radio" name="lex-6" value="2"><span class="lt">C</span><span>guidebooks</span></label></div>
+      </div>
+      <div class="qrow">
+        <span class="snum">8</span>
+        <div class="optgrid"><label class="opt"><input type="radio" name="lex-7" value="0"><span class="lt">A</span><span>check</span></label><label class="opt"><input type="radio" name="lex-7" value="1"><span class="lt">B</span><span>counter</span></label><label class="opt"><input type="radio" name="lex-7" value="2"><span class="lt">C</span><span>office</span></label></div>
+      </div>
+    <div class="task-actions no-print"><button class="btn" onclick="TestAPI.check('lex')">Проверить</button></div>
+  </article>
+  <article class="task" id="task-gram">
+    <div class="task-head"><h3>Задание 3. Грамматика (формат заданий 20–28)</h3><span class="badge" id="score-gram">– / 10</span></div>
+    <p class="instr">Преобразуйте слова, напечатанные ЗАГЛАВНЫМИ буквами, так, чтобы они грамматически соответствовали содержанию текста: будущее время (will / be going to / Present Continuous), Present Perfect, Past Simple. В реальном ОГЭ это задания 20–28. Орфографическая ошибка обнуляет ответ.</p>
+    <div class="gramtext">My name is Masha, and travelling is my favourite thing in the world. Last August my family (<span class="gn">1</span>) <span class="caps">GO</span> to St Petersburg, and we (<span class="gn">2</span>) <span class="caps">SPEND</span> a whole week there. I have wanted to return ever since! This year we (<span class="gn">3</span>) <span class="caps">VISIT</span> Murmansk — Mom planned this trip long ago. Dad (<span class="gn">4</span>) <span class="caps">ALREADY/BUY</span> the train tickets, and I have just packed my rucksack. I (<span class="gn">5</span>) <span class="caps">NEVER/BE</span> so far north, so I am very excited. We usually go by car: last winter, for example, we (<span class="gn">6</span>) <span class="caps">GO</span> to Kazan by car. But I think the night train (<span class="gn">7</span>) <span class="caps">BE</span> a real adventure! We (<span class="gn">8</span>) <span class="caps">LEAVE</span> at six on Saturday morning — everything is arranged. My little brother Pasha is the only problem: he still (<span class="gn">9</span>) <span class="caps">NOT/PACK</span>, though Mom reminded him twice. By the way, (<span class="gn">10</span>) <span class="caps">YOU EVER SLEEP</span> on a night train? Write me about it!</div>
+    <div class="gram-grid">
+      <div class="gcell" id="gram-cell-0">
+        <span class="gbase">1. GO</span>
+        <input type="text" id="gram-0" autocomplete="off" autocapitalize="none" spellcheck="false">
+        <span class="fb" id="gram-fb-0"></span>
+      </div>
+      <div class="gcell" id="gram-cell-1">
+        <span class="gbase">2. SPEND</span>
+        <input type="text" id="gram-1" autocomplete="off" autocapitalize="none" spellcheck="false">
+        <span class="fb" id="gram-fb-1"></span>
+      </div>
+      <div class="gcell" id="gram-cell-2">
+        <span class="gbase">3. VISIT</span>
+        <input type="text" id="gram-2" autocomplete="off" autocapitalize="none" spellcheck="false">
+        <span class="fb" id="gram-fb-2"></span>
+      </div>
+      <div class="gcell" id="gram-cell-3">
+        <span class="gbase">4. ALREADY/BUY</span>
+        <input type="text" id="gram-3" autocomplete="off" autocapitalize="none" spellcheck="false">
+        <span class="fb" id="gram-fb-3"></span>
+      </div>
+      <div class="gcell" id="gram-cell-4">
+        <span class="gbase">5. NEVER/BE</span>
+        <input type="text" id="gram-4" autocomplete="off" autocapitalize="none" spellcheck="false">
+        <span class="fb" id="gram-fb-4"></span>
+      </div>
+      <div class="gcell" id="gram-cell-5">
+        <span class="gbase">6. GO</span>
+        <input type="text" id="gram-5" autocomplete="off" autocapitalize="none" spellcheck="false">
+        <span class="fb" id="gram-fb-5"></span>
+      </div>
+      <div class="gcell" id="gram-cell-6">
+        <span class="gbase">7. BE</span>
+        <input type="text" id="gram-6" autocomplete="off" autocapitalize="none" spellcheck="false">
+        <span class="fb" id="gram-fb-6"></span>
+      </div>
+      <div class="gcell" id="gram-cell-7">
+        <span class="gbase">8. LEAVE</span>
+        <input type="text" id="gram-7" autocomplete="off" autocapitalize="none" spellcheck="false">
+        <span class="fb" id="gram-fb-7"></span>
+      </div>
+      <div class="gcell" id="gram-cell-8">
+        <span class="gbase">9. NOT/PACK</span>
+        <input type="text" id="gram-8" autocomplete="off" autocapitalize="none" spellcheck="false">
+        <span class="fb" id="gram-fb-8"></span>
+      </div>
+      <div class="gcell" id="gram-cell-9">
+        <span class="gbase">10. YOU EVER SLEEP</span>
+        <input type="text" id="gram-9" autocomplete="off" autocapitalize="none" spellcheck="false">
+        <span class="fb" id="gram-fb-9"></span>
+      </div>
+    </div>
+    <div class="task-actions no-print"><button class="btn" onclick="TestAPI.check('gram')">Проверить</button></div>
+  </article>
+  <article class="task" id="task-letter">
+    <div class="task-head"><h3>Задание 4. Письмо №1 (формат задания 35)</h3><span class="badge" id="score-letter">– / 10</span></div>
+    <p class="instr">Прочитайте электронное письмо от друга по переписке и напишите ответ. В формате ОГЭ встречные вопросы НЕ задаются — нужно только ответить на все три вопроса Бена, полно и точно. Соблюдите нормы вежливости: поблагодарите за полученное письмо или/и выразите положительные эмоции от его получения, выразите надежду на последующие контакты (Hope to hear from you soon / Write back soon). Объём — 100–120 слов: менее 90 слов — всё задание оценивается в 0 баллов; более 132 слов — проверяются только первые 120 слов. Кнопка «Проверить письмо» проверит структуру автоматически; баллы по критериям К1–К4 выставляет учитель.</p>
+    <div class="letter-stim">
+      <div class="lrow"><span class="lhk">From:</span><span>Ben@school.uk</span></div>
+      <div class="lrow"><span class="lhk">To:</span><span>friend@mail.ru</span></div>
+      <div class="lrow"><span class="lhk">Subject:</span><span>Holidays</span></div>
+      <div class="lbody">I've just come back from my trip to Scotland, and I still can't believe how great it was! We travelled there by train, walked in the mountains and even saw a real loch. My little sister says it was the best trip of her life. Now we are planning our next holidays, and my parents want to visit a Russian city this time. There are so many places to choose from, and we can't decide!</div>
+      <ul class="lqs">
+<li>Where did you spend your last school holidays?</li>
+<li>What do you usually do during your holidays?</li>
+<li>What Russian city would you like to visit, and why?</li>
+      </ul>
+      <p class="lclosing">Write back soon.<br>Ben</p>
+      <div class="ltask">Напишите Бену ответ по электронной почте. Ответьте на все три его вопроса. Объём — 100–120 слов.</div>
+    </div>
+    <div class="letter-area">
+      <textarea id="letter-text" placeholder="Dear Ben,
+...
+Best wishes,
+Alex"></textarea>
+      <div class="letter-meta no-print">
+        <span class="lcount" id="letter-count">0 слов</span>
+        <span class="tnote">счётчик обновляется автоматически · объём 100–120 слов (допустимо 90–132) · менее 90 — 0 баллов · более 132 — проверяются первые 120 слов · обращение и подпись входят в объём · стяжённые (I've) и дефисные (pop-singer) формы — одно слово</span>
+      </div>
+    </div>
+    <div class="chk-list no-print" id="letter-chk"></div>
+    <div class="crit">
+        <div class="cname">К1. Решение коммуникативной задачи</div>
+        <select id="letter-K1" aria-label="К1. Решение коммуникативной задачи"><option value="">—</option><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select>
+        <div class="chelp">3 — задание выполнено полностью: полные и точные ответы на все 3 вопроса; стилевое оформление выбрано правильно (обращение, завершающая фраза, подпись); соблюдены нормы вежливости (благодарность за полученное письмо или/и выражение положительных эмоций от его получения, надежда на последующие контакты). Допускается 1 неполный или неточный аспект. 2 — 1 аспект не раскрыт, ИЛИ 2–3 аспекта раскрыты неполно или неточно, ИЛИ 1 аспект не раскрыт и 1 раскрыт неполно/неточно. 1 — 2 аспекта не раскрыты, ИЛИ 4 аспекта раскрыты неполно или неточно, ИЛИ 1 аспект не раскрыт и 2 раскрыты неполно/неточно. 0 — все остальные случаи. При 0 по К1 всё задание оценивается в 0 баллов.</div>
+        <div class="cname">К2. Организация текста</div>
+        <select id="letter-K2" aria-label="К2. Организация текста"><option value="">—</option><option value="0">0</option><option value="1">1</option><option value="2">2</option></select>
+        <div class="chelp">2 — текст логично выстроен и верно разделён на абзацы; правильно использованы средства логической связи; структурное оформление соответствует нормам письменного этикета (обращение, завершающая фраза, подпись — на отдельных строках). Допускается 1 ошибка в организации текста. 1 — 2–3 ошибки. 0 — 4 и более ошибок.</div>
+        <div class="cname">К3. Лексико-грамматическое оформление текста</div>
+        <select id="letter-K3" aria-label="К3. Лексико-грамматическое оформление текста"><option value="">—</option><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select>
+        <div class="chelp">3 — словарный запас и грамматические структуры соответствуют уровню сложности задания, допускается 1 лексико-грамматическая ошибка. 2 — 2–3 ошибки (словарь и грамматика не полностью соответствуют уровню). 1 — 4 ошибки (соответствуют частично). 0 — 5 и более ошибок.</div>
+        <div class="cname">К4. Орфография и пунктуация</div>
+        <select id="letter-K4" aria-label="К4. Орфография и пунктуация"><option value="">—</option><option value="0">0</option><option value="1">1</option><option value="2">2</option></select>
+        <div class="chelp">2 — орфографические и пунктуационные ошибки практически отсутствуют (не более 2). 1 — 3–4 ошибки. 0 — многочисленные ошибки (5 и более).</div>
+    </div>
+    <div class="warnbox" id="letter-warn"></div>
+    <div class="task-actions no-print"><button class="btn" onclick="TestAPI.check('letter')">Проверить письмо</button></div>
+  </article>
+  </section>
+  <section id="l2">
+    <h2>Урок 2 · Аудирование + устная часть (монологи + телефонный опрос) <small>5 заданий · 31 балл · аудирование + устная часть с озвучкой</small></h2>
+    <div class="timerbar no-print">
+      <button class="btn ghost" onclick="TestAPI.timer('lt2',3000)">Старт / пауза — 50:00</button>
+      <span class="tdisp" id="tdisp-lt2">50:00</span>
+      <button class="btn warn" onclick="TestAPI.timerReset('lt2',3000)">Сброс</button>
+      <span class="tnote">таймер занятия</span>
+    </div>
+    <div class="audio-bar no-print" id="abar">
+      <div class="ab-row" id="abar-controls">
+        <button class="btn" id="abar-play1" title="Прочитать все тексты первого блока подряд">▶ Задание 5 (А–Е)</button>
+        <button class="btn" id="abar-play2" title="Прочитать второй блок целиком">▶ Интервью</button>
+        <button class="btn" id="abar-play3" title="Прочитать вступление и все вопросы опроса подряд">▶ Телефонный опрос</button>
+        <button class="btn ghost" id="abar-pause" disabled>⏸ Пауза</button>
+        <button class="btn ghost" id="abar-stop" disabled>⏹ Стоп</button>
+        <label class="ab-chk"><input type="checkbox" id="abar-x2"> ×2 как на ОГЭ</label>
+        <label class="ab-label">Темп
+          <select id="abar-rate">
+            <option value="0.8">0.8 — медленно</option>
+            <option value="0.9">0.9</option>
+            <option value="1" selected>1.0 — обычный</option>
+            <option value="1.15">1.15 — быстрее</option>
+          </select>
+        </label>
+        <label class="ab-label">Голос
+          <select id="abar-voice"></select>
+        </label>
+      </div>
+      <div class="ab-status" id="abar-status"></div>
+      <div class="tts-unsupported" id="abar-msg" style="display:none">В этом браузере озвучка недоступна — откройте страницу в Chrome, Edge или Safari, либо читайте тексты вслух (тексты — в «Режиме учителя»).</div>
+    </div>
+  <article class="task" id="task-listen5">
+    <div class="task-head"><h3>Задание 5. Аудирование: высказывания и рубрики (формат задания 5)</h3><span class="badge" id="score-listen5">– / 5</span></div>
+    <p class="instr">Вы услышите пять высказываний, обозначенных буквами A–E. Каждое звучит дважды: учитель читает вслух — либо включите озвучку браузером (кнопка ▶ у каждого текста и панель озвучки сверху). Прочитайте рубрики 1–6 и подберите к каждому высказыванию подходящую рубрику. Одна рубрика — лишняя. В реальном ОГЭ это задание 5.</p>
+    <div class="lextext"><b>Рубрики 1–6 (одна — лишняя):</b>
+      <ol class="rublist">
+<li>Speaker explains why he prefers travelling by train.</li>
+<li>Speaker describes the problems he had during his trip.</li>
+<li>Speaker advises his friends to travel only by plane.</li>
+<li>Speaker is looking forward to his future trip.</li>
+<li>Speaker tells about his usual way to get to school.</li>
+<li>Speaker describes how he spent his summer holidays.</li>
+      </ol>
+    </div>
+    <div class="listencard" id="lc-listen5-0">
+      <div class="lh"><span class="lletter">A</span><button class="btn mini ghost ltbtn no-print" data-key="listen5-0" data-letter="A" id="ltbtn-listen5-0" title="Прослушать высказывание A (браузерная озвучка)">▶ A</button></div>
+      <div class="rubrow"><label class="opt"><input type="radio" name="listen5-0" value="1"><span class="lt">1</span></label><label class="opt"><input type="radio" name="listen5-0" value="2"><span class="lt">2</span></label><label class="opt"><input type="radio" name="listen5-0" value="3"><span class="lt">3</span></label><label class="opt"><input type="radio" name="listen5-0" value="4"><span class="lt">4</span></label><label class="opt"><input type="radio" name="listen5-0" value="5"><span class="lt">5</span></label><label class="opt"><input type="radio" name="listen5-0" value="6"><span class="lt">6</span></label></div>
+      <details class="tape teacher-only">
+        <summary>Текст для чтения вслух (только учитель)</summary>
+        <p>I spent my summer holidays at my granny's in a small village near the sea. Every morning I swam in the sea and helped my granny in the garden. In the evenings my cousins and I played volleyball on the beach or watched the stars. I didn't miss my gadgets at all: there is no internet there, but you don't need it when you have the sea, fresh air and friends!</p>
+        <div class="tnote">Прочитать дважды: первый раз — без остановок, второй раз — с паузами 10–15 секунд для ответов. Темп спокойный, имена и числа не выделять голосом. Либо включите озвучку кнопкой ▶ рядом с буквой.</div>
+      </details>
+    </div>
+    <div class="listencard" id="lc-listen5-1">
+      <div class="lh"><span class="lletter">B</span><button class="btn mini ghost ltbtn no-print" data-key="listen5-1" data-letter="B" id="ltbtn-listen5-1" title="Прослушать высказывание B (браузерная озвучка)">▶ B</button></div>
+      <div class="rubrow"><label class="opt"><input type="radio" name="listen5-1" value="1"><span class="lt">1</span></label><label class="opt"><input type="radio" name="listen5-1" value="2"><span class="lt">2</span></label><label class="opt"><input type="radio" name="listen5-1" value="3"><span class="lt">3</span></label><label class="opt"><input type="radio" name="listen5-1" value="4"><span class="lt">4</span></label><label class="opt"><input type="radio" name="listen5-1" value="5"><span class="lt">5</span></label><label class="opt"><input type="radio" name="listen5-1" value="6"><span class="lt">6</span></label></div>
+      <details class="tape teacher-only">
+        <summary>Текст для чтения вслух (только учитель)</summary>
+        <p>I don't like flying. Planes are fast, but you see nothing from the window except clouds, and you can't walk around. A train is different: you can get up any time you want, have tea in the restaurant car and look at the fields and forests outside. Last month I went to Kazan by train, and the trip itself was part of the adventure!</p>
+        <div class="tnote">Прочитать дважды: первый раз — без остановок, второй раз — с паузами 10–15 секунд для ответов. Темп спокойный, имена и числа не выделять голосом. Либо включите озвучку кнопкой ▶ рядом с буквой.</div>
+      </details>
+    </div>
+    <div class="listencard" id="lc-listen5-2">
+      <div class="lh"><span class="lletter">C</span><button class="btn mini ghost ltbtn no-print" data-key="listen5-2" data-letter="C" id="ltbtn-listen5-2" title="Прослушать высказывание C (браузерная озвучка)">▶ C</button></div>
+      <div class="rubrow"><label class="opt"><input type="radio" name="listen5-2" value="1"><span class="lt">1</span></label><label class="opt"><input type="radio" name="listen5-2" value="2"><span class="lt">2</span></label><label class="opt"><input type="radio" name="listen5-2" value="3"><span class="lt">3</span></label><label class="opt"><input type="radio" name="listen5-2" value="4"><span class="lt">4</span></label><label class="opt"><input type="radio" name="listen5-2" value="5"><span class="lt">5</span></label><label class="opt"><input type="radio" name="listen5-2" value="6"><span class="lt">6</span></label></div>
+      <details class="tape teacher-only">
+        <summary>Текст для чтения вслух (только учитель)</summary>
+        <p>Next summer my family is going to visit Lake Baikal. Dad has already bought the tickets, and I have started packing my rucksack — three months before the trip! I have never seen real mountains or deep clear water, so I simply can't wait. I read everything about Baikal and watch videos of it almost every day.</p>
+        <div class="tnote">Прочитать дважды: первый раз — без остановок, второй раз — с паузами 10–15 секунд для ответов. Темп спокойный, имена и числа не выделять голосом. Либо включите озвучку кнопкой ▶ рядом с буквой.</div>
+      </details>
+    </div>
+    <div class="listencard" id="lc-listen5-3">
+      <div class="lh"><span class="lletter">D</span><button class="btn mini ghost ltbtn no-print" data-key="listen5-3" data-letter="D" id="ltbtn-listen5-3" title="Прослушать высказывание D (браузерная озвучка)">▶ D</button></div>
+      <div class="rubrow"><label class="opt"><input type="radio" name="listen5-3" value="1"><span class="lt">1</span></label><label class="opt"><input type="radio" name="listen5-3" value="2"><span class="lt">2</span></label><label class="opt"><input type="radio" name="listen5-3" value="3"><span class="lt">3</span></label><label class="opt"><input type="radio" name="listen5-3" value="4"><span class="lt">4</span></label><label class="opt"><input type="radio" name="listen5-3" value="5"><span class="lt">5</span></label><label class="opt"><input type="radio" name="listen5-3" value="6"><span class="lt">6</span></label></div>
+      <details class="tape teacher-only">
+        <summary>Текст для чтения вслух (только учитель)</summary>
+        <p>I go to school by metro. It is the fastest way in our city: buses get stuck in traffic jams, but the metro is never late. My stop is two minutes from school. Of course, it is crowded in the morning, but I put on my headphones, listen to music and read — the trip takes only fifteen minutes.</p>
+        <div class="tnote">Прочитать дважды: первый раз — без остановок, второй раз — с паузами 10–15 секунд для ответов. Темп спокойный, имена и числа не выделять голосом. Либо включите озвучку кнопкой ▶ рядом с буквой.</div>
+      </details>
+    </div>
+    <div class="listencard" id="lc-listen5-4">
+      <div class="lh"><span class="lletter">E</span><button class="btn mini ghost ltbtn no-print" data-key="listen5-4" data-letter="E" id="ltbtn-listen5-4" title="Прослушать высказывание E (браузерная озвучка)">▶ E</button></div>
+      <div class="rubrow"><label class="opt"><input type="radio" name="listen5-4" value="1"><span class="lt">1</span></label><label class="opt"><input type="radio" name="listen5-4" value="2"><span class="lt">2</span></label><label class="opt"><input type="radio" name="listen5-4" value="3"><span class="lt">3</span></label><label class="opt"><input type="radio" name="listen5-4" value="4"><span class="lt">4</span></label><label class="opt"><input type="radio" name="listen5-4" value="5"><span class="lt">5</span></label><label class="opt"><input type="radio" name="listen5-4" value="6"><span class="lt">6</span></label></div>
+      <details class="tape teacher-only">
+        <summary>Текст для чтения вслух (только учитель)</summary>
+        <p>Last autumn we went to the mountains by bus, and it was the worst trip ever. First, our bus broke down on the way, and we waited for another one for three hours in the rain. Then it turned out that our hotel had lost our booking, and we spent the night at the bus station. Never again will I book rooms on unknown websites!</p>
+        <div class="tnote">Прочитать дважды: первый раз — без остановок, второй раз — с паузами 10–15 секунд для ответов. Темп спокойный, имена и числа не выделять голосом. Либо включите озвучку кнопкой ▶ рядом с буквой.</div>
+      </details>
+    </div>
+    <div class="task-actions no-print"><button class="btn" onclick="TestAPI.check('listen5')">Проверить</button></div>
+  </article>
+  <article class="task" id="task-listen6">
+    <div class="task-head"><h3>Задание 6. Аудирование: интервью (формат задания 6)</h3><span class="badge" id="score-listen6">– / 6</span></div>
+    <p class="instr">Вы услышите интервью с Беном о его поездке в Шотландию — оно звучит дважды (учитель читает вслух или озвучка браузером). Заполните таблицу: в каждом пункте (в реальном ОГЭ это задания 6–11) впишите НЕ БОЛЕЕ ОДНОГО слова из записи. Числа записываются прописью; артикли и предлоги не пишутся — иначе 0 баллов (правило ОГЭ).</p>
+    <div class="gaptable">
+      <div class="gaprow" id="gap-row-0">
+        <span class="idx">6</span>
+        <span class="hint">Ben went to Scotland in …</span>
+        <input type="text" id="gap-0" autocomplete="off" autocapitalize="none" spellcheck="false">
+        <span class="fb" id="gap-fb-0"></span>
+      </div>
+      <div class="gaprow" id="gap-row-1">
+        <span class="idx">7</span>
+        <span class="hint">The train journey took …</span>
+        <input type="text" id="gap-1" autocomplete="off" autocapitalize="none" spellcheck="false">
+        <span class="fb" id="gap-fb-1"></span>
+      </div>
+      <div class="gaprow" id="gap-row-2">
+        <span class="idx">8</span>
+        <span class="hint">Ben liked the …</span>
+        <input type="text" id="gap-2" autocomplete="off" autocapitalize="none" spellcheck="false">
+        <span class="fb" id="gap-fb-2"></span>
+      </div>
+      <div class="gaprow" id="gap-row-3">
+        <span class="idx">9</span>
+        <span class="hint">The family stayed in a small …</span>
+        <input type="text" id="gap-3" autocomplete="off" autocapitalize="none" spellcheck="false">
+        <span class="fb" id="gap-fb-3"></span>
+      </div>
+      <div class="gaprow" id="gap-row-4">
+        <span class="idx">10</span>
+        <span class="hint">The weather was …</span>
+        <input type="text" id="gap-4" autocomplete="off" autocapitalize="none" spellcheck="false">
+        <span class="fb" id="gap-fb-4"></span>
+      </div>
+      <div class="gaprow" id="gap-row-5">
+        <span class="idx">11</span>
+        <span class="hint">Ben brought home …</span>
+        <input type="text" id="gap-5" autocomplete="off" autocapitalize="none" spellcheck="false">
+        <span class="fb" id="gap-fb-5"></span>
+      </div>
+    </div>
+    <div class="listencard" id="lc-listen6-0">
+      <div class="lh"><span class="lletter">6</span><span class="lq">Интервью целиком — звучит дважды</span><button class="btn mini ghost ltbtn no-print" data-key="listen6-0" data-letter="Интервью" id="ltbtn-listen6-0" title="Прослушать интервью (браузерная озвучка)">▶ Интервью</button></div>
+      <details class="tape teacher-only">
+        <summary>Текст интервью для чтения вслух (только учитель)</summary>
+        <p>Interviewer: Hello, Ben! Welcome to our programme. You have just come back from Scotland. Tell our listeners about your trip. Ben: Hi! It was my dream trip. We went to Scotland in July, right after the school year finished. Interviewer: How did you get there? Ben: First we flew to Edinburgh. Then we took a train to the Highlands. The train journey took fifteen hours, but I wasn't bored at all: from the window I could see forests, lakes and even castles. Interviewer: What did you like most of all? Ben: The mountains! We walked in the mountains every day, and the views were amazing. Interviewer: Where did you stay? Ben: In a small hotel near a lake. The room was tiny but comfortable, and breakfast was fantastic. Interviewer: Was the weather good? Ben: Ha! It was rainy, of course — it was Scotland! But we had raincoats, so we walked every day anyway. Interviewer: Did you bring anything back home? Ben: Yes — souvenirs! A woolen scarf for my mum, a toy highland cow for my little sister and postcards for my classmates. Interviewer: Thank you, Ben! Have a nice school year. Ben: Thank you! Goodbye!</p>
+        <div class="tnote">Прочитать дважды: первый раз — без остановок, второй раз — с паузами 10–15 секунд для заполнения таблицы. Можно читать по ролям: учитель — Interviewer, ученик — Ben. Либо включите озвучку кнопкой ▶.</div>
+      </details>
+    </div>
+    <div class="task-actions no-print"><button class="btn" onclick="TestAPI.check('listen6')">Проверить</button></div>
+  </article>
+  <article class="task" id="task-monoA">
+    <div class="task-head"><h3>Задание 7. Монолог №1 — «Каникулы»</h3><span class="badge" id="score-monoA">– / 7</span></div>
+    <p class="instr">Представь, что ты готовишь проект по теме «School holidays». Расскажи:</p>
+    <ol class="mono-plan">
+      <li>what your favourite school holidays are and why you like them;</li>
+      <li>what you usually do during your school holidays;</li>
+      <li>where you spent your last holidays and what you did there;</li>
+      <li>what you are going to do during your next holidays, and why.</li>
+    </ol>
+    <div class="mono-note">10–12 фраз · подготовка 1,5 мин · говорение до 2 мин</div>
+    <div class="timerbar no-print">
+      <button class="btn ghost" onclick="TestAPI.timer('monoA-prep',90)">Подготовка 1:30</button>
+      <span class="tdisp" id="tdisp-monoA-prep">1:30</span>
+      <button class="btn ghost" onclick="TestAPI.timer('monoA-speak',120)">Говорение 2:00</button>
+      <span class="tdisp" id="tdisp-monoA-speak">2:00</span>
+      <span class="tnote">таймеры монолога</span>
+    </div>
+    <div class="crit">
+        <div class="cname">К1. Решение коммуникативной задачи</div>
+        <select id="monoA-K1" aria-label="К1. Решение коммуникативной задачи"><option value="">—</option><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select>
+        <div class="chelp">3 — все четыре аспекта раскрыты полно и развёрнуто, 10–12 фраз; 2 — один аспект раскрыт не полностью, 8–9 фраз; 1 — 6–7 фраз; 0 — три аспекта не раскрыты. При 0 по К1 весь монолог — 0 баллов.</div>
+        <div class="cname">К2. Организация высказывания</div>
+        <select id="monoA-K2" aria-label="К2. Организация высказывания"><option value="">—</option><option value="0">0</option><option value="1">1</option></select>
+        <div class="chelp">1 — есть вступление и заключение, высказывание логично, есть связки-переходы (first, also, however, to sum up); 0 — нет вступления/заключения или речь распадается на отдельные фразы.</div>
+        <div class="cname">К3. Языковое оформление</div>
+        <select id="monoA-K3" aria-label="К3. Языковое оформление"><option value="">—</option><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select>
+        <div class="chelp">3 — не более 4 негрубых лексико-грамматических и не более 3 фонетических ошибок; 2 — характеристики соседней зоны превышены незначительно; 1 — ошибки заметны, но не мешают пониманию; 0 — ошибки мешают пониманию.</div>
+    </div>
+    <div class="warnbox" id="monoA-warn"></div>
+    <details class="supports">
+      <summary>Фразы-опоры для связного ответа</summary>
+      <div><span>To start with… / First of all…</span><span>In my opinion… / I believe…</span><span>As for me… / And what about me — …</span><span>Besides… / Also… / Moreover…</span><span>On the one hand…, on the other hand…</span><span>To sum up… / All in all…</span></div>
+    </details>
+    <div class="task-actions no-print"><button class="btn" onclick="TestAPI.check('monoA')">Выставить баллы</button></div>
+  </article>
+  <article class="task" id="task-monoB">
+    <div class="task-head"><h3>Задание 8. Монолог №2 — «Путешествия»</h3><span class="badge" id="score-monoB">– / 7</span></div>
+    <p class="instr">Представь, что ты готовишь проект по теме «Travelling». Расскажи:</p>
+    <ol class="mono-plan">
+      <li>why people like travelling;</li>
+      <li>what means of transport people prefer for long trips, and why;</li>
+      <li>what places in Russia you would like to visit, and why;</li>
+      <li>whether you prefer travelling with your family or with your friends, and why.</li>
+    </ol>
+    <div class="mono-note">10–12 фраз · подготовка 1,5 мин · говорение до 2 мин</div>
+    <div class="timerbar no-print">
+      <button class="btn ghost" onclick="TestAPI.timer('monoB-prep',90)">Подготовка 1:30</button>
+      <span class="tdisp" id="tdisp-monoB-prep">1:30</span>
+      <button class="btn ghost" onclick="TestAPI.timer('monoB-speak',120)">Говорение 2:00</button>
+      <span class="tdisp" id="tdisp-monoB-speak">2:00</span>
+      <span class="tnote">таймеры монолога</span>
+    </div>
+    <div class="crit">
+        <div class="cname">К1. Решение коммуникативной задачи</div>
+        <select id="monoB-K1" aria-label="К1. Решение коммуникативной задачи"><option value="">—</option><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select>
+        <div class="chelp">3 — все четыре аспекта раскрыты полно и развёрнуто, 10–12 фраз; 2 — один аспект раскрыт не полностью, 8–9 фраз; 1 — 6–7 фраз; 0 — три аспекта не раскрыты. При 0 по К1 весь монолог — 0 баллов.</div>
+        <div class="cname">К2. Организация высказывания</div>
+        <select id="monoB-K2" aria-label="К2. Организация высказывания"><option value="">—</option><option value="0">0</option><option value="1">1</option></select>
+        <div class="chelp">1 — есть вступление и заключение, высказывание логично, есть связки-переходы (first, also, however, to sum up); 0 — нет вступления/заключения или речь распадается на отдельные фразы.</div>
+        <div class="cname">К3. Языковое оформление</div>
+        <select id="monoB-K3" aria-label="К3. Языковое оформление"><option value="">—</option><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select>
+        <div class="chelp">3 — не более 4 негрубых лексико-грамматических и не более 3 фонетических ошибок; 2 — характеристики соседней зоны превышены незначительно; 1 — ошибки заметны, но не мешают пониманию; 0 — ошибки мешают пониманию.</div>
+    </div>
+    <div class="warnbox" id="monoB-warn"></div>
+    <details class="supports">
+      <summary>Фразы-опоры для связного ответа</summary>
+      <div><span>To start with… / First of all…</span><span>In my opinion… / I believe…</span><span>As for me… / And what about me — …</span><span>Besides… / Also… / Moreover…</span><span>On the one hand…, on the other hand…</span><span>To sum up… / All in all…</span></div>
+    </details>
+    <div class="task-actions no-print"><button class="btn" onclick="TestAPI.check('monoB')">Выставить баллы</button></div>
+  </article>
+  <article class="task" id="task-survey">
+    <div class="task-head"><h3>Задание 9. Телефонный опрос (устная часть, задание 2)</h3><span class="badge" id="score-survey">– / 6</span></div>
+    <p class="instr">Тема опроса — «Каникулы и путешествия». Прослушай вопрос электронного помощника (кнопка ▶ у вопроса или «▶ Телефонный опрос» на панели озвучки) и ответь вслух ПОЛНЫМ предложением — 40 секунд на каждый ответ (таймер в карточке). Учитель выставляет 1 или 0 напротив каждого ответа. Критерий C3: 1 балл — дан полный ответ на поставленный вопрос, отдельные фонетические, лексические и грамматические погрешности не затрудняют понимания; 0 баллов — ответ не дан, ИЛИ ответ не соответствует заданному вопросу, ИЛИ ответ дан в виде слова или словосочетания, И/ИЛИ ошибки препятствуют пониманию.</p>
+    <div class="letter-stim">
+      <div class="ltask">You are going to take part in a telephone survey. You have to answer six questions. Give full answers to the questions. Remember that you have 40 seconds to answer each question.</div>
+    </div>
+    <div class="timerbar no-print">
+      <button class="btn ghost" onclick="TestAPI.timer('survey-40',40)">Ответ — 0:40</button>
+      <span class="tdisp" id="tdisp-survey-40">0:40</span>
+      <span class="tnote">таймер одного ответа · 40 секунд, как на экзамене</span>
+    </div>
+    <div class="listencard" id="lc-survey-0">
+      <div class="lh"><span class="lletter">EA</span><span class="lq"><b>Electronic assistant:</b> вступление к опросу</span><button class="btn mini ghost ltbtn no-print" data-key="survey-0" data-letter="Вступление" id="ltbtn-survey-0" title="Прослушать вступление (браузерная озвучка)">▶ Вступление</button></div>
+      <p class="svintro">Hello! It's the electronic assistant of the Sun Travel Club. We kindly ask you to take part in our survey. We need to find out how people feel about travelling and holidays. Please answer six questions. The survey is anonymous — you don't have to give your name. So, let's get started.</p>
+    </div>
+    <div class="svrow" id="lc-survey-1">
+      <span class="snum">1</span>
+      <div class="optgrid">
+        <div class="lh"><span class="lq"><b>Electronic assistant:</b> Where did you spend your last school holidays?</span><button class="btn mini ghost ltbtn no-print" data-key="survey-1" data-letter="Q1" id="ltbtn-survey-1" title="Прослушать вопрос Q1 (браузерная озвучка)">▶ Q1</button></div>
+        <div class="svradio">
+          <label class="opt"><input type="radio" name="survey-1" value="1"><span>1 — полный ответ</span></label>
+          <label class="opt"><input type="radio" name="survey-1" value="0"><span>0 — нет / словом</span></label>
+        </div>
+        <details class="tape teacher-only">
+          <summary>Образец полного ответа (только учитель)</summary>
+          <p>I spent my last school holidays at the seaside with my parents. We swam, played beach volleyball and did a lot of sightseeing.</p>
+        </details>
+      </div>
+    </div>
+    <div class="svrow" id="lc-survey-2">
+      <span class="snum">2</span>
+      <div class="optgrid">
+        <div class="lh"><span class="lq"><b>Electronic assistant:</b> How do you usually travel when you go on holiday?</span><button class="btn mini ghost ltbtn no-print" data-key="survey-2" data-letter="Q2" id="ltbtn-survey-2" title="Прослушать вопрос Q2 (браузерная озвучка)">▶ Q2</button></div>
+        <div class="svradio">
+          <label class="opt"><input type="radio" name="survey-2" value="1"><span>1 — полный ответ</span></label>
+          <label class="opt"><input type="radio" name="survey-2" value="0"><span>0 — нет / словом</span></label>
+        </div>
+        <details class="tape teacher-only">
+          <summary>Образец полного ответа (только учитель)</summary>
+          <p>I usually travel by train because I like looking out of the window and walking around the train during long journeys.</p>
+        </details>
+      </div>
+    </div>
+    <div class="svrow" id="lc-survey-3">
+      <span class="snum">3</span>
+      <div class="optgrid">
+        <div class="lh"><span class="lq"><b>Electronic assistant:</b> What are you going to do during your next school holidays?</span><button class="btn mini ghost ltbtn no-print" data-key="survey-3" data-letter="Q3" id="ltbtn-survey-3" title="Прослушать вопрос Q3 (браузерная озвучка)">▶ Q3</button></div>
+        <div class="svradio">
+          <label class="opt"><input type="radio" name="survey-3" value="1"><span>1 — полный ответ</span></label>
+          <label class="opt"><input type="radio" name="survey-3" value="0"><span>0 — нет / словом</span></label>
+        </div>
+        <details class="tape teacher-only">
+          <summary>Образец полного ответа (только учитель)</summary>
+          <p>I am going to visit my cousins in Moscow. We are going to do some sightseeing and ride the famous Moscow metro.</p>
+        </details>
+      </div>
+    </div>
+    <div class="svrow" id="lc-survey-4">
+      <span class="snum">4</span>
+      <div class="optgrid">
+        <div class="lh"><span class="lq"><b>Electronic assistant:</b> What is the most popular means of transport among teenagers in your region?</span><button class="btn mini ghost ltbtn no-print" data-key="survey-4" data-letter="Q4" id="ltbtn-survey-4" title="Прослушать вопрос Q4 (браузерная озвучка)">▶ Q4</button></div>
+        <div class="svradio">
+          <label class="opt"><input type="radio" name="survey-4" value="1"><span>1 — полный ответ</span></label>
+          <label class="opt"><input type="radio" name="survey-4" value="0"><span>0 — нет / словом</span></label>
+        </div>
+        <details class="tape teacher-only">
+          <summary>Образец полного ответа (только учитель)</summary>
+          <p>I think that buses and the metro are the most popular means of transport among teenagers in my region because they are fast and cheap.</p>
+        </details>
+      </div>
+    </div>
+    <div class="svrow" id="lc-survey-5">
+      <span class="snum">5</span>
+      <div class="optgrid">
+        <div class="lh"><span class="lq"><b>Electronic assistant:</b> What places in Russia would you like to visit, and why?</span><button class="btn mini ghost ltbtn no-print" data-key="survey-5" data-letter="Q5" id="ltbtn-survey-5" title="Прослушать вопрос Q5 (браузерная озвучка)">▶ Q5</button></div>
+        <div class="svradio">
+          <label class="opt"><input type="radio" name="survey-5" value="1"><span>1 — полный ответ</span></label>
+          <label class="opt"><input type="radio" name="survey-5" value="0"><span>0 — нет / словом</span></label>
+        </div>
+        <details class="tape teacher-only">
+          <summary>Образец полного ответа (только учитель)</summary>
+          <p>I would like to visit Lake Baikal because I have never seen deep clear water and real mountains, and I want to travel there by train.</p>
+        </details>
+      </div>
+    </div>
+    <div class="svrow" id="lc-survey-6">
+      <span class="snum">6</span>
+      <div class="optgrid">
+        <div class="lh"><span class="lq"><b>Electronic assistant:</b> What would you advise a person who wants to have a good holiday?</span><button class="btn mini ghost ltbtn no-print" data-key="survey-6" data-letter="Q6" id="ltbtn-survey-6" title="Прослушать вопрос Q6 (браузерная озвучка)">▶ Q6</button></div>
+        <div class="svradio">
+          <label class="opt"><input type="radio" name="survey-6" value="1"><span>1 — полный ответ</span></label>
+          <label class="opt"><input type="radio" name="survey-6" value="0"><span>0 — нет / словом</span></label>
+        </div>
+        <details class="tape teacher-only">
+          <summary>Образец полного ответа (только учитель)</summary>
+          <p>If somebody wants to have a good holiday, I advise him or her to plan the trip in advance, buy tickets early and take less luggage.</p>
+        </details>
+      </div>
+    </div>
+    <div class="warnbox" id="survey-warn"></div>
+    <div class="task-actions no-print"><button class="btn" onclick="TestAPI.check('survey')">Проверить</button></div>
+  </article>
+  </section>
+  <section id="results">
+    <h2>Результаты <small>баллы по разделам · оценка · прогноз на ОГЭ</small></h2>
+    <table class="res-table">
+      <thead><tr><th>Раздел</th><th style="text-align:right">Баллы</th><th style="text-align:right">Освоение</th></tr></thead>
+      <tbody id="res-rows"></tbody>
+    </table>
+    <table class="res-table">
+      <thead><tr><th>Прогноз на ОГЭ (ориентировочно)</th><th style="text-align:right">Проверочная</th><th style="text-align:right">ОГЭ (первичные)</th></tr></thead>
+      <tbody id="fc-rows"></tbody>
+    </table>
+    <p class="fclist">Прогноз — линейная проекция процента освоения на максимум раздела ОГЭ. Материал проверяемого месяца покрывает не весь экзамен, поэтому цифра показывает динамику, а не гарантированный балл.</p>
+    <div class="grade-line">
+      <span class="grade-big" id="grade-big">«—»</span>
+      <span class="grade-note" id="grade-note">Проверьте задания, чтобы получить оценку.</span>
+    </div>
+    <div class="res-actions no-print">
+      <button class="btn" onclick="TestAPI.checkAll()">Проверить всё</button>
+      <button class="btn ghost" onclick="window.print()">Печать / PDF</button>
+      <button class="btn warn" onclick="TestAPI.resetAll()">Сбросить все результаты</button>
+    </div>
+  </section>
+  <footer>Проверочная работа по материалам уроков 17–24 плана подготовки к ОГЭ (A2 → B1) · формат заданий — спецификация ФИПИ, ОГЭ-2027<br>критерии письма — К1–К4 задания 35 · критерии монолога — К1–К3 устного задания 3 · телефонный опрос — по 1 баллу за полный ответ (критерий C3) · шкала проверочной: «5» ≥ 64 · «4» 53–63 · «3» 39–52 · «2» &lt; 39</footer>
+</div>
+<script>
+var TEST_DATA = {"storageKey":"oge-test-nov-v1","ttsKey":"oge-test-nov-tts-v1","blitz":{"id":"blitz","max":12,"minutes":8,"title":"Задание 1. Блиц-перевод","instr":"Напишите по-английски. По одному слову или выражению на строку. (Цифровой аналог еженедельного словарного диктанта: лексика ноября — «Каникулы и путешествия» и «Транспорт».)","items":[{"ru":"школьные каникулы","accept":["school holidays","school vacation","holidays"]},{"ru":"поездка, короткое путешествие","accept":["trip","a trip"]},{"ru":"путешествие (дорога в путь)","accept":["journey","a journey"]},{"ru":"чемодан","accept":["suitcase","a suitcase"]},{"ru":"багаж","accept":["luggage","baggage"]},{"ru":"билет туда и обратно","accept":["return ticket","a return ticket"]},{"ru":"успеть на поезд","accept":["catch a train","catch the train","to catch a train","to catch the train"]},{"ru":"посадочный талон","accept":["boarding pass","a boarding pass"]},{"ru":"взлетать (о самолёте)","accept":["take off","to take off"]},{"ru":"приземляться","accept":["land","to land"]},{"ru":"осмотр достопримечательностей","accept":["sightseeing","go sightseeing","to go sightseeing"]},{"ru":"заблудиться","accept":["get lost","to get lost"]}]},"lex":{"id":"lex","max":8,"minutes":9,"title":"Задание 2. Лексика в контексте","instr":"Прочитайте текст и в каждом пункте (1–8) выберите один правильный вариант из трёх.","text":"Hi! I'm Dima. In August my parents and I made a long (1) ___ across the country: we visited three cities in ten days. We travelled by train because flying is expensive. Dad bought the tickets online, so we didn't have to stand in a long (2) ___ at the station. On the day of the trip we came to the station early, found our (3) ___ and put our heavy (4) ___ on the special rack. The train (5) ___ in the first city early in the morning, and we went to the hotel to leave our suitcases. Every day we did a lot of (6) ___: old streets, museums and famous places. Mom bought (7) ___ for our grandparents — magnets and postcards from every city. On the last evening we went to the airport, went through security (8) ___ and flew home. It was the best trip of my summer!","items":[{"options":["journey","travel","ticket"],"correct":0},{"options":["queue","delay","traffic jam"],"correct":0},{"options":["platform","passport","passenger"],"correct":0},{"options":["luggage","tickets","souvenirs"],"correct":0},{"options":["arrived","landed","took"],"correct":0},{"options":["sightseeing","viewing","excursions"],"correct":0},{"options":["souvenirs","suitcases","guidebooks"],"correct":0},{"options":["check","counter","office"],"correct":0}]},"gram":{"id":"gram","max":10,"minutes":13,"title":"Задание 3. Грамматика (формат заданий 20–28)","instr":"Преобразуйте слова, напечатанные ЗАГЛАВНЫМИ буквами, так, чтобы они грамматически соответствовали содержанию текста: будущее время (will / be going to / Present Continuous), Present Perfect, Past Simple. В реальном ОГЭ это задания 20–28. Орфографическая ошибка обнуляет ответ.","parts":[{"t":"My name is Masha, and travelling is my favourite thing in the world. Last August my family "},{"gap":1},{"t":" to St Petersburg, and we "},{"gap":2},{"t":" a whole week there. I have wanted to return ever since! This year we "},{"gap":3},{"t":" Murmansk — Mom planned this trip long ago. Dad "},{"gap":4},{"t":" the train tickets, and I have just packed my rucksack. I "},{"gap":5},{"t":" so far north, so I am very excited. We usually go by car: last winter, for example, we "},{"gap":6},{"t":" to Kazan by car. But I think the night train "},{"gap":7},{"t":" a real adventure! We "},{"gap":8},{"t":" at six on Saturday morning — everything is arranged. My little brother Pasha is the only problem: he still "},{"gap":9},{"t":", though Mom reminded him twice. By the way, "},{"gap":10},{"t":" on a night train? Write me about it!"}],"items":[{"base":"GO","accept":["went"],"tip":"last August — маркер прошедшего: Past Simple, а не Present Perfect (go–went–gone)"},{"base":"SPEND","accept":["spent"],"tip":"неправильный глагол: spend–spent–spent"},{"base":"VISIT","accept":["are going to visit","'re going to visit"],"tip":"план принят заранее (Mom planned long ago) → be going to"},{"base":"ALREADY/BUY","accept":["has already bought"],"tip":"already стоит между has и V3: has already bought (buy–bought–bought)"},{"base":"NEVER/BE","accept":["have never been","'ve never been"],"tip":"never — опыт к настоящему моменту: have never been (be–was/were–been)"},{"base":"GO","accept":["went"],"tip":"last winter — точное прошедшее → Past Simple (главный конфликт PP vs PS)"},{"base":"BE","accept":["will be"],"tip":"I think… — предсказание → will + инфинитив без частицы to"},{"base":"LEAVE","accept":["are leaving","'re leaving"],"tip":"договорённость на будущее (всё уже arranged) → Present Continuous"},{"base":"NOT/PACK","accept":["hasn't packed","has not packed"],"tip":"смысл «ещё не» (still, though) → hasn't + V3 (pack–packed–packed)"},{"base":"YOU EVER SLEEP","accept":["have you ever slept"],"tip":"вопрос об опыте с ever → have you ever + V3 (sleep–slept–slept)"}]},"clientTasks":[["blitz",12,"blitz"],["lex",8,"choice"],["gram",10,"text"],["letter",10,"letter"],["listen5",5,"choice"],["listen6",6,"interview"],["monoA",7,"mono"],["monoB",7,"mono"],["survey",6,"survey"]],"sections":[["Лексика (словарный запас)",["blitz","lex"]],["Грамматика (формат 20–28)",["gram"]],["Письмо №1 (формат 35, К1–К4)",["letter"]],["Аудирование (форматы 5–6)",["listen5","listen6"]],["Говорение (устная часть)",["monoA","monoB","survey"]]],"forecast":[["Грамматика и лексика",["blitz","lex","gram"],15],["Письмо (задание 35)",["letter"],10],["Аудирование",["listen5","listen6"],15],["Говорение (устная часть)",["monoA","monoB","survey"],15]],"grade":[64,53,39],"total":71,"ttsBlocks":["listen5","listen6","survey"],"listen5":{"id":"listen5","max":5,"minutes":12,"title":"Задание 5. Аудирование: высказывания и рубрики (формат задания 5)","instr":"Вы услышите пять высказываний, обозначенных буквами A–E. Каждое звучит дважды: учитель читает вслух — либо включите озвучку браузером (кнопка ▶ у каждого текста и панель озвучки сверху). Прочитайте рубрики 1–6 и подберите к каждому высказыванию подходящую рубрику. Одна рубрика — лишняя. В реальном ОГЭ это задание 5.","rubrics":["Speaker explains why he prefers travelling by train.","Speaker describes the problems he had during his trip.","Speaker advises his friends to travel only by plane.","Speaker is looking forward to his future trip.","Speaker tells about his usual way to get to school.","Speaker describes how he spent his summer holidays."],"items":[{"letter":"A","correct":6,"script":"I spent my summer holidays at my granny's in a small village near the sea. Every morning I swam in the sea and helped my granny in the garden. In the evenings my cousins and I played volleyball on the beach or watched the stars. I didn't miss my gadgets at all: there is no internet there, but you don't need it when you have the sea, fresh air and friends!"},{"letter":"B","correct":1,"script":"I don't like flying. Planes are fast, but you see nothing from the window except clouds, and you can't walk around. A train is different: you can get up any time you want, have tea in the restaurant car and look at the fields and forests outside. Last month I went to Kazan by train, and the trip itself was part of the adventure!"},{"letter":"C","correct":4,"script":"Next summer my family is going to visit Lake Baikal. Dad has already bought the tickets, and I have started packing my rucksack — three months before the trip! I have never seen real mountains or deep clear water, so I simply can't wait. I read everything about Baikal and watch videos of it almost every day."},{"letter":"D","correct":5,"script":"I go to school by metro. It is the fastest way in our city: buses get stuck in traffic jams, but the metro is never late. My stop is two minutes from school. Of course, it is crowded in the morning, but I put on my headphones, listen to music and read — the trip takes only fifteen minutes."},{"letter":"E","correct":2,"script":"Last autumn we went to the mountains by bus, and it was the worst trip ever. First, our bus broke down on the way, and we waited for another one for three hours in the rain. Then it turned out that our hotel had lost our booking, and we spent the night at the bus station. Never again will I book rooms on unknown websites!"}]},"listen6":{"id":"listen6","max":6,"minutes":13,"title":"Задание 6. Аудирование: интервью (формат задания 6)","instr":"Вы услышите интервью с Беном о его поездке в Шотландию — оно звучит дважды (учитель читает вслух или озвучка браузером). Заполните таблицу: в каждом пункте (в реальном ОГЭ это задания 6–11) впишите НЕ БОЛЕЕ ОДНОГО слова из записи. Числа записываются прописью; артикли и предлоги не пишутся — иначе 0 баллов (правило ОГЭ).","items":[{"letter":"Интервью","script":"Interviewer: Hello, Ben! Welcome to our programme. You have just come back from Scotland. Tell our listeners about your trip. Ben: Hi! It was my dream trip. We went to Scotland in July, right after the school year finished. Interviewer: How did you get there? Ben: First we flew to Edinburgh. Then we took a train to the Highlands. The train journey took fifteen hours, but I wasn't bored at all: from the window I could see forests, lakes and even castles. Interviewer: What did you like most of all? Ben: The mountains! We walked in the mountains every day, and the views were amazing. Interviewer: Where did you stay? Ben: In a small hotel near a lake. The room was tiny but comfortable, and breakfast was fantastic. Interviewer: Was the weather good? Ben: Ha! It was rainy, of course — it was Scotland! But we had raincoats, so we walked every day anyway. Interviewer: Did you bring anything back home? Ben: Yes — souvenirs! A woolen scarf for my mum, a toy highland cow for my little sister and postcards for my classmates. Interviewer: Thank you, Ben! Have a nice school year. Ben: Thank you! Goodbye!"}],"gaps":[{"hint":"Ben went to Scotland in","accept":["july"],"tip":"месяц — ровно слово из записи"},{"hint":"The train journey took","accept":["fifteen"],"tip":"числа — прописью, как на ОГЭ"},{"hint":"Ben liked the","accept":["mountains"],"tip":"ровно слово из записи, без артикля"},{"hint":"The family stayed in a small","accept":["hotel"],"tip":"одно слово из записи"},{"hint":"The weather was","accept":["rainy"],"tip":"одно слово из записи"},{"hint":"Ben brought home","accept":["souvenirs"],"tip":"ровно слово из записи"}]},"letter":{"id":"letter","max":10,"minutes":17,"title":"Задание 4. Письмо №1 (формат задания 35)","instr":"Прочитайте электронное письмо от друга по переписке и напишите ответ. В формате ОГЭ встречные вопросы НЕ задаются — нужно только ответить на все три вопроса Бена, полно и точно. Соблюдите нормы вежливости: поблагодарите за полученное письмо или/и выразите положительные эмоции от его получения, выразите надежду на последующие контакты (Hope to hear from you soon / Write back soon). Объём — 100–120 слов: менее 90 слов — всё задание оценивается в 0 баллов; более 132 слов — проверяются только первые 120 слов. Кнопка «Проверить письмо» проверит структуру автоматически; баллы по критериям К1–К4 выставляет учитель.","name":"Ben","from":"Ben@school.uk","to":"friend@mail.ru","subject":"Holidays","body":"I've just come back from my trip to Scotland, and I still can't believe how great it was! We travelled there by train, walked in the mountains and even saw a real loch. My little sister says it was the best trip of her life. Now we are planning our next holidays, and my parents want to visit a Russian city this time. There are so many places to choose from, and we can't decide!","questions":["Where did you spend your last school holidays?","What do you usually do during your holidays?","What Russian city would you like to visit, and why?"],"closing":"Write back soon.","task":"Напишите Бену ответ по электронной почте. Ответьте на все три его вопроса. Объём — 100–120 слов."},"survey":{"id":"survey","max":6,"minutes":7,"title":"Задание 9. Телефонный опрос (устная часть, задание 2)","task":"You are going to take part in a telephone survey. You have to answer six questions. Give full answers to the questions. Remember that you have 40 seconds to answer each question.","instr":"Тема опроса — «Каникулы и путешествия». Прослушай вопрос электронного помощника (кнопка ▶ у вопроса или «▶ Телефонный опрос» на панели озвучки) и ответь вслух ПОЛНЫМ предложением — 40 секунд на каждый ответ (таймер в карточке). Учитель выставляет 1 или 0 напротив каждого ответа. Критерий C3: 1 балл — дан полный ответ на поставленный вопрос, отдельные фонетические, лексические и грамматические погрешности не затрудняют понимания; 0 баллов — ответ не дан, ИЛИ ответ не соответствует заданному вопросу, ИЛИ ответ дан в виде слова или словосочетания, И/ИЛИ ошибки препятствуют пониманию.","items":[{"letter":"Вступление","q":"","model":"","script":"Hello! It's the electronic assistant of the Sun Travel Club. We kindly ask you to take part in our survey. We need to find out how people feel about travelling and holidays. Please answer six questions. The survey is anonymous — you don't have to give your name. So, let's get started."},{"letter":"Q1","q":"Where did you spend your last school holidays?","model":"I spent my last school holidays at the seaside with my parents. We swam, played beach volleyball and did a lot of sightseeing.","script":"Where did you spend your last school holidays?"},{"letter":"Q2","q":"How do you usually travel when you go on holiday?","model":"I usually travel by train because I like looking out of the window and walking around the train during long journeys.","script":"How do you usually travel when you go on holiday?"},{"letter":"Q3","q":"What are you going to do during your next school holidays?","model":"I am going to visit my cousins in Moscow. We are going to do some sightseeing and ride the famous Moscow metro.","script":"What are you going to do during your next school holidays?"},{"letter":"Q4","q":"What is the most popular means of transport among teenagers in your region?","model":"I think that buses and the metro are the most popular means of transport among teenagers in my region because they are fast and cheap.","script":"What is the most popular means of transport among teenagers in your region?"},{"letter":"Q5","q":"What places in Russia would you like to visit, and why?","model":"I would like to visit Lake Baikal because I have never seen deep clear water and real mountains, and I want to travel there by train.","script":"What places in Russia would you like to visit, and why?"},{"letter":"Q6","q":"What would you advise a person who wants to have a good holiday?","model":"If somebody wants to have a good holiday, I advise him or her to plan the trip in advance, buy tickets early and take less luggage.","script":"What would you advise a person who wants to have a good holiday?"}]}};
+
+(function(){
+  'use strict';
+  var DATA = window.TEST_DATA;
+  var KEY = (DATA && DATA.storageKey) || 'oge-test-v1';
+  var MAX_TOTAL = (DATA && DATA.total) || 60;
+  var DEFAULT_TASKS = {
+    blitz:{max:10,kind:'blitz'}, lex:{max:8,kind:'choice'}, gram:{max:8,kind:'text'},
+    readA:{max:7,kind:'tf'}, readB:{max:5,kind:'tf'},
+    listenA:{max:4,kind:'choice'}, listenB:{max:4,kind:'choice'},
+    monoA:{max:7,kind:'mono'}, monoB:{max:7,kind:'mono'}
+  };
+  var TASKS = DEFAULT_TASKS;
+  if (DATA && DATA.clientTasks){
+    TASKS = {};
+    for (var ti=0; ti<DATA.clientTasks.length; ti++){
+      var ct = DATA.clientTasks[ti];
+      TASKS[ct[0]] = { max: ct[1], kind: ct[2] };
+    }
+  }
+  var MONO_KEYS = [];
+  (function(){ for (var mk in TASKS){ if (mk.indexOf('mono')===0){ MONO_KEYS.push(mk+'-prep'); MONO_KEYS.push(mk+'-speak'); } } })();
+  var S = loadState();
+  S.answers = S.answers || {};
+  S.scores = S.scores || {};
+
+  function loadState(){ try{ return JSON.parse(localStorage.getItem(KEY)) || {}; }catch(e){ return {}; } }
+  function persist(){ try{ localStorage.setItem(KEY, JSON.stringify(S)); }catch(e){} }
+  function el(id){ return document.getElementById(id); }
+  function norm(v){
+    var s = (v===null||v===undefined?'':String(v)).toLowerCase();
+    s = s.replace(/[\u2019\u2018\u0060\u00B4]/g,"'");
+    s = s.replace(/[.,!?;:"]+/g,' ');
+    s = s.replace(/\s+/g,' ').trim();
+    if (s.indexOf('to ')===0) s = s.slice(3);
+    return s;
+  }
+  function radioVal(name){
+    var r = document.querySelector('input[name="'+name+'"]:checked');
+    return r ? r.value : null;
+  }
+  function setBadge(id, score, max){
+    var b = el('score-'+id); if(!b) return;
+    b.textContent = (score===null?'–':score) + ' / ' + max;
+    b.classList.toggle('done', score!==null && score===max);
+  }
+
+  function checkBlitz(){
+    var items = DATA.blitz.items, score = 0;
+    for (var i=0;i<items.length;i++){
+      var row = el('blitz-row-'+i), fb = el('blitz-fb-'+i), inp = el('blitz-'+i);
+      var val = norm(inp.value); var ok = false;
+      for (var j=0;j<items[i].accept.length;j++){ if (val && val===norm(items[i].accept[j])){ ok=true; break; } }
+      if (ok) score++;
+      row.classList.remove('ok','bad'); row.classList.add(ok?'ok':'bad');
+      fb.textContent = ok ? '✓' : '✗ правильно: ' + items[i].accept[0];
+    }
+    finish('blitz', score);
+  }
+  function checkGram(){
+    var items = DATA.gram.items, score = 0;
+    for (var i=0;i<items.length;i++){
+      var cell = el('gram-cell-'+i), fb = el('gram-fb-'+i), inp = el('gram-'+i);
+      var val = norm(inp.value); var ok = false;
+      S.answers['gram-'+i] = inp.value;
+      for (var j=0;j<items[i].accept.length;j++){ if (val && val===norm(items[i].accept[j])){ ok=true; break; } }
+      if (ok) score++;
+      cell.classList.remove('g-ok','g-bad'); cell.classList.add(ok?'g-ok':'g-bad');
+      fb.textContent = ok ? '✓ ' + items[i].accept[0] : '✗ ' + items[i].accept[0] + ' · ' + items[i].tip;
+    }
+    finish('gram', score);
+  }
+  function checkChoice(id){
+    var items = DATA[id].items, score = 0;
+    for (var i=0;i<items.length;i++){
+      var name = id+'-'+i;
+      var key = (items[i].correct!==undefined) ? String(items[i].correct) : items[i].a;
+      var val = radioVal(name);
+      S.answers[name] = val;
+      var labels = document.querySelectorAll('input[name="'+name+'"]');
+      for (var k=0;k<labels.length;k++){ labels[k].closest('label').classList.remove('ok','bad','reveal'); }
+      if (val===null) continue;
+      var ok = (val===key);
+      if (ok) score++;
+      var picked = document.querySelector('input[name="'+name+'"][value="'+val+'"]');
+      if (picked) picked.closest('label').classList.add(ok?'ok':'bad');
+      if (!ok){
+        var right = document.querySelector('input[name="'+name+'"][value="'+key+'"]');
+        if (right) right.closest('label').classList.add('reveal');
+      }
+    }
+    finish(id, score);
+  }
+  function checkMono(id){
+    var s1 = el(id+'-K1'), s2 = el(id+'-K2'), s3 = el(id+'-K3');
+    S.answers[id+'-K1'] = s1.value; S.answers[id+'-K2'] = s2.value; S.answers[id+'-K3'] = s3.value;
+    var warn = el(id+'-warn');
+    if (s1.value==='' || s2.value==='' || s3.value===''){
+      if (warn){ warn.style.display='block'; warn.textContent='Выставьте все три критерия (К1, К2, К3) — иначе балл не начисляется.'; }
+      finish(id, null);
+      return;
+    }
+    var k1 = parseInt(s1.value,10), k2 = parseInt(s2.value,10), k3 = parseInt(s3.value,10);
+    var total = k1 + k2 + k3;
+    if (k1===0){ total = 0; if (warn){ warn.style.display='block'; warn.textContent='К1 = 0 (коммуникативная задача не решена) — по правилам ФИПИ весь монолог оценивается в 0 баллов.'; } }
+    else if (warn){ warn.style.display='none'; }
+    finish(id, total);
+  }
+  function checkInterview(){
+    var items = DATA.listen6.gaps, score = 0;
+    for (var i=0;i<items.length;i++){
+      var row = el('gap-row-'+i), fb = el('gap-fb-'+i), inp = el('gap-'+i);
+      var val = norm(inp.value); var ok = false;
+      S.answers['gap-'+i] = inp.value;
+      for (var j=0;j<items[i].accept.length;j++){ if (val && val===norm(items[i].accept[j])){ ok=true; break; } }
+      if (ok) score++;
+      row.classList.remove('ok','bad'); row.classList.add(ok?'ok':'bad');
+      fb.textContent = ok ? '✓ ' + items[i].accept[0] : '✗ правильно: ' + items[i].accept[0] + (items[i].tip ? ' · ' + items[i].tip : '');
+    }
+    finish('listen6', score);
+  }
+  function letterWords(t){
+    var w = t.replace(/\s+/g,' ').trim();
+    if (!w) return 0;
+    var arr = w.split(' '), n = 0;
+    for (var i=0;i<arr.length;i++){ if (/[A-Za-z0-9]/.test(arr[i])) n++; }
+    return n;
+  }
+  function updateLetterCount(){
+    var ta = el('letter-text'), c = el('letter-count');
+    if (!ta || !c) return;
+    var n = letterWords(ta.value || '');
+    c.textContent = n + ' слов';
+    c.classList.toggle('warn', n > 0 && (n < 90 || n > 132));
+  }
+  function checkLetter(){
+    var txt = el('letter-text').value || '';
+    S.answers['letter-text'] = txt;
+    updateLetterCount();
+    var wc = letterWords(txt);
+    var lines = txt.split('\n').map(function(s){ return s.trim(); }).filter(function(s){ return s; });
+    var name = (DATA.letter && DATA.letter.name) || 'Ben';
+    var hi = lines.length > 0 && new RegExp('^Dear\\s+' + name + '[,!.]?$', 'i').test(lines[0]);
+    var thanks = /thank/i.test(txt) || /(great|nice|glad|happy|lovely|wonderful|good|cool)[^.!?]{0,40}to (hear|get|receive)/i.test(txt) || /to (hear|get|receive) (from you|your (letter|e-?mail|news|message))/i.test(txt);
+    var hope = /hope to hear|write (back )?soon|looking forward|wait for your|see you soon|reply soon|answer soon|don'?t forget to write/i.test(txt);
+    var closeRe = /^(with (best|warm) wishes|best wishes|warm wishes|kind regards|best regards|all the best|yours|love)[,!.]?$/i;
+    var closing = lines.length > 1 && closeRe.test(lines[lines.length - 2]);
+    var sig = lines.length > 1 && /^[A-Za-z][A-Za-z -]{0,30}$/.test(lines[lines.length - 1]);
+    var checks = [
+      [ hi, 'Обращение (Dear ' + name + ',) — отдельной строкой' ],
+      [ thanks, 'Благодарность за письмо или/и положительные эмоции от его получения (Thanks for your letter / It was great to hear from you)' ],
+      [ hope, 'Надежда на последующие контакты (Hope to hear from you soon / Write back soon)' ],
+      [ closing, 'Завершающая фраза (Best wishes, / Love, / Kind regards,) — отдельной строкой' ],
+      [ sig, 'Подпись — только имя, отдельной строкой' ]
+    ];
+    var box = el('letter-chk');
+    if (box){
+      var h = '';
+      for (var i=0;i<checks.length;i++){
+        h += '<div class="' + (checks[i][0] ? 'ok-c' : 'bad-c') + '">' + (checks[i][0] ? '✓ ' : '✗ ') + checks[i][1] + '</div>';
+      }
+      h += '<div>Объём: ' + wc + ' слов — ' + (wc < 90 ? 'меньше 90: по правилам ФИПИ всё задание оценивается в 0 баллов!' : (wc > 132 ? 'больше 132: проверяются только первые 120 слов' : 'в допустимом диапазоне (90–132)')) + '</div>';
+      box.innerHTML = h;
+    }
+    var s1 = el('letter-K1'), s2 = el('letter-K2'), s3 = el('letter-K3'), s4 = el('letter-K4');
+    S.answers['letter-K1'] = s1.value; S.answers['letter-K2'] = s2.value;
+    S.answers['letter-K3'] = s3.value; S.answers['letter-K4'] = s4.value;
+    var warn = el('letter-warn');
+    if (s1.value==='' || s2.value==='' || s3.value==='' || s4.value===''){
+      if (warn){ warn.style.display='block'; warn.textContent='Структура проверена ✓. Выставьте критерии К1–К4 — иначе балл за письмо не начисляется.'; }
+      finish('letter', null);
+      return;
+    }
+    var total = parseInt(s1.value,10) + parseInt(s2.value,10) + parseInt(s3.value,10) + parseInt(s4.value,10);
+    if (wc < 90){
+      total = 0;
+      if (warn){ warn.style.display='block'; warn.textContent='Меньше 90 слов — по правилам ФИПИ всё задание оценивается в 0 баллов.'; }
+    }
+    else if (parseInt(s1.value,10) === 0){
+      total = 0;
+      if (warn){ warn.style.display='block'; warn.textContent='К1 = 0 (решение коммуникативной задачи не выполнено) — по правилам ФИПИ всё письмо оценивается в 0 баллов.'; }
+    }
+    else if (wc > 132){
+      if (warn){ warn.style.display='block'; warn.textContent='Больше 132 слов — проверяются только первые 120 слов (продолжение после 120-го слова при оценивании отбрасывается).'; }
+    }
+    else if (warn){ warn.style.display='none'; }
+    finish('letter', total);
+  }
+  function checkSurvey(){
+    var items = DATA.survey.items, score = 0, all = true;
+    for (var i=1;i<items.length;i++){
+      var row = el('lc-survey-' + i);
+      var val = radioVal('survey-' + i);
+      S.answers['survey-' + i] = val;
+      if (val === null){ all = false; if (row) row.classList.remove('ok','bad'); continue; }
+      var one = (val === '1');
+      if (one) score++;
+      if (row){ row.classList.remove('ok','bad'); row.classList.add(one ? 'ok' : 'bad'); }
+    }
+    var warn = el('survey-warn');
+    if (!all){
+      if (warn){ warn.style.display='block'; warn.textContent='Оцените все шесть ответов (1 или 0) — иначе балл за опрос не начисляется.'; }
+      finish('survey', null);
+      return;
+    }
+    if (warn){ warn.style.display='none'; }
+    finish('survey', score);
+  }
+  function finish(id, score){
+    S.scores[id] = score;
+    setBadge(id, score, TASKS[id].max);
+    persist();
+    updateTotals();
+  }
+  function runCheck(id){
+    var kind = TASKS[id].kind;
+    if (kind==='blitz') checkBlitz();
+    else if (kind==='text') checkGram();
+    else if (kind==='mono') checkMono(id);
+    else if (kind==='interview') checkInterview();
+    else if (kind==='survey') checkSurvey();
+    else if (kind==='letter') checkLetter();
+    else checkChoice(id);
+  }
+
+  function sumOf(ids){ var s=0; for (var i=0;i<ids.length;i++){ var v=S.scores[ids[i]]; if (typeof v==='number') s+=v; } return s; }
+  function scoredMax(ids){ var s=0; for (var i=0;i<ids.length;i++){ var v=S.scores[ids[i]]; if (typeof v==='number') s+=TASKS[ids[i]].max; } return s; }
+
+  var SECTIONS = (DATA && DATA.sections) || [
+    ['Лексика', ['blitz','lex']],
+    ['Грамматика (формат 20–28)', ['gram']],
+    ['Чтение (формат 13–19)', ['readA','readB']],
+    ['Аудирование (формат 1–4)', ['listenA','listenB']],
+    ['Говорение (монологи, К1–К3)', ['monoA','monoB']]
+  ];
+  var FORECAST = (DATA && DATA.forecast) || [
+    ['Грамматика и лексика', ['blitz','lex','gram'], 15],
+    ['Чтение', ['readA','readB'], 13],
+    ['Аудирование', ['listenA','listenB'], 15],
+    ['Говорение', ['monoA','monoB'], 15]
+  ];
+  var GRADE = (DATA && DATA.grade) || [54, 45, 33];
+
+  function updateTotals(){
+    var total = sumOf(Object.keys(TASKS));
+    var doneMax = 0, checkedAll = true;
+    for (var t in TASKS){ doneMax += scoredMax([t]); if (typeof S.scores[t]!=='number') checkedAll = false; }
+    var chip = el('chip-total'); if (chip) chip.textContent = 'Баллы: ' + total + ' / ' + MAX_TOTAL;
+    var tb = el('res-rows'); if (!tb) return;
+    var html = '';
+    for (var i=0;i<SECTIONS.length;i++){
+      var nm = SECTIONS[i][0], ids = SECTIONS[i][1];
+      var max = 0; for (var j=0;j<ids.length;j++) max += TASKS[ids[j]].max;
+      var sc = sumOf(ids); var pct = Math.round(100 * sc / max);
+      html += '<tr><td>'+nm+'</td><td class="num">'+sc+' / '+max+'</td><td class="num">'+pct+'%</td></tr>';
+    }
+    html += '<tr class="total"><td>ИТОГО (с оценкой)</td><td class="num">'+total+' / '+MAX_TOTAL+'</td><td class="num">'+Math.round(100*total/MAX_TOTAL)+'%</td></tr>';
+    tb.innerHTML = html;
+    var grade = total>=GRADE[0]?'5':(total>=GRADE[1]?'4':(total>=GRADE[2]?'3':'2'));
+    var gEl = el('grade-big'); if (gEl) gEl.textContent = '«'+grade+'»';
+    var gNote = el('grade-note');
+    if (gNote) gNote.textContent = checkedAll
+      ? 'Итоговая оценка за проверочную работу (шкала в разделе «План»).'
+      : 'Предварительная оценка: проверены не все задания ('+doneMax+' из '+MAX_TOTAL+' доступных баллов).';
+    var fb = el('fc-rows');
+    if (fb){
+      var fh = '';
+      for (var f=0;f<FORECAST.length;f++){
+        var nm2 = FORECAST[f][0], ids2 = FORECAST[f][1], oge = FORECAST[f][2];
+        var max2 = 0; for (var q=0;q<ids2.length;q++) max2 += TASKS[ids2[q]].max;
+        var sc2 = sumOf(ids2);
+        var any = scoredMax(ids2) > 0;
+        var proj = any ? Math.round(100*sc2/max2/100*oge) : null;
+        fh += '<tr><td>'+nm2+'</td><td class="num">'+sc2+' / '+max2+'</td><td class="num">'+(proj===null?'—':'≈ '+proj+' / '+oge)+'</td></tr>';
+      }
+      fb.innerHTML = fh;
+    }
+  }
+
+  function restore(){
+    Object.keys(S.answers).forEach(function(key){
+      var v = S.answers[key];
+      if (v===null || v===undefined) return;
+      var anyRadio = document.querySelector('input[name="'+key+'"]');
+      if (anyRadio){
+        var target = document.querySelector('input[name="'+key+'"][value="'+v+'"]');
+        if (target) target.checked = true;
+      } else {
+        var node = el(key);
+        if (node) node.value = v;
+      }
+    });
+    Object.keys(S.scores).forEach(function(t){ setBadge(t, S.scores[t], TASKS[t].max); });
+    updateTotals();
+    updateLetterCount();
+    if (S.teacher) document.body.classList.add('teacher');
+    var tb = el('tbtn'); if (tb) tb.textContent = S.teacher ? 'Режим учителя: ВКЛ' : 'Режим учителя: ВЫКЛ';
+  }
+
+  function trackInput(e){
+    var t = e.target;
+    if (!t || !t.name && !t.id) return;
+    if (t.type==='radio'){ if (t.name) { S.answers[t.name] = t.value; persist(); } return; }
+    if (t.tagName==='SELECT' && t.id){ S.answers[t.id] = t.value; persist(); return; }
+    if (t.tagName==='TEXTAREA' && t.id){ S.answers[t.id] = t.value; persist(); if (t.id==='letter-text') updateLetterCount(); return; }
+    if (t.type==='text' && t.id){ S.answers[t.id] = t.value; persist(); }
+  }
+
+  // ---- timers ----
+  var T = {};
+  function fmt(left){ var m=Math.floor(left/60), s=left%60; return m+':'+(s<10?'0':'')+s; }
+  function render(id){
+    var t = T[id]; if(!t || !t.disp) return;
+    t.disp.textContent = t.left>0 ? fmt(t.left) : 'Время!';
+    t.disp.classList.toggle('warn', t.left>0 && t.left<=300);
+    t.disp.classList.toggle('danger', t.left<=60);
+  }
+  function pauseOtherMono(id){
+    MONO_KEYS.forEach(function(k){
+      if (k!==id && T[k] && T[k].iv){ clearInterval(T[k].iv); T[k].iv = null; }
+    });
+  }
+  function timer(id, secs){
+    var t = T[id];
+    if (!t){ t = T[id] = { left: secs, iv: null, disp: el('tdisp-'+id) }; }
+    if (t.iv){ clearInterval(t.iv); t.iv = null; }
+    else {
+      if (id.indexOf('mono')===0) pauseOtherMono(id);
+      t.iv = setInterval(function(){
+        t.left--;
+        if (t.left<=0){ t.left=0; render(id); clearInterval(t.iv); t.iv=null; return; }
+        render(id);
+      }, 1000);
+    }
+    render(id);
+  }
+  function timerReset(id, secs){
+    if (T[id] && T[id].iv){ clearInterval(T[id].iv); }
+    T[id] = { left: secs, iv: null, disp: el('tdisp-'+id) };
+    render(id);
+  }
+
+  // ---- teacher mode / global actions ----
+  function teacher(){
+    S.teacher = !S.teacher;
+    document.body.classList.toggle('teacher', !!S.teacher);
+    var tb = el('tbtn'); if (tb) tb.textContent = S.teacher ? 'Режим учителя: ВКЛ' : 'Режим учителя: ВЫКЛ';
+    persist();
+  }
+  function checkAll(){
+    Object.keys(TASKS).forEach(function(id){ runCheck(id); });
+    var r = el('results'); if (r) r.scrollIntoView({behavior:'smooth'});
+  }
+  function resetAll(){
+    if (!window.confirm('Сбросить все ответы и баллы проверочной работы?')) return;
+    try{ localStorage.removeItem(KEY); }catch(e){}
+    window.location.reload();
+  }
+
+  // ---- TTS: озвучка текстов аудирования браузером ----
+  var TTS = (function(){
+    var API = window.speechSynthesis || null;
+    var USUP = !!API && typeof window.SpeechSynthesisUtterance !== 'undefined';
+    var TKEY = (DATA && DATA.ttsKey) || 'oge-test-tts-v1';
+    var BLOCKS = (DATA && DATA.ttsBlocks) || ['listenA','listenB'];
+    var voices = [], voiceIdx = -1;
+    var q = [], qi = 0, state = 'idle', curKey = null; // idle | playing | paused
+    var gapTimer = null, gapTick = null, gapLeft = 0, gapResume = null;
+    var keepAlive = null, inited = false, primed = false;
+    var els = {};
+
+    function loadPrefs(){ try{ return JSON.parse(localStorage.getItem(TKEY)) || {}; }catch(e){ return {}; } }
+    var prefs = loadPrefs();
+    function savePrefs(){ try{ localStorage.setItem(TKEY, JSON.stringify(prefs)); }catch(e){} }
+
+    function itemOf(key){
+      var p = key.split('-');
+      var blk = DATA[p[0]];
+      var i = parseInt(p[1], 10);
+      return (blk && blk.items && blk.items[i]) ? blk.items[i] : null;
+    }
+    function blockKeys(b){
+      var out = [], it = DATA[b].items;
+      for (var i=0;i<it.length;i++) out.push(b + '-' + i);
+      return out;
+    }
+    function splitSentences(t){
+      var m = String(t).match(/[^.!?]+[.!?]+/g);
+      if (!m || !m.length) return [String(t)];
+      var out = [], i;
+      for (i=0;i<m.length;i++){ var s = m[i].trim(); if (s) out.push(s); }
+      return out.length ? out : [String(t)];
+    }
+
+    function scoreVoice(v){
+      var n = (v.name||'').toLowerCase(), s = 0, lang = (v.lang||'').toLowerCase();
+      if (lang.indexOf('en') !== 0) return -1;
+      if (n.indexOf('natural') >= 0) s += 100;
+      if (n.indexOf('google uk english') >= 0) s += 80;
+      if (n.indexOf('google us english') >= 0) s += 70;
+      if (n.indexOf('microsoft') >= 0 && n.indexOf('online') >= 0) s += 60;
+      if (lang === 'en-gb') s += 10;
+      if (lang === 'en-us') s += 8;
+      if (n.indexOf('compact') >= 0) s -= 20;
+      return s;
+    }
+    function pickVoice(list){
+      var i;
+      if (prefs.voice){
+        for (i=0;i<list.length;i++){ if (list[i].name === prefs.voice) return i; }
+      }
+      var best = -1, bs = 0;
+      for (i=0;i<list.length;i++){ var s = scoreVoice(list[i]); if (s > bs){ bs = s; best = i; } }
+      return best;
+    }
+    function refreshVoices(){
+      if (!USUP || !els.voice) return;
+      var list = API.getVoices() || [];
+      var en = [], i;
+      for (i=0;i<list.length;i++){ if ((list[i].lang||'').toLowerCase().indexOf('en') === 0) en.push(list[i]); }
+      if (!en.length) en = list;
+      if (!en.length) return;
+      voices = en;
+      els.voice.innerHTML = '';
+      for (i=0;i<voices.length;i++){
+        var o = document.createElement('option');
+        o.value = voices[i].name;
+        o.textContent = voices[i].name + ' (' + voices[i].lang + ')';
+        els.voice.appendChild(o);
+      }
+      voiceIdx = pickVoice(voices);
+      if (voiceIdx >= 0) els.voice.selectedIndex = voiceIdx;
+    }
+
+    function setStatus(t){ if (els.status) els.status.textContent = t; }
+    function setPauseLabel(paused){
+      if (!els.pause) return;
+      els.pause.textContent = paused ? '▶ Продолжить' : '⏸ Пауза';
+      els.pause.disabled = (state === 'idle');
+      if (els.stop) els.stop.disabled = (state === 'idle');
+    }
+    function resetUI(){
+      var cards = document.querySelectorAll('.listencard'), i;
+      for (i=0;i<cards.length;i++) cards[i].classList.remove('speaking');
+      var btns = document.querySelectorAll('.ltbtn');
+      for (i=0;i<btns.length;i++){ btns[i].textContent = '▶ ' + btns[i].getAttribute('data-letter'); }
+    }
+    function updateUI(){
+      resetUI();
+      if (state === 'idle'){ setPauseLabel(false); return; }
+      var st = q[qi];
+      if (st && st.key){
+        var it = itemOf(st.key);
+        var card = el('lc-' + st.key);
+        if (card) card.classList.add('speaking');
+        var btn = el('ltbtn-' + st.key);
+        if (btn) btn.textContent = '⏹';
+        if (it && state === 'paused') setStatus('⏸ Пауза — текст ' + it.letter);
+      }
+      setPauseLabel(state === 'paused');
+    }
+
+    function clearGap(){ if (gapTimer){ clearTimeout(gapTimer); gapTimer = null; } if (gapTick){ clearInterval(gapTick); gapTick = null; } }
+    function stopKeepAlive(){ if (keepAlive){ clearInterval(keepAlive); keepAlive = null; } }
+    function startKeepAlive(){
+      stopKeepAlive();
+      keepAlive = setInterval(function(){
+        if (state === 'playing' && API.speaking && !API.paused) API.resume();
+      }, 8000);
+    }
+
+    function buildQueue(keys){
+      var x2 = els.x2 && els.x2.checked;
+      var out = [], k;
+      for (k=0;k<keys.length;k++){
+        var key = keys[k], it = itemOf(key);
+        var sents = it ? splitSentences(it.script) : [];
+        out.push({ type:'text', key:key, sents:sents, pass:1, si:0 });
+        if (x2){
+          out.push({ type:'gap', ms:10, label:'Пауза для ответов', key:key });
+          out.push({ type:'text', key:key, sents:sents, pass:2, si:0 });
+        }
+        if (k < keys.length - 1) out.push({ type:'gap', ms:(x2 ? 12 : 4), label:'Следующий текст', key:keys[k+1] });
+      }
+      return out;
+    }
+
+    function currentRate(){
+      var r = els.rate ? parseFloat(els.rate.value) : 1;
+      if (!r || r < 0.5 || r > 2) r = 1;
+      return r;
+    }
+
+    function playStep(){
+      if (state !== 'playing') return;
+      if (qi >= q.length){ finish(); return; }
+      var st = q[qi];
+      if (st.type === 'gap'){ startGap(st, st.ms); return; }
+      if (st.type === 'text' && st.key !== curKey){ curKey = st.key; updateUI(); }
+      if (st.si >= st.sents.length){ st.si = 0; qi++; playStep(); return; }
+      var it = itemOf(st.key);
+      var u = new SpeechSynthesisUtterance(st.sents[st.si]);
+      if (voiceIdx >= 0 && voices[voiceIdx]){ u.voice = voices[voiceIdx]; u.lang = voices[voiceIdx].lang; }
+      else { u.lang = 'en-GB'; }
+      u.rate = currentRate(); u.pitch = 1; u.volume = 1;
+      var where = (it ? it.letter : '?') + (st.pass === 2 ? ' · 2-е прочтение' : '');
+      setStatus('🔊 Читается ' + where + ' · фраза ' + (st.si + 1) + ' из ' + st.sents.length);
+      st.si++;
+      u.onend = function(){ if (state === 'playing') playStep(); };
+      u.onerror = function(ev){
+        var er = ev && ev.error ? ev.error : '';
+        if (er === 'interrupted' || er === 'canceled') return;
+        if (state === 'playing') playStep();
+      };
+      API.speak(u);
+    }
+
+    function startGap(step, leftSec){
+      gapLeft = leftSec;
+      var it = itemOf(step.key);
+      var tail = it ? ' · далее текст ' + it.letter : '';
+      setStatus('🔊 ' + step.label + ' — ' + gapLeft + ' с' + tail);
+      gapTick = setInterval(function(){
+        gapLeft--;
+        if (gapLeft > 0) setStatus('🔊 ' + step.label + ' — ' + gapLeft + ' с' + tail);
+      }, 1000);
+      gapTimer = setTimeout(function(){ clearGap(); qi++; playStep(); }, gapLeft * 1000);
+    }
+
+    function finish(){
+      state = 'idle'; clearGap(); stopKeepAlive(); curKey = null;
+      q = []; qi = 0;
+      resetUI(); setPauseLabel(false);
+      setStatus('Прочтение завершено ✓');
+      setTimeout(function(){ if (state === 'idle') setStatus(''); }, 4000);
+    }
+
+    function stopAll(silent){
+      state = 'idle'; clearGap(); stopKeepAlive(); gapResume = null; curKey = null;
+      if (API){ try{ API.cancel(); }catch(e){} }
+      q = []; qi = 0;
+      resetUI(); setPauseLabel(false);
+      if (!silent) setStatus('');
+    }
+
+    function prime(){
+      if (primed || !USUP) return;
+      primed = true;
+      try{
+        var u0 = new SpeechSynthesisUtterance(' ');
+        u0.volume = 0; u0.rate = 2;
+        API.speak(u0);
+        API.cancel();
+      }catch(e){}
+    }
+
+    function play(keys){
+      if (!USUP) return;
+      prime();
+      stopAll(true);
+      q = buildQueue(keys); qi = 0;
+      state = 'playing';
+      setPauseLabel(false);
+      updateUI();
+      // Chrome: speak() сразу после cancel() может быть проигнорирован — микропауза
+      setTimeout(function(){ if (state === 'playing') playStep(); }, 150);
+      startKeepAlive();
+    }
+
+    function pauseToggle(){
+      if (state === 'playing'){
+        state = 'paused';
+        if (gapTimer){ gapResume = { left: gapLeft }; clearGap(); }
+        else { try{ API.pause(); }catch(e){} }
+        setPauseLabel(true);
+        var st = q[qi];
+        if (st && st.key){ var it = itemOf(st.key); if (it) setStatus('⏸ Пауза — текст ' + it.letter); }
+      } else if (state === 'paused'){
+        state = 'playing';
+        if (gapResume){
+          var step = q[qi], left = gapResume.left;
+          gapResume = null;
+          if (step && step.type === 'gap') startGap(step, Math.max(1, left));
+          else playStep();
+        }
+        else if (API.speaking || API.pending){ try{ API.resume(); }catch(e){} }
+        else { playStep(); }
+        setPauseLabel(false);
+      }
+    }
+
+    function bind(){
+      if (els.p1) els.p1.onclick = function(){ play(blockKeys(BLOCKS[0])); };
+      if (els.p2) els.p2.onclick = function(){ play(blockKeys(BLOCKS[1])); };
+      if (els.p3) els.p3.onclick = function(){ play(blockKeys(BLOCKS[2])); };
+      if (els.pause) els.pause.onclick = pauseToggle;
+      if (els.stop) els.stop.onclick = function(){ stopAll(); };
+      if (els.x2) els.x2.onchange = function(){ prefs.x2 = els.x2.checked; savePrefs(); setStatus(els.x2.checked ? 'Режим ×2 включён: каждый текст прозвучит дважды, между прочтениями — пауза для ответов' : 'Режим ×2 выключен: каждый текст прозвучит один раз'); };
+      if (els.rate) els.rate.onchange = function(){ prefs.rate = parseFloat(els.rate.value); savePrefs(); };
+      if (els.voice) els.voice.onchange = function(){ prefs.voice = els.voice.value; voiceIdx = els.voice.selectedIndex; savePrefs(); };
+      document.addEventListener('click', function(e){
+        var b = e.target && e.target.closest ? e.target.closest('.ltbtn') : null;
+        if (!b || b.disabled) return;
+        var key = b.getAttribute('data-key');
+        var cur = (state !== 'idle' && q[qi]) ? q[qi].key : null;
+        if (cur === key){ stopAll(); } else { play([key]); }
+      });
+    }
+
+    function init(){
+      if (inited) return;
+      inited = true;
+      els.status = el('abar-status');
+      els.voice = el('abar-voice');
+      els.rate = el('abar-rate');
+      els.x2 = el('abar-x2');
+      els.pause = el('abar-pause');
+      els.stop = el('abar-stop');
+      els.p1 = el('abar-play1');
+      els.p2 = el('abar-play2');
+      els.p3 = el('abar-play3');
+      if (!USUP){
+        var ctrl = el('abar-controls');
+        if (ctrl) ctrl.style.display = 'none';
+        var msg = el('abar-msg');
+        if (msg) msg.style.display = 'block';
+        var btns = document.querySelectorAll('.ltbtn');
+        for (var i=0;i<btns.length;i++){ btns[i].disabled = true; }
+        setStatus('озвучка браузером недоступна');
+        return;
+      }
+      if (els.rate && prefs.rate) els.rate.value = String(prefs.rate);
+      if (els.x2) els.x2.checked = !!prefs.x2;
+      setPauseLabel(false);
+      refreshVoices();
+      if (typeof API.onvoiceschanged !== 'undefined') API.onvoiceschanged = refreshVoices;
+      setTimeout(refreshVoices, 250);
+      setTimeout(refreshVoices, 1200);
+      bind();
+    }
+
+    return { init: init, state: function(){ return state; }, stop: function(){ stopAll(); } };
+  })();
+
+  window.TestAPI = { check: runCheck, checkAll: checkAll, resetAll: resetAll, timer: timer, timerReset: timerReset, teacher: teacher, tts: TTS };
+
+  document.addEventListener('input', trackInput, true);
+  document.addEventListener('change', trackInput, true);
+  function boot(){ restore(); TTS.init(); }
+  document.addEventListener('DOMContentLoaded', boot);
+  if (document.readyState !== 'loading') boot();
+})();
+
+</script>
+</body>
+</html>
